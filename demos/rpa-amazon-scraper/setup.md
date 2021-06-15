@@ -6,4 +6,4 @@ Install and setup notes can be found here =>
 
 The sample solution file can be found here =>
 
-[gccAmazonScraper_1_0_0_2.zip](gccAmazonScraper_1_0_0_2.zip)_
+[gccAmazonScraper_1_0_0_2.zip](gccAmazonScraper_1_0_0_2.zip)

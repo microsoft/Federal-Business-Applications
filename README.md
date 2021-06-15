@@ -1,6 +1,8 @@
 # Federal Business Applications Demo Repository
 
-Welcome to the Federal Business Applications Demo Repository.
+Welcome to the Federal Business Applications Demo Repository.  This repository was created to showcase sample solutions that run in the Power Platform and D365 in our various US sovereign government clouds. 
+
+Below is a listing of the sample solutions available.  These sample solution files are meant for demonstration purposes only to quickly showcase various features across our platform.  
 
 # Demos
 

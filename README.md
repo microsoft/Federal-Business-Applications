@@ -2,6 +2,10 @@
 
 Welcome to the Federal Business Applications Demo Repository.
 
+# Demos
+
+* [RPA Web Scraping Demo] (demos/rpa-amazon-scraper/setup.md)
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a

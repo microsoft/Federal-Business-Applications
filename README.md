@@ -4,7 +4,9 @@ Welcome to the Federal Business Applications Demo Repository.
 
 # Demos
 
-* [RPA Web Scraping Demo](demos/rpa-amazon-scraper/setup.md)
+| Demos            | GCC | GCCH | DoD |
+| ---------------- | ---- | ---- | ---- |
+| [RPA Web Scraping Demo](demos/rpa-amazon-scraper/setup.md) | :heavy_check_mark: | :heavy_check_mark: | |
 
 ## Contributing
 

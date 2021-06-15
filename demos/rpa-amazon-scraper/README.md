@@ -2,6 +2,10 @@
 
 Install and setup notes can be found here =>
 
+[rpa-amazon-scraper-setup-notes.pdf](rpa-amazon-scraper-setup-notes.pdf)
+
+Or you can download the setup notes here =>
+
 [rpa-amazon-scraper-setup-notes.pdf](https://github.com/microsoft/Federal-Business-Applications/raw/main/demos/rpa-amazon-scraper/rpa-amazon-scraper-setup-notes.pdf)
 
 The sample solution file can be found here =>

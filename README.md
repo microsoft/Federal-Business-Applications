@@ -15,6 +15,8 @@ Below is a listing of the sample solutions available.  These sample solution fil
 
 Below are whitepapers that have been created specically for use in the US Government sovereign cloud regions.
 
+* [How to use the O365 Outlook Connector for Notifications](Documentation/How%20to%20use%20the%20O365%20Outlook%20Connector%20for%20Notifications.pdf)
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a

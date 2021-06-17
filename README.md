@@ -2,7 +2,7 @@
 
 Welcome to the Federal Business Applications Demo Repository.  This repository was created to showcase sample solutions that run in the Power Platform and D365 in our various US sovereign government clouds. 
 
-# Demos
+## Demos
 
 Below is a listing of the sample solutions available.  These sample solution files are meant for demonstration purposes only to quickly showcase various features across our platform.  
 
@@ -11,7 +11,7 @@ Below is a listing of the sample solutions available.  These sample solution fil
 | [RPA Web Scraping Demo](demos/rpa-amazon-scraper/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | |
 | [PowerShell Gov Samples](demos/powershell-gov-samples/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 
-# Whitepapers
+## Whitepapers
 
 Below are whitepapers that have been created specically for use in the US Government sovereign cloud regions.
 

@@ -8,6 +8,7 @@ Below is a listing of the sample solutions available.  These sample solution fil
 
 | Demo Name | Commercial | GCC | GCCH | DoD |
 | --------- | :----------: | :---: | :----: | :---: |
+| [Electronic Signature Canvas App](demos/electronic-signatures/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [RPA Web Scraping Demo](demos/rpa-amazon-scraper/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | |
 | [PowerShell Gov Samples](demos/powershell-gov-samples/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 

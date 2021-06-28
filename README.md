@@ -17,7 +17,7 @@ Below is a listing of the sample solutions available.  These sample solution fil
 
 Below are whitepapers that have been created specically for use in the US Government sovereign cloud regions.
 
-* [Consume Commercial Azure Stroage Resources from Power Platform GCC](wiki/PowerApps-Connecting-from-GCC-to-any-Endpoint-including-Commercial-Azure)
+* [Consume Commercial Azure Storage Resources from Power Platform GCC](https://github.com/microsoft/Federal-Business-Applications/wiki/PowerApps-Connecting-from-GCC-to-any-Endpoint-including-Commercial-Azure)
 * [Creating US Government Support Tickets](whitepapers/power-platform-support/README.md)
 * [Enable Azure AD Connector in GCC](whitepapers/azure-ad-gcc/README.md)
 * [How to use the O365 Outlook Connector for Notifications](whitepapers/o365-outlook-connector/How%20to%20use%20the%20O365%20Outlook%20Connector%20for%20Notifications.pdf)

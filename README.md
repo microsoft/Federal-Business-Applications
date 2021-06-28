@@ -18,6 +18,7 @@ Below are whitepapers that have been created specically for use in the US Govern
 * [How to use the O365 Outlook Connector for Notifications](whitepapers/How%20to%20use%20the%20O365%20Outlook%20Connector%20for%20Notifications.pdf)
 * [Enable Azure AD Connector in GCC](whitepapers/azure-ad-gcc/README.md)
 * [Creating US Government Support Tickets](whitepapers/power-platform-support/README.md)
+* [Power BI Desktop Registry Settings for US Gov Clouds](whitepapers/power-bi-registry-settings/README.md)
 
 ## Contributing
 

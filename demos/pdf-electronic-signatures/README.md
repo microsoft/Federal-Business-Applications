@@ -4,7 +4,7 @@ This example builds on the Electronic Signatures Demo app [Electronic Signatures
 ![Final Result](images/signed-form-PDF-result.JPG)
 
 ## Power Automate Flow Overview
-Here is an outline of how you can accopmlish this using the data from the [Electronic Signatures Demo App](../electronic-signatures/README.md).  This Flow is triggered when a new Signature CDS record is created.  The signature image is downloaded, and then it is populated into a Word template file which is then exported to a PDF and sent to an email address.
+Here is an outline of how you can accopmlish this using the data from the [Electronic Signatures Demo App](../electronic-signatures/README.md).  This Flow is triggered when a new Signature Dataverse record is created.  The signature image is downloaded, and then it is populated into a Word template file which is then exported to a PDF and sent to an email address.
 
 ![Flow Overview](images/signed-form-flow-overview.JPG)
 
@@ -13,7 +13,7 @@ Word templates with control types have been around for many years.  You can use 
 
 [Create Word Templates with Content Controls](https://support.office.com/en-us/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b?ui=en-US&rs=en-US&ad=US)
 
-Power Apps and Dyanmics support Word Template files to create reports off of entities in CDS.  To date, those templates do not support image control types in Word templates.  
+Power Apps and Dyanmics support Word Template files to create reports off of entities in Dataverse.  To date, those templates do not support image control types in Word templates.  
 
 [Word Templates with D365](https://docs.microsoft.com/en-us/power-platform/admin/using-word-templates-dynamics-365)
 
@@ -38,7 +38,7 @@ Add a new action to get the display name of the user who created the entity.  Th
 
 
 ### Download the Signature Image
-The Pen Input result from the [Electronic Signatures Demo App](../electronic-signatures/README.md) was stored using the [File field type in CDS](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/file-attributes).  You could also use the [new Image field type](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/image-attributes) that supports full images too.
+The Pen Input result from the [Electronic Signatures Demo App](../electronic-signatures/README.md) was stored using the [File field type in Dataverse](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/file-attributes).  You could also use the [new Image field type](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/image-attributes) that supports full images too.
 
 Use the [Get file or image content](https://docs.microsoft.com/en-us/connectors/commondataserviceforapps/#get-file-or-image-content) action.
 
@@ -80,7 +80,7 @@ Putting this all together, when we create a new Signature entity we now receive 
 ![Email Results](images/signed-form-email-output.JPG)
 
 ## Setting up the Sample Solution
-Below is the sample solution you can install in your CDS environment to test this.  
+Below is the sample solution you can install in your Dataverse environment to test this.  
 
 [Electronic Demo Solution File](https://github.com/microsoft/Federal-Business-Applications/raw/main/demos/electronic-signatures/ElectronicSignatureDemo_1_0_0_6.zip)
 

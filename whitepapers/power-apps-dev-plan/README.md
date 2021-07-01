@@ -1,6 +1,5 @@
 # Signing up for a Power Apps Developer Plan with Government Identities
-If you have a .gov or a .mil or are using a work account in a GCC, GCC High or DOD cloud environment, you will not be able to sign up for the free Power Apps Developer Plan.  
-The Power Apps Developer Plan requires using a commerical Azure Active Directory identity to sign up.
+If you have a .gov or a .mil email address or are using a work account in a GCC, GCC High or DOD cloud environment, you will not be able to sign up for the free Power Apps Developer Plan with those email accounts.  The Power Apps Developer Plan requires using a commerical Azure Active Directory identity to sign up.
 
 If you don't have a commercial work account, follow the steps below to setup a free commercial Azure Active Direcotry account.
 

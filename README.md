@@ -8,6 +8,7 @@ Below is a listing of the sample solutions available.  These sample solution fil
 
 | Demo Name | Commercial | GCC | GCCH | DoD |
 | --------- | :----------: | :---: | :----: | :---: |
+| [AI Builder Form Processing + RPA](https://www.youtube.com/watch?v=toVIdGjUK4A) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | |
 | [Electronic Signature Canvas App](demos/electronic-signatures/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Electronic Signature PDF Flow](demos/pdf-electronic-signatures/README.md) | :heavy_check_mark: | :heavy_check_mark: |  |  |
 | [PowerShell Gov Samples](demos/powershell-gov-samples/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |

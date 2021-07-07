@@ -2,7 +2,9 @@
 
 This demo showcases how to use AI Builders prebuilt drivers license model to extract fields from any valid US issued drivers license.
 
+<p align="center">
 ![overview image](files/CanvasApp01.PNG)
+</p>
 
 ## Prereq's
 
@@ -21,8 +23,20 @@ This demo showcases how to use AI Builders prebuilt drivers license model to ext
 
 4. You can either add an existing image from your device, or you can use your camera to take a photo of a drivers license
 
+<p align="center">
 ![overview image](files/CanvasApp02.PNG)
+</p>
 
-5. Sample drivers licenses can be found here for each state in the United States,
+5. If you add an existing photo, you can find sample drivers licenses can be found here for each state in the United States,
 
 [Sample US Drivers License Photos](https://github.com/SteveWinward/PowerApps/blob/master/WriteUps/Samples/AIBuilder_IDReader/SampleDriversLicenses.zip)
+
+<p align="center">
+![overview image](files/CanvasApp03.PNG)
+</p>
+
+6. Processing the image will show you the results page that includes the fields it pulled, the values and the associated confidence scores of the results.
+
+<p align="center">
+![overview image](files/CanvasApp01.PNG)
+</p>

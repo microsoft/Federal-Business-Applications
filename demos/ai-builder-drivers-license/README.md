@@ -13,7 +13,7 @@ This demo showcases how to use AI Builders prebuilt drivers license model to ext
 ## Setup Notes
 1. Download the sample solution file here,
 
-[AI Builder Samples](https://github.com/microsoft/Federal-Business-Applications/raw/main/demos/ai-builder-drivers-license/files/AIBuilderSamples_1_0_0_3.zip)
+	[AI Builder Samples](https://github.com/microsoft/Federal-Business-Applications/raw/main/demos/ai-builder-drivers-license/files/AIBuilderSamples_1_0_0_3.zip)
 
 2. Import the solution into your Power Platform environment
 
@@ -21,14 +21,14 @@ This demo showcases how to use AI Builders prebuilt drivers license model to ext
 
 4. You can either add an existing image from your device, or you can use your camera to take a photo of a drivers license
 
-![overview image](files/CanvasApp02.PNG)
+	![overview image](files/CanvasApp02.PNG)
 
 5. If you add an existing photo, you can find sample drivers licenses can be found here for each state in the United States,
 
-[Sample US Drivers License Photos](https://github.com/SteveWinward/PowerApps/blob/master/WriteUps/Samples/AIBuilder_IDReader/SampleDriversLicenses.zip)
+	[Sample US Drivers License Photos](https://github.com/SteveWinward/PowerApps/blob/master/WriteUps/Samples/AIBuilder_IDReader/SampleDriversLicenses.zip)
 
-![overview image](files/CanvasApp03.PNG)
+	![overview image](files/CanvasApp03.PNG)
 
 6. Processing the image will show you the results page that includes the fields it pulled, the values and the associated confidence scores of the results.
 
-![overview image](files/CanvasApp01.PNG)
+	![overview image](files/CanvasApp01.PNG)

@@ -25,7 +25,11 @@ This demo showcases how to use AI Builders prebuilt drivers license model to ext
 
 5. If you add an existing photo, you can find sample drivers licenses can be found here for each state in the United States,
 
-	[Sample US Drivers License Photos](https://github.com/SteveWinward/PowerApps/blob/master/WriteUps/Samples/AIBuilder_IDReader/SampleDriversLicenses.zip)
+	[Sample US Drivers License Photos](https://github.com/microsoft/Federal-Business-Applications/raw/main/demos/ai-builder-drivers-license/files/SampleDriversLicenses.zip)
+
+	> Note, these sample drivers licnese images were obtained from the following site,
+	> 
+	> https://www.insider.com/what-drivers-license-looks-like-in-every-state
 
 	![overview image](files/CanvasApp03.PNG)
 

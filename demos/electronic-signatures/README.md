@@ -87,6 +87,6 @@ Lastly, click on the preivew icon in the upper right of the editor.  Fill out th
 ![Signature Demo](files/images/signature-demo-input-form.JPG)
 
 I created a completed canvas app and packaged it as a 
-[solution](https://github.com/microsoft/Federal-Business-Applications/raw/main/demos/electronic-signatures/ElectronicSignatureDemo_1_0_0_6.zip) if you want to play around with this more,
+[solution](https://github.com/microsoft/Federal-Business-Applications/raw/main/demos/electronic-signatures/files/ElectronicSignatureDemo_1_0_0_6.zip) if you want to play around with this more,
 
 ![Final View](files/images/signature-demo-final-list-view.JPG)

@@ -9,7 +9,8 @@ Below is a listing of the sample solutions available.  These sample solution fil
 | Demo Name | Commercial | GCC | GCCH | DoD |
 | --------- | :----------: | :---: | :----: | :---: |
 | [AI Builder Drivers License Canvas App](demos/ai-builder-drivers-license/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | |
-| [AI Builder Form Processing + RPA](https://www.youtube.com/watch?v=toVIdGjUK4A) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | |
+| [AI Builder Form Processing + RPA](demos/ai-builder-form-processing-rpa/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | |
+| [Azure Computer Vision Canvas App](demos/azure-computer-vision/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Electronic Signature Canvas App](demos/electronic-signatures/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Electronic Signature PDF Flow](demos/pdf-electronic-signatures/README.md) | :heavy_check_mark: | :heavy_check_mark: |  |  |
 | [PII Redaction with Power Automate](demos/pii-redaction/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |

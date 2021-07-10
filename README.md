@@ -28,6 +28,7 @@ Below are whitepapers that have been created specically for use in the US Govern
 * [Power Apps Developer Plan for US Government Customers](whitepapers/power-apps-dev-plan/README.md)
 * [Power BI Desktop Registry Settings for US Gov Clouds](whitepapers/power-bi-registry-settings/README.md)
 * [Power BI & O365 Forms Integration in US Gov Clouds](whitepapers/power-bi-o365-forms/README.md)
+* [Power BI Visuals Download Tool](whitepapers/power-bi-visuals-download/README.md)
 
 ## Contributing
 

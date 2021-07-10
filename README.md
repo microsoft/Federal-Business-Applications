@@ -26,6 +26,7 @@ Below are whitepapers that have been created specically for use in the US Govern
 * [How to use the O365 Outlook Connector for Notifications](whitepapers/o365-outlook-connector/How%20to%20use%20the%20O365%20Outlook%20Connector%20for%20Notifications.pdf)
 * [Power Apps Developer Plan for US Government Customers](whitepapers/power-apps-dev-plan/README.md)
 * [Power BI Desktop Registry Settings for US Gov Clouds](whitepapers/power-bi-registry-settings/README.md)
+* [Power BI & O365 Forms Integration in US Gov Clouds](whitepapers/power-bi-o365-forms/README.md)
 
 ## Contributing
 

@@ -46,6 +46,7 @@ Below are whitepapers that have been created specifically for use in the US Gove
 * [Power Platform Learning Paths](https://docs.microsoft.com/en-us/learn/powerplatform/)
 * [Power Platform Center of Excellence Starter Kit](https://docs.microsoft.com/en-us/power-platform/guidance/coe/starter-kit)
 * [Power CAT Adoption Maturity Model](https://powerapps.microsoft.com/en-us/blog/power-cat-adoption-maturity-model-repeatable-patterns-for-successful-power-platform-adoption/)
+* [AI Builder Labs](https://docs.microsoft.com/en-us/ai-builder/learn-ai-builder)
 
 ## D365 Training Resources
 

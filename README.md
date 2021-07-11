@@ -6,7 +6,7 @@ Welcome to the Federal Business Applications Demo Repository.  This repository w
 
 Below is a listing of the sample solutions available.  These sample solution files are meant for demonstration purposes only to quickly showcase various features across our platform.  
 
-| Demo Name | GCC | GCCH | DoD |
+| Demo Name | GCC | GCC High | DoD |
 | --------- | :---: | :----: | :---: |
 | [AI Builder Drivers License Canvas App](demos/ai-builder-drivers-license/README.md) | :heavy_check_mark: | :heavy_check_mark: | |
 | [AI Builder Form Processing + RPA](demos/ai-builder-form-processing-rpa/README.md) | :heavy_check_mark: | :heavy_check_mark: | |
@@ -29,6 +29,28 @@ Below are whitepapers that have been created specically for use in the US Govern
 * [Power BI Desktop Registry Settings for US Gov Clouds](whitepapers/power-bi-registry-settings/README.md)
 * [Power BI & O365 Forms Integration in US Gov Clouds](whitepapers/power-bi-o365-forms/README.md)
 * [Power BI Visuals Download Tool](whitepapers/power-bi-visuals-download/README.md)
+
+## Power BI Training Resources
+
+* [Power BI Learning Paths](https://docs.microsoft.com/en-us/power-bi/guided-learning/)
+* [Guy in a Cube YouTube Channel](https://www.youtube.com/channel/UCFp1vaKzpfvoGai0vE5VJ0w)
+* [Power BI Training Content](https://aka.ms/PBITraining)
+* [Power BI Dashboard in an Hour Lab](https://aka.ms/pbi-diah)
+* [Power BI Paginated Reports in a Day YouTube Training](https://www.youtube.com/playlist?list=PL1N57mwBHtN1icIhpjQOaRL8r9G-wytpT)
+* [Power BI Adoption Framework](https://www.youtube.com/playlist?list=PL1N57mwBHtN0UZbEgLHtA1yxqPlae3B90)
+
+## Power Apps / Power Automate Training Resources
+
+* [App in a Day](https://aka.ms/aiad)
+* [RPA in a Day](https://aka.ms/rpainaday)
+* [Power Platform Learning Paths](https://docs.microsoft.com/en-us/learn/powerplatform/)
+* [Power Platform Center of Excellence Starter Kit](https://docs.microsoft.com/en-us/power-platform/guidance/coe/starter-kit)
+* [Power CAT Adoption Maturity Model](https://powerapps.microsoft.com/en-us/blog/power-cat-adoption-maturity-model-repeatable-patterns-for-successful-power-platform-adoption/)
+
+## D365 Training Resources
+
+* [D365 Learning Paths](https://docs.microsoft.com/en-us/learn/dynamics365/)
+* [D365 Certifications](https://docs.microsoft.com/en-us/learn/certifications/browse/?technology=Microsoft%20Dynamics%20365&products=dynamics-365)
 
 ## Contributing
 

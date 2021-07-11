@@ -8,6 +8,10 @@ You can get the full PowerShell script below,
 
 [VisualsBulkDownloadTool.ps1](files/VisualsBulkDownloadTool.ps1)
 
+You can also watch a YouTube video on how to use this script as well,
+
+[Using Power BI AppSource Visuals in Disconnected Environments](https://youtu.be/JRDc9kyAmeo)
+
 When you run the script you have some optional flags,
 
 * This script will download all Power BI visuals from the marketplace and save them to a downloads subfolder in the current working directory.

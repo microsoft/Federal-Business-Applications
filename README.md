@@ -6,16 +6,16 @@ Welcome to the Federal Business Applications Demo Repository.  This repository w
 
 Below is a listing of the sample solutions available.  These sample solution files are meant for demonstration purposes only to quickly showcase various features across our platform.  
 
-| Demo Name | Commercial | GCC | GCCH | DoD |
-| --------- | :----------: | :---: | :----: | :---: |
-| [AI Builder Drivers License Canvas App](demos/ai-builder-drivers-license/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | |
-| [AI Builder Form Processing + RPA](demos/ai-builder-form-processing-rpa/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | |
-| [Azure Computer Vision Canvas App](demos/azure-computer-vision/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Electronic Signature Canvas App](demos/electronic-signatures/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Electronic Signature PDF Flow](demos/pdf-electronic-signatures/README.md) | :heavy_check_mark: | :heavy_check_mark: |  |  |
-| [PII Redaction with Power Automate](demos/pii-redaction/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |
-| [PowerShell Gov Samples](demos/powershell-gov-samples/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [RPA Web Scraping Demo](demos/rpa-amazon-scraper/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | |
+| Demo Name | GCC | GCCH | DoD |
+| --------- | :---: | :----: | :---: |
+| [AI Builder Drivers License Canvas App](demos/ai-builder-drivers-license/README.md) | :heavy_check_mark: | :heavy_check_mark: | |
+| [AI Builder Form Processing + RPA](demos/ai-builder-form-processing-rpa/README.md) | :heavy_check_mark: | :heavy_check_mark: | |
+| [Azure Computer Vision Canvas App](demos/azure-computer-vision/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [Electronic Signature Canvas App](demos/electronic-signatures/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [Electronic Signature PDF Flow](demos/pdf-electronic-signatures/README.md) | :heavy_check_mark: |  |  |
+| [PII Redaction with Power Automate](demos/pii-redaction/README.md) | :heavy_check_mark: | :heavy_check_mark: |  |
+| [PowerShell Gov Samples](demos/powershell-gov-samples/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [RPA Web Scraping Demo](demos/rpa-amazon-scraper/README.md) | :heavy_check_mark: | :heavy_check_mark: | |
 
 ## Whitepapers
 

@@ -8,7 +8,7 @@ This solution requires using a premium licnese of Power Apps (ie not the seeded 
 ## Sample Solution File
 You can download the sample solution for this here to play around with yourself in Power Apps!
 
-[Electronic Demo Solution File](https://github.com/microsoft/Federal-Business-Applications/raw/main/demos/electronic-signatures/files/ElectronicSignatureDemo_1_0_0_6.zip)
+[Electronic Demo Solution File](files/ElectronicSignatureDemo_1_0_0_6.zip)
 
 Details on importing solution files can be found on our online docs below,
 
@@ -86,7 +86,6 @@ Lastly, click on the preivew icon in the upper right of the editor.  Fill out th
 
 ![Signature Demo](files/images/signature-demo-input-form.JPG)
 
-I created a completed canvas app and packaged it as a 
-[solution](https://github.com/microsoft/Federal-Business-Applications/raw/main/demos/electronic-signatures/files/ElectronicSignatureDemo_1_0_0_6.zip) if you want to play around with this more,
+The completed canvas app is packaged in a [solution](files/ElectronicSignatureDemo_1_0_0_6.zip) if you want to play around with this more,
 
 ![Final View](files/images/signature-demo-final-list-view.JPG)

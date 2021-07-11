@@ -17,11 +17,11 @@ is below =>
 # Sample Redaction Flow
 Below is a link to download the sample solution file that inclues the Redaction Cloud Flow.
 
-https://github.com/microsoft/Federal-Business-Applications/raw/main/demos/ai-builder-drivers-license/files/RedactionDemo_1_0_0_1.zip
+[RedactionDemo Solution File](files/RedactionDemo_1_0_0_1.zip)
 
 Also, below is a link to a Word document that has content control types added which are used in the Flow sample.
 
-https://github.com/microsoft/Federal-Business-Applications/raw/main/demos/ai-builder-drivers-license/files/SurveyTemplate.docx
+[SurveyTemplate.docx](files/SurveyTemplate.docx)
 
 # Requirements
 * An Azure subscription.
@@ -30,7 +30,7 @@ https://github.com/microsoft/Federal-Business-Applications/raw/main/demos/ai-bui
 # Setup
 * Create an Azure Text Analytics resource in your Azure subscription.
 * Download the sample Word document and upload that to your OneDrive.
-* Import the [sample solution file](https://github.com/microsoft/Federal-Business-Applications/raw/main/demos/ai-builder-drivers-license/files/RedactionDemo_1_0_0_1.zip).  
+* Import the [sample solution file](files/RedactionDemo_1_0_0_1.zip).  
 * Once imported, go to the Redaction Cloud Flow
 * Edit the flow and then update the connections for the Word for Business and Outlook actions
 

@@ -6,7 +6,7 @@ This demo showcases how to use AI Builders prebuilt drivers license model to ext
 > 
 > https://www.insider.com/what-drivers-license-looks-like-in-every-state
 > 
-> You can download a zip file of all of those images [here](https://github.com/microsoft/Federal-Business-Applications/raw/main/demos/ai-builder-drivers-license/files/SampleDriversLicenses.zip)
+> You can download a zip file of all of those images [here](files/SampleDriversLicenses.zip)
 
 ![overview image](files/CanvasApp01.PNG)
 
@@ -19,7 +19,7 @@ This demo showcases how to use AI Builders prebuilt drivers license model to ext
 ## Setup Notes
 1. Download the sample solution file here,
 
-	[AI Builder Samples](https://github.com/microsoft/Federal-Business-Applications/raw/main/demos/ai-builder-drivers-license/files/AIBuilderSamples_1_0_0_3.zip)
+	[AI Builder Samples](files/AIBuilderSamples_1_0_0_3.zip)
 
 2. Import the solution into your Power Platform environment
 
@@ -31,7 +31,7 @@ This demo showcases how to use AI Builders prebuilt drivers license model to ext
 
 5. If you add an existing photo, you can find sample drivers licenses can be found here for each state in the United States,
 
-	[Sample US Drivers License Photos](https://github.com/microsoft/Federal-Business-Applications/raw/main/demos/ai-builder-drivers-license/files/SampleDriversLicenses.zip)
+	[Sample US Drivers License Photos](files/SampleDriversLicenses.zip)
 
 	![overview image](files/CanvasApp03.PNG)
 

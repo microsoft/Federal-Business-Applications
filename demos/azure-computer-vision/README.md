@@ -25,7 +25,7 @@ The end result is a blurb of the Computer Vision API's caption of how it interpr
 ## Sample Solution
 The sample solution file for this demo can be found below,
 
-[Computer Vision Sample Solution](https://github.com/microsoft/Federal-Business-Applications/raw/main/demos/azure-computer-vision/files/ComputerVisionGCC_1_0_0_6.zip)
+[Computer Vision Sample Solution](files/ComputerVisionGCC_1_0_0_6.zip)
 
 To get this up and running in your environment follow the steps below.
 

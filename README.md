@@ -19,7 +19,7 @@ Below is a listing of the sample solutions available.  These sample solution fil
 
 ## Whitepapers
 
-Below are whitepapers that have been created specically for use in the US Government sovereign cloud regions.
+Below are whitepapers that have been created specifically for use in the US Government sovereign cloud regions.
 
 * [Consume Commercial Azure Storage Resources from Power Platform GCC](https://github.com/microsoft/Federal-Business-Applications/wiki/PowerApps-Connecting-from-GCC-to-any-Endpoint-including-Commercial-Azure)
 * [Creating US Government Support Tickets](whitepapers/power-platform-support/README.md)

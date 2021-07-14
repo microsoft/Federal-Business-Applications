@@ -13,7 +13,7 @@ Sample forms that can be used for training and testing the sample Forms Processi
 
 Sample solution file that includes the Desktop Flow (ie RPA), Cloud Flow and AI Builder Model are included below,
 
-[FoodSignUpAutomation Solution File](files/FoodSignUpAutomation_1_0_0_2.zip)
+[FoodSignUpAutomation Solution File](files/FoodSignUpAutomation_1_0_0_4.zip)
 
 # Setup Notes
 1. Create an O365 tenant if you don't already have one.
@@ -29,7 +29,7 @@ https://docs.microsoft.com/en-us/data-integration/gateway/service-gateway-instal
 
 6. Install the sample solution file
 
-[FoodSignUpAutomation Solution File](files/FoodSignUpAutomation_1_0_0_2.zip)
+[FoodSignUpAutomation Solution File](files/FoodSignUpAutomation_1_0_0_4.zip)
 
 7. Run the "Food Sign Up Cloud Flow" and input a sample file from here,
 

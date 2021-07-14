@@ -1,5 +1,9 @@
 # AI Builder Drivers License Canvas App
 
+You can watch a video of this sample app on YouTube below,
+
+[Process Drivers Licenses with AI Builder in US Sovereign Clouds GCC and GCC High](https://youtu.be/aMIyT-gOvWs)
+
 This demo showcases how to use AI Builders prebuilt drivers license model to extract fields from any valid US issued drivers license.
 
 > NOTE: This demo uses sample drivers license images that were obtained from the following site,

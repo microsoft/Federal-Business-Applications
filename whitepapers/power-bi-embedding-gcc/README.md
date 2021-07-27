@@ -1,4 +1,4 @@
-**A  Guide to Power BI Embedding within Government Community Clouds (GCC)**
+# A Guide to Power BI Embedding within Government Community Clouds (GCC)
 
 # Table of Contents
 

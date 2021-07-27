@@ -30,6 +30,7 @@ Below are whitepapers that have been created specifically for use in the US Gove
 * [Power BI Desktop Registry Settings for US Gov Clouds](whitepapers/power-bi-registry-settings/README.md)
 * [Power BI & O365 Forms Integration in US Gov Clouds](whitepapers/power-bi-o365-forms/README.md)
 * [Power BI Visuals Download Tool](whitepapers/power-bi-visuals-download/README.md)
+* [A Guide to Power BI Embedding within Government Community Clouds (GCC)](whitepapers/power-bi-embedding-gcc/README.md)
 
 ## Power BI Training Resources
 

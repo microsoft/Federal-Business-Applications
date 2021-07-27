@@ -549,7 +549,7 @@ You will need the following information in the request:
 
 -   Power BI App Workspace name
 
--   Power BI App Workspace ID. You can get the Workspace id from the URL. For example the bolded section of the URL is the Workspace ID: https://app.powerbigov.us/groups/**e6a67dd9-59d3-4d9d-8d1a-a25c761ad330**/list/dashboards
+-   Power BI App Workspace ID. You can get the Workspace id from the URL. For example the bolded section of the URL is the Workspace ID: https://app.powerbigov.us/groups/**xxx67dd9-59d3-4d9d-8x1a-a25x761xd330**/list/dashboards
 
 You may be asked to provide additional details about your project including business justification or ATO. Please contact *{ADMIN NOTE: Please insert contact email}* for any questions. Once approved, your Azure app will be granted admin consent on the agency's tenant.
 
@@ -685,7 +685,7 @@ You will need the following information in the request:
 
 -   Power BI App Workspace name
 
--   Power BI App Workspace ID. You can get the Workspace id from the URL. For example the bolded section of the URL is the Workspace ID: https://app.powerbigov.us/groups/**e6a67dd9-59d3-4d9d-8d1a-a25c761ad330**/list/dashboards
+-   Power BI App Workspace ID. You can get the Workspace id from the URL. For example the bolded section of the URL is the Workspace ID: https://app.powerbigov.us/groups/**x6x67dx9-5xx3-4d9d-8dxa-a25x761xx330**/list/dashboards
 
 You may be asked to provide additional details about your project including business justification or ATO. Please contact *{ADMIN NOTE: Please insert contact email}* for any questions. Once approved, your Azure app
 will be granted admin consent on the agency's tenant.

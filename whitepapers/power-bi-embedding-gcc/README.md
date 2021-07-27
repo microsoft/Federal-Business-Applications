@@ -8,7 +8,7 @@
 
     1.2 [Options for embedding Power BI reports](#options-for-embedding-power-bi-reports)
 
-    1.3 [Embedding scenarios and options -- Decision Matrix](#embedding-scenarios-and-options-decision-matrix)
+    1.3 [Embedding scenarios and options](#embedding-scenarios-and-options)
 
 1. [General considerations for embedding](#general-considerations-for-embedding)
 
@@ -117,7 +117,7 @@ Service on US Gov Clouds* <https://app.powerbigov.us/>
 
     Additional details covered [here](#embed-using-publish-to-web-public).
 
-## Embedding scenarios and options -- Decision Matrix
+## Embedding scenarios and options
 
 |   | Embed in SharePoint Online  | Secure Embed  | Embed using Power BI REST APIs  | Publish to Web  |
 |---|---|---|---|---|

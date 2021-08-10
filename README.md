@@ -20,24 +20,29 @@ Below is a listing of the sample solutions available.  These sample solution fil
 | [Return to the Workplace](demos/return-to-work/README.md) | :heavy_check_mark: | :heavy_check_mark: | |
 | [RPA Web Scraping Demo](demos/rpa-amazon-scraper/README.md) | :heavy_check_mark: | :heavy_check_mark: | |
 
-## Power Platform Whitepapers
+## Whitepapers
+
+### Power Platform
 
 Below are whitepapers that have been created specifically for use in the US Government sovereign cloud regions.
 
+* [Power Platform / D365 Gov Architecture](whitepapers/power-plat-d365-architecture/README.md)
 * [Consume Commercial Azure Storage Resources from Power Platform GCC](https://github.com/microsoft/Federal-Business-Applications/wiki/PowerApps-Connecting-from-GCC-to-any-Endpoint-including-Commercial-Azure)
 * [Creating US Government Support Tickets](whitepapers/power-platform-support/README.md)
 * [Enable Azure AD Connector in GCC](whitepapers/azure-ad-gcc/README.md)
 * [How to use the O365 Outlook Connector for Notifications](whitepapers/o365-outlook-connector/How%20to%20use%20the%20O365%20Outlook%20Connector%20for%20Notifications.pdf)
 * [Power Apps Developer Plan for US Government Customers](whitepapers/power-apps-dev-plan/README.md)
 
-## Power BI Whitepapers
+### Power BI
 
 * [Power BI Desktop Registry Settings for US Gov Clouds](whitepapers/power-bi-registry-settings/README.md)
 * [Power BI & O365 Forms Integration in US Gov Clouds](whitepapers/power-bi-o365-forms/README.md)
 * [Power BI Visuals Download Tool](whitepapers/power-bi-visuals-download/README.md)
 * [A Guide to Power BI Embedding within Government Community Clouds (GCC)](whitepapers/power-bi-embedding-gcc/README.md)
 
-## Power BI Training Resources
+## Training Resources
+
+### Power BI
 
 * [Power BI Learning Paths](https://docs.microsoft.com/en-us/power-bi/guided-learning/)
 * [Guy in a Cube YouTube Channel](https://www.youtube.com/channel/UCFp1vaKzpfvoGai0vE5VJ0w)
@@ -46,7 +51,7 @@ Below are whitepapers that have been created specifically for use in the US Gove
 * [Power BI Paginated Reports in a Day YouTube Training](https://www.youtube.com/playlist?list=PL1N57mwBHtN1icIhpjQOaRL8r9G-wytpT)
 * [Power BI Adoption Framework](https://www.youtube.com/playlist?list=PL1N57mwBHtN0UZbEgLHtA1yxqPlae3B90)
 
-## Power Apps / Power Automate Training Resources
+### Power Apps / Power Automate
 
 * [App in a Day](https://aka.ms/aiad)
 * [RPA in a Day](https://aka.ms/rpainaday)
@@ -55,7 +60,7 @@ Below are whitepapers that have been created specifically for use in the US Gove
 * [Power CAT Adoption Maturity Model](https://powerapps.microsoft.com/en-us/blog/power-cat-adoption-maturity-model-repeatable-patterns-for-successful-power-platform-adoption/)
 * [AI Builder Labs](https://docs.microsoft.com/en-us/ai-builder/learn-ai-builder)
 
-## D365 Training Resources
+### D365
 
 * [D365 Learning Paths](https://docs.microsoft.com/en-us/learn/dynamics365/)
 * [D365 Certifications](https://docs.microsoft.com/en-us/learn/certifications/browse/?technology=Microsoft%20Dynamics%20365&products=dynamics-365)

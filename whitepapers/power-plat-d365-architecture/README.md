@@ -1,5 +1,9 @@
 # US Government Power Platform / D365 Architecture
 
+We recorded a presentation covering US Gov Cloud specific architecture of Power Platform and D365 at a Meetup group talk.  The video recording can be found below,
+
+https://www.youtube.com/watch?v=027gVhqt1l0&t=101s
+
 ![Gov Cloud Overview](files/Slide1.PNG)
 
 ## GCC

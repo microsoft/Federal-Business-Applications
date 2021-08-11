@@ -1,0 +1,13 @@
+name: Spellcheck Action
+on: workflow_dispatch
+
+jobs:
+  build:
+    name: Spellcheck
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: rojopolis/spellcheck-github-actions@0.14.0
+      name: Spellcheck
+      with:
+        source_files: '**/README.md'

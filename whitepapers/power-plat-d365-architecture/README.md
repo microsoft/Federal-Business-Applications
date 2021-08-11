@@ -9,11 +9,11 @@
 ## US Government Cloud Video Recordings
 Below is a presentation recording covering US Gov Cloud specific architecture of Power Platform and D365 at a Meetup group talk.  The video recording can be found below,
 
-https://www.youtube.com/watch?v=027gVhqt1l0&t=101s
+[Power Platform / D365 US Government Cloud Overview](https://www.youtube.com/watch?v=027gVhqt1l0&t=101s)
 
 There's also a great video that overviews all of Microsoft's Sovereign Clouds,
 
-https://www.youtube.com/watch?v=DMg3uQ5EFLI
+[Microsoft Sovereign Clouds - Power CAT Live](https://www.youtube.com/watch?v=DMg3uQ5EFLI)
 
 ## US Government Cloud Offerings
 

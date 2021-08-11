@@ -3,3 +3,14 @@ RPA
 JSON
 OData
 Dynamics
+Dataverse
+PowerShell
+AppSource
+AAD
+GCC
+GCCH
+DOD
+DoD
+SaaS
+APIs
+ATO

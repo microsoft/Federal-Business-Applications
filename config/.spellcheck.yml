@@ -14,6 +14,8 @@ matrix:
     ignores:
     - code
     - pre
+  - pyspelling.filters.url:
+
   sources:
   - '**/*.md'
   default_encoding: utf-8

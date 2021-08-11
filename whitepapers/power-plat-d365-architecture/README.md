@@ -27,19 +27,19 @@ The list of GCC Power Platform connectors available can be found below,
 
 [GCC Power Platform Connectors List](https://gov.flow.microsoft.us/en-us/connectors/)
 
-### Azure Commerical vs Azure for Government in GCC
+### Azure Commercial vs Azure for Government in GCC
 
-For GCC customers, you have the option of using Azure Commerical or Azure for Government subscriptions.  Today, the GCC Power Platform service will assume that the resources you want to use are only Azure for Government resources.
+Today, for GCC customers, you have the option with certain Azure connectors (e.g., SQL Server) to togggle between Azure for Government or Azure Commercial subscription.  This toggle option will eventually make its way to other Azure connectors in Power Platform GCC.
+
+![GCC SQL Server Connector](files/Slide7.PNG)
+
+Today, some connectors in GCC Power Platform service will assume that the resources you want to use are only Azure for Government resources.
 
 ![GCC Connectors](files/Slide5.PNG)
 
-A work around to leverage Azure Commerical resources from Power Platform GCC is to create a Azure Logic App in Azure Commerical and use that with the commerical connectors to get access to the resources you want to leverage,
+A work around for the listed scenario above is to create a Azure Logic App in Azure Commercial and use that with the Azure commerical connectors to get access to the resources you want to leverage,
 
 ![GCC Connector Work Around](files/Slide6.PNG)
-
-Today, you have the option with the SQL Server connector in GCC to togggle between Azure for Government or Azure Commerical.  This will eventually make its way to other Azure connectors in Power Platform GCC as well.
-
-![GCC SQL Server Connector](files/Slide7.PNG)
 
 ## GCC High Architecture
 ![GCC High Overview](files/Slide3.PNG)

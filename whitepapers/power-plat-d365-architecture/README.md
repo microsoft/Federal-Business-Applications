@@ -22,6 +22,11 @@ There's also a great video that overviews all of Microsoft's Sovereign Clouds,
 ## GCC Architecture
 ![GCC Overview](files/Slide2.PNG)
 
+### GCC Power Platform Connectors
+The list of GCC Power Platform connectors available can be found below,
+
+[GCC Power Platform Connectors List](https://gov.flow.microsoft.us/en-us/connectors/)
+
 ### Azure Commerical vs Azure for Government in GCC
 
 For GCC customers, you have the option of using Azure Commerical or Azure for Government subscriptions.  Today, the GCC Power Platform service will assume that the resources you want to use are only Azure for Government resources.
@@ -39,5 +44,15 @@ Today, you have the option with the SQL Server connector in GCC to togggle betwe
 ## GCC High Architecture
 ![GCC High Overview](files/Slide3.PNG)
 
+### GCC High Power Platform Connectors
+The list of GCC High Power Platform connectors available can be found below,
+
+[GCC High Power Platform Connectors List](https://high.flow.microsoft.us/en-us/connectors/)
+
 ## DOD Architecture
 ![DOD Overview](files/Slide4.PNG)
+
+### DOD Power Platform Connectors
+The list of DOD Power Platform connectors available can be found below,
+
+[DOD Power Platform Connectors List](https://flow.appsplatform.us/en-us/connectors/)

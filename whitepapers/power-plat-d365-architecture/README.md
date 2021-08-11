@@ -22,6 +22,8 @@ https://www.youtube.com/watch?v=DMg3uQ5EFLI
 ## GCC Architecture
 ![GCC Overview](files/Slide2.PNG)
 
+### Azure Commerical vs Azure for Government in GCC
+
 For GCC customers, you have the option of using Azure Commerical or Azure for Government subscriptions.  Today, the GCC Power Platform service will assume that the resources you want to use are only Azure for Government resources.
 
 ![GCC Connectors](files/Slide5.PNG)

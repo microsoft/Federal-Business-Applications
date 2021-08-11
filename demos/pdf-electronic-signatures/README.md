@@ -4,16 +4,16 @@ This example builds on the Electronic Signatures Demo app [Electronic Signatures
 ![Final Result](files/signed-form-PDF-result.JPG)
 
 ## Power Automate Flow Overview
-Here is an outline of how you can accopmlish this using the data from the [Electronic Signatures Demo App](../electronic-signatures/README.md).  This Flow is triggered when a new Signature Dataverse record is created.  The signature image is downloaded, and then it is populated into a Word template file which is then exported to a PDF and sent to an email address.
+Here is an outline of how you can accomplish this using the data from the [Electronic Signatures Demo App](../electronic-signatures/README.md).  This Flow is triggered when a new Signature Dataverse record is created.  The signature image is downloaded, and then it is populated into a Word template file which is then exported to a PDF and sent to an email address.
 
 ![Flow Overview](files/signed-form-flow-overview.JPG)
 
 ## Word Templates Overview
-Word templates with control types have been around for many years.  You can use them to standarize reports for your organization. Below is a link to read more about them,
+Word templates with control types have been around for many years.  You can use them to standardize reports for your organization. Below is a link to read more about them,
 
 [Create Word Templates with Content Controls](https://support.office.com/en-us/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b?ui=en-US&rs=en-US&ad=US)
 
-Power Apps and Dyanmics support Word Template files to create reports off of entities in Dataverse.  To date, those templates do not support image control types in Word templates.  
+Power Apps and Dynamics support Word Template files to create reports off of entities in Dataverse.  To date, those templates do not support image control types in Word templates.  
 
 [Word Templates with D365](https://docs.microsoft.com/en-us/power-platform/admin/using-word-templates-dynamics-365)
 
@@ -54,12 +54,12 @@ Now we need to configure the action itself.  Make a GET request to download the 
 ![HTTP with Azure AD Action Config](files/signed-form-HTTP-AAD-action-setup.JPG)
 
 ### Format the JSON Response
-The Word template action requires a specfiic format for image control types.  This action formats the download response properly.
+The Word template action requires a specific format for image control types.  This action formats the download response properly.
 
 ![Format JSON](files/signed-form-format-json.JPG)
 
 ### Populate the Word Template
-Add a new action to Populate a Microsoft Word template.  Find the template file you created eariler and uploaded to OneDrive and configure this action.  Once you tell it the file you want to you use, you should now see each content control field available as inputs to the action step.  
+Add a new action to Populate a Microsoft Word template.  Find the template file you created earlier and uploaded to OneDrive and configure this action.  Once you tell it the file you want to you use, you should now see each content control field available as inputs to the action step.  
 
 ![Word Template Action](files/signed-form-word-template-action.JPG)
 
@@ -86,6 +86,6 @@ Below is the sample solution you can install in your Dataverse environment to te
 
 Once installing the solution you need to run the following steps,
 
-Run the "SetupOneDrive" Flow manually.  You will need to re-establish the OneDrive connection.  This creates a template Word document in the root of your OneDrive environment (/Signatures/AgreementsTemplate_NEW.docx).  This is used by the Flow that creates the PDF file.
+Run the ```SetupOneDrive``` Flow manually.  You will need to re-establish the OneDrive connection.  This creates a template Word document in the root of your OneDrive environment (```/Signatures/AgreementsTemplate_NEW.docx```).  This is used by the Flow that creates the PDF file.
 
 Edit the "Power Apps Word Template Generation" Flow.  You will need to re-establish the connections to the various services it uses.  Enable the Flow and then create a new Signature record using the Signature Canvas App.  Then you can wait for the email to show up in the inbox that contains the PDF file.

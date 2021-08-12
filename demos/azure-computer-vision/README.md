@@ -42,7 +42,7 @@ https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/
 
 ![Data Connection Creation](files/computer-vision-data-connectors.JPG)
 
-5. Import the sample ComputerVisionGCC solution file.
+5. Import the sample ```ComputerVisionGCC``` solution file.
 6. Edit the Power Apps Azure Gov Computer Vision Flow and expand the Computer Vision action step.  Add the Computer Vision connection you added in step 4.
 7. Edit the Computer Vision Canvas App.  You will get prompted for a connection to Computer Vision.  Ignore this warning by clicking Don't Allow.  Once you reconfigure the Power Automate Flow connection in the later steps this will no longer show up.
 

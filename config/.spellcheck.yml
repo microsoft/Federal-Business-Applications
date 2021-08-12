@@ -15,8 +15,7 @@ matrix:
   - pyspelling.filters.html:
     comments: false
     ignores:
-    - code
-    - pre
+    - :is(code, pre)
   - pyspelling.filters.url:
 
   sources:

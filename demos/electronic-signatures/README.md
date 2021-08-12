@@ -1,7 +1,7 @@
 # Electronic Signatures using Dataverse File Field Type
 This sample shows how you can create a Power Apps canvas app to capture a users signature and then save it to a Dataverse record.  This solution also allows you to avoid using a 3rd party solution to capture the signature portion.
 
-This solution requires using a premium licnese of Power Apps (ie not the seeded version of O365/M365).  You must have an environment with a Dataverse database provisioned.
+This solution requires using a premium license of Power Apps (i.e. not the seeded version of O365/M365).  You must have an environment with a Dataverse database provisioned.
 
 ![overview image](files/images/signature-demo-final-list-view.JPG)
 
@@ -38,7 +38,7 @@ Then add the Signature entity as a data source for the edit form.
 
 ![Set Data Source](files/images/signature-demo-add-data-source.JPG)
 
-Next, confgiure the fields for your edit form to include the Signature Image field and the Signature Date fields.
+Next, configure the fields for your edit form to include the Signature Image field and the Signature Date fields.
 
 ![Configure Fields](files/images/signature-demo-configure-fields.JPG)
 
@@ -82,7 +82,7 @@ Your edit form should now look like this,
 
 ![Edit Form](files/images/signature-demo-pen-input-contorls-missing.JPG)
 
-Lastly, click on the preivew icon in the upper right of the editor.  Fill out the form and click on the check icon.  This will now save your first entity that includes an electronic signature!
+Lastly, click on the preview icon in the upper right of the editor.  Fill out the form and click on the check icon.  This will now save your first entity that includes an electronic signature!
 
 ![Signature Demo](files/images/signature-demo-input-form.JPG)
 

@@ -29,7 +29,7 @@ The sample solution file for this demo can be found below,
 
 To get this up and running in your environment follow the steps below.
 
-1. Create a Computer Vision resource in your Azure subsription. 
+1. Create a Computer Vision resource in your Azure subscription. 
 
 https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/
 

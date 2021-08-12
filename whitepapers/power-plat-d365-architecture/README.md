@@ -29,7 +29,7 @@ The list of GCC Power Platform connectors available can be found below,
 
 ### Azure Commercial vs Azure for Government in GCC
 
-Today, for GCC customers, you have the option with certain Azure connectors (e.g., SQL Server) to togggle between Azure for Government or Azure Commercial subscription.  This toggle option will eventually make its way to other Azure connectors in Power Platform GCC.
+Today, for GCC customers, you have the option with certain Azure connectors (e.g., SQL Server) to toggle between Azure for Government or Azure Commercial subscription.  This toggle option will eventually make its way to other Azure connectors in Power Platform GCC.
 
 ![GCC SQL Server Connector](files/Slide7.PNG)
 
@@ -37,7 +37,7 @@ Today, some connectors in GCC Power Platform service will assume that the resour
 
 ![GCC Connectors](files/Slide5.PNG)
 
-A work around for the listed scenario above is to create a Azure Logic App in Azure Commercial and use that with the Azure commerical connectors to get access to the resources you want to leverage,
+A work around for the listed scenario above is to create a Azure Logic App in Azure Commercial and use that with the Azure commercial connectors to get access to the resources you want to leverage,
 
 ![GCC Connector Work Around](files/Slide6.PNG)
 

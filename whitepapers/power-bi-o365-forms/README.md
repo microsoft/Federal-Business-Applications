@@ -4,7 +4,7 @@ There is a great YouTube video that shows how you can easily create a Power BI r
 
 [Easiest Way to Get Microsoft Forms Data in Power BI](https://www.youtube.com/watch?v=HupBVO1P8_M)
 
-This video, only shows how to do this for a Commerical O365 tenant.  You can do the exact same process in the US Sovereign clouds as well.  You just need to replace the commerical endpoint referenced in the video with the following for the specific US Gov Cloud endpoints.
+This video, only shows how to do this for a Commercial O365 tenant.  You can do the exact same process in the US Sovereign clouds as well.  You just need to replace the commercial endpoint referenced in the video with the following for the specific US Gov Cloud endpoints.
 
 Also make sure that you get the actual Forms id that will replace the text "<ACTUAL_FORM_ID_GOES_HERE>"
 

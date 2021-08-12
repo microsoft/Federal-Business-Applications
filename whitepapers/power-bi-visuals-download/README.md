@@ -1,7 +1,7 @@
 # Power BI Visuals Bulk Download
 For customers that need to download Power BI visuals from the marketplace to use in disconnected environments, we have created a PowerShell script that can be run on a internet connected machine, and then transfer the visuals to a disconnected environment for use with Power BI Report Server.
 
-NOTE:  Not all custom visuals in the market place work with Power BI Report Server.  Specifically, any cusotm visuals written in R will not work.
+NOTE:  Not all custom visuals in the market place work with Power BI Report Server.  Specifically, any custom visuals written in R will not work.
 
 ## Setup
 You can get the full PowerShell script below,

@@ -97,7 +97,7 @@ Service on US Gov Clouds* <https://app.powerbigov.us/>
 
 3.  **Secure Embed (a.k.a. Website or portal embed)**
 
-    With the Secure Embed option (also referred to simply as the 'Embed'option) for Power BI reports, you can easily and securely embed reports in internal web portals. Embedded reports respect all item permissions and data security. This provides no-code embedding into any portal that accepts a URL or IFrame. The Embed option supports URL Filters and URL settings. It allows you to integrate with portals using a low-code approach requiring only basic HTML and JavaScript knowledge.
+    With the Secure Embed option (also referred to simply as the 'Embed' option) for Power BI reports, you can easily and securely embed reports in internal web portals. Embedded reports respect all item permissions and data security. This provides no-code embedding into any portal that accepts a URL or IFrame. The Embed option supports URL Filters and URL settings. It allows you to integrate with portals using a low-code approach requiring only basic HTML and JavaScript knowledge.
     
     Additional details covered [here](#embed-in-sharepoint-online).
 
@@ -158,12 +158,12 @@ you should generate the embed code from the App.
 -   To get **Workspace Report** embed link, navigate to the report from
     the workspace and then go to *Share > Embed report*
 
-![Example of embedding using a report from a workspace with Embed report identified with red recentagle](./images/AppEmbed1.png)
+![Example of embedding using a report from a workspace with Embed report identified with red rectangle](./images/AppEmbed1.png)
 
 -   To get **App Report** embed link, navigate to the App, open the
     report inside the App and then go to *Share > Embed report*
 
-![Example of embedding using a report from an App with Embed report identified with red recentagle](./images/AppEmbed2.png)
+![Example of embedding using a report from an App with Embed report identified with red rectangle](./images/AppEmbed2.png)
 ## Consideration for App Report embedding
 
 A user will be able to view an embedded App report only if the App is installed for that user. Adding the user account to the App permission alone is not sufficient. If the App is not installed, the embedded page will throw errors as shown below.
@@ -277,7 +277,7 @@ Read more about this feature
 Embed](https://powerbi.microsoft.com/en-us/blog/easily-embed-secure-power-bi-reports-in-your-internal-portals-or-websites/) is an easy way to show Power BI Reports in internal websites, without the need for coding Additional details [here](https://docs.microsoft.com/en-us/power-bi/service-embed-secure). This approach can be used to easily embed Power BI reports securely on
 SharePoint Online, Dynamics 365 and more.
 
-*Note that this option may not work on on-premises SharePoint due to current security settings on your laptop/device, please see the details in the [Cookies
+*Note that this option may not work with on-premises SharePoint due to current security settings on your laptop/device, please see the details in the [Cookies
 section](#cookies).*
 
 ## Steps for embedding
@@ -476,7 +476,7 @@ Common use cases for this approach:
     order, for this scenario. However, there could be complex
     architecture and security requirements for your project, which may warrant using this approach.
 
-> ***Important Note**: Both the embedding approaches using APIs will require admininstrator assistance. Detailed steps for embedding using REST APIs included in the respective
+> ***Important Note**: Both the embedding approaches using APIs will require administrator assistance. Detailed steps for embedding using REST APIs included in the respective
 sections below.*
 
 ## Embedding for your organization (User owns data)
@@ -497,7 +497,7 @@ At a high level, following are the steps to complete this process.
 
 1.  Register an application in Azure Active Directory
 
-2.  Contact adminstration *{ADMIN NOTE: Please insert contact email}*
+2.  Contact administration *{ADMIN NOTE: Please insert contact email}*
 
 3.  Embed Power BI report in your application
 
@@ -665,7 +665,7 @@ Azure Active Directory (Azure AD). You\'ll be able to manage and modify these se
 
 ![App Registration Page](./images/AOD6.png) 
 
-3.  Click on the App you created in the previous step. and then click the link labled "Create Service Principal"
+3.  Click on the App you created in the previous step. and then click the link labeled "Create Service Principal"
 ![App Registration page with App Registrations and Owned applications options identified with orange rectangles.](./images/AOD7.png) 
 
 4. At this point, you have registered the Azure App and set up an associated Service Principal. However, note that the app service principal is not yet enabled to be used in the agency's tenant.  
@@ -806,11 +806,11 @@ Publish to web is disabled by default at the agency. If you have a business need
 
 3.  Select the App you wish to update and then click on the navigation item labeled "API Permissions".
 
-![Applicaton Page with API permissions identified with an orange rectangle.](./images/AppReg3.png) 
+![Application Page with API permissions identified with an orange rectangle.](./images/AppReg3.png) 
 
 > ***Important Note**: Make sure to search under \'APIs my organization uses\' and if you are updated Power BI API permissions please use the one labeled "Microsoft Power BI Government Community Cloud" (as shown below).  If you use the API permissions associated with "Power BI Service" this is for the commercial cloud and will not work on the agency's tenant.*
 
-![APIs my organization uses tab identified with an orange recentagle and Microsoft Power BI Government Community Cloud option identified by an orange rectangle.](./images/AppReg4.png) 
+![APIs my organization uses tab identified with an orange rectangle and Microsoft Power BI Government Community Cloud option identified by an orange rectangle.](./images/AppReg4.png) 
 
 Select \'Delegated permissions\' and select the required permission and click \'Add permissions. *Screenshot below is an example of adding permission to API for accessing Power BI App.*
 

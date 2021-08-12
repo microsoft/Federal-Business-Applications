@@ -16,7 +16,7 @@ This demo showcases how to use AI Builders prebuilt drivers license model to ext
 
 ## Prereq's
 
-* AI Builder capacitiy credits
+* AI Builder capacity credits
 	* You can get these through either an AI Builder capacity add on license or through Power Automate Per User with Attended RPA licenses
 * A Power Platform environment
 

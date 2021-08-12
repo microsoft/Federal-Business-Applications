@@ -11,7 +11,7 @@ Sample forms that can be used for training and testing the sample Forms Processi
 
 [Sample Training Forms](files/SampleForms)
 
-Sample solution file that includes the Desktop Flow (ie RPA), Cloud Flow and AI Builder Model are included below,
+Sample solution file that includes the Desktop Flow (i.e. RPA), Cloud Flow and AI Builder Model are included below,
 
 [FoodSignUpAutomation Solution File](files/FoodSignUpAutomation_1_0_0_4.zip)
 

@@ -15,7 +15,7 @@ is below =>
 ![Flow Result](files/RedactionFlowOutput.JPG)
 
 # Sample Redaction Flow
-Below is a link to download the sample solution file that inclues the Redaction Cloud Flow.
+Below is a link to download the sample solution file that includes the Redaction Cloud Flow.
 
 [RedactionDemo Solution File](files/RedactionDemo_1_0_0_1.zip)
 

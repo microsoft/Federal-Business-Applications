@@ -19,7 +19,6 @@ matrix:
       comments: false
       attributes:
       - title
-      - alt
       ignores:
       - :is(code, pre, blockquote)
   - pyspelling.filters.url:

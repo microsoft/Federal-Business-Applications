@@ -5,6 +5,7 @@ jobs:
   build:
     name: Spellcheck
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
     - uses: actions/checkout@master
     - uses: rojopolis/spellcheck-github-actions@0.14.0

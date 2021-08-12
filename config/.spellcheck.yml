@@ -20,5 +20,5 @@ matrix:
       attributes:
       - title
       ignores:
-      - :is(code, pre, blockquote)
+      - :is(code, pre)
   - pyspelling.filters.url:

@@ -343,21 +343,25 @@ If you want to further customize how the embedded report is displayed, please se
 
 ### Tip #1 - Hide Tabs in the Report
 
-Add the bolded code below to the embed code to hide the tabs. 
+Add the ```&navContentPaneEnabled=false``` query string parameter to the embed code to hide the tabs. 
 
->\<iframe width=\"1140\" height=\"541.25\"
-src=\"https://app.powerbigov.us/reportEmbed?reportId=xXb43542-81e5-4869-8571-014e47d59084&autoAuth=true&ctid=f5727296-5b49-4b31-a544-d1d85d64a529&config=xxxxxxVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLWVhc3QyLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9 **&navContentPaneEnabled=false**\"
-frameborder=\"0\" allowFullScreen=\"true\"\>\</iframe>
+```html
+<iframe width="1140" height="541.25"
+src="https://app.powerbigov.us/reportEmbed?reportId=xXb43542-81e5-4869-8571-014e47d59084&autoAuth=true&ctid=f5727296-5b49-4b31-a544-d1d85d64a529&config=xxxxxxVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLWVhc3QyLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9&navContentPaneEnabled=false"
+frameborder="0" allowFullScreen="true"></iframe>
+```
 
 ![Example of hiding tabs in Secure Embed](./images/CustomizeSecureEmbed1.png)
 
 ### Tip #2 - Hide Filter Pane from Report
 
-Add the bolded code below to the embed code to hide the filter pane. 
+Add the ```&filterPaneEnabled=false``` query string parameter to the embed code to hide the filter pane. 
 
->\<iframe width=\"1140\" height=\"541.25\"
-src=\"https://app.powerbigov.us/reportEmbed?reportId=xXb43542-81e5-4869-8571-014e47d59084&autoAuth=true&ctid=f5727296-5b49-4b31-a544-d1d85d64a529&config=xxxxxxVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLWVhc3QyLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9 **&filterPaneEnabled=false**\"
-frameborder=\"0\" allowFullScreen=\"true\"\>\</iframe>
+```html
+<iframe width="1140" height="541.25"
+src="https://app.powerbigov.us/reportEmbed?reportId=xXb43542-81e5-4869-8571-014e47d59084&autoAuth=true&ctid=f5727296-5b49-4b31-a544-d1d85d64a529&config=xxxxxxVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLWVhc3QyLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9&filterPaneEnabled=false"
+frameborder="0" allowFullScreen="true"></iframe>
+```
 
 ![Example of hiding filter pane in Secure Embed](./images/CustomizeSecureEmbed2.png)
 
@@ -371,12 +375,14 @@ Please follow these steps:
 
 ![Example of URL for Report in Power BI Service](./images/CustomizeSecureEmbed3.png)
 
-3. Add the highlighted code below to the embed code using what you copied in step 2.
+3. Add the ```&pageName=ReportSection2f16bbfdbd93add9c47f``` query string parameter to the embed code using what you copied in step 2.
 
->\<iframe width=\"1140\" height=\"541.25\"
-src=\"https://app.powerbigov.us/reportEmbed?reportId=xXb43542-81e5-4869-8571-014e47d59084&autoAuth=true&ctid=f5727296-5b49-4b31-a544-d1d85d64a529&config=xxxxxxVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLWVhc3QyLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9 **&pageName=
-ReportSection2f16bbfdbd93add9c47f**\" frameborder=\"0\"
-allowFullScreen=\"true\"\>\</iframe>
+```html
+<iframe width="1140" height="541.25"
+src="https://app.powerbigov.us/reportEmbed?reportId=xXb43542-81e5-4869-8571-014e47d59084&autoAuth=true&ctid=f5727296-5b49-4b31-a544-d1d85d64a529&config=xxxxxxVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLWVhc3QyLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9&pageName=ReportSection2f16bbfdbd93add9c47f" frameborder="0"
+allowFullScreen="true"></iframe>
+```
+
 
 ![Example of choosing the second tab in a Power BI report using Secure Embed](./images/CustomizeSecureEmbed4.png)
 

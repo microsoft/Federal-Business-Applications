@@ -6,7 +6,7 @@ NOTE:  Not all custom visuals in the market place work with Power BI Report Serv
 ## Setup
 You can get the full PowerShell script below,
 
-[VisualsBulkDownloadTool.ps1](files/VisualsBulkDownloadTool.ps1)
+[Visuals Bulk Download PowerShell Script](files/VisualsBulkDownloadTool.ps1)
 
 You can also watch a YouTube video on how to use this script as well,
 

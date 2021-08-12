@@ -17,3 +17,10 @@ APIs
 API's
 ATO
 PII
+subfolder
+SPO
+dropdown
+dataset
+bolded
+Config
+config

@@ -658,9 +658,9 @@ Azure Active Directory (Azure AD). You\'ll be able to manage and modify these se
 5.  Make a note of the Application ID and Application secret. You will need to provide the Application ID on requests to an administrator. Application Secret will be used in your embedded application config file.
 
 ![Successful Registration message with application id and application secret](./images/AOD4.png)
-> *Application ID: xxxxxxx*
+> ```Application ID: xxxxxxx```
 >
-> *Application secret: xxxxxxxx*
+> ```Application secret: xxxxxxxx```
 
 ### 2. Create a service principal
 

@@ -97,7 +97,7 @@ Service on US Gov Clouds* <https://app.powerbigov.us/>
 
 3.  **Secure Embed (a.k.a. Website or portal embed)**
 
-    With the Secure Embed option (also referred to simply as the 'Embed' option) for Power BI reports, you can easily and securely embed reports in internal web portals. Embedded reports respect all item permissions and data security. This provides no-code embedding into any portal that accepts a URL or IFrame. The Embed option supports URL Filters and URL settings. It allows you to integrate with portals using a low-code approach requiring only basic HTML and JavaScript knowledge.
+    With the Secure Embed option (also referred to simply as the 'Embed' option) for Power BI reports, you can easily and securely embed reports in internal web portals. Embedded reports respect all item permissions and data security. This provides no-code embedding into any portal that accepts a URL or iFrame. The Embed option supports URL Filters and URL settings. It allows you to integrate with portals using a low-code approach requiring only basic HTML and JavaScript knowledge.
     
     Additional details covered [here](#embed-in-sharepoint-online).
 
@@ -299,7 +299,7 @@ Since SharePoint Online is a common use case the following instructions will sho
 
 ![Secure embed code window](./images/SecureEmbed2.png)
 
-4.  Copy the HTML to Notepad as save the file as EmbedReport.txt
+4.  Copy the HTML to Notepad as save the file as ```EmbedReport.txt```
 
 ![Notepad window with iframe text.](./images/SecureEmbed3.png)
 
@@ -367,7 +367,7 @@ Please follow these steps:
 
 1. In the Power BI Service, go the report and select the tab for the report you wish to show by default.
 
-2. In the URL copy the text after the last forward slash character. For example the text after the last forward slash below would be the text: "ReportSection2f16bbfdbd93add9c47f".
+2. In the URL copy the text after the last forward slash character. For example the text after the last forward slash below would be the text: ```ReportSection2f16bbfdbd93add9c47f```.
 
 ![Example of URL for Report in Power BI Service](./images/CustomizeSecureEmbed3.png)
 
@@ -434,11 +434,11 @@ If you experience issues with viewing embedded Power BI Reports in Chrome, pleas
 
 ![Cookie settings in Chrome](./images/Cookies1.png)
 
-3.  A pop-up will appear. Paste \[\*.\]login.microsoftonline.com into the textbox and click Add.
+3.  A pop-up will appear. Paste ```[*.]login.microsoftonline.com``` into the textbox and click Add.
 
 ![Add a site for Allowing cookies in Chrome](./images/Cookies2.png)
 
-4.  Repeat Step 3 with the URL \[\*.\]app.powerbigov.us. Once completed you should see the following entries in the Allowed Cookie list (note they may not be next to each other).
+4.  Repeat Step 3 with the URL ```[*.]app.powerbigov.us```. Once completed you should see the following entries in the Allowed Cookie list (note they may not be next to each other).
 
 ![URLs added to Allowed Cookies in Chrome](./images/Cookies3.png)
 
@@ -549,7 +549,7 @@ You will need the following information in the request:
 
 -   Power BI App Workspace name
 
--   Power BI App Workspace ID. You can get the Workspace id from the URL. For example the bolded section of the URL is the Workspace ID: https://app.powerbigov.us/groups/**xxx67dd9-59d3-4d9d-8x1a-a25x761xd330**/list/dashboards
+-   Power BI App Workspace ID. You can get the Workspace id from the URL. For example the bolded section of the URL is the Workspace ID: ```https://app.powerbigov.us/groups/**xxx67dd9-59d3-4d9d-8x1a-a25x761xd330**/list/dashboards```
 
 You may be asked to provide additional details about your project including business justification or ATO. Please contact *{ADMIN NOTE: Please insert contact email}* for any questions. Once approved, your Azure app will be granted admin consent on the agency's tenant.
 
@@ -586,7 +586,7 @@ If you are using the sample code, update the keys in the config file as below.
 For more information about JavaScript API, reference [Power BI JavaScript API](https://github.com/Microsoft/PowerBI-JavaScript).
 
 For a full sample of using the JavaScript API, you can use the [Playground tool](https://microsoft.github.io/PowerBI-JavaScript/demo). The Playground tool is a quick way to play with different types of Power BI Embedded samples. You can also get more Information about the
-JavaScript API by visiting the [PowerBI-JavaScript wiki
+JavaScript API by visiting the [Power BI JavaScript wiki
 page](https://github.com/Microsoft/powerbi-javascript/wiki).
 
 ## Embedding for your customer (App owns data)

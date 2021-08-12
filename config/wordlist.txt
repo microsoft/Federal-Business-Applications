@@ -37,3 +37,4 @@ UI
 CLA
 iFrame
 workspaces
+GUID

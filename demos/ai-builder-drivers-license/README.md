@@ -14,7 +14,7 @@ This demo showcases how to use AI Builders prebuilt drivers license model to ext
 
 ![overview image](files/CanvasApp01.PNG)
 
-## Prereq's
+## Prerequisites
 
 * AI Builder capacity credits
 	* You can get these through either an AI Builder capacity add on license or through Power Automate Per User with Attended RPA licenses
@@ -27,7 +27,7 @@ This demo showcases how to use AI Builders prebuilt drivers license model to ext
 
 2. Import the solution into your Power Platform environment
 
-3. Run the DriversLicenseCanvasApp app in the solution
+3. Run the ```DriversLicenseCanvasApp``` app in the solution
 
 4. You can either add an existing image from your device, or you can use your camera to take a photo of a drivers license
 

@@ -42,15 +42,6 @@ Below are whitepapers that have been created specifically for use in the US Gove
 
 ## Training Resources
 
-### Power BI
-
-* [Power BI Learning Paths](https://docs.microsoft.com/en-us/power-bi/guided-learning/)
-* [Guy in a Cube YouTube Channel](https://www.youtube.com/channel/UCFp1vaKzpfvoGai0vE5VJ0w)
-* [Power BI Training Content](https://aka.ms/PBITraining)
-* [Power BI Dashboard in an Hour Lab](https://aka.ms/pbi-diah)
-* [Power BI Paginated Reports in a Day YouTube Training](https://www.youtube.com/playlist?list=PL1N57mwBHtN1icIhpjQOaRL8r9G-wytpT)
-* [Power BI Adoption Framework](https://www.youtube.com/playlist?list=PL1N57mwBHtN0UZbEgLHtA1yxqPlae3B90)
-
 ### Power Apps / Power Automate
 
 * [App in a Day](https://aka.ms/aiad)
@@ -64,6 +55,15 @@ Below are whitepapers that have been created specifically for use in the US Gove
 
 * [D365 Learning Paths](https://docs.microsoft.com/en-us/learn/dynamics365/)
 * [D365 Certifications](https://docs.microsoft.com/en-us/learn/certifications/browse/?technology=Microsoft%20Dynamics%20365&products=dynamics-365)
+
+### Power BI
+
+* [Power BI Learning Paths](https://docs.microsoft.com/en-us/power-bi/guided-learning/)
+* [Guy in a Cube YouTube Channel](https://www.youtube.com/channel/UCFp1vaKzpfvoGai0vE5VJ0w)
+* [Power BI Training Content](https://aka.ms/PBITraining)
+* [Power BI Dashboard in an Hour Lab](https://aka.ms/pbi-diah)
+* [Power BI Paginated Reports in a Day YouTube Training](https://www.youtube.com/playlist?list=PL1N57mwBHtN1icIhpjQOaRL8r9G-wytpT)
+* [Power BI Adoption Framework](https://www.youtube.com/playlist?list=PL1N57mwBHtN0UZbEgLHtA1yxqPlae3B90)
 
 ## Contributing
 

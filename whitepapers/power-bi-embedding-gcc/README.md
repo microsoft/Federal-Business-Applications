@@ -323,7 +323,7 @@ Since SharePoint Online is a common use case the following instructions will sho
 
 ![Embed window in SharePoint Online](./images/SecureEmbed7.png)
 
-10. Paste the code you saved from EmbedReport.txt into the text area field labeled "Website address or embed code".
+10. Paste the code you saved from ```EmbedReport.txt``` into the text area field labeled "Website address or embed code".
 
 ![Example of pasting embed url into Embed window](./images/SecureEmbed8.png)
 
@@ -767,7 +767,7 @@ always be secured on server side.*
 For more information about JavaScript API, reference [Power BI JavaScript API](https://github.com/Microsoft/PowerBI-JavaScript).
 
 For a full sample of using the JavaScript API, you can use the [Playground tool](https://microsoft.github.io/PowerBI-JavaScript/demo).
-The Playground tool is a quick way to play with different types of Power BI Embedded samples. You can also get more Information about the JavaScript API by visiting the [PowerBI-JavaScript wiki
+The Playground tool is a quick way to play with different types of Power BI Embedded samples. You can also get more Information about the JavaScript API by visiting the [Power BI JavaScript wiki
 page](https://github.com/Microsoft/powerbi-javascript/wiki).
 
 # Embed using Publish to web (public) 

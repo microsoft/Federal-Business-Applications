@@ -74,7 +74,7 @@ Now we need to set the Update property on the control to save back to the File f
 
 ![Add Pen Ink Control](files/images/signature-demo-set-update-property-on-image.JPG)
 
-By default the Pen Ink control will show different ink styles and options.  If you want to not show those, you need to disable that in the ShowControls setting by changing it to "false",
+By default the Pen Ink control will show different ink styles and options.  If you want to not show those, you need to disable that in the ```ShowControls``` setting by changing it to "false",
 
 ![Remove Pen Ink Controls](files/images/signature-demo-hide-controls.JPG)
 

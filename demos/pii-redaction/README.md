@@ -17,11 +17,11 @@ is below =>
 # Sample Redaction Flow
 Below is a link to download the sample solution file that includes the Redaction Cloud Flow.
 
-[RedactionDemo Solution File](files/RedactionDemo_1_0_0_1.zip)
+[Redaction Demo Solution File](files/RedactionDemo_1_0_0_1.zip)
 
 Also, below is a link to a Word document that has content control types added which are used in the Flow sample.
 
-[SurveyTemplate.docx](files/SurveyTemplate.docx)
+[Survey Template Word Document](files/SurveyTemplate.docx)
 
 # Requirements
 * An Azure subscription.

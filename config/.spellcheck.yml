@@ -17,6 +17,9 @@ matrix:
       - pymdownx.highlight:
   - pyspelling.filters.html:
       comments: false
+      attributes:
+      - title
+      - alt
       ignores:
       - :is(code, pre)
   - pyspelling.filters.url:

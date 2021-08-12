@@ -36,7 +36,7 @@ Also, below is a link to a Word document that has content control types added wh
 
 ![Connector Error Messages](files/ConnectionError.PNG)
 
-* Update the Word for Business action to point to the file path you uploaded the [SurveyTemplate.docx](files/SurveyTemplate.docx) file
+* Update the Word for Business action to point to the file path you uploaded the [Survey Template Word Document](files/SurveyTemplate.docx) file
 
 * Update the Text Analytics URL and the Text Analytics API Key to use your instance of the Text Analytics service.
 

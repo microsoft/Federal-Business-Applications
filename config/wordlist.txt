@@ -21,7 +21,15 @@ subfolder
 SPO
 dropdown
 dataset
+datasets
+dataset's
 bolded
 Config
 config
 Analytics
+analytics
+programmatically
+textbox
+prebuilt
+Whitepapers
+whitepapers

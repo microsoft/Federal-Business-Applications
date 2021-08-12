@@ -8,7 +8,11 @@ This demo highlights how you can use Power Automate with Azure Cognitive Service
 
 The Word document that gets generated from a sample text input of 
 
-> I had a wonderful trip to Seattle last week. My SSN is 123-43-1234 and my name is Steve Winward.  I work for Microsoft and my current IP is 103.1.0.104
+```
+I had a wonderful trip to Seattle last week. 
+My SSN is 123-43-1234 and my name is Steve Winward.  
+I work for Microsoft and my current IP is 103.1.0.104
+```
 
 is below =>
 

@@ -1,5 +1,8 @@
 matrix:
 - name: Markdown
+  sources:
+  - '**/README.md'
+  default_encoding: utf-8
   aspell:
     lang: en
     d: en_US
@@ -17,7 +20,3 @@ matrix:
       ignores:
       - :is(code, pre)
   - pyspelling.filters.url:
-
-  sources:
-  - '**/README.md'
-  default_encoding: utf-8

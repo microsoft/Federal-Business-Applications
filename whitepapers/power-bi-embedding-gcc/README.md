@@ -537,9 +537,9 @@ Azure Active Directory (Azure AD). You\'ll be able to manage and modify these se
 4.  Make a note of the Application ID and Application secret. You will need the Application ID on the LEAF request. Application Secret will be used in your embedded application config file.
 
 ![Successful Registration message with application id and application secret](./images/UOD4.png)
-> *Application ID: xxxxxxx*
+> ```Application ID: xxxxxxx```
 >
-> *Application secret: xxxxxxxx*
+> ```Application secret: xxxxxxxx```
 
 At this point, you have registered the Azure App. However, note that the app is not yet enabled to be used in the agency's tenant.
 

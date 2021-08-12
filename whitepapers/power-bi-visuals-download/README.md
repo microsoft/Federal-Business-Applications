@@ -15,5 +15,5 @@ You can also watch a YouTube video on how to use this script as well,
 When you run the script you have some optional flags,
 
 * This script will download all Power BI visuals from the marketplace and save them to a downloads subfolder in the current working directory.
-* You can optionally specify the -CertifiedOnly switch to only download visuals that have gone through the certification process.
-* You can optionally specify the -MicrosoftOnly switch to download visuals that are created by Microsoft.
+* You can optionally specify the ```-CertifiedOnly``` switch to only download visuals that have gone through the certification process.
+* You can optionally specify the ```-MicrosoftOnly``` switch to download visuals that are created by Microsoft.

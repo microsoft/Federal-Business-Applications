@@ -8,8 +8,8 @@ This solution shows how you can use Power Automate Desktop (Power Automate RPA) 
 
 Install and setup notes can be found here =>
 
-[rpa-amazon-scraper-setup-notes.pdf](files/rpa-amazon-scraper-setup-notes.pdf)
+[RPA Amazon Scraper Setup Notes](files/rpa-amazon-scraper-setup-notes.pdf)
 
 The sample solution file can be found here =>
 
-[gccAmazonScraper_1_0_0_2.zip](files/gccAmazonScraper_1_0_0_2.zip)
+[Amazon Scraper Sample Solution File](files/gccAmazonScraper_1_0_0_2.zip)

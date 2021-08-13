@@ -25,6 +25,8 @@ iFrame
 JSON
 OData
 OneDrive
+PDF
+PDF's
 PII
 PowerShell
 prebuilt
@@ -35,6 +37,7 @@ SPO
 subfolder
 textbox
 UI
+whitepaper
 Whitepapers
 whitepapers
 workspaces

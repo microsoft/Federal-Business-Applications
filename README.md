@@ -85,19 +85,21 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 If you want to add a new demo or whitepaper, follow the folder structure convention below,
 
 ```
---demos
-----your-new-demo-folder
-------files
---------image1.PNG
---------sampleSolution.zip
-------README.md
---whitepapers
-----your-new-whitepaper-folder
-------files
---------image1.PNG
-------README.md
-----your-new-whitepaper2-folder
-------summary.pdf
+demos/
+├─ your-new-demo-folder/
+│  ├─ files/
+│  │  ├─ image1.PNG
+│  │  ├─ image2.PNG
+│  │  ├─ sampleSolution.zip
+│  ├─ README.md
+whitepapers/
+├─ your-new-whitepaper-folder/
+│  ├─ files/
+│  │  ├─ image1.PNG
+│  ├─ README.md
+├─ your-new-whitepaper2-folder/
+│  ├─ summary.pdf
+README.md
 ```
 
 You can decided if you would rather have a ```README.md``` file with Markdown syntax, or if you prefer, you can convert a document into a PDF file and then upload that into the subfolder for the demo/whitepaper.  PDF's will render in the browser when viewed on GitHub.

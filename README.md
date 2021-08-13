@@ -99,9 +99,9 @@ If you want to add a new demo or whitepaper, follow the folder structure convent
 ------summary.pdf
 ```
 
-You can decided if you would rather have a README.md file with Markdown syntax, or if you prefer, you can convert a document into a PDF file and then upload that into the subfolder for the demo/whitepaper.  PDF's will render in the browser when viewed on GitHub.
+You can decided if you would rather have a ```README.md``` file with Markdown syntax, or if you prefer, you can convert a document into a PDF file and then upload that into the subfolder for the demo/whitepaper.  PDF's will render in the browser when viewed on GitHub.
 
-Lastly, link from this main README.md page to your new demo/whitepaper and the corresponding README.md or PDF file.
+Lastly, link from this main README.md page to your new demo/whitepaper and the corresponding ```README.md``` or PDF file.
 
 ## Trademarks
 

@@ -79,6 +79,30 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
+## Contributing Guidelines and Folder Naming Conventions
+
+If you want to add a new demo or whitepaper, follow the folder structure convention below,
+
+```
+--demos
+----your-new-demo-folder
+------files
+--------image1.PNG
+--------sampleSolution.zip
+------README.md
+--whitepapers
+----your-new-whitepaper-folder
+------files
+--------image1.PNG
+------README.md
+----your-new-whitepaper2-folder
+------summary.pdf
+```
+
+You can decided if you would rather have a README.md file with Markdown syntax, or if you prefer, you can convert a document into a PDF file and then upload that into the subfolder for the demo/whitepaper.  PDF's will render in the browser when viewed on GitHub.
+
+Lastly, link from this main README.md page to your new demo/whitepaper and the corresponding README.md or PDF file.
+
 ## Trademarks
 
 This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 

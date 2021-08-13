@@ -42,7 +42,7 @@ Next, configure the fields for your edit form to include the Signature Image fie
 
 ![Configure Fields](files/images/signature-demo-configure-fields.JPG)
 
-In this case, we want to make sure the edit form is only used for new entries.  Set the Edit Form's DefaultMode property to FormMode.New,
+In this case, we want to make sure the edit form is only used for new entries.  Set the Edit Form's ```DefaultMode``` property to ```FormMode.New```,
 
 ![Set Form Mode](files/images/signature-demo-set-form-new.JPG)
 
@@ -58,7 +58,7 @@ Next we want to modify the automated field for Signature Image.  Expand the cont
 
 ![Expand Controls](files/images/signature-demo-unlock-signature-image.JPG)
 
-Remove all controls except the DataCardKey control,
+Remove all controls except the ```DataCardKey``` control,
 
 ![Remove Controls](files/images/signature-demo-remove-extra-controls.JPG)
 
@@ -70,11 +70,11 @@ Resize the Pen Input control to fit better in the Edit Form,
 
 ![Resize Pen Ink Control](files/images/signature-demo-resize-pen-input-control.JPG)
 
-Now we need to set the Update property on the control to save back to the File field type.  To save to the File field type you need to specify two values.  The first is the filename (in this case I named it Signature.jpg).  You also need to save the image itself that is returned from the Pen Ink control.
+Now we need to set the Update property on the control to save back to the File field type.  To save to the File field type you need to specify two values.  The first is the filename (in this case I named it ```Signature.jpg```).  You also need to save the image itself that is returned from the Pen Ink control.
 
 ![Add Pen Ink Control](files/images/signature-demo-set-update-property-on-image.JPG)
 
-By default the Pen Ink control will show different ink styles and options.  If you want to not show those, you need to disable that in the ShowControls setting by changing it to "false",
+By default the Pen Ink control will show different ink styles and options.  If you want to not show those, you need to disable that in the ```ShowControls``` setting by changing it to "false",
 
 ![Remove Pen Ink Controls](files/images/signature-demo-hide-controls.JPG)
 

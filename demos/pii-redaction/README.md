@@ -8,7 +8,11 @@ This demo highlights how you can use Power Automate with Azure Cognitive Service
 
 The Word document that gets generated from a sample text input of 
 
-> I had a wonderful trip to Seattle last week. My SSN is 123-43-1234 and my name is Steve Winward.  I work for Microsoft and my current IP is 103.1.0.104
+```
+I had a wonderful trip to Seattle last week. 
+My SSN is 123-43-1234 and my name is Steve Winward.  
+I work for Microsoft and my current IP is 103.1.0.104
+```
 
 is below =>
 
@@ -17,11 +21,11 @@ is below =>
 # Sample Redaction Flow
 Below is a link to download the sample solution file that includes the Redaction Cloud Flow.
 
-[RedactionDemo Solution File](files/RedactionDemo_1_0_0_1.zip)
+[Redaction Demo Solution File](files/RedactionDemo_1_0_0_1.zip)
 
 Also, below is a link to a Word document that has content control types added which are used in the Flow sample.
 
-[SurveyTemplate.docx](files/SurveyTemplate.docx)
+[Survey Template Word Document](files/SurveyTemplate.docx)
 
 # Requirements
 * An Azure subscription.
@@ -36,7 +40,7 @@ Also, below is a link to a Word document that has content control types added wh
 
 ![Connector Error Messages](files/ConnectionError.PNG)
 
-* Update the Word for Business action to point to the file path you uploaded the [SurveyTemplate.docx](files/SurveyTemplate.docx) file
+* Update the Word for Business action to point to the file path you uploaded the [Survey Template Word Document](files/SurveyTemplate.docx) file
 
 * Update the Text Analytics URL and the Text Analytics API Key to use your instance of the Text Analytics service.
 

@@ -58,7 +58,7 @@ Login-PowerBI -Environment AzureUSGovernment
 
 https://docs.microsoft.com/en-us/power-platform/admin/powerapps-powershell
 
-To install the PowerApps modules, run the following.  Note that you need to run this as an administrator.
+To install the Power Apps modules, run the following.  Note that you need to run this as an administrator.
 
 ```
 Install-Module -Name Microsoft.PowerApps.Administration.PowerShell
@@ -124,7 +124,7 @@ Import-PSSession $Session -DisableNameChecking
 
 ```
 
-## Exhange Online with Multi-Factor Authentication (MFA)
+## Exchange Online with Multi-Factor Authentication (MFA)
 
 https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell?view=exchange-ps
 

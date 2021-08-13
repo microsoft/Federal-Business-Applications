@@ -97,7 +97,7 @@ Service on US Gov Clouds* <https://app.powerbigov.us/>
 
 3.  **Secure Embed (a.k.a. Website or portal embed)**
 
-    With the Secure Embed option (also referred to simply as the 'Embed' option) for Power BI reports, you can easily and securely embed reports in internal web portals. Embedded reports respect all item permissions and data security. This provides no-code embedding into any portal that accepts a URL or IFrame. The Embed option supports URL Filters and URL settings. It allows you to integrate with portals using a low-code approach requiring only basic HTML and JavaScript knowledge.
+    With the Secure Embed option (also referred to simply as the 'Embed' option) for Power BI reports, you can easily and securely embed reports in internal web portals. Embedded reports respect all item permissions and data security. This provides no-code embedding into any portal that accepts a URL or iFrame. The Embed option supports URL Filters and URL settings. It allows you to integrate with portals using a low-code approach requiring only basic HTML and JavaScript knowledge.
     
     Additional details covered [here](#embed-in-sharepoint-online).
 
@@ -299,7 +299,7 @@ Since SharePoint Online is a common use case the following instructions will sho
 
 ![Secure embed code window](./images/SecureEmbed2.png)
 
-4.  Copy the HTML to Notepad as save the file as EmbedReport.txt
+4.  Copy the HTML to Notepad as save the file as ```EmbedReport.txt```
 
 ![Notepad window with iframe text.](./images/SecureEmbed3.png)
 
@@ -323,7 +323,7 @@ Since SharePoint Online is a common use case the following instructions will sho
 
 ![Embed window in SharePoint Online](./images/SecureEmbed7.png)
 
-10. Paste the code you saved from EmbedReport.txt into the text area field labeled "Website address or embed code".
+10. Paste the code you saved from ```EmbedReport.txt``` into the text area field labeled "Website address or embed code".
 
 ![Example of pasting embed url into Embed window](./images/SecureEmbed8.png)
 
@@ -343,21 +343,25 @@ If you want to further customize how the embedded report is displayed, please se
 
 ### Tip #1 - Hide Tabs in the Report
 
-Add the bolded code below to the embed code to hide the tabs. 
+Add the ```&navContentPaneEnabled=false``` query string parameter to the embed code to hide the tabs. 
 
->\<iframe width=\"1140\" height=\"541.25\"
-src=\"https://app.powerbigov.us/reportEmbed?reportId=xXb43542-81e5-4869-8571-014e47d59084&autoAuth=true&ctid=f5727296-5b49-4b31-a544-d1d85d64a529&config=xxxxxxVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLWVhc3QyLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9 **&navContentPaneEnabled=false**\"
-frameborder=\"0\" allowFullScreen=\"true\"\>\</iframe>
+```html
+<iframe width="1140" height="541.25"
+src="https://app.powerbigov.us/reportEmbed?reportId=xXb43542-81e5-4869-8571-014e47d59084&autoAuth=true&ctid=f5727296-5b49-4b31-a544-d1d85d64a529&config=xxxxxxVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLWVhc3QyLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9&navContentPaneEnabled=false"
+frameborder="0" allowFullScreen="true"></iframe>
+```
 
 ![Example of hiding tabs in Secure Embed](./images/CustomizeSecureEmbed1.png)
 
 ### Tip #2 - Hide Filter Pane from Report
 
-Add the bolded code below to the embed code to hide the filter pane. 
+Add the ```&filterPaneEnabled=false``` query string parameter to the embed code to hide the filter pane. 
 
->\<iframe width=\"1140\" height=\"541.25\"
-src=\"https://app.powerbigov.us/reportEmbed?reportId=xXb43542-81e5-4869-8571-014e47d59084&autoAuth=true&ctid=f5727296-5b49-4b31-a544-d1d85d64a529&config=xxxxxxVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLWVhc3QyLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9 **&filterPaneEnabled=false**\"
-frameborder=\"0\" allowFullScreen=\"true\"\>\</iframe>
+```html
+<iframe width="1140" height="541.25"
+src="https://app.powerbigov.us/reportEmbed?reportId=xXb43542-81e5-4869-8571-014e47d59084&autoAuth=true&ctid=f5727296-5b49-4b31-a544-d1d85d64a529&config=xxxxxxVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLWVhc3QyLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9&filterPaneEnabled=false"
+frameborder="0" allowFullScreen="true"></iframe>
+```
 
 ![Example of hiding filter pane in Secure Embed](./images/CustomizeSecureEmbed2.png)
 
@@ -367,16 +371,18 @@ Please follow these steps:
 
 1. In the Power BI Service, go the report and select the tab for the report you wish to show by default.
 
-2. In the URL copy the text after the last forward slash character. For example the text after the last forward slash below would be the text: "ReportSection2f16bbfdbd93add9c47f".
+2. In the URL copy the text after the last forward slash character. For example the text after the last forward slash below would be the text: ```ReportSection2f16bbfdbd93add9c47f```.
 
 ![Example of URL for Report in Power BI Service](./images/CustomizeSecureEmbed3.png)
 
-3. Add the highlighted code below to the embed code using what you copied in step 2.
+3. Add the ```&pageName=ReportSection2f16bbfdbd93add9c47f``` query string parameter to the embed code using what you copied in step 2.
 
->\<iframe width=\"1140\" height=\"541.25\"
-src=\"https://app.powerbigov.us/reportEmbed?reportId=xXb43542-81e5-4869-8571-014e47d59084&autoAuth=true&ctid=f5727296-5b49-4b31-a544-d1d85d64a529&config=xxxxxxVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLWVhc3QyLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9 **&pageName=
-ReportSection2f16bbfdbd93add9c47f**\" frameborder=\"0\"
-allowFullScreen=\"true\"\>\</iframe>
+```html
+<iframe width="1140" height="541.25"
+src="https://app.powerbigov.us/reportEmbed?reportId=xXb43542-81e5-4869-8571-014e47d59084&autoAuth=true&ctid=f5727296-5b49-4b31-a544-d1d85d64a529&config=xxxxxxVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLWVhc3QyLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9&pageName=ReportSection2f16bbfdbd93add9c47f" frameborder="0"
+allowFullScreen="true"></iframe>
+```
+
 
 ![Example of choosing the second tab in a Power BI report using Secure Embed](./images/CustomizeSecureEmbed4.png)
 
@@ -434,11 +440,11 @@ If you experience issues with viewing embedded Power BI Reports in Chrome, pleas
 
 ![Cookie settings in Chrome](./images/Cookies1.png)
 
-3.  A pop-up will appear. Paste \[\*.\]login.microsoftonline.com into the textbox and click Add.
+3.  A pop-up will appear. Paste ```[*.]login.microsoftonline.com``` into the textbox and click Add.
 
 ![Add a site for Allowing cookies in Chrome](./images/Cookies2.png)
 
-4.  Repeat Step 3 with the URL \[\*.\]app.powerbigov.us. Once completed you should see the following entries in the Allowed Cookie list (note they may not be next to each other).
+4.  Repeat Step 3 with the URL ```[*.]app.powerbigov.us```. Once completed you should see the following entries in the Allowed Cookie list (note they may not be next to each other).
 
 ![URLs added to Allowed Cookies in Chrome](./images/Cookies3.png)
 
@@ -531,9 +537,9 @@ Azure Active Directory (Azure AD). You\'ll be able to manage and modify these se
 4.  Make a note of the Application ID and Application secret. You will need the Application ID on the LEAF request. Application Secret will be used in your embedded application config file.
 
 ![Successful Registration message with application id and application secret](./images/UOD4.png)
-> *Application ID: xxxxxxx*
+> ```Application ID: xxxxxxx```
 >
-> *Application secret: xxxxxxxx*
+> ```Application secret: xxxxxxxx```
 
 At this point, you have registered the Azure App. However, note that the app is not yet enabled to be used in the agency's tenant.
 
@@ -549,7 +555,9 @@ You will need the following information in the request:
 
 -   Power BI App Workspace name
 
--   Power BI App Workspace ID. You can get the Workspace id from the URL. For example the bolded section of the URL is the Workspace ID: https://app.powerbigov.us/groups/**xxx67dd9-59d3-4d9d-8x1a-a25x761xd330**/list/dashboards
+-   Power BI App Workspace ID. You can get the Workspace id from the URL. For example the ```xxx67dd9-59d3-4d9d-8x1a-a25x761xd330``` GUID of the URL is the Workspace ID: 
+
+```https://app.powerbigov.us/groups/xxx67dd9-59d3-4d9d-8x1a-a25x761xd330/list/dashboards```
 
 You may be asked to provide additional details about your project including business justification or ATO. Please contact *{ADMIN NOTE: Please insert contact email}* for any questions. Once approved, your Azure app will be granted admin consent on the agency's tenant.
 
@@ -586,7 +594,7 @@ If you are using the sample code, update the keys in the config file as below.
 For more information about JavaScript API, reference [Power BI JavaScript API](https://github.com/Microsoft/PowerBI-JavaScript).
 
 For a full sample of using the JavaScript API, you can use the [Playground tool](https://microsoft.github.io/PowerBI-JavaScript/demo). The Playground tool is a quick way to play with different types of Power BI Embedded samples. You can also get more Information about the
-JavaScript API by visiting the [PowerBI-JavaScript wiki
+JavaScript API by visiting the [Power BI JavaScript wiki
 page](https://github.com/Microsoft/powerbi-javascript/wiki).
 
 ## Embedding for your customer (App owns data)
@@ -650,9 +658,9 @@ Azure Active Directory (Azure AD). You\'ll be able to manage and modify these se
 5.  Make a note of the Application ID and Application secret. You will need to provide the Application ID on requests to an administrator. Application Secret will be used in your embedded application config file.
 
 ![Successful Registration message with application id and application secret](./images/AOD4.png)
-> *Application ID: xxxxxxx*
+> ```Application ID: xxxxxxx```
 >
-> *Application secret: xxxxxxxx*
+> ```Application secret: xxxxxxxx```
 
 ### 2. Create a service principal
 
@@ -685,7 +693,9 @@ You will need the following information in the request:
 
 -   Power BI App Workspace name
 
--   Power BI App Workspace ID. You can get the Workspace id from the URL. For example the bolded section of the URL is the Workspace ID: https://app.powerbigov.us/groups/**x6x67dx9-5xx3-4d9d-8dxa-a25x761xx330**/list/dashboards
+-   Power BI App Workspace ID. You can get the Workspace id from the URL. For example the ```x6x67dx9-5xx3-4d9d-8dxa-a25x761xx330``` GUID of the URL is the Workspace ID: 
+
+```https://app.powerbigov.us/groups/x6x67dx9-5xx3-4d9d-8dxa-a25x761xx330/list/dashboards```
 
 You may be asked to provide additional details about your project including business justification or ATO. Please contact *{ADMIN NOTE: Please insert contact email}* for any questions. Once approved, your Azure app
 will be granted admin consent on the agency's tenant.
@@ -763,7 +773,7 @@ always be secured on server side.*
 For more information about JavaScript API, reference [Power BI JavaScript API](https://github.com/Microsoft/PowerBI-JavaScript).
 
 For a full sample of using the JavaScript API, you can use the [Playground tool](https://microsoft.github.io/PowerBI-JavaScript/demo).
-The Playground tool is a quick way to play with different types of Power BI Embedded samples. You can also get more Information about the JavaScript API by visiting the [PowerBI-JavaScript wiki
+The Playground tool is a quick way to play with different types of Power BI Embedded samples. You can also get more Information about the JavaScript API by visiting the [Power BI JavaScript wiki
 page](https://github.com/Microsoft/powerbi-javascript/wiki).
 
 # Embed using Publish to web (public) 

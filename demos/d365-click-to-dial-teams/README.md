@@ -43,8 +43,8 @@ Note the developer prefix associated with your publisher, as you will need this 
 
 ## Update your javascript
 
-The [Javascript Library](/files/DialFromTeams.js) will need to be updated to include your custom property.
-Update the following line in the code, so that the name of your custom property is placed between the quotation marks. 
+The [Javascript Library](https://github.com/microsoft/Federal-Business-Applications/blob/main/demos/d365-click-to-dial-teams/files/DialFromTeams.js) will need to be updated to include your custom property.
+Update the following line in the code, so that the name of your custom property is placed between the quotation marks.
  (The name should use the publisherPrefix_propertyName syntax)
 
 ```javascript

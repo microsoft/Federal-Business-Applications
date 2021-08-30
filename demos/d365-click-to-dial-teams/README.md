@@ -49,7 +49,11 @@ Click Done.  Then click on "Save Table".
 
 Download the script from this [Javascript Library](https://github.com/microsoft/Federal-Business-Applications/blob/main/demos/d365-click-to-dial-teams/files/DialFromTeams.js). 
 
-Update the following line and paste  your custom column name in between the quotation marks. (i.e., Column name should use the publisherPrefix_propertyName syntax)
+Obtain your custom column name.  i.e., Column name should be in the publisherPrefix_propertyName syntax.
+
+![aCustom Column prefix1](files/images/js-phonecall-prefix.jpg)
+
+Update the following line in your Javascript file and paste your custom column name in between the quotation marks.
 
 ```javascript
 # var callFromTeams = formContext.getAttribute("").getValue();
@@ -57,14 +61,19 @@ Update the following line and paste  your custom column name in between the quot
 
 ## Add your javascript file as a web resource
 
-With the solution file, select New->Other->Web Resource.
+Save your Javascript file locally, then upload the file into the Power Apps solution file by selecting New->Other->Web Resource.
 
 ![add web resource step 1](files/images/addNewWebResource.jpg)
 ![add web resource step 2](files/images/addNewWebResource2.jpg)
 
+Click Save, then Publish.
+
 ## Update the Quick Create form
 
-Within your solution file, select the Quick Create form, and configure the OnLoad event of the form so that it references your javascript library
+Within your solution file, click on Phone Call Table > Forms tab > Phone call quick create form.  Then click on Events tab -> Add library -> Search then add your DialFromTeams Javascript file
+
+
+configure the OnLoad event of the form so that it references your javascript library
 
 ![update form step 1](files/images/updateForm1.jpg)
 

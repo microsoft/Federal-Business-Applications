@@ -28,11 +28,19 @@ function initiatePhoneCallWindow(executionContext ){
     if(callFromTeams){
 
         var phoneNumber = formContext.getAttribute("phonenumber").getValue();
+        
+        if(!phoneNumber || phoneNumber.length <9){
+
+            alert("You must enter a 9 digit phone number");
+            return;
+         }
+
         var phoneNumberSanitized = phoneNumber.replace(/[^0-9]/g, '');
 
         if(!phoneNumberSanitized || phoneNumberSanitized.length <9){
 
            alert("You must enter a 9 digit phone number");
+           return;
         }else{
             
            const teamsURL = new URL("https://teams.microsoft.com/l/call/0/0"); 

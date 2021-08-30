@@ -89,3 +89,19 @@ Click on your custom column > Events tab -> Add library -> Search then add your 
 ![update form step 3](files/images/updateFormIII.jpg)
 
 Save then Publish your form.
+
+## See It in Action
+
+Open a D365 app or a Model-Driven Power Apps.  Find a form that has the Timeline Control (typically found in the out-of-box Contact, Account, Case forms).  Click on + > Phone Call
+
+![Call step 1](files/images/TeamsCall1.jpg)
+
+Within the Quick Create: Phone Call form, type a Phone Number then change the Call from Teams value to Yes
+
+![Call step 2](files/images/TeamsCall2.jpg)
+
+If there's a pop-up from your browser to confirm opening up the call in Teams, click OK.  At this point, your Teams client app should be making the outbound phone call accordingly.
+
+![Call step 3](files/images/TeamsCall3.jpg)
+
+![Call step 4](files/images/TeamsCall4.jpg)

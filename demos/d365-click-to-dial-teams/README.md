@@ -76,7 +76,7 @@ Add the custom column to your form.
 
 ![update form step 1](files/images/updateFormI.jpg)
 
-Click on your custom column > Events tab -> Add library -> Search then add your DialFromTeams JavaScript file
+Click on your custom column > Events tab -> Add library -> Search then add your ````DialFromTeams```` JavaScript file
 
 ![update form step 2](files/images/updateFormII.jpg)
 

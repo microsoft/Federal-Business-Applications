@@ -19,7 +19,7 @@ Below is a listing of the sample solutions available.  These sample solution fil
 | [PowerShell Gov Samples](demos/powershell-gov-samples/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Return to the Workplace](demos/return-to-work/README.md) | :heavy_check_mark: | :heavy_check_mark: | |
 | [RPA Web Scraping Demo](demos/rpa-amazon-scraper/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [D365 Click To Dial From Teams](demos/d365-click-to-dial-teams/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [D365 or Model-Driven Power Apps & Teams Click-To-Dial](demos/d365-click-to-dial-teams/README.md) | :heavy_check_mark: | | |
 
 ## Whitepapers
 

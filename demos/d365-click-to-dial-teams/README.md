@@ -1,11 +1,11 @@
-# Click To Dial From D365 or Model-driven Power Apps Using Teams
+# Teams Click-To-Dial From D365 or Model-Driven Power Apps
 
 This sample shows you how to initiate Microsoft Teams outbound calling from either Dynamics 365 or Power Apps model-driven apps using MS Teams deep links. While most tenants can leverage the Teams native integrations in D365 apps, there may be scenarios where that capabilities have not yet been made available in your tenant.
 
 > [!IMPORTANT]
 > This solution requires that your users users assigned with Teams Calling Plan license and either [
-model-driven Power Apps](https://docs.microsoft.com/en-us/power-platform/admin/powerapps-flow-licensing-faq#how-is-microsoft-power-apps-and-power-automate-licensed) or [
-Dynamics 365 apps](https://www.microsoft.com/en-us/licensing/product-licensing/dynamics365).
+Dynamics 365 apps](https://www.microsoft.com/en-us/licensing/product-licensing/dynamics365) or  [
+Model-Driven Power Apps](https://docs.microsoft.com/en-us/power-platform/admin/powerapps-flow-licensing-faq#how-is-microsoft-power-apps-and-power-automate-licensed).
    
 ## Solution Steps Overview
 

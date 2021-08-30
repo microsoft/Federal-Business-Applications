@@ -19,7 +19,7 @@ Model-Driven Power Apps](https://docs.microsoft.com/en-us/power-platform/admin/p
 
 ## Create a new solution file
 
-From the [PowerApps Portal](https://make.powerapps.com/), create a new solution file in your environment.
+From the [Power Apps maker portal](https://make.gov.powerapps.us/), [create a new solution file](https://docs.microsoft.com/en-us/powerapps/maker/data-platform/create-solution) in your environment.
 
 ## Add the Phone Call entity
 
@@ -38,16 +38,18 @@ Click the option for "Select Components", click Forms, and select the "Quick Cre
 
 ## Add a custom column to the Phone Call
 
-Within the solution file you created, select the Phone Call entity that you just added, and choose the option to add a column.
-Note the developer prefix associated with your publisher, as you will need this in the following step. Set the data type to "Yes/No" so you can use the default dropdown or toggle controls.
+Within the solution file, select the Phone Call table that you have just added,then choose the option to add a column.
+Note the developer prefix will be specific to your environment's publisher info (which you would need to reference in the following step). Set the data type to "Yes/No" so you can use the default dropdown or toggle controls.
 
 ![add a new custom column](files/images/addNewColumn.jpg)
 
+Click Done.  Then click on "Save Table".
+
 ## Update your javascript
 
-The [Javascript Library](https://github.com/microsoft/Federal-Business-Applications/blob/main/demos/d365-click-to-dial-teams/files/DialFromTeams.js) will need to be updated to include your custom property.
-Update the following line in the code, so that the name of your custom property is placed between the quotation marks.
- (The name should use the publisherPrefix_propertyName syntax)
+Download the script from this [Javascript Library](https://github.com/microsoft/Federal-Business-Applications/blob/main/demos/d365-click-to-dial-teams/files/DialFromTeams.js). 
+
+Update the following line and paste  your custom column name in between the quotation marks. (i.e., Column name should use the publisherPrefix_propertyName syntax)
 
 ```javascript
 # var callFromTeams = formContext.getAttribute("").getValue();

@@ -70,13 +70,22 @@ Click Save, then Publish.
 
 ## Update the Quick Create form
 
-Within your solution file, click on Phone Call Table > Forms tab > Phone call quick create form.  Then click on Events tab -> Add library -> Search then add your DialFromTeams Javascript file
+Within your solution file, click on Phone Call Table > Forms tab > Phone call quick create form.  
 
+Add the custom column to your form.
 
-configure the OnLoad event of the form so that it references your javascript library
+![update form step 1](files/images/updateFormI.jpg)
 
-![update form step 1](files/images/updateForm1.jpg)
+Click on your custom column > Events tab -> Add library -> Search then add your DialFromTeams Javascript file
 
-Place the new custom field on the form, and configure the OnChange event. Ensure that the "Pass execution context as first parameter" is checked. Then Save and Publish all customizations.
+![update form step 2](files/images/updateFormII.jpg)
 
-![update form step 2](files/images/updateForm2.jpg)
+    * Click + Event Handler
+    * Ensure that you select OnChange and your Javascript Library
+    * In the Function textbox, type initiatePhoneCallWindow
+    * Check "Pass execution context as first parameter"
+    * Click Done
+
+![update form step 3](files/images/updateFormIII.jpg)
+
+Save then Publish your form.

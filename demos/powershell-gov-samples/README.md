@@ -58,7 +58,7 @@ Login-PowerBI -Environment AzureUSGovernment
 
 https://docs.microsoft.com/en-us/powershell/azure/active-directory/overview?view=azureadps-1.0
 
-If you have not already done so, install the Azure AD Module.  Note that you need to run this as an administrator.
+If you have not already done so, install the ```MSOnline``` Module.  Note that you need to run this as an administrator.
 
 ```powershell
 Install-Module -Name MSOnline

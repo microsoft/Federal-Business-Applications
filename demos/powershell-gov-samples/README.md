@@ -7,19 +7,19 @@ https://docs.microsoft.com/en-us/powershell/power-bi/overview?view=powerbi-ps
 
 If you have not already done so, install the Power BI Admin module for PowerShell.  Note that you need to run this as an administrator.
 
-```
+```powershell
 Install-Module -Name MicrosoftPowerBIMgmt
 ```
 
 If you have already installed it, make sure to update to the latest version
 
-```
+```powershell
 Update-Module -Name MicrosoftPowerBIMgmt
 ```
 
 To connect to a Power BI environment in a US Government O365 Environment,
 
-```
+```powershell
 # Login for GCC Moderate
 Login-PowerBI -Environment USGov
 
@@ -36,22 +36,70 @@ https://docs.microsoft.com/en-us/office365/enterprise/powershell/connect-to-offi
 
 If you have not already done so, install the Azure AD Module.  Note that you need to run this as an administrator.
 
-```
+```powershell
 Install-Module -Name AzureAD
 ```
 
 If you have already installed it, make sure to update to the latest version
 
-```
+```powershell
 Update-Module -Name AzureAD
 ```
 
-```
+```powershell
 # Login for GCC Moderate
 Connect-AzureAD
 
 # Login for GCC High / GCC DoD
 Login-PowerBI -Environment AzureUSGovernment
+```
+
+## MSOnline
+
+https://docs.microsoft.com/en-us/powershell/azure/active-directory/overview?view=azureadps-1.0
+
+If you have not already done so, install the Azure AD Module.  Note that you need to run this as an administrator.
+
+```powershell
+Install-Module -Name MSOnline
+```
+
+If you have already installed it, make sure to update to the latest version
+
+```powershell
+Update-Module -Name MSOnline
+```
+
+Authentication examples,
+
+```powershell
+# Commercial and GCC
+Connect-MsolService
+
+# GCC High and DOD
+Connect-MsolService -AzureEnvironment AzureUSGovernmentCloud
+```
+
+Sample resetting default service plan options for the O365 E3 license,
+
+```powershell
+# Set this to the actual UPN you want to run this against
+$UserPrincipalName = "<INPUT_ACTUAL_UPN_HERE>";
+
+# Lookup the E3 SKU ID in the tenant
+$SKU = (Get-MsolAccountSku | where {$_.AccountSkuId -like '*E3*'}).AccountSkuId
+
+# get all the default service plans for the E3 SKU
+# this is only for troubleshooting if you want to see the individual service plans
+# $ServicePlans = ((Get-MsolAccountSku | Where-Object {$_.AccountSkuId -eq $SKU}).ServiceStatus | Select-Object ServicePlan -ExpandProperty ServicePlan)
+
+$LicOptions = New-MsolLicenseOptions -AccountSkuId $SKU
+
+# remove the license with the existing settings
+Set-MsolUserLicense -UserPrincipalName $UserPrincipalName -RemoveLicenses $SKU
+
+# add the license back with the default service plan settings (which inlcudes power apps and power automate)
+Set-MsolUserLicense -UserPrincipalName $UserPrincipalName -AddLicenses $SKU -LicenseOptions $LicOptions
 ```
 
 ## Power Apps
@@ -60,19 +108,19 @@ https://docs.microsoft.com/en-us/power-platform/admin/powerapps-powershell
 
 To install the Power Apps modules, run the following.  Note that you need to run this as an administrator.
 
-```
+```powershell
 Install-Module -Name Microsoft.PowerApps.Administration.PowerShell
 Install-Module -Name Microsoft.PowerApps.PowerShell -AllowClobber
 ```
 
 If you have already installed it, make sure to update to the latest version
 
-```
+```powershell
 Update-Module -Name Microsoft.PowerApps.Administration.PowerShell
 Update-Module -Name Microsoft.PowerApps.PowerShell
 ```
 Examples for GCC and GCC High below,
-```
+```powershell
 # Add an account in GCC Moderate
 Add-PowerAppsAccount -Endpoint "usgov" 
 
@@ -93,7 +141,7 @@ Examples to use with GCC.  GCC High and DOD are not supported yet with PAC tool 
 
 https://github.com/microsoft/powerplatform-actions/issues/73
 
-```
+```powershell
 # GCC authentication with AAD application id and secret
 pac auth create --name gcc --kind CDS --url <INPUT_ENVIRONMENT_URL> --applicationId <AAD_APP_ID> --clientSecret <AAD_APP_SECRET> --tenant <AAD_TENANT_ID> --cloud UsGov
 
@@ -106,7 +154,7 @@ pac auth create --name gcc --kind CDS --url <INPUT_ENVIRONMENT_URL> --username <
 
 https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell?view=exchange-ps
 
-```
+```powershell
 # Set the user credentials
 $userCredential = Get-Credential
 
@@ -128,7 +176,7 @@ Import-PSSession $Session -DisableNameChecking
 
 https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell?view=exchange-ps
 
-```
+```powershell
 # Set the UserPrincipalName
 $upn = <john@contoso.com> # set this to your actual UPN
 
@@ -148,17 +196,17 @@ https://docs.microsoft.com/en-us/powershell/module/teams/connect-microsoftteams?
 
 If you have not already done so, install the Power BI Admin module for PowerShell.  Note that you need to run this as an administrator.
 
-```
+```powershell
 Install-Module -Name MicrosoftTeams
 ```
 
 If you have already installed it, make sure to update to the latest version
 
-```
+```powershell
 Update-Module -Name MicrosoftTeams
 ```
 Examples for GCC, GCC High and GCC DoD are below
-```
+```powershell
 # GCC
 Connect-MicrosoftTeams
 

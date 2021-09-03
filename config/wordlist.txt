@@ -23,6 +23,7 @@ GCCH
 GUID
 iFrame
 JSON
+MSOnline
 OData
 OneDrive
 PDF

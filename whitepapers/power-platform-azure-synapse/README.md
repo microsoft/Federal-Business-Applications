@@ -49,7 +49,7 @@ Once provisioned, you need to grant the "Export to data lake" service principal 
 * Storage Blob Data Contributor
 * Storage Blob Data Owner
 
-Open up the Marker Portal in GCC (https://make.gov.powerapps.us) and select the environment you wan to setup.
+Open up the Marker Portal in GCC (https://make.gov.powerapps.us) and select the environment you want to setup.
 
 Add the following query string ```?athena.advancedSetup=true``` to the end of the URL.  For example,
 

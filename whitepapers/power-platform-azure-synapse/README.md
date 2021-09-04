@@ -1,5 +1,5 @@
 # Power Platform Azure Synapse Link Integration
-To date (9/3/2021), this feature is only supported in GCC.  This will eventually land in our GCC High and DoD clouds as well.
+> To date (9/3/2021), this feature is only supported in GCC.  This will eventually land in our GCC High and DoD clouds as well.
 
 ## GCC
 
@@ -24,7 +24,9 @@ Below is an architecture diagram of how everything is laid out in this setup,
 
 ### Setup Notes for Azure for Government
 
-First you need to have at least Application Administer priviledges to create a new Service Principal.  Use the PowerShell script below in your Azure for Government subscription to provision the "Export to data lake" service principal account.
+> Important: you need to have at least Application Administer priviledges to create a new Service Principal. Global Adminstrator would work as well.  
+
+Use the PowerShell script below in your Azure for Government subscription to provision the "Export to data lake" service principal account.
 
 ```powershell
 # Authenticate to Azure
@@ -60,6 +62,8 @@ Click on the Azure Synapse Link menu item
 ![Azure Synapse Menu Item](files/AzureSynapseMenuItem.png)
 
 Click on "New link to data lake"
+
+![New Link to Data Lake Icon](files/new_link_to_data_lake.png)
 
 Fill out the following fields,
 

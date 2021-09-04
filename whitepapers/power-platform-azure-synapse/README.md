@@ -29,7 +29,7 @@ Below is an architecture diagram of how everything is laid out in this setup,
 Use the PowerShell script below in your Azure for Government subscription to provision the "Export to data lake" service principal account.
 
 ```powershell
-# Authenticate to Azure
+# Authenticate to Azure for Government
 Connect-AzAccount -Environment AzureUSGovernment 
 
 # Provision the "Export to data lake" Service Principal account

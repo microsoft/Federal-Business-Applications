@@ -12,7 +12,7 @@ Below is an architecture diagram of how everything is laid out with this setup,
 
 ![Synapse with Azure Commercial](files/Slide1.PNG)
 
-If you have an associated Azure Commercial subscription with your tenant, then you can follow the commerical public docs to set this up,
+If you have an associated Azure Commercial subscription with your tenant, then you can follow the commercial public docs to set this up,
 
 [Azure Synapse Link Setup Documentation](https://docs.microsoft.com/en-us/powerapps/maker/data-platform/azure-synapse-link-synapse)
 
@@ -24,7 +24,7 @@ Below is an architecture diagram of how everything is laid out in this setup,
 
 ### Setup Notes for Azure for Government
 
-> Important: you need to have at least Application Administrator priviledges to create a new Service Principal. Global Administrator would work as well.  
+> Important: you need to have at least Application Administrator privileges to create a new Service Principal. Global Administrator would work as well.  
 
 Use the PowerShell script below in your Azure for Government subscription to provision the "Export to data lake" service principal account.
 

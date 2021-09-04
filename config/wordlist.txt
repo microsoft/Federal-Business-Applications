@@ -21,9 +21,11 @@ Dynamics
 GCC
 GCCH
 GUID
+IAM
 iFrame
 JSON
 MSOnline
+namespace
 OData
 OneDrive
 PDF

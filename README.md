@@ -28,6 +28,7 @@ Below is a listing of the sample solutions available.  These sample solution fil
 Below are whitepapers that have been created specifically for use in the US Government sovereign cloud regions.
 
 * [Power Platform / D365 Gov Architecture](whitepapers/power-plat-d365-architecture/README.md)
+* [Power Platform and Azure Synapse Link in Gov](whitepapers/power-platform-azure-synapse/README.md)
 * [Consume Commercial Azure Storage Resources from Power Platform GCC](https://github.com/microsoft/Federal-Business-Applications/wiki/PowerApps-Connecting-from-GCC-to-any-Endpoint-including-Commercial-Azure)
 * [Creating US Government Support Tickets](whitepapers/power-platform-support/README.md)
 * [Enable Azure AD Connector in GCC](whitepapers/azure-ad-gcc/README.md)

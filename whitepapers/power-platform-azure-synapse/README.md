@@ -71,7 +71,7 @@ Fill out the following fields,
 
 Select next.  Choose the Dataverse tables you want to sync and finish the setup.
 
-Note.  If you get an error that a file system name does not exist, you may need to manually create the storage container via the Azure Portal.
+> If you get an error that a file system name does not exist, you may need to manually create the storage container via the Azure Portal.
 
 ![Azure Gov Portal Workaround](files/storageworkaround.png)
 

@@ -1,7 +1,42 @@
 # Power Platform Azure Synapse Link Integration
 > To date (9/3/2021), this feature is only supported in GCC.  This will eventually land in our GCC High and DoD clouds as well.
 
-## GCC
+## Overview of the Feature
+Azure Synapse integration with Power Platform Dataverse allows you to sync data automatically from select tables in Dataverse into an Azure Data Lake Storage Account.  Below is an example of how it works once Azure Synapse Link is already setup.  Full setup notes for GCC are included below.
+
+1. Make sure the Dataverse table you want to sync is marked to enable change tracking.
+
+![Enable change tracking](files/SampleEnableChangeTracking.png)
+
+2. Go to the Azure Synapse Link page and then lookup the Dataverse table you want to sync
+
+![Select Dataverse table](files/SelectDataverseTablesToSync.png)
+
+3. Once configured, the Dataverse table will do an initial synchronization and then all future updates will get pushed to Azure Data Lake Storage
+
+![Sample Form Submission](files/SampleFormSubmission.png)
+
+4. When you view the configured Azure Storage account you will see new containers provisioned by the Power Platform service,
+
+![Environment Containers View](files/SampleDataLakeEnvironmentContainers.png)
+
+5. When you drill into an environment's container you will then see all tables that are actively being synchronized.
+
+![Table Containers View](files/SampleDataLakeTableContainers.png)
+
+6. Drilling into the tables container you will see a series of CSV files that contain the Dataverse data.
+
+![CSV Files View](files/SampleDataLakeCsvFile.png)
+
+7. And if you open up one of the CSV files, you can see the actual contents which in this case matches the initial form submission in Power Apps.
+
+![CSV File Contents View](files/SampleDataLakeCsvFileContents.png)
+
+8. Optionally, you can create an Azure Synapse Workspace that is associated with the Azure Data Lake Storage account.  This allows you to query with familiar SQL queries against all Dataverse data being synchronized!
+
+![Azure Synapse Studio View](files/SampleSynapseStudioView)
+
+## GCC Setup
 
 You have two implementation options to integrate Power Platform Dataverse tables with Azure Synapse Link.  
 

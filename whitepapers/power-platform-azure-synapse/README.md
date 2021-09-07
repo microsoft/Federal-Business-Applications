@@ -36,7 +36,9 @@ Connect-AzAccount -Environment AzureUSGovernment
 New-AzADServicePrincipal -ApplicationId '7f15f9d9-cad0-44f1-bbba-d36650e07765' 
 ```
 
-Now you need to create an Azure Storage account (Gen 2).
+Next you need to create an Azure Storage account (Gen 2).
+
+![Azure Storage Account Creation in Azure for Government](files/AzureGovStorageCreation.png)
 
 Make sure you mark "Enable hierarchical namespace" in the advanced section.
 

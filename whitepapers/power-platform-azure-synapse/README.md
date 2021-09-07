@@ -34,7 +34,7 @@ Azure Synapse integration with Power Platform Dataverse allows you to sync data 
 
 8. Optionally, you can create an Azure Synapse Workspace that is associated with the Azure Data Lake Storage account.  This allows you to query with familiar SQL queries against all Dataverse data being synchronized!
 
-![Azure Synapse Studio View](files/SampleSynapseStudioView)
+![Azure Synapse Studio View](files/SampleSynapseStudioView.png)
 
 ## GCC Setup
 

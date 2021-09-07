@@ -53,15 +53,15 @@ Once provisioned, you need to grant the "Export to data lake" service principal 
 
 Open up the Marker Portal in GCC (https://make.gov.powerapps.us) and select the environment you want to setup.
 
-Add the following query string ```?athena.advancedSetup=true``` to the end of the URL.  For example,
+Click on the Azure Synapse Link menu item
+
+![Azure Synapse Menu Item](files/AzureSynapseMenuItem.png)
+
+Add the following query string ```?athena.advancedSetup=true``` to the end of the URL and load the page.  For example,
 
 ```
 https://make.gov.powerapps.us/environments/aaaaaa-xxx-4442-8f7e-229b080exxx/exporttodatalake?athena.advancedSetup=true
 ```
-
-Click on the Azure Synapse Link menu item
-
-![Azure Synapse Menu Item](files/AzureSynapseMenuItem.png)
 
 Click on "New link to data lake"
 

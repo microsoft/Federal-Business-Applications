@@ -14,25 +14,29 @@ Azure Synapse integration with Power Platform Dataverse allows you to sync data 
 
 3. Once configured, the Dataverse table will do an initial synchronization and then all future updates will get pushed to Azure Data Lake Storage
 
+![Sample Synchronization View](files/SampleSynchronizationView.png)
+
+4. Now when you add or modify rows in the Dataverse table, they will automatically get pushed into the configured Azure Data Lake Storage Account.
+
 ![Sample Form Submission](files/SampleFormSubmission.png)
 
-4. When you view the configured Azure Storage account you will see new containers provisioned by the Power Platform service,
+5. When you view the configured Azure Storage account you will see new containers provisioned by the Power Platform service,
 
 ![Environment Containers View](files/SampleDataLakeEnvironmentContainers.png)
 
-5. When you drill into an environment's container you will then see all tables that are actively being synchronized.
+6. When you drill into an environment's container you will then see all tables that are actively being synchronized.
 
 ![Table Containers View](files/SampleDataLakeTableContainers.png)
 
-6. Drilling into the tables container you will see a series of CSV files that contain the Dataverse data.
+7. Drilling into the tables container you will see a series of CSV files that contain the Dataverse data.
 
 ![CSV Files View](files/SampleDataLakeCsvFile.png)
 
-7. And if you open up one of the CSV files, you can see the actual contents which in this case matches the initial form submission in Power Apps.
+8. And if you open up one of the CSV files, you can see the actual contents which in this case matches the initial form submission in Power Apps.
 
 ![CSV File Contents View](files/SampleDataLakeCsvFileContents.png)
 
-8. Optionally, you can create an Azure Synapse Workspace that is associated with the Azure Data Lake Storage account.  This allows you to query with familiar SQL queries against all Dataverse data being synchronized!
+9. Optionally, you can create an Azure Synapse Workspace that is associated with the Azure Data Lake Storage account.  This allows you to query with familiar SQL queries against all Dataverse data being synchronized!
 
 ![Azure Synapse Studio View](files/SampleSynapseStudioView)
 

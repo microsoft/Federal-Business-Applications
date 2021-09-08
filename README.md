@@ -84,6 +84,14 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 
 ## Contributing Guidelines and Folder Naming Conventions
 
+For non-Microsoft employees, you can fork this repository, and then submit any contributions with a pull request.  Someone on the contributors team will review your pull request and then work to get it merged into the repository.  Details on how to fork this repo and submit a pull request are available on GitHub's documentation page below,
+
+[Creating a Pull Request from a Fork](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)
+
+We also have spell checking enabled via a GitHub Action.  To see if you have any spelling typos, run the Spellcheck Action associate with this repository.  We also have a file that contains a list of spell check exceptions.  You may need to add acronyms or other words to this list as you run into them.
+
+[Spell Check Word List](./config/wordlist.txt)
+
 If you want to add a new demo or whitepaper, follow the folder structure convention below,
 
 ```
@@ -104,7 +112,7 @@ whitepapers/
 README.md
 ```
 
-You can decided if you would rather have a ```README.md``` file with Markdown syntax, or if you prefer, you can convert a document into a PDF file and then upload that into the subfolder for the demo/whitepaper.  PDF's will render in the browser when viewed on GitHub.
+You can decide if you would rather have a ```README.md``` file with Markdown syntax, or if you prefer, you can convert a document into a PDF file and then upload that into the subfolder for the demo/whitepaper.  PDF's will render in the browser when viewed on GitHub. ```README.md``` files are preferred as they will also support version control and change history on the actual file.
 
 Lastly, link from this main ```README.md``` page to your new demo/whitepaper and the corresponding ```README.md``` or PDF file.
 

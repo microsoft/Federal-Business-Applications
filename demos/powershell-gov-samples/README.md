@@ -216,3 +216,43 @@ Connect-MicrosoftTeams -TeamsEnvironmentName "TeamsGCCH"
 # GCC DoD
 Connect-MicrosoftTeams -TeamsEnvironmentName "TeamsDOD"
 ```
+
+## Microsoft Graph PowerShell
+
+Installation notes can be found on the public docs below,
+
+https://docs.microsoft.com/en-us/graph/powershell/installation
+
+Connecting to the Graph API with user delegated permissions,
+
+https://docs.microsoft.com/en-us/graph/powershell/get-started
+
+```powershell
+# GCC
+Connect-MgGraph
+
+# GCC High
+Connect-MgGraph -Environment USGov
+
+# DOD
+Connect-MgGraph -Environment USGovDoD
+```
+> NOTE: Using the delegated permissions you will still need an admin to grant consent to the scopes you want to run for the tenant.  
+> Example of this running as an admin is below,
+
+![Admin Consent Dialogue](files/AdminDelegatedConsent.png)
+
+Connecting to the Graph API with Azure Active Directory Application identities (i.e. app-only authentication) are below,
+
+https://docs.microsoft.com/en-us/graph/powershell/app-only?tabs=azure-portal
+
+```powershell
+# GCC
+Connect-MgGraph -ClientID YOUR_APP_ID -TenantId YOUR_TENANT_ID -CertificateName YOUR_CERT_SUBJECT
+
+# GCC High
+Connect-MgGraph -Environment USGov -ClientID YOUR_APP_ID -TenantId YOUR_TENANT_ID -CertificateName YOUR_CERT_SUBJECT
+
+# DOD
+Connect-MgGraph -Environment USGovDoD -ClientID YOUR_APP_ID -TenantId YOUR_TENANT_ID -CertificateName YOUR_CERT_SUBJECT
+```

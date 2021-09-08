@@ -216,3 +216,22 @@ Connect-MicrosoftTeams -TeamsEnvironmentName "TeamsGCCH"
 # GCC DoD
 Connect-MicrosoftTeams -TeamsEnvironmentName "TeamsDOD"
 ```
+
+## Microsoft Graph PowerShell
+
+Installation notes can be found on the public docs below,
+
+https://docs.microsoft.com/en-us/graph/powershell/installation
+
+Connecting to the Graph API with the PowerShell module examples below,
+
+```powershell
+# GCC
+Connect-MgGraph
+
+# GCC High
+Connect-MgGraph -Environment USGov
+
+# DOD
+Connect-MgGraph -Environment USGovDoD
+```

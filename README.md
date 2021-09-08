@@ -82,16 +82,18 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-## Contributing Guidelines and Folder Naming Conventions
+### Contributing Guidelines
 
 For non-Microsoft employees, you can fork this repository, and then submit any contributions with a pull request.  Someone on the contributors team will review your pull request and then work to get it merged into the repository.  Details on how to fork this repository and submit a pull request are available on GitHub's documentation page below,
 
 [Creating a Pull Request from a Fork](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)
 
+### Spell Check
 We also have spell checking enabled via a GitHub Action.  To see if you have any spelling typos, run the Spellcheck Action associate with this repository.  We also have a file that contains a list of spell check exceptions.  You may need to add acronyms or other words to this list as you run into them.
 
 [Spell Check Word List](./config/wordlist.txt)
 
+### Folder Naming Conventions
 If you want to add a new demo or whitepaper, follow the folder structure convention below,
 
 ```

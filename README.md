@@ -17,7 +17,7 @@ Below is a listing of the sample solutions available.  These sample solution fil
 | [Electronic Signature PDF Flow](demos/pdf-electronic-signatures/README.md) | :heavy_check_mark: |  |  |
 | [PII Redaction with Power Automate](demos/pii-redaction/README.md) | :heavy_check_mark: | :heavy_check_mark: |  |
 | [PowerShell Gov Samples](demos/powershell-gov-samples/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Return to the Workplace](demos/return-to-work/README.md) | :heavy_check_mark: | :heavy_check_mark: | |
+| [Return to the Workplace](demos/return-to-work/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [RPA Web Scraping Demo](demos/rpa-amazon-scraper/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [D365 or Model-Driven Power Apps & Teams Click-To-Dial](demos/d365-click-to-dial-teams/README.md) | :heavy_check_mark: | | |
 

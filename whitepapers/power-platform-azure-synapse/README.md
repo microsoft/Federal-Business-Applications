@@ -96,10 +96,10 @@ Click on the Azure Synapse Link menu item
 
 ![Azure Synapse Menu Item](files/AzureSynapseMenuItem.png)
 
-Add the following query string ```?athena.advancedSetup=true``` to the end of the URL and load the page.  For example,
+Add the following query string ```?athena.advancedSetup=true``` to configure cross Tenant setup and ```&athena.synapse=true``` for Azure Synapse Analytics integration the end of the URL and load the page.  For example,
 
 ```
-https://make.gov.powerapps.us/environments/aaaaaa-xxx-4442-8f7e-229b080exxx/exporttodatalake?athena.advancedSetup=true
+https://make.gov.powerapps.us/environments/aaaaaa-xxx-4442-8f7e-229b080exxx/exporttodatalake?athena.advancedSetup=true&athena.synapse=true
 ```
 
 Click on "New link to data lake"
@@ -108,7 +108,7 @@ Click on "New link to data lake"
 
 Fill out the following fields,
 
-![Azure Synapse Form Input](files/GovStorageOptions.png)
+![Azure Synapse Form Input](files/GovStorageOptionsTenantSynapse.png)
 
 Select next.  Choose the Dataverse tables you want to sync and finish the setup.
 

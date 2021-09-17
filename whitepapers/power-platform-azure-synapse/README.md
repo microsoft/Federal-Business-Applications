@@ -72,6 +72,8 @@ Use the PowerShell script below in your Azure for Government subscription to pro
 Connect-AzAccount -Environment AzureUSGovernment 
 
 # Provision the "Export to data lake" Service Principal account
+# This Application ID needs to be hard coded to the exact GUID below
+# Once you create the Service Principal, the name will show up as "Export to data lake"
 New-AzADServicePrincipal -ApplicationId '7f15f9d9-cad0-44f1-bbba-d36650e07765' 
 ```
 

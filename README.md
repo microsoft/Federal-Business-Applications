@@ -20,6 +20,7 @@ Below is a listing of the sample solutions available.  These sample solution fil
 | [Return to the Workplace](demos/return-to-work/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [RPA Web Scraping Demo](demos/rpa-amazon-scraper/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [D365 or Model-Driven Power Apps & Teams Click-To-Dial](demos/d365-click-to-dial-teams/README.md) | :heavy_check_mark: | | |
+| [Vaccine Attestation](https://github.com/microsoft/mwx-teams-vaccine-attestation) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 
 ## Whitepapers
 

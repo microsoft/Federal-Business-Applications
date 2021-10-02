@@ -15,7 +15,7 @@ https://docs.microsoft.com/en-us/connectors/cognitiveservicescomputervision/
 ## Power Automate Flow
 In order to response to a button action in Power Apps, I created a Power Automate Flow that takes input parameters from a Power Apps Canvas app.  The Flow looks like this,
 
-![Flow Overview](files/computer-vision-flow-overview.JPG)
+![Flow Overview](files/computer-vision-flow-overview.png)
 
 ## Power Apps Canvas App
 This app leverages the Power Apps camera control which is built into the platform.  It also takes advantage of calling  Power Automate Flow from a Canvas app to pass an image to the Azure Computer Vision API.
@@ -25,7 +25,7 @@ The end result is a blurb of the Computer Vision API's caption of how it interpr
 ## Sample Solution
 The sample solution file for this demo can be found below,
 
-[Computer Vision Sample Solution](files/ComputerVisionGCC_1_0_0_6.zip)
+[Computer Vision Sample Solution](files/ComputerVisionGCC_1_0_0_7.zip)
 
 To get this up and running in your environment follow the steps below.
 

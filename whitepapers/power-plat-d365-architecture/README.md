@@ -6,6 +6,10 @@
 * [Power Apps US Government Docs](https://docs.microsoft.com/en-us/power-platform/admin/powerapps-us-government)
 * [D365 US Government Docs](https://docs.microsoft.com/en-us/power-platform/admin/microsoft-dynamics-365-government)
 
+## US Government Feature Parity Documentation
+
+[US Government Power Platform / D365 Feature Matrix](https://aka.ms/BAPFunctionalParity)
+
 ## US Government Cloud Video Recordings
 Below is a presentation recording covering US Gov Cloud specific architecture of Power Platform and D365 at a Meetup group talk.  The video recording can be found below,
 

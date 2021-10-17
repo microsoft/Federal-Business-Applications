@@ -13,13 +13,14 @@ Below is a listing of the sample solutions available.  These sample solution fil
 | [AI Builder Drivers License Canvas App](demos/ai-builder-drivers-license/README.md) | :heavy_check_mark: | :heavy_check_mark: | |
 | [AI Builder Form Processing + RPA](demos/ai-builder-form-processing-rpa/README.md) | :heavy_check_mark: | :heavy_check_mark: | |
 | [Azure Computer Vision Canvas App](demos/azure-computer-vision/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [D365 Fraud Protection](demos/d365-fraud-protection/d365-fraud-protection.pdf) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [D365 or Model-Driven Power Apps & Teams Click-To-Dial](demos/d365-click-to-dial-teams/README.md) | :heavy_check_mark: | | |
 | [Electronic Signature Canvas App](demos/electronic-signatures/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Electronic Signature PDF Flow](demos/pdf-electronic-signatures/README.md) | :heavy_check_mark: |  |  |
 | [PII Redaction with Power Automate](demos/pii-redaction/README.md) | :heavy_check_mark: | :heavy_check_mark: |  |
 | [PowerShell Gov Samples](demos/powershell-gov-samples/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Return to the Workplace](demos/return-to-work/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [RPA Web Scraping Demo](demos/rpa-amazon-scraper/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [D365 or Model-Driven Power Apps & Teams Click-To-Dial](demos/d365-click-to-dial-teams/README.md) | :heavy_check_mark: | | |
 | [Vaccine Attestation](https://github.com/microsoft/mwx-teams-vaccine-attestation) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 
 ## Whitepapers

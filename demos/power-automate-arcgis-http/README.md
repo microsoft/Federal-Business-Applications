@@ -24,3 +24,5 @@ To complete the second section, you will need to have a registered Application i
 
 ### Create a Table to Store Data
 We will query the service for information about trails.  To store this information, create an Table called ArcGIS in Dataverse with the custom fields below.  Note that the Primary Name field should be TRL_NAME:
+
+![Dataverse Fields](files/image1.png)

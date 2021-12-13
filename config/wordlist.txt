@@ -28,6 +28,7 @@ JSON
 MSOnline
 namespace
 OData
+Omnichannel
 OneDrive
 PDF
 PDF's

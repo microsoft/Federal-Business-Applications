@@ -37,4 +37,10 @@ We will query the service for information about trails.  To store this informati
 
 ## Step by Step Example  
 
-1.	To obtain an OAUTH 2.0 token, you will need the Client ID and Client Secret for your Application.  These can be found on your Application’s Dashboard Overview page as shown in the screenshot below. 
+1.	To obtain an OAUTH 2.0 token, you will need the Client ID and Client Secret for your Application.  These can be found in the OAUTH 2.0 area of your Dashboard as shown in the screenshot below. 
+
+![ArcGIS Application](files/2.png)
+
+2.	In the Power Apps Maker portal, create a new Instant Cloud Flow. 
+
+![Instant Cloud Flow](files/3.png)

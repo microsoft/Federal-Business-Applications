@@ -46,6 +46,12 @@ Below are whitepapers that have been created specifically for use in the US Gove
 * [Power BI Visuals Download Tool](whitepapers/power-bi-visuals-download/README.md)
 * [A Guide to Power BI Embedding within Government Community Clouds (GCC)](whitepapers/power-bi-embedding-gcc/README.md)
 
+## Webinar Series
+
+We recently launched a new Federal Business Applications webinar series.  Past recordings and future session details can be found below,
+
+[Federal Business Applications Webinar Sessions](whitepapers/webinar-series/README.md)
+
 ## Training Resources
 
 ### Power Apps / Power Automate

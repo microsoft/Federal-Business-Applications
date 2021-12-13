@@ -34,3 +34,7 @@ We will query the service for information about trails.  To store this informati
 | PARK_NAME | Text |
 
 ![Dataverse Fields](files/1.png)
+
+## Step by Step Example  
+
+1.	To obtain an OAUTH 2.0 token, you will need the Client ID and Client Secret for your Application.  These can be found on your Application’s Dashboard Overview page as shown in the screenshot below. 

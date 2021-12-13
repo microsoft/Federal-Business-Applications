@@ -33,4 +33,4 @@ We will query the service for information about trails.  To store this informati
 | FID | Whole Number |
 | PARK_NAME | Text |
 
-![Dataverse Fields](files/Picture1.png)
+![Dataverse Fields](files/1.png)

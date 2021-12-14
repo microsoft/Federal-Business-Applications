@@ -6,10 +6,10 @@ This document will describe one method of using Microsoft Power Automate to quer
 
 The document describes the process in three parts.
 #### Obtain an OAUTH 2.0 authentication token from the ArcGIS web service.  
-An OAUTH 2.0 token is required to access secured ArcGIS resources.  As of this writing, the default lifespan of the ArcGIS OAUTH 2.0 tokens is two hours with a configurable maximum lifespan of two weeks.  In order to make sure our flow has a valid token, we will ensure that the flow obtains a new token automatically each time it runs.  The API calls for this part of the process are outlined in the [ArcGIS OAUTH documentation](https://developers.arcgis.com/documentation/mapping-apis-and-services/security/oauth-2.0/).
+An OAUTH 2.0 token is required to access secured ArcGIS resources.  As of this writing, the default lifespan of the ArcGIS OAUTH 2.0 tokens is two hours with a configurable maximum lifespan of two weeks.  In order to make sure our flow has a valid token, we will configure the flow to obtain a new token automatically each time it runs.  The API calls for this part of the process are outlined in the [ArcGIS OAUTH documentation](https://developers.arcgis.com/documentation/mapping-apis-and-services/security/oauth-2.0/).
 
 #### Connect to the Feature Service and query Feature attributes.  
-We will connect to the ArcGIS Feature Service sample endpoint and return an array of Features.  For each Feature, we will return the following attributes:  TRL_NAME, ELEV_FT, CITY_JUR, PARK_NAME, and FID, and load them into a Dataverse Table.  The API calls for this part of the process are outlined in the [ArcGIS Feature Layer API Documentation](https://developers.arcgis.com/labs/rest/query-a-feature-layer/).
+We will connect to the ArcGIS Feature Service sample endpoint and return an array of Trails.  For each Trail, we will return the following attributes:  TRL_NAME, TRL_ID, LENGTH_FT, USE_BIKE, and USE_HIKE, and load them into a Dataverse Table.  The API calls for this part of the process are outlined in the [ArcGIS Feature Layer API Documentation](https://developers.arcgis.com/labs/rest/query-a-feature-layer/).
 
 #### Load Epoch data Types from ArcGIS into the Common Data Service.
 The ArcGIS Feature Service can return dates in Epoch format (number of milliseconds since 1/1/1970).  [Epoch format details](https://en.wikipedia.org/wiki/Unix_time).  These data types may need to be converted before being loaded into a Dataverse Table.  This document will discuss strategies for loading Epoch data types.
@@ -28,10 +28,10 @@ We will query the service for information about trails.  To store this informati
 | Field Name | Data Type |
 | --------- | :---: |
 | TRL_NAME | Text |
-| CITY_JUR | Text |
-| ELEV_FT | Whole Number |
-| FID | Whole Number |
-| PARK_NAME | Text |
+| LENGTH_FT | Whole Number |
+| TRL_ID | Whole Number |
+| USE_BIKE | Text |
+| USE_HIKE | Text |
 
 ![Dataverse Fields](files/1.png)
 

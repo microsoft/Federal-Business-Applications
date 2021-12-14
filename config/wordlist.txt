@@ -5,6 +5,7 @@ API
 APIs
 API's
 AppSource
+ArcGIS
 ATO
 bolded
 CLA
@@ -21,12 +22,14 @@ dropdown
 Dynamics
 GCC
 GCCH
+GIS
 GUID
 IAM
 iFrame
 JSON
 MSOnline
 namespace
+OAUTH
 OData
 Omnichannel
 OneDrive

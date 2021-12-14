@@ -117,9 +117,11 @@ a.	Make sure the value isn’t null.
 
 b.	Divide the epoch date by 1000 to get number of seconds since 1/1/1970.
 
-c.	Use the **addseconds** function to add the result to 1/1/1970.
+c.	Use the ```addseconds``` function to add the result to 1/1/1970.
 
 
 As an example, if we are using the flow from this document to return an epoch date/time field called **GIS_DATE**, we can use the following formula to convert the data type.
 
-**if(equals(items('Apply_to_each')?['attributes']?[‘GIS_DATE’],null),null,addseconds('1970-1-1', Div(items('Apply_to_each')?['attributes']?[‘GIS_DATE’],1000) , 'yyyy-MM-dd hh:mm:ss tt'))**
+```
+if(equals(items('Apply_to_each')?['attributes']?[‘GIS_DATE’],null),null,addseconds('1970-1-1', Div(items('Apply_to_each')?['attributes']?[‘GIS_DATE’],1000) , 'yyyy-MM-dd hh:mm:ss tt'))
+```

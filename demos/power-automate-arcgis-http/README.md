@@ -109,12 +109,16 @@ We will query the service for information about trails.  To store this informati
 
 ![Dataverse Data](files/12.png)
 
-##Epoch Data Types
+## Epoch Data Types
 
 ArcGIS stores some date/time date fields as Unix epoch data types.  These are expressed as an integer representing the number of milliseconds since January 1, 1970.  For example, the value **1546096196000** would equate to **2018-12-29 03:09:56 PM**.  To load these fields into CDS as date/time data types, we must convert them using the following method.
+
 a.	Make sure the value isn’t null.
+
 b.	Divide the epoch date by 1000 to get number of seconds since 1/1/1970.
+
 c.	Use the **addseconds** function to add the result to 1/1/1970.
+
 
 As an example, if we are using the flow from this document to return an epoch date/time field called **GIS_DATE**, we can use the following formula to convert the data type.
 

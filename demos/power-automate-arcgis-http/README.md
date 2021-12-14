@@ -6,7 +6,7 @@ This document will describe one method of using Microsoft Power Automate to quer
 
 The document describes the process in three parts.
 #### Obtain an OAUTH 2.0 authentication token from the ArcGIS web service.  
-An OAUTH 2.0 token is required to access secured ArcGIS resources.  As of this writing, the default lifespan of the ArcGIS OAUTH 2.0 tokens is two hours with a configurable maximum lifespan of two weeks.  In order to make sure our flow has a valid token, we will ensure that the flow obtains a new token automatically each time it runs.  The API calls for this part of the process are outlined in the [ArcGIS Token API documentation](https://developers.arcgis.com/labs/rest/get-an-access-token/).
+An OAUTH 2.0 token is required to access secured ArcGIS resources.  As of this writing, the default lifespan of the ArcGIS OAUTH 2.0 tokens is two hours with a configurable maximum lifespan of two weeks.  In order to make sure our flow has a valid token, we will ensure that the flow obtains a new token automatically each time it runs.  The API calls for this part of the process are outlined in the [ArcGIS OAUTH documentation](https://developers.arcgis.com/documentation/mapping-apis-and-services/security/oauth-2.0/).
 
 #### Connect to the Feature Service and query Feature attributes.  
 We will connect to the ArcGIS Feature Service sample endpoint and return an array of Features.  For each Feature, we will return the following attributes:  TRL_NAME, ELEV_FT, CITY_JUR, PARK_NAME, and FID, and load them into a Dataverse Table.  The API calls for this part of the process are outlined in the [ArcGIS Feature Layer API Documentation](https://developers.arcgis.com/labs/rest/query-a-feature-layer/).
@@ -44,3 +44,46 @@ We will query the service for information about trails.  To store this informati
 2.	In the Power Apps Maker portal, create a new Instant Cloud Flow. 
 
 ![Instant Cloud Flow](files/3.png)
+
+3.	Name the Flow ArcGIS Sample and set the trigger to Manually trigger a flow. 
+
+![Cloud Flow Settings](files/4.png)
+
+4.	Add an HTTP action and configure it as shown below, using your Client ID and Client Secret from Step 1.  We will set the expiration parameter to 21600.  This will return a token with a six-hour lifespan. 
+
+| Field Name | Value |
+| --------- | :---: |
+| Method | POST |
+| URL | https://www.arcgis.com/sharing/rest/oauth2/token/ |
+| client_id | YOUR_CLIENT_ID_HERE |
+| client_secret | YOUR_CLIENT_SECRET_HERE |
+| grant_type | client_credentials |
+| expiration | 21600 |
+
+![HTTP Details](files/5.png)
+
+5.	Save and Test the flow.  Inspect the OUTPUTS area of the HTTP action and ensure the Status code is 200 and the Body contains an access_token as shown below. 
+
+![HTTP Output](files/6.png)
+
+6.	Add another HTTP Action to the flow and configure it with the parameters shown below.    We will set the where parameter to filter the rows and return a subset of the data.  To pass the token we received in the previous step, we set the token parameter to the following expression: json(body('HTTP'))?[ 'access_token']. Note that the token is not required to run the sample query but will be required to access secured resources. 
+
+| Field Name | Value |
+| --------- | :---: |
+| Method | POST |
+| URL | https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trails/FeatureServer/0 |
+| content_type | application/x-www-form-urlencoded |
+| f | json |
+| where | TRL_NAME like 'a%' |
+| outSr | 4326 |
+| outFields | * |
+| outSr | 4326 |
+| token | Expression: body('HTTP')?[ 'access_token'] |
+
+![HTTP Output](files/7.png)
+
+7.	Save and Test the flow.  Inspect the OUTPUTS area of the HTTP_2 action and ensure the Status code is 200 and the Body contains the JSON object data as shown below. 
+
+![HTTP 2 Output](files/8.png)
+
+8.	Add an Apply to each action as shown below.  To iterate over each Feature returned by the query, we set the Select an output from previous steps field to the following expression: json(body('HTTP_2'))?['features']. 

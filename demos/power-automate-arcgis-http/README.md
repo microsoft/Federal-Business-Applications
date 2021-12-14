@@ -105,7 +105,7 @@ We will query the service for information about trails.  To store this informati
 
 ![Dataverse Outputs](files/11.png)
 
-11.	To view the new data, select the **All Columns** view in the Table designer.  To load the entire dataset, delete the current records, change the **where** paramter to **1=1** (Step 6), and run the flow again.
+11.	To view the new data, select the **All Columns** view in the Table designer.  To load the entire dataset, delete the current records, change the **where** parameter to **1=1** (Step 6), and run the flow again.
 
 ![Dataverse Data](files/12.png)
 

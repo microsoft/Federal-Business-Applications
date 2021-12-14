@@ -71,7 +71,7 @@ We will query the service for information about trails.  To store this informati
 | Field Name | Value |
 | --------- | :---: |
 | Method | POST |
-| URL | https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trails/FeatureServer/0 |
+| URL | https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trails/FeatureServer/0/query |
 | content_type | application/x-www-form-urlencoded |
 | f | json |
 | where | TRL_NAME like 'a%' |
@@ -87,3 +87,20 @@ We will query the service for information about trails.  To store this informati
 ![HTTP 2 Output](files/8.png)
 
 8.	Add an Apply to each action as shown below.  To iterate over each Feature returned by the query, we set the Select an output from previous steps field to the following expression: json(body('HTTP_2'))?['features']. 
+
+![Apply to Each](files/9.png)
+
+9.	Add a Dataverse – Add a new row action to the Apply to each step as shown below.  Use the following expression syntax for each of the fields.
+
+| Field Name | Expression |
+| --------- | :---: |
+| TRL_NAME | items('Apply_to_each')?['attributes']?['TRL_NAME']  |
+| CITY_JUR | items('Apply_to_each')?['attributes']?['CITY_JUR']  |
+| ELEV_FT | items('Apply_to_each')?['attributes']?['ELEV_FT']  |
+| FID | items('Apply_to_each')?['attributes']?['FID']  |
+| PARK_NAME | items('Apply_to_each')?['attributes']?['PARK_NAME']  |
+
+![Apply to Each](files/10.png)
+
+10.	Save and Test the flow.  Inspect the OUTPUTS area of the first Create a new record action and ensure the attributes are being loaded with data as shown below. 
+

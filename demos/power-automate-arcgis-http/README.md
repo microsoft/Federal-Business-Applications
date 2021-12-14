@@ -17,7 +17,7 @@ The ArcGIS Feature Service can return dates in Epoch format (number of milliseco
 ## Prerequisites
 
 ### ArcGIS Developer Account
-To complete the first section, you will need an ArcGIS Developer account.  If you do not have one, you can create an ArcGIS Developer account at the [ArcGIS Developer Signup Page](https://developers.arcgis.com/sign-up/)
+To complete the first section, you will need an ArcGIS Developer account.  If you do not have one, you can create an ArcGIS Developer account at the [ArcGIS Developer Sign up Page](https://developers.arcgis.com/sign-up/)
 
 ### ArcGIS Application
 To complete the second section, you will need to have a registered Application in ArcGIS.  If you do not have an Application you can create one by following steps 1-4 in the [ArcGIS Documentation](https://developers.arcgis.com/documentation/mapping-apis-and-services/security/tutorials/register-your-application/)

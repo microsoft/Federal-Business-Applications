@@ -77,30 +77,34 @@ We will query the service for information about trails.  To store this informati
 | where | TRL_NAME like 'a%' |
 | outSr | 4326 |
 | outFields | * |
-| outSr | 4326 |
 | token | Expression: body('HTTP')?[ 'access_token'] |
 
 ![HTTP Output](files/7.png)
 
-7.	Save and Test the flow.  Inspect the OUTPUTS area of the HTTP_2 action and ensure the Status code is 200 and the Body contains the JSON object data as shown below. 
+7.	Save and Test the flow.  Inspect the **OUTPUTS** area of the **HTTP_2** action and ensure the **Status code** is **200** and the **Body** contains the JSON object data as shown below. 
 
 ![HTTP 2 Output](files/8.png)
 
-8.	Add an Apply to each action as shown below.  To iterate over each Feature returned by the query, we set the Select an output from previous steps field to the following expression: json(body('HTTP_2'))?['features']. 
+8.	Add an **Apply to each** action as shown below.  To iterate over each Feature returned by the query, we set the **Select an output from previous steps** field to the following expression: body('HTTP_2')?['features']. 
 
 ![Apply to Each](files/9.png)
 
-9.	Add a Dataverse – Add a new row action to the Apply to each step as shown below.  Use the following expression syntax for each of the fields.
+9.	Add a **Dataverse – Add a new row** action to the **Apply to each** step as shown below.  Use the following expression syntax for each of the fields.
 
 | Field Name | Expression |
 | --------- | :---: |
 | TRL_NAME | items('Apply_to_each')?['attributes']?['TRL_NAME']  |
-| CITY_JUR | items('Apply_to_each')?['attributes']?['CITY_JUR']  |
-| ELEV_FT | items('Apply_to_each')?['attributes']?['ELEV_FT']  |
-| FID | items('Apply_to_each')?['attributes']?['FID']  |
-| PARK_NAME | items('Apply_to_each')?['attributes']?['PARK_NAME']  |
+| TRL_ID | items('Apply_to_each')?['attributes']?['TRL_ID']  |
+| TRL_LENGTH | items('Apply_to_each')?['attributes']?['LENGTH_FT']  |
+| USE_BIKE | items('Apply_to_each')?['attributes']?['USE_BIKE']  |
+| USE_HIKE | items('Apply_to_each')?['attributes']?['USE_HIKE']  |
 
-![Apply to Each](files/10.png)
+![Add a new row](files/10.png)
 
-10.	Save and Test the flow.  Inspect the OUTPUTS area of the first Create a new record action and ensure the attributes are being loaded with data as shown below. 
+10.	Save and Test the flow.  Inspect the **OUTPUTS** area of the first **Create a new record** action and ensure the attributes are being loaded with data as shown below. 
 
+![Dataverse Outputs](files/11.png)
+
+11.	To view the new data, select the **All Columns** view in the Table designer.  To load the entire dataset, delete the current records, change the **where** paramter to **1=1** (Step 6), and run the flow again.
+
+![Dataverse Data](files/12.png)

@@ -9,7 +9,7 @@ The document describes the process in three parts.
 An OAUTH 2.0 token is required to access secured ArcGIS resources.  As of this writing, the default lifespan of the ArcGIS OAUTH 2.0 tokens is two hours with a configurable maximum lifespan of two weeks.  In order to make sure our flow has a valid token, we will configure the flow to obtain a new token automatically each time it runs.  The API calls for this part of the process are outlined in the [ArcGIS OAUTH documentation](https://developers.arcgis.com/documentation/mapping-apis-and-services/security/oauth-2.0/).
 
 #### Connect to the Feature Service and query Feature attributes.  
-We will connect to the ArcGIS Feature Service sample endpoint and return an array of Trails.  For each Trail, we will return the following attributes:  TRL_NAME, TRL_ID, LENGTH_FT, USE_BIKE, and USE_HIKE, and load them into a Dataverse Table.  The API calls for this part of the process are outlined in the [ArcGIS Feature Layer API Documentation](https://developers.arcgis.com/rest/services-reference/enterprise/query-feature-service-.htm).
+We will connect to the ArcGIS Feature Service sample endpoint and return an array of Trails.  For each Trail, we will return the following attributes:  TRL_NAME, TRL_ID, LENGTH_FT, USE_BIKE, and USE_HIKE, and load them into a Dataverse Table.  The API calls for this part of the process are outlined in the [ArcGIS Feature Service API Documentation](https://developers.arcgis.com/rest/services-reference/enterprise/query-feature-service-.htm).
 
 #### Load Epoch data Types from ArcGIS into the Common Data Service.
 The ArcGIS Feature Service can return dates in Epoch format (number of milliseconds since 1/1/1970).  [Epoch format details](https://en.wikipedia.org/wiki/Unix_time).  These data types may need to be converted before being loaded into a Dataverse Table.  This document will discuss strategies for loading Epoch data types.
@@ -23,7 +23,7 @@ To complete the first section, you will need an ArcGIS Developer account.  If yo
 To complete the second section, you will need to have a registered Application in ArcGIS.  If you do not have an Application you can create one by following steps 1-4 in the [ArcGIS Documentation](https://developers.arcgis.com/documentation/mapping-apis-and-services/security/tutorials/register-your-application/)
 
 ### Create a Table to Store Data
-We will query the service for information about trails.  To store this information, create an Table called ArcGIS in Dataverse with the custom fields below.  Note that the Primary Name field should be TRL_NAME:
+We will query the service for information about trails.  To store this information, create an Table called **ArcGIS** in Dataverse with the custom fields below.  Note that the **Primary Name** field should be **TRL_NAME**:
 
 | Field Name | Data Type |
 | --------- | :---: |
@@ -37,19 +37,19 @@ We will query the service for information about trails.  To store this informati
 
 ## Step by Step Example  
 
-1.	To obtain an OAUTH 2.0 token, you will need the Client ID and Client Secret for your Application.  These can be found in the OAUTH 2.0 area of your Dashboard as shown in the screenshot below. 
+1.	To obtain an OAUTH 2.0 token, you will need the **Client ID** and **Client Secret** for your Application.  These can be found in the OAUTH 2.0 area of your Dashboard as shown in the screenshot below. 
 
 ![ArcGIS Application](files/2.png)
 
-2.	In the Power Apps Maker portal, create a new Instant Cloud Flow. 
+2.	In the Power Apps Maker portal, create a new **Instant cloud flow**. 
 
 ![Instant Cloud Flow](files/3.png)
 
-3.	Name the Flow ArcGIS Sample and set the trigger to Manually trigger a flow. 
+3.	Name the Flow **ArcGIS Sample** and set the trigger to **Manually trigger a flow**. 
 
 ![Cloud Flow Settings](files/4.png)
 
-4.	Add an HTTP action and configure it as shown below, using your Client ID and Client Secret from Step 1.  We will set the expiration parameter to 21600.  This will return a token with a six-hour lifespan. 
+4.	Add an **HTTP** action and configure it as shown below, using your **Client ID** and **Client Secret** from Step 1.  We will set the **expiration** parameter to **21600**.  This will return a token with a six-hour lifespan. 
 
 | Field Name | Value |
 | --------- | :---: |
@@ -62,11 +62,11 @@ We will query the service for information about trails.  To store this informati
 
 ![HTTP Details](files/5.png)
 
-5.	Save and Test the flow.  Inspect the OUTPUTS area of the HTTP action and ensure the Status code is 200 and the Body contains an access_token as shown below. 
+5.	Save and Test the flow.  Inspect the **OUTPUTS** area of the **HTTP** action and ensure the **Status code** is **200** and the **Body** contains an **access_token** as shown below. 
 
 ![HTTP Output](files/6.png)
 
-6.	Add another HTTP Action to the flow and configure it with the parameters shown below.    We will set the where parameter to filter the rows and return a subset of the data.  To pass the token we received in the previous step, we set the token parameter to the following expression: json(body('HTTP'))?[ 'access_token']. Note that the token is not required to run the sample query but will be required to access secured resources. 
+6.	Add another **HTTP** Action to the flow and configure it with the parameters shown below.    We will set the **where** parameter to filter the rows and return a subset of the data.  To pass the token we received in the previous step, we set the **token** parameter to the following expression: **body('HTTP')?[ 'access_token']**. Note that the token is not required to run the sample query but will be required to access secured resources. 
 
 | Field Name | Value |
 | --------- | :---: |

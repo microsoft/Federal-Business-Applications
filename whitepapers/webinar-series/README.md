@@ -8,4 +8,5 @@ Below we have included all past session recordings, as well as future sessions t
 
 ## Upcoming Sessions
 
-We are currently working to schedule our next event in the January time frame. Stay tuned for more details!
+* [January 26, 2022](https://aka.ms/FedBizAppsWebinar)
+* 	* Topics included: Streamline FOIA requests with Dynamics 365, Power Platform, Azure Cognitive Services and RPA.

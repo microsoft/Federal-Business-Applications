@@ -11,5 +11,5 @@ Below we have included all past session recordings, as well as future sessions t
 
 ## Upcoming Sessions
 
-* February 17, 2022
+* [February 17, 2022 Registration Link](https://aka.ms/FedBizAppsWebinar)
  	* Topics included: Customer Experience

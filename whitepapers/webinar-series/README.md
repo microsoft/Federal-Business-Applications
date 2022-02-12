@@ -4,12 +4,19 @@ Below we have included all past session recordings, as well as future sessions t
 ## Past Sessions
 
 * [December 1, 2021 Session](https://youtu.be/hHyyfl8TiA8)
-	* Topics included: US Government sovereign cloud overview, Access Database migration and AI Builder, and Dynamics 365 Customer Service and Omnichannel
+	* US Government sovereign cloud overview 
+	* Access Database migration 
+	* AI Builder
+	* Dynamics 365 Customer Service and Omnichannel
 
 * [January 26, 2022 Session](https://youtu.be/TqYwKbiEC54)
- 	* Topics included: Streamline FOIA requests with Dynamics 365, Power Platform, Azure Cognitive Services and RPA.
+ 	* Streamlining FOIA requests with Dynamics 365 and Power Platform 
+ 	* Automatic PII redaction with Azure Cognitive Services and RPA
 
 ## Upcoming Sessions
 
 * [February 17, 2022 Registration Link](https://aka.ms/FedBizAppsWebinar)
- 	* Topics included: Customer Experience
+ 	* Customer Experience
+ 	* Power Virtual Agents
+ 	* Power Apps Portals
+ 	* D365 Customer Service

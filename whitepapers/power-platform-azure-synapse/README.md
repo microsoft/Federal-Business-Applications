@@ -55,6 +55,114 @@ If you have an associated Azure Commercial subscription with your tenant, then y
 
 [Azure Synapse Link Setup Documentation](https://docs.microsoft.com/en-us/powerapps/maker/data-platform/azure-synapse-link-synapse)
 
+#### Azure Commercial Advanced Networking Configuration
+If you want to setup your Azure Synapse Workspace and your Azure Storage account to restrict the IP addresses that can access them, you will need to do an additional step to allow Power Platform GCC to access those resources.
+
+When you go to create a new Azure Synapse Link, it will tell you your environment is located in US Gov Virginia, or US Gov Texas.  You will need to download the latest Azure for Government IP Ranges documentation below,
+
+[Azure IP Ranges and Service Tags for Azure for Government](https://www.microsoft.com/download/details.aspx?id=57063)
+
+Next, if you are in the US Gov Virgina region, look for the ```PowerPlatformInfra.USGovVirginia``` service tag.  
+
+````json
+{
+  "name": "PowerPlatformInfra.USGovVirginia",
+  "id": "PowerPlatformInfra.USGovVirginia",
+  "properties": {
+    "changeNumber": 1,
+    "region": "usgovvirginia",
+    "regionId": 42,
+    "platform": "Azure",
+    "systemService": "PowerPlatformInfra",
+    "addressPrefixes": [
+      "52.127.52.124/30",
+      "52.127.53.0/26",
+      "52.127.53.64/27",
+      "52.127.53.96/29",
+      "52.127.53.112/28",
+      "52.127.53.128/25",
+      "52.127.54.0/28",
+      "52.127.55.136/29",
+      "52.127.55.144/29",
+      "52.227.216.40/32",
+      "52.227.228.164/32",
+      "52.227.232.14/32",
+      "52.227.232.88/32",
+      "52.227.232.254/32"
+    ],
+    "networkFeatures": [
+      "API",
+      "NSG",
+      "FW"
+    ]
+  }
+},
+````
+
+If you are in US Gov Texas, look for the ```PowerPlatformInfra.USGovTexas``` service tag.
+
+````json
+{
+    "name": "PowerPlatformInfra.USGovTexas",
+    "id": "PowerPlatformInfra.USGovTexas",
+    "properties": {
+      "changeNumber": 1,
+      "region": "usgovtexas",
+      "regionId": 41,
+      "platform": "Azure",
+      "systemService": "PowerPlatformInfra",
+      "addressPrefixes": [
+        "20.140.59.12/30",
+        "20.140.59.16/28",
+        "20.140.59.32/28",
+        "20.140.59.48/29",
+        "20.140.59.64/26",
+        "20.140.59.128/25",
+        "20.140.60.0/27",
+        "20.140.144.96/28",
+        "52.243.155.223/32",
+        "52.243.156.135/32",
+        "52.243.159.108/32",
+        "52.243.159.166/32",
+        "52.243.159.168/32"
+      ],
+      "networkFeatures": [
+        "API",
+        "NSG",
+        "FW"
+      ]
+    }
+}
+````
+
+Azure Synapse requires a start and end IP address and does not use CIDR.  To easily convert CIDR ranges to start and stop IP addresses, you can use the PowerShell script referenced below,
+
+[CIDR to IP Address Range PowerShell Script](files/CIDRtoIpRange.ps1)
+
+An example of using the ```CIDRtoIpRange.ps1``` script is below,
+
+````powershell
+.\CIDRtoIpRange.ps1 -IPAddressJsonFilePath C:\Misc\ServiceTags_AzureGovernment_20220214.json -ServiceTagName "PowerPlatformInfra.USGovTexas"
+````
+
+The sample output from this command are below,
+
+````
+PowerPlatformInfra.USGovTexas-1 : 20.140.59.13 : 20.140.59.15
+PowerPlatformInfra.USGovTexas-2 : 20.140.59.17 : 20.140.59.31
+PowerPlatformInfra.USGovTexas-3 : 20.140.59.33 : 20.140.59.47
+PowerPlatformInfra.USGovTexas-4 : 20.140.59.49 : 20.140.59.55
+PowerPlatformInfra.USGovTexas-5 : 20.140.59.65 : 20.140.59.127
+PowerPlatformInfra.USGovTexas-6 : 20.140.59.129 : 20.140.59.255
+PowerPlatformInfra.USGovTexas-7 : 20.140.60.1 : 20.140.60.31
+PowerPlatformInfra.USGovTexas-8 : 20.140.144.97 : 20.140.144.111
+PowerPlatformInfra.USGovTexas-9 : 52.243.155.223 : 52.243.155.223
+PowerPlatformInfra.USGovTexas-10 : 52.243.156.135 : 52.243.156.135
+PowerPlatformInfra.USGovTexas-11 : 52.243.159.108 : 52.243.159.108
+PowerPlatformInfra.USGovTexas-12 : 52.243.159.166 : 52.243.159.166
+PowerPlatformInfra.USGovTexas-13 : 52.243.159.168 : 52.243.159.168
+````
+
 ### Azure for Government Subscription
 
 Below is an architecture diagram of how everything is laid out in this setup,

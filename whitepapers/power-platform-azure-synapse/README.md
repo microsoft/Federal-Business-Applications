@@ -142,7 +142,7 @@ Azure Synapse requires a start and end IP address and does not use CIDR.  To eas
 An example of using the ```CIDRtoIpRange.ps1``` script is below,
 
 ````powershell
-.\CIDRtoIpRange.ps1 -IPAddressJsonFilePath C:\Misc\ServiceTags_AzureGovernment_20220214.json -ServiceTagName "PowerPlatformInfra.USGovTexas"
+.\CIDRtoIpRange.ps1 -IPAddressJsonFilePath "C:\Misc\ServiceTags_AzureGovernment_20220214.json" -ServiceTagName "PowerPlatformInfra.USGovTexas"
 ````
 
 The sample output from this command are below,

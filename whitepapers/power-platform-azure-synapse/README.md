@@ -55,7 +55,7 @@ If you have an associated Azure Commercial subscription with your tenant, then y
 
 [Azure Synapse Link Setup Documentation](https://docs.microsoft.com/en-us/powerapps/maker/data-platform/azure-synapse-link-synapse)
 
-#### Azure Commercial Advanced Networking Configuration
+### Azure Commercial Advanced Networking Configuration
 If you want to setup your Azure Synapse Workspace and your Azure Storage account to restrict the IP addresses that can access them, you will need to do an additional step to allow Power Platform GCC to access those resources.
 
 When you go to create a new Azure Synapse Link, it will tell you your environment is located in US Gov Virginia, or US Gov Texas.  You will need to download the latest Azure for Government IP Ranges documentation below,

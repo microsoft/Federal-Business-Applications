@@ -8,6 +8,7 @@ AppSource
 ArcGIS
 ATO
 bolded
+CIDR
 CLA
 Config
 config

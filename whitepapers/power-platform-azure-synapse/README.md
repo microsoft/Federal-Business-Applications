@@ -62,7 +62,7 @@ When you go to create a new Azure Synapse Link, it will tell you your environmen
 
 [Azure IP Ranges and Service Tags for Azure for Government](https://www.microsoft.com/download/details.aspx?id=57063)
 
-Next, if you are in the US Gov Virgina region, look for the ```PowerPlatformInfra.USGovVirginia``` service tag.  
+Next, if you are in the US Gov Virginia region, look for the ```PowerPlatformInfra.USGovVirginia``` service tag.  
 
 ````json
 {

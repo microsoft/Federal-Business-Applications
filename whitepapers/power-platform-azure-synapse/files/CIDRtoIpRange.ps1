@@ -60,6 +60,9 @@ $myJson = Get-Content $IPAddressJsonFilePath -Raw | ConvertFrom-Json
 
 $ranges = $myJson.values | where {$_.id -eq $ServiceTagName}
 
+write-Output "IP Ranges for $ServiceTagName below =>"
+write-Output ""
+
 $count = 1
 
 foreach($range in $ranges.properties.addressPrefixes)
@@ -67,7 +70,39 @@ foreach($range in $ranges.properties.addressPrefixes)
     $start = Get-IPV4NetworkStartIP($range)
     $end = Get-IPV4NetworkEndIP($range)
 
-    Write-Output ($ServiceTagName + "-" + $count + " : " + $start.IPAddressToString + " : " + $end.IPAddressToString)
+    Write-Output ($start.IPAddressToString + " : " + $end.IPAddressToString)
+
+    $count = $count + 1
+}
+
+write-Output ""
+write-Output "Sample Storage Account PowerShell Script =>"
+write-Output ""
+write-Output "`$storageAccountName = `"INSET_NAME_HERE`""
+write-Output "`$resourceGroupName = `"INSET_NAME_HERE`""
+
+foreach($range in $ranges.properties.addressPrefixes)
+{
+    $newRange = $range -replace "/32"
+
+    Write-Output ("Add-AzStorageAccountNetworkRule -ResourceGroupName `$resourceGroupName -Name `$storageAccountName -IPAddressOrRange " + $newRange)
+}
+
+write-Output ""
+write-Output "Sample Azure Synapse PowerShell Script =>"
+write-Output ""
+write-Output "`$synapseWorkspaceName = `"INSET_NAME_HERE`""
+
+$count = 1
+
+foreach($range in $ranges.properties.addressPrefixes)
+{
+    $start = Get-IPV4NetworkStartIP($range)
+    $end = Get-IPV4NetworkEndIP($range)
+
+    $name = ($ServiceTagName + "-" + $count)
+
+    Write-Output ("New-AzSynapseFirewallRule -WorkspaceName `$synapseWorkspaceName -Name $name -StartIpAddress `"$start`" -EndIpAddress `"$end`"")
 
     $count = $count + 1
 }

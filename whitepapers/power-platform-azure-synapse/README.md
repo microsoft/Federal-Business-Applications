@@ -168,8 +168,9 @@ IP Ranges for PowerPlatformInfra.USGovVirginia below =>
 Sample Storage Account PowerShell Script =>
 ````
 ````powershell
-$storageAccountName = "INSET_NAME_HERE"
-$resourceGroupName = "INSET_NAME_HERE"
+$storageAccountName = "INSERT_STORAGE_ACCOUNT_HERE"
+$resourceGroupName = "INSERT_RESOURCE_GROUP_HERE"
+
 Add-AzStorageAccountNetworkRule -ResourceGroupName $resourceGroupName -Name $storageAccountName -IPAddressOrRange 52.127.52.124/30
 Add-AzStorageAccountNetworkRule -ResourceGroupName $resourceGroupName -Name $storageAccountName -IPAddressOrRange 52.127.53.0/26
 Add-AzStorageAccountNetworkRule -ResourceGroupName $resourceGroupName -Name $storageAccountName -IPAddressOrRange 52.127.53.64/27
@@ -189,7 +190,8 @@ Add-AzStorageAccountNetworkRule -ResourceGroupName $resourceGroupName -Name $sto
 Sample Azure Synapse PowerShell Script =>
 ````
 ````powershell
-$synapseWorkspaceName = "INSET_NAME_HERE"
+$synapseWorkspaceName = "INSET_SYNAPSE_WORKSPACE_HERE"
+
 New-AzSynapseFirewallRule -WorkspaceName $synapseWorkspaceName -Name PowerPlatformInfra.USGovVirginia-1 -StartIpAddress "52.127.52.125" -EndIpAddress "52.127.52.127"
 New-AzSynapseFirewallRule -WorkspaceName $synapseWorkspaceName -Name PowerPlatformInfra.USGovVirginia-2 -StartIpAddress "52.127.53.1" -EndIpAddress "52.127.53.63"
 New-AzSynapseFirewallRule -WorkspaceName $synapseWorkspaceName -Name PowerPlatformInfra.USGovVirginia-3 -StartIpAddress "52.127.53.65" -EndIpAddress "52.127.53.95"

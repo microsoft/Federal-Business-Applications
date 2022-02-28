@@ -9,14 +9,19 @@ This application consists of 2 parts:
 ## Story Overview 
 Note: End user only uses front-end app, approvers only use back-end app.
 >1. User submits a grant request
-2. Manager views request, asks user to upload documentation.
-3. User revisits application and uploads documentation.
-4. Manager reviews application and approves 
-5. Move grant through BPF to Funded stage
-6. User submits a Quarterly Report
-7. Manager reviews Quarterly Report
-8. Leadership has visibility across dashboards, grant requests, and quarterly reports submitted by users 
+>2. Manager views request, asks user to upload documentation.
+>3. User revisits application and uploads documentation.
+>4. Manager reviews application and approves 
+>5. Move grant through BPF to Funded stage
+>6. User submits a Quarterly Report
+>7. Manager reviews Quarterly Report
+>8. Leadership has visibility across dashboards, grant requests, and quarterly reports submitted by users 
 
 ## Screenshots
-![overview image](screenshots/model_driven_dashboard)
-![overview image](screenshots/canvas_home.PNG)
+![overview image](screenshots/model_driven_dashboard.png)
+
+![overview image](screenshots/canvas_home.png)
+
+![overview image](screenshots/canvas_submission_funding_scr.png)
+
+![overview image](screenshots/canvas_submission_review.png)

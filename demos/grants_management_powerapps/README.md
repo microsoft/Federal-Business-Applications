@@ -19,20 +19,16 @@ Note: End user only uses front-end app, approvers only use back-end app.
 
 ## Screenshots
 ![overview image](screenshots/model_driven_dashboard.png)
-
 _Back-end Model-driven app dashboard for approvers/leadership._
 
 
 ![overview image](screenshots/canvas_home.png)
-
 _Front-end Canvas app for grant request submissions - Home._
 
 
 ![overview image](screenshots/canvas_submission_funding_scr.png)
-
 _Handheld, step-by-step grant submission process._
 
 
 ![overview image](screenshots/canvas_submission_review.png)
-
 _Submission review with attestation._

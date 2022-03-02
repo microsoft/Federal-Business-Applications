@@ -1,6 +1,6 @@
 # Grants Managements Power App
 
-This demo showcases how PowerApps can be utilized to build an enterprise-scale grants management system. 
+This demo showcases how Power Apps can be utilized to build an enterprise-scale grants management system. 
 
 This application consists of 2 parts: 
 1. Front end Canvas app that allows users to submit and edit grant requests.

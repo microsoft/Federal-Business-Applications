@@ -4,10 +4,12 @@ analytics
 API
 APIs
 API's
+approvers
 AppSource
 ArcGIS
 ATO
 bolded
+BPF
 CIDR
 CLA
 Config

@@ -2,7 +2,9 @@
 Below we have included all past session recordings, as well as future sessions that are planned.  
 
 ## Upcoming Sessions
-* March 22, 2022.  We will get the registration link posted soon.
+* [March 22, 2022 Registration Link](https://aka.ms/FedBizAppsWebinar)
+	* Accessibility
+	* Section 508 compliance
  
  ## Past Sessions
 * [February 17, 2022 Recording](https://youtu.be/OENTM5aiEU0)

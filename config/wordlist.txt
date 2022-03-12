@@ -27,6 +27,7 @@ FOIA
 GCC
 GCCH
 GIS
+govDelivery
 GUID
 IAM
 iFrame

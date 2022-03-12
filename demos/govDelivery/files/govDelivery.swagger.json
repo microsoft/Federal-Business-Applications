@@ -98,18 +98,67 @@
           }
         ]
       }
+    },
+    "/messages/voice": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "summary": "Send Audio Message",
+        "operationId": "SendAudioMessage",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "play_url": {
+                  "type": "string",
+                  "description": "play_url"
+                },
+                "say_text": {
+                  "type": "string",
+                  "description": "say_text"
+                },
+                "recipients": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "phone": {
+                        "type": "string",
+                        "description": "phone"
+                      }
+                    }
+                  },
+                  "description": "recipients"
+                }
+              }
+            }
+          }
+        ]
+      }
     }
   },
   "definitions": {},
   "parameters": {},
   "responses": {},
   "securityDefinitions": {
-    "api_key": {
+    "API Key": {
       "type": "apiKey",
       "in": "header",
       "name": "X-AUTH-TOKEN"
     }
   },
-  "security": [],
+  "security": [
+    {
+      "API Key": []
+    }
+  ],
   "tags": []
 }

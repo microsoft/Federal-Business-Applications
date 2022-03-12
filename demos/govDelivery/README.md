@@ -1,5 +1,9 @@
 # govDelivery Custom Connector
-This sample shows how easy it is to get started using govDelivery with Power Platform.  To get started you will need to have a govDelivery account and also an API key.  Details on govDelivery's APIs can be found below,
+This sample shows how to easily consume govDelivery APIs to send SMS text messages and email notifications to citizens.  We have also provided a sample custom connector that streamlines the process to get started and building Power Automate Flows with govDelivery.
+
+![Sample Flow](files/sample-flow.jpg)
+
+To get started, you will need a govDelivery account and an API key to connect to their APIs.  Details on govDelivery's APIs can be found below,
 
 [govDelivery API Docs](https://developer.govdelivery.com/api/tms/overview/Setup/)
 

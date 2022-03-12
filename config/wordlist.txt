@@ -28,6 +28,7 @@ GCC
 GCCH
 GIS
 govDelivery
+govDelivery's
 GUID
 IAM
 iFrame
@@ -38,6 +39,7 @@ OAUTH
 OData
 Omnichannel
 OneDrive
+OpenAPI
 PDF
 PDF's
 PII
@@ -46,6 +48,7 @@ prebuilt
 programmatically
 RPA
 SaaS
+SMS
 SPO
 subfolder
 textbox

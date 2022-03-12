@@ -8,9 +8,7 @@ To get started, you will need a govDelivery account and an API key to connect to
 [govDelivery API Docs](https://developer.govdelivery.com/api/tms/overview/Setup/)
 
 ## Installing the Custom Connector
-We have created a sample custom connector to make it incredibly easy to get started with govDelivery.
-
-To install the custom connector, download the following swagger OpenAPI connection file,
+To install the sample custom connector, download the following swagger OpenAPI connection file,
 
 [govDelivery Swagger Definition File](files/govDelivery.swagger.json)
 

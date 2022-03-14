@@ -1,13 +1,17 @@
 # govDelivery Custom Connector
 This sample shows how to easily consume govDelivery APIs to send SMS text messages and email notifications to citizens.  We have also provided a sample custom connector that streamlines the process to get started and building Power Automate Flows with govDelivery.
 
+![govDelivery Custom Connector Overivew](files/govDeliveryCustomConnectorOverview.jpg)
+
+Sample Power Automate Flow below using the custom connector,
+
 ![Sample Flow](files/sample-flow.jpg)
 
+## Installing the Custom Connector
 To get started, you will need a govDelivery account and an API key to connect to their APIs.  Details on govDelivery's APIs can be found below,
 
 [govDelivery API Docs](https://developer.govdelivery.com/api/tms/overview/Setup/)
 
-## Installing the Custom Connector
 To install the sample custom connector, download the following swagger OpenAPI connection file,
 
 [govDelivery Swagger Definition File](files/govDelivery.swagger.json)

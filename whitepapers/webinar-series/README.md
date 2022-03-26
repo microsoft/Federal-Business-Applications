@@ -6,7 +6,7 @@ Below we have included all past session recordings, as well as future sessions t
 	* Power Platform for Developers
  
  ## Past Sessions
-* [March 22, 2022 Registration Link](https://youtu.be/ZlbyuP12zr4)
+* [March 22, 2022 Recording](https://youtu.be/ZlbyuP12zr4)
 	* Accessibility
 	* Section 508 compliance
 

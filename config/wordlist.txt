@@ -19,6 +19,7 @@ dataset
 datasets
 dataset's
 Dataverse
+DevOps
 DOD
 DoD
 dropdown

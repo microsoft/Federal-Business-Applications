@@ -5,7 +5,7 @@ Below we have included all past session recordings, as well as future sessions t
 * May 2022: Date and session TBD.
  
  ## Past Sessions
-* [Apirl 20, 2022 Recording](https://youtu.be/YgR0njqMxnU)
+* [April 20, 2022 Recording](https://youtu.be/YgR0njqMxnU)
 	* Power Platform for Developers
  
 * [March 22, 2022 Recording](https://youtu.be/ZlbyuP12zr4)

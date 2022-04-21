@@ -2,10 +2,12 @@
 Below we have included all past session recordings, as well as future sessions that are planned.  
 
 ## Upcoming Sessions
-* [April 20, 2022 Registration Link](https://aka.ms/FedBizAppsWebinar)
-	* Power Platform for Developers
+* May 2022: Date and session TBD.
  
  ## Past Sessions
+* [April 20, 2022 Recording](https://youtu.be/YgR0njqMxnU)
+	* Power Platform for Developers
+ 
 * [March 22, 2022 Recording](https://youtu.be/ZlbyuP12zr4)
 	* Accessibility
 	* Section 508 compliance

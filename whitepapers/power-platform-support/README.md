@@ -5,6 +5,10 @@ Details to create a Support ticket can be found below,
 
 https://docs.microsoft.com/en-us/power-platform/admin/get-help-support
 
+## Commercial
+
+https://admin.powerplatform.microsoft.com/
+
 ## GCC
 
 https://gcc.admin.powerplatform.microsoft.us/support

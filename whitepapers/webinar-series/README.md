@@ -4,7 +4,7 @@ Below we have included all past session recordings, as well as future sessions t
 ## Upcoming Sessions
 * May 2022: Date and session TBD.
  
- ## Past Sessions
+## Past Sessions
 * [April 20, 2022 Recording](https://youtu.be/YgR0njqMxnU)
 	* Power Platform for Developers
  
@@ -27,3 +27,8 @@ Below we have included all past session recordings, as well as future sessions t
 	* Access Database migration 
 	* AI Builder
 	* Dynamics 365 Customer Service and Omnichannel
+
+## How we use Teams Webinars
+We published a video on how we leverage Microsoft Teams to run our webinar series.  The link to the video is below,
+
+[Teams Webinar Tips and Tricks](https://youtu.be/Geu3wvoDh6s)

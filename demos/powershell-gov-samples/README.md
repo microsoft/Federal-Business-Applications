@@ -51,7 +51,7 @@ Update-Module -Name AzureAD
 Connect-AzureAD
 
 # Login for GCC High / GCC DoD
-Login-PowerBI -Environment AzureUSGovernment
+Connect-AzureAD -AzureEnvironmentName AzureUSGovernment
 ```
 
 ## MSOnline

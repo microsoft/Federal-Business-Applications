@@ -4,6 +4,7 @@ Below we have included all past session recordings, as well as future sessions t
 ## Upcoming Sessions
 * [May 31, 2022 Registration Link](https://aka.ms/FedBizAppsWebinar)
 	* Power Platform and SAP Integration
+	* [Webinar Notes / Links](20220531/README.md)
  
 ## Past Sessions
 * [April 20, 2022 Recording](https://youtu.be/YgR0njqMxnU)

@@ -2,7 +2,7 @@
 Below we have included all past session recordings, as well as future sessions that are planned.  
 
 ## Upcoming Sessions
-* [June 30, 2022 Registration](https://aka.ms/FedBizAppsWebinar)
+* [June 30, 2022 Registration2](https://aka.ms/FedBizAppsWebinar)
  
 ## Past Sessions
 * [May 31, 2022 Recording](https://youtu.be/Z_oH3E7JJvg)

@@ -11,6 +11,7 @@ Below we have included all past session recordings, as well as future sessions t
 
 * [April 20, 2022 Recording](https://youtu.be/YgR0njqMxnU)
 	* Power Platform for Developers
+	* [Webinar Notes / Links](20220420/README.md)
  
 * [March 22, 2022 Recording](https://youtu.be/ZlbyuP12zr4)
 	* Accessibility

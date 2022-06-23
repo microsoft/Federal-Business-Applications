@@ -19,24 +19,24 @@ namespace PDFLibrary
 
             return Read(path);
         }
-        
+
         //Read a PDF
         public static ImmutableArray<byte> Read(ImmutableString path)
         {
-            return  ImmutableArray.Create<byte>(File.ReadAllBytes(path.Value));
+            return ImmutableArray.Create<byte>(File.ReadAllBytes(path.Value));
         }
 
         //Determine if a file is a PDF
         public static ImmutableBoolean IsPDF(ImmutableArray<byte> file)
         {
 
-                using (var ms = new MemoryStream(file.ToArray()))
+            using (var ms = new MemoryStream(file.ToArray()))
+            {
+                using (var reader = new PdfReader(ms))
                 {
-                    using (var reader = new PdfReader(ms))
-                    {
-                        return new ImmutableBoolean(true);
-                    }
+                    return new ImmutableBoolean(true);
                 }
+            }
 
         }
 
@@ -50,20 +50,20 @@ namespace PDFLibrary
 
 
         //Get field data from a PDF
-        public static ImmutableDictionary<string,string>  GetData(ImmutableArray<byte> pdf)
+        public static ImmutableDictionary<string, string> GetData(ImmutableArray<byte> pdf)
         {
             return getFormFields(pdf).ToDictionary(x => x.Key, x => x.Value.GetValueAsString()).ToImmutableDictionary();
         }
 
         //Set field data in a PDF
-        public static ImmutableArray<byte> SetData(ImmutableArray<PdfField>  fields, ImmutableArray<byte> pdf)
+        public static ImmutableArray<byte> SetData(ImmutableArray<PdfField> fields, ImmutableArray<byte> pdf)
         {
             using (var ms = new MemoryStream())
             {
                 using (var doc = new PdfDocument(new PdfReader(new MemoryStream(pdf.ToArray())), new PdfWriter(ms)))
 
                 {
-                    var form = PdfAcroForm.GetAcroForm(doc,false);
+                    var form = PdfAcroForm.GetAcroForm(doc, false);
                     var formFields = form.GetFormFields();
                     foreach (var field in fields)
                     {
@@ -78,7 +78,7 @@ namespace PDFLibrary
                     }
 
                     doc.Close();
-                    return   ImmutableArray.Create<byte>(ms.ToArray());
+                    return ImmutableArray.Create<byte>(ms.ToArray());
                 }
             }
         }

@@ -2,7 +2,7 @@
 
 Welcome to the US Government Business Applications Demo Repository.  This repository was created to showcase sample solutions that run in the Power Platform and D365 in our various US sovereign government clouds. 
 
-![US Federal Biz Apps Logo](https://repository-images.githubusercontent.com/377017613/29d05bf9-5261-4de1-8faf-f6b131203350)
+![US Federal Biz Apps Logo](https://repository-images.githubusercontent.com/377017613/deaf534a-73aa-4b26-a3e5-a384b8bf158a)
 
 ## Demos
 

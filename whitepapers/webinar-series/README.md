@@ -2,9 +2,12 @@
 Below we have included all past session recordings, as well as future sessions that are planned.  
 
 ## Upcoming Sessions
-* [June 30, 2022 Registration](https://aka.ms/FedBizAppsWebinar)
+* August 11, 2022:  Registration Coming Soon!
  
 ## Past Sessions
+* [June 30, 2022 Recording](https://youtu.be/GwgTNn4ChlQ)
+	* Voices from the Field:  Power Platform at the CBP
+	
 * [May 31, 2022 Recording](https://youtu.be/Z_oH3E7JJvg)
 	* Power Platform and SAP Integration
 	* [Webinar Notes / Links](20220531/README.md)

@@ -2,7 +2,7 @@
 Below we have included all past session recordings, as well as future sessions that are planned.  
 
 ## Upcoming Sessions
-* August 11, 2022:  Registration Coming Soon!
+* [August 11, 2022 - One Microsoft:  Nuance](https://aka.ms/FedBizAppsWebinar)
  
 ## Past Sessions
 * [June 30, 2022 Recording](https://youtu.be/GwgTNn4ChlQ)

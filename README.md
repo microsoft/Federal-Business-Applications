@@ -56,6 +56,10 @@ We recently launched a new Federal Business Applications webinar series.  Past r
 
 [Federal Business Applications Webinar Sessions](whitepapers/webinar-series/README.md)
 
+## Federal Forums
+
+* [Federal App Makers Forum](https://powerusers.microsoft.com/t5/GCC-GCCH-DoD-Federal-App-Makers/Welcome-you-to-the-GCC-GCCH-DoD-Federal-App-Makers-FAM-community/m-p/1729627#M1)
+
 ## Training Resources
 
 ### Power Apps / Power Automate

@@ -2,9 +2,12 @@
 Below we have included all past session recordings, as well as future sessions that are planned.  
 
 ## Upcoming Sessions
-* [August 11, 2022 - One Microsoft:  Nuance](https://aka.ms/FedBizAppsWebinar)
+Stay Tuned!
  
 ## Past Sessions
+* [August 11, 2022 Recording](https://youtu.be/LGVkCga8kO8)
+	* One Microsoft:  Nuance
+
 * [June 30, 2022 Recording](https://youtu.be/GwgTNn4ChlQ)
 	* Voices from the Field:  Power Platform at the CBP
 	

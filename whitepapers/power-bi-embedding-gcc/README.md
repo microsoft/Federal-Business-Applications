@@ -750,7 +750,7 @@ for the steps.
 `  <ServicePrincipal>
     <!-- Note: Do NOT leave your app secret on code. Save it in secure place. -->
     <add key="applicationSecret" value="xxxxxxx" />
-    <add key="tenant" value="e95f1b23-abaf-45ee-821d-b7ab251ab3bf" />
+    <add key="tenant" value="xxxxxxx" />
   </ServicePrincipal>`
 
 -   Get the app id, workspace id and report id.

@@ -65,3 +65,4 @@ whitepaper
 Whitepapers
 whitepapers
 workspaces
+Hyperautomation

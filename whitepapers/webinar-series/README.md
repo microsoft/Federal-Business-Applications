@@ -2,10 +2,14 @@
 Below we have included all past session recordings, as well as future sessions that are planned.  
 
 ## Upcoming Sessions
-* [September 29, 2022 Fed BizApps Webinar](https://aka.ms/fedbizappswebinar)
-	* Join us to learn about Microsoft's Hyper-Automation Story! Register via the link above.
+
+* Check back soon!
  
 ## Past Sessions
+* [September 29, 2022 Recording](https://youtu.be/q-ms1kKSAvo)
+	* Microsoft:  Hyperautomation
+	* [Webinar Notes / Links](20220929)
+
 * [August 11, 2022 Recording](https://youtu.be/LGVkCga8kO8)
 	* One Microsoft:  Nuance
 

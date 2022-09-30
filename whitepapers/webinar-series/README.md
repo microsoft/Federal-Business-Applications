@@ -8,6 +8,7 @@ Below we have included all past session recordings, as well as future sessions t
 ## Past Sessions
 * [September 29, 2022 Recording](https://youtu.be/q-ms1kKSAvo)
 	* Microsoft:  Hyperautomation
+	* [Webinar Notes / Links](20220929/Readme.md)
 
 * [August 11, 2022 Recording](https://youtu.be/LGVkCga8kO8)
 	* One Microsoft:  Nuance

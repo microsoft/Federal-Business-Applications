@@ -194,7 +194,7 @@ Connect-EXOPSSession -UserPrincipalName $upn -ConnectionUri https://webmail.apps
 ## Teams
 https://docs.microsoft.com/en-us/powershell/module/teams/connect-microsoftteams?view=teams-ps
 
-If you have not already done so, install the Power BI Admin module for PowerShell.  Note that you need to run this as an administrator.
+If you have not already done so, install the Microsoft Teams PowerShell module.  Note that you need to run this as an administrator.
 
 ```powershell
 Install-Module -Name MicrosoftTeams

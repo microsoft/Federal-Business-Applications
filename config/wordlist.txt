@@ -29,6 +29,7 @@ DoD
 dropdown
 Dynamics
 Ebook
+executeQueries
 FOIA
 GCC
 GCCH
@@ -41,6 +42,8 @@ iFrame
 JSON
 MSOnline
 namespace
+NetImpact
+OAuth
 OAUTH
 OData
 Omnichannel
@@ -54,11 +57,13 @@ prebuilt
 programmatically
 RPA
 SaaS
+SDK
 SMS
 SPO
 subfolder
 TBD
 textbox
+th
 UI
 Valter
 whitepaper

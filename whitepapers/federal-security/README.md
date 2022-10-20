@@ -41,7 +41,7 @@ For internal Agency use of Power Platform and D365, our services leverage the se
 
 We recommend using Azure Front Door with Power Pages to support CISA TIC requirements.  Some of the benefits you get when using Azure Front Door with Power Pages are below,
 
-* Support IPv6 traffic
+* Support ````IPv6```` traffic
 * Built in Web Application Firewall (WAF)
 * Content Delivery Network (CDN) of static content in Power Pages
 * Restrict Power Pages traffic to only coming through Azure Front Door

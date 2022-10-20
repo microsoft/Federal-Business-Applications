@@ -1,12 +1,6 @@
 # Federal Security Resources for Microsoft Business Applications
 The goal of this whitepaper is to have a single place to refer for US Federal security and accredidation resources for Power Platform and GCC.
 
-# TIC for Internal Agency Use
-
-# TIC for Public Facing Power Pages (ie Portals)
-
-![Power Pages & Azure Front Door Diagram](images/PowerPages_AzureFrontDoor.jpg)
-
 # FedRAMP Packages
 * [Azure Commercial FedRAMP Package](https://marketplace.fedramp.gov/#!/product/azure-commercial-cloud?sort=productName)
   * Includes only commercial Power Platform and D365 services
@@ -33,3 +27,9 @@ The security baseline recommendations for Power Platform can be found below,
 The security baseline recommendations for Power BI can be found below,
 
 [Microsoft Power BI M365 Minimum Viable Secure Configuration Baseline](https://github.com/cisagov/ScubaGear/blob/main/baselines/powerbi.md)
+
+# TIC for Internal Agency Use
+
+# TIC for Public Facing Power Pages (ie Portals)
+
+![Power Pages & Azure Front Door Diagram](images/PowerPages_AzureFrontDoor.jpg)

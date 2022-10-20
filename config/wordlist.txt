@@ -73,7 +73,9 @@ workspaces
 Hyperautomation
 FedRAMP
 CISA
+CISA's
 CDN
 WAF
 IPv6
 SCuBA
+ExpressRoute

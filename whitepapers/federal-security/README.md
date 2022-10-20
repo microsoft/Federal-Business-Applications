@@ -5,6 +5,8 @@ The goal of this whitepaper is to have a single place to refer for US Federal se
 
 # TIC for Public Facing Power Pages (ie Portals)
 
+![Power Pages & Azure Front Door Diagram](images/PowerPages_AzureFrontDoor.jpg)
+
 # FedRAMP Packages
 * [Azure Commercial FedRAMP Package](https://marketplace.fedramp.gov/#!/product/azure-commercial-cloud?sort=productName)
   * Includes only commercial Power Platform and D365 services

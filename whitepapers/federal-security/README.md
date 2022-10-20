@@ -11,6 +11,9 @@ The goal of this whitepaper is to have a single place to refer for US Federal se
 * [Microsoft Office 365 GCC High](https://marketplace.fedramp.gov/#!/product/microsoft-office-365-gcc-high?sort=productName)
   * Office 365 GCC High
   
+  
+If you need to request any of the actual FedRAMP pacakges from Microsoft, please send a request to azurefedramp@microsoft.com.
+  
  A visual diagram of our FedRAMP packages above for a GCC customer is shown below,
  
  ![FedRAMP Package Diagram](images/FedRAMP_Diagrams.png)
@@ -19,6 +22,10 @@ The goal of this whitepaper is to have a single place to refer for US Federal se
 CISA has published M365 Minimum Viable Secure Configuration Baseline documents for various Microsoft products.  Below is a link to the entire GitHub repository,
 
 [SCuBA M365 Security Baseline Assessment Tool](https://github.com/cisagov/ScubaGear)
+
+CISA's Secure Cloud Business Appliations (SCuBA) official website can be found below,
+
+[CISA SCuBA Official Page](https://www.cisa.gov/scuba)
 
 The security baseline recommendations for Power Platform can be found below,
 
@@ -33,9 +40,9 @@ The security baseline recommendations for Power BI can be found below,
 For internal Agency use of Power Platform and D365, our services leverage the security and auditing capabilities of Microsoft 365.  We have a great blog series that outlines how Microsoft 365 services align to TIC.  The blog links can be found below,
 
 * [Part 1 – Securing Mobile](https://devblogs.microsoft.com/azuregov/securing-mobile-designing-saas-service-implementations-to-meet-federal-tic-policy-1-of-4/)
-* [Part 2 -Securing the Endpoint](https://devblogs.microsoft.com/azuregov/securing-the-endpoint-designing-saas-service-implementations-to-meet-federal-policy-2-of-4/)
-* [Part 3 -Securing the Platform](https://techcommunity.microsoft.com/t5/public-sector-blog/securing-the-platform-designing-saas-service-implementations-to/ba-p/1192088)
-* [Part 4  Auditing and Logging](https://techcommunity.microsoft.com/t5/public-sector-blog/auditing-and-logging-designing-saas-service-implementations-to/ba-p/1550810)
+* [Part 2 - Securing the Endpoint](https://devblogs.microsoft.com/azuregov/securing-the-endpoint-designing-saas-service-implementations-to-meet-federal-policy-2-of-4/)
+* [Part 3 - Securing the Platform](https://techcommunity.microsoft.com/t5/public-sector-blog/securing-the-platform-designing-saas-service-implementations-to/ba-p/1192088)
+* [Part 4 - Auditing and Logging](https://techcommunity.microsoft.com/t5/public-sector-blog/auditing-and-logging-designing-saas-service-implementations-to/ba-p/1550810)
 
 # TIC for Public Facing Power Pages (i.e. Portals)
 

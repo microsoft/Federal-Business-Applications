@@ -1,5 +1,5 @@
 # Federal Security Resources for Microsoft Business Applications
-The goal of this whitepaper is to have a single place to refer for US Federal security and accredidation resources for Power Platform and GCC.
+The goal of this whitepaper is to have a single place to refer for US Federal security and accreditation resources for Power Platform and GCC.
 
 # FedRAMP Packages
 * [Azure Commercial FedRAMP Package](https://marketplace.fedramp.gov/#!/product/azure-commercial-cloud?sort=productName)
@@ -37,7 +37,7 @@ For internal Agency use of Power Platform and D365, our services leverage the se
 * [Part 3 -Securing the Platform](https://techcommunity.microsoft.com/t5/public-sector-blog/securing-the-platform-designing-saas-service-implementations-to/ba-p/1192088)
 * [Part 4  Auditing and Logging](https://techcommunity.microsoft.com/t5/public-sector-blog/auditing-and-logging-designing-saas-service-implementations-to/ba-p/1550810)
 
-# TIC for Public Facing Power Pages (ie Portals)
+# TIC for Public Facing Power Pages (i.e. Portals)
 
 We recommend using Azure Front Door with Power Pages to support CISA TIC requirements.  Some of the benefits you get when using Azure Front Door with Power Pages are below,
 
@@ -46,7 +46,7 @@ We recommend using Azure Front Door with Power Pages to support CISA TIC require
 * Content Delivery Network (CDN) of static content in Power Pages
 * Restrict Power Pages traffic to only coming through Azure Front Door
 
-Below is a great resource on designing a web appliation to use Azure Front Door to meet TIC 3.0 requirements,
+Below is a great resource on designing a web application to use Azure Front Door to meet TIC 3.0 requirements,
 
 [TIC 3.0 Azure Front Door Architecture](https://github.com/haithamshahin333/Federal-App-Innovation-Community/tree/main/topics/infrastructure/solutions/tic3.0/Azure-Front-Door)
 

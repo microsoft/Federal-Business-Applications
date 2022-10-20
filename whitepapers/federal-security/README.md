@@ -30,6 +30,13 @@ The security baseline recommendations for Power BI can be found below,
 
 # TIC for Internal Agency Use
 
+For internal Agency use of Power Platform and D365, our services leverage the security and auditing capabilities of Microsoft 365.  We have a great blog series that outlines how Microsoft 365 services align to TIC.  The blog links can be found below,
+
+* [Part 1 – Securing Mobile](https://devblogs.microsoft.com/azuregov/securing-mobile-designing-saas-service-implementations-to-meet-federal-tic-policy-1-of-4/)
+* [Part 2 -Securing the Endpoint](https://devblogs.microsoft.com/azuregov/securing-the-endpoint-designing-saas-service-implementations-to-meet-federal-policy-2-of-4/)
+* [Part 3 -Securing the Platform](https://techcommunity.microsoft.com/t5/public-sector-blog/securing-the-platform-designing-saas-service-implementations-to/ba-p/1192088)
+* [Part 4  Auditing and Logging](https://techcommunity.microsoft.com/t5/public-sector-blog/auditing-and-logging-designing-saas-service-implementations-to/ba-p/1550810)
+
 # TIC for Public Facing Power Pages (ie Portals)
 
 ![Power Pages & Azure Front Door Diagram](images/PowerPages_AzureFrontDoor.jpg)

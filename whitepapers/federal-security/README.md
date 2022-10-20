@@ -56,4 +56,8 @@ You can easily swap out the web application above with a Power Pages web applica
 
 Below we have great documentation on how to configure a Power Pages Portal with Azure Front Door,
 
-[Set up Azure Front Door with portals documents](https://learn.microsoft.com/en-us/power-apps/maker/portals/azure-front-door)
+[Set up Azure Front Door with portals](https://learn.microsoft.com/en-us/power-apps/maker/portals/azure-front-door)
+
+Lastly, you can also configure diagnostic logs from Power Pages to get sent to an Azure Storage account.
+
+![Configure Diagnostic Logging with Power Pages](images/EnableDiagnosticLogs.png)

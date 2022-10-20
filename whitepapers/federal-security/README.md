@@ -19,21 +19,18 @@ If you need to request any of the actual FedRAMP pacakges from Microsoft, please
  ![FedRAMP Package Diagram](images/FedRAMP_Diagrams.png)
 
 # CISA Recommended Security Baseline
-CISA has published M365 Minimum Viable Secure Configuration Baseline documents for various Microsoft products.  Below is a link to the entire GitHub repository,
-
-[SCuBA M365 Security Baseline Assessment Tool](https://github.com/cisagov/ScubaGear)
-
 CISA's Secure Cloud Business Appliations (SCuBA) official website can be found below,
 
 [CISA SCuBA Official Page](https://www.cisa.gov/scuba)
 
-The security baseline recommendations for Power Platform can be found below,
+CISA has published M365 Minimum Viable Secure Configuration Baseline documents for various Microsoft products.  Below is a link to the entire GitHub repository,
 
-[Microsoft Power Platform M365 Minimum Viable Secure Configuration Baseline](https://github.com/cisagov/ScubaGear/blob/main/baselines/powerplatform.md)
+[SCuBA M365 Security Baseline Assessment Tool](https://github.com/cisagov/ScubaGear)
 
-The security baseline recommendations for Power BI can be found below,
+The security baseline recommendations Power Platform and Power BI can be found below,
 
-[Microsoft Power BI M365 Minimum Viable Secure Configuration Baseline](https://github.com/cisagov/ScubaGear/blob/main/baselines/powerbi.md)
+* [Microsoft Power Platform M365 Minimum Viable Secure Configuration Baseline](https://github.com/cisagov/ScubaGear/blob/main/baselines/powerplatform.md)
+* [Microsoft Power BI M365 Minimum Viable Secure Configuration Baseline](https://github.com/cisagov/ScubaGear/blob/main/baselines/powerbi.md)
 
 # TIC for Internal Agency Use
 

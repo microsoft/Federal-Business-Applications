@@ -39,4 +39,21 @@ For internal Agency use of Power Platform and D365, our services leverage the se
 
 # TIC for Public Facing Power Pages (ie Portals)
 
+We recommend using Azure Front Door with Power Pages to support CISA TIC requirements.  Some of the benefits you get when using Azure Front Door with Power Pages are below,
+
+* Support IPv6 traffic
+* Built in Web Application Firewall (WAF)
+* Content Delivery Network (CDN) of static content in Power Pages
+* Restrict Power Pages traffic to only coming through Azure Front Door
+
+Below is a great resource on designing a web appliation to use Azure Front Door to meet TIC 3.0 requirements,
+
+[TIC 3.0 Azure Front Door Architecture](https://github.com/haithamshahin333/Federal-App-Innovation-Community/tree/main/topics/infrastructure/solutions/tic3.0/Azure-Front-Door)
+
+You can easily swap out the web application above with a Power Pages web application.  That design would look like this,
+
 ![Power Pages & Azure Front Door Diagram](images/PowerPages_AzureFrontDoor.jpg)
+
+Below we have great documentation on how to configure a Power Pages Portal with Azure Front Door,
+
+[Set up Azure Front Door with portals documents](https://learn.microsoft.com/en-us/power-apps/maker/portals/azure-front-door)

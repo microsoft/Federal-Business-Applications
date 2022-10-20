@@ -18,7 +18,7 @@ A visual diagram of our FedRAMP packages above for a GCC customer is shown below
 ![FedRAMP Package Diagram](images/FedRAMP_Diagrams.png)
 
 # CISA Recommended Security Baseline
-CISA's Secure Cloud Business Appliations (SCuBA) official website can be found below,
+CISA's Secure Cloud Business Applications (SCuBA) official website can be found below,
 
 [CISA SCuBA Official Page](https://www.cisa.gov/scuba)
 

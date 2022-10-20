@@ -11,12 +11,11 @@ The goal of this whitepaper is to have a single place to refer for US Federal se
 * [Microsoft Office 365 GCC High](https://marketplace.fedramp.gov/#!/product/microsoft-office-365-gcc-high?sort=productName)
   * Office 365 GCC High
   
-  
 If you need to request any of the actual FedRAMP pacakges from Microsoft, please send a request to azurefedramp@microsoft.com.
   
- A visual diagram of our FedRAMP packages above for a GCC customer is shown below,
+A visual diagram of our FedRAMP packages above for a GCC customer is shown below,
  
- ![FedRAMP Package Diagram](images/FedRAMP_Diagrams.png)
+![FedRAMP Package Diagram](images/FedRAMP_Diagrams.png)
 
 # CISA Recommended Security Baseline
 CISA's Secure Cloud Business Appliations (SCuBA) official website can be found below,
@@ -65,3 +64,21 @@ Below we have great documentation on how to configure a Power Pages Portal with 
 Lastly, you can also configure diagnostic logs from Power Pages to get sent to an Azure Storage account.
 
 ![Configure Diagnostic Logging with Power Pages](images/EnableDiagnosticLogs.png)
+
+# Data Gateway Configuration
+Power Platform's Data Gateway enables you to combine on premise data with your data in the cloud.  
+
+Power Platform Data Gateway leverages the Azure Service Bus Relay service to communicate from the cloud to your on premise infrastructure.  In GCC, GCC High and DOD there is a managed Azure Service Bus Relay namespace that lives in Azure for Government.
+
+If you want to have more control of the networking policies for the Azure Service Bus Relay instnace, we recommend you create your own in Azure for Government.  You can then configure your Power Platform Data Gateway instance to leverage your Azure Service Bus Relay instance in the steps below,
+
+[Configure a Custom Azure Service Bus Relay](https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-azure-relay)
+
+Also, if you are using Azure for Government ExpressRoute and you want the Power Platform Data Gateway to use ExpressRoute, you need to make sure you include the following Azure service tags into your ExpressRoute configuration,
+
+* ServiceBus.USGovTexas
+* ServiceBus.USGovVirginia
+
+You can find the full list of Azure for Government IP Ranges in the following document,
+
+[Azure for Government IP Ranges](https://www.microsoft.com/en-us/download/details.aspx?id=57063)

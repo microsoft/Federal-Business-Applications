@@ -65,19 +65,41 @@ Lastly, you can also configure diagnostic logs from Power Pages to get sent to a
 
 ![Configure Diagnostic Logging with Power Pages](images/EnableDiagnosticLogs.png)
 
+# Power Platform / D365 IP Ranges
+Use the following Azure for Government service tags to get the IP ranges that Power Platform / D365 use for GCC, GCC High and DOD cloud regions.  You can find the full list of Azure for Government IP Ranges in the following document,
+
+[Azure for Government IP Ranges](https://www.microsoft.com/en-us/download/details.aspx?id=57063)
+
+## GCC and GCC High IP Ranges
+* ````AzureCloud.usgovvirginia````
+* ````AzureCloud.usgovtexas````
+
+## DOD IP Ranges
+* ````AzureCloud.usdodcentral````
+* ````AzureCloud.usdodeast````
+
 # Data Gateway Configuration
-Power Platform's Data Gateway enables you to combine on premise data with your data in the cloud.  
+Power Platform's data gateway enables you to combine on premise data with your data in the cloud.  More details on the data gateway can be found in our public docs below,
 
-Power Platform Data Gateway leverages the Azure Service Bus Relay service to communicate from the cloud to your on premise infrastructure.  In GCC, GCC High and DOD there is a managed Azure Service Bus Relay namespace that lives in Azure for Government.
+[On-premises data gateways documentation](https://learn.microsoft.com/en-us/data-integration/gateway/)
 
-If you want to have more control of the networking policies for the Azure Service Bus Relay instance, we recommend you create your own in Azure for Government.  You can then configure your Power Platform Data Gateway instance to leverage your Azure Service Bus Relay instance in the steps below,
+Power Platform data gateway leverages the Azure Service Bus Relay service to communicate from the cloud to your on premise infrastructure.  In GCC, GCC High and DOD there is a managed Azure Service Bus Relay namespace that lives in Azure for Government.
+
+If you want to have more control of the networking policies for the Azure Service Bus Relay instance, we recommend you create your own in Azure for Government.  You can then configure your Power Platform data gateway instance to leverage your Azure Service Bus Relay instance in the steps below,
 
 [Configure a Custom Azure Service Bus Relay](https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-azure-relay)
 
-Also, if you are using Azure for Government ExpressRoute and you want the Power Platform Data Gateway to use ExpressRoute, you need to make sure you include the following Azure service tags into your ExpressRoute configuration,
+Also, if you are using Azure for Government ExpressRoute and you want the Power Platform data gateway to use ExpressRoute, you need to make sure you include the following Azure service tags into your ExpressRoute configuration,
+
+## GCC and GCC High Service Tags
 
 * ````ServiceBus.USGovTexas````
 * ````ServiceBus.USGovVirginia````
+
+## DOD Service Tags
+
+* ````ServiceBus.USDoDCentral````
+* ````ServiceBus.USDoDEast````
 
 You can find the full list of Azure for Government IP Ranges in the following document,
 

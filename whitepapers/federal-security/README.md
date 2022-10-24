@@ -40,6 +40,19 @@ For internal Agency use of Power Platform and D365, our services leverage the se
 * [Part 3 - Securing the Platform](https://techcommunity.microsoft.com/t5/public-sector-blog/securing-the-platform-designing-saas-service-implementations-to/ba-p/1192088)
 * [Part 4 - Auditing and Logging](https://techcommunity.microsoft.com/t5/public-sector-blog/auditing-and-logging-designing-saas-service-implementations-to/ba-p/1550810)
 
+## Power Platform / D365 Auditing
+
+You can view all of the audit logs specific to Power Platform and D365 the same way you would for all other O365 services as described in the blog articles above.  Details on each Power Platform / D365 service and their corresponding auditing types that get logged can be found in our documentation pages below,
+
+* [Power Apps Audit Logs](https://learn.microsoft.com/en-us/power-platform/admin/logging-powerapps)
+* [Power Automate Audit Logs](https://learn.microsoft.com/en-us/power-platform/admin/logging-power-automate)
+* [Data loss prevention (DLP) Audit Logs](https://learn.microsoft.com/en-us/power-platform/admin/dlp-activity-logging)
+* [Dataverse and model-drive apps Audit Logs](https://learn.microsoft.com/en-us/power-platform/admin/enable-use-comprehensive-auditing)
+
+Full details of auditing capabilities inside of Dataverse can be found in the link below,
+
+[Manage Dataverse Auditing](https://learn.microsoft.com/en-us/power-platform/admin/enable-use-comprehensive-auditing)
+
 # TIC for Public Facing Power Pages (i.e. Portals)
 
 We recommend using Azure Front Door with Power Pages to support CISA TIC requirements.  Some of the benefits you get when using Azure Front Door with Power Pages are below,

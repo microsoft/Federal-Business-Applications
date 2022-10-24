@@ -75,9 +75,14 @@ Below we have great documentation on how to configure a Power Pages Portal with 
 
 [Set up Azure Front Door with portals](https://learn.microsoft.com/en-us/power-apps/maker/portals/azure-front-door)
 
-Lastly, you can also configure diagnostic logs from Power Pages to get sent to an Azure Storage account.
+You can also configure diagnostic logs from Power Pages to get sent to an Azure Storage account.
 
 ![Configure Diagnostic Logging with Power Pages](images/EnableDiagnosticLogs.png)
+
+# Power Pages (i.e. Portals) Security Settings
+When designing a Power Page, we highly recommend reviewing the security controls for any public facing website.  Those details can be found in our public documentation below,
+
+[Power Pages Security Controls](https://learn.microsoft.com/en-us/power-pages/security/power-pages-security)
 
 # Power Platform / D365 IP Ranges
 Use the following Azure for Government service tags to get the IP ranges that Power Platform / D365 use for GCC, GCC High and DOD cloud regions.  You can find the full list of Azure for Government IP Ranges in the following document,

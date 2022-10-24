@@ -47,6 +47,7 @@ You can view all of the audit logs specific to Power Platform and D365 the same 
 * [Power Apps Audit Logs](https://learn.microsoft.com/en-us/power-platform/admin/logging-powerapps)
 * [Power Automate Audit Logs](https://learn.microsoft.com/en-us/power-platform/admin/logging-power-automate)
 * [Data loss prevention (DLP) Audit Logs](https://learn.microsoft.com/en-us/power-platform/admin/dlp-activity-logging)
+* [Power Platform Connection Audit Logs](https://learn.microsoft.com/en-us/power-platform/admin/connector-events-power-platform)
 * [Dataverse and model-drive apps Audit Logs](https://learn.microsoft.com/en-us/power-platform/admin/enable-use-comprehensive-auditing)
 
 Full details of auditing capabilities inside of Dataverse can be found in the link below,

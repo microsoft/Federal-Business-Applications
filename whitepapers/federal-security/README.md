@@ -118,6 +118,11 @@ You can then configure your Power Platform data gateway instance to leverage you
 
 Also, if you are using Azure for Government ExpressRoute and you want the Power Platform data gateway to use ExpressRoute, you need to make sure you include the following Azure service tags into your ExpressRoute configuration,
 
+## Data Gateway Ports
+For a full list of the Data Gateway ports and fully qualified domain names (FQDN) that are required to run Data Gateway, please see our public documentation page below.  Be sure to reference the table for GCC, GCC High or DOD for your actual environments configuration details.
+
+* [Power Platform Data Gateway Ports & FQDN Documentation](https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-communication#ports)
+
 ## GCC and GCC High Service Tags
 
 * ````ServiceBus.USGovTexas````

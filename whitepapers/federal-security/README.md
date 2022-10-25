@@ -52,7 +52,9 @@ You can view all of the audit logs specific to Power Platform and D365 the same 
 
 Full details of auditing capabilities inside of Dataverse can be found in the link below,
 
-[Manage Dataverse Auditing](https://learn.microsoft.com/en-us/power-platform/admin/enable-use-comprehensive-auditing)
+* [Manage Dataverse Auditing](https://learn.microsoft.com/en-us/power-platform/admin/enable-use-comprehensive-auditing)
+
+> For GCC only, you will need to use the classic Dynamics 365 settings page to enable audit logs getting sent to the O365 Security and Compliance Center.  From the Power Apps home page, click on Settings (gear icon) > Advanced settings > Settings > Auditing > Global Audit Settings.
 
 # TIC for Public Facing Power Pages (i.e. Portals)
 

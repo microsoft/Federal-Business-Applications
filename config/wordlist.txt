@@ -37,6 +37,7 @@ executeQueries
 ExpressRoute
 FedRAMP
 FOIA
+FQDN
 GCC
 GCCH
 GIS

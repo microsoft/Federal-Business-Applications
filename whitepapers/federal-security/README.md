@@ -61,15 +61,15 @@ Full details of auditing capabilities inside of Dataverse can be found in the li
 ### GCC AAD Application Details
 | Service | AAD Application Name | AAD Application ID |
 | ------- | -------------------- | ------------------ |
-| Power Apps | Microsoft PowerApps | ```` 475226c6-020e-4fb2-8a90-7a972cbfc1d4 ```` |
-| Power Automate | Microsoft Flow | ```` 7df0a125-d3be-4c96-aa54-591f83ff541c ```` |
+| Power Apps | PowerApps Service - GCC | ```` a16afde6-431b-4662-b2b2-e5ee8c05b1f2 ```` |
+| Power Automate | Microsoft Flow Portal GCC | ```` 38a893b6-d74c-4786-8fe7-bc3b4318e881 ```` |
 | Dataverse / Dynamics 365 | Common Data Service | ```` 00000007-0000-0000-c000-000000000000 ```` |
 
 ### GCC High AAD Application Details
 | Service | AAD Application Name | AAD Application ID |
 | ------- | -------------------- | ------------------ |
 | Power Apps | PowerApps Service GCC L4 | ```` 5e0cb1f6-2841-4956-9c76-868bfbc15a39 ```` |
-| Power Automate |  | ````  ```` |
+| Power Automate | Microsoft Flow Portal GCC High | ```` 9856e8dd-37b6-4749-a54b-8f6503ea93b7 ```` |
 | Dataverse / Dynamics 365 | Common Data Service | ```` 00000007-0000-0000-c000-000000000000 ```` |
 
 # TIC for Public Facing Power Pages (i.e. Portals)

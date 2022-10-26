@@ -65,6 +65,13 @@ Full details of auditing capabilities inside of Dataverse can be found in the li
 | Power Automate | Microsoft Flow | ```` 7df0a125-d3be-4c96-aa54-591f83ff541c ```` |
 | Dataverse / Dynamics 365 | Common Data Service | ```` 00000007-0000-0000-c000-000000000000 ```` |
 
+### GCC High AAD Application Details
+| Service | AAD Application Name | AAD Application ID |
+| ------- | -------------------- | ------------------ |
+| Power Apps | PowerApps Service GCC L4 | ```` 5e0cb1f6-2841-4956-9c76-868bfbc15a39 ```` |
+| Power Automate |  | ````  ```` |
+| Dataverse / Dynamics 365 | Common Data Service | ```` 00000007-0000-0000-c000-000000000000 ```` |
+
 # TIC for Public Facing Power Pages (i.e. Portals)
 
 We recommend using Azure Front Door with Power Pages to support CISA TIC requirements.  Some of the benefits you get when using Azure Front Door with Power Pages are below,

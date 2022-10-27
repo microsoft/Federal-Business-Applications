@@ -73,6 +73,9 @@ The sovereign cloud specific AAD applications for conditional access are below,
 | Power Automate | ```` Microsoft Flow Portal GCC High ```` | ```` 9856e8dd-37b6-4749-a54b-8f6503ea93b7 ```` |
 | Dataverse / Dynamics 365 | ```` Common Data Service ```` | ```` 00000007-0000-0000-c000-000000000000 ```` |
 
+
+> At this time (10/27/2022) there is a known issue that the Power Apps and Power Automate services do not show up in Azure for Government's Conditional Access portal.  The work around to use conditional access in GCC High is to create a policy that is enforced for all cloud applications, versus selecting Power Apps and Power Automate individually.  
+
 # TIC for Public Facing Power Pages (i.e. Portals)
 
 We recommend using Azure Front Door with Power Pages to support CISA TIC requirements.  Some of the benefits you get when using Azure Front Door with Power Pages are below,

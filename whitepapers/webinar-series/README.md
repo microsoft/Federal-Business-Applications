@@ -3,10 +3,13 @@ Below we have included all past session recordings, as well as future sessions t
 
 ## Upcoming Sessions
 
-* [October 19, 2022 NetImpact Strategies](https://aka.ms/fedbizappswebinar)
-	* NetImpact Strategies will showcase two software solutions built on top of the Power Platform. 
+* Coming Soon!
+	 
  
 ## Past Sessions
+* [October 19, 2022 Recording](https://youtu.be/U6QEMicjQUI)
+	* NetImpact Strategies - Authority to Operate Accelerator
+	
 * [September 29, 2022 Recording](https://youtu.be/q-ms1kKSAvo)
 	* Microsoft:  Hyperautomation
 	* [Webinar Notes / Links](20220929)

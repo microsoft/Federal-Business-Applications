@@ -82,7 +82,7 @@ Putting this all together, when we create a new Signature entity we now receive 
 ## Setting up the Sample Solution
 Below is the sample solution you can install in your Dataverse environment to test this.  
 
-[Electronic Demo Solution File](files/ElectronicSignatureDemo_1_0_0_6.zip)
+[Electronic Demo Solution File](../electronic-signatures/files/ElectronicSignatureDemo_1_0_0_6.zip)
 
 Once installing the solution you need to run the following steps,
 

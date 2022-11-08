@@ -8,7 +8,7 @@ This solution requires using a premium license of Power Apps (i.e. not the seede
 ## Sample Solution File
 You can download the sample solution for this here to play around with yourself in Power Apps!
 
-[Electronic Demo Solution File](files/ElectronicSignatureDemo_1_0_0_6.zip)
+[Electronic Demo Solution File](files/ElectronicSignatureDemo_1_0_0_7.zip)
 
 Details on importing solution files can be found on our online docs below,
 

@@ -3,8 +3,9 @@ Below we have included all past session recordings, as well as future sessions t
 
 ## Upcoming Sessions
 
-* Coming Soon!
-	 
+* [December 8, 2022 Registration Link](https://msit.events.teams.microsoft.com/event/2ae0638e-3b6e-4d27-8f4c-a9b0af560cb5@72f988bf-86f1-41af-91ab-2d7cd011db47)
+	* Rules Engines - A common design pattern for flexible, advanced workflow solutions
+	* Microsoft Technology Center Architect Brendon Colburn
  
 ## Past Sessions
 * [October 19, 2022 Recording](https://youtu.be/U6QEMicjQUI)

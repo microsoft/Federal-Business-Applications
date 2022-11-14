@@ -31,7 +31,7 @@ The security baseline recommendations Power Platform and Power BI can be found b
 * [Microsoft Power Platform M365 Minimum Viable Secure Configuration Baseline](https://github.com/cisagov/ScubaGear/blob/main/baselines/powerplatform.md)
 * [Microsoft Power BI M365 Minimum Viable Secure Configuration Baseline](https://github.com/cisagov/ScubaGear/blob/main/baselines/powerbi.md)
 
-# TIC for Internal Agency Use
+# TIC 3.0 for Internal Agency Use
 
 For internal Agency use of Power Platform and D365, our services leverage the security and auditing capabilities of Microsoft 365.  We have a great blog series that outlines how Microsoft 365 services align to TIC.  The blog links can be found below,
 
@@ -76,7 +76,7 @@ The sovereign cloud specific AAD applications for conditional access are below,
 
 > At this time (10/28/2022) there is a known issue that the Power Automate service does not show up in Azure for Government's Conditional Access portal.  The work around to use conditional access in GCC High is to create a policy that is enforced for all cloud applications, versus selecting Power Automate individually.  
 
-# TIC for Public Facing Power Pages (i.e. Portals)
+# TIC 3.0 for Public Facing Power Pages (i.e. Portals)
 
 We recommend using Azure Front Door with Power Pages to support CISA TIC requirements.  Some of the benefits you get when using Azure Front Door with Power Pages are below,
 

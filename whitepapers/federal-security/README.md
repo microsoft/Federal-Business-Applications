@@ -90,7 +90,7 @@ Below is a great resource on designing a general web application to use Azure Fr
 
 You can easily swap out the web application above with a Power Pages web application.  That design would look like this,
 
-![Power Pages & Azure Application Gateway Diagram](images/PowerPagesAppGateway.png)
+![Power Pages & Azure Application Gateway Diagram](images/PowerPagesAppGatewayDiagram.png)
 
 Below we have great documentation on how to configure a Power Pages Portal with Azure Front Door.  While today we recommend Azure Application Gateway, the documentation for Azure Front Door below can also be applied with an Azure Application Gateway instance.
 

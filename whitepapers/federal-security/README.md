@@ -54,8 +54,6 @@ Full details of auditing capabilities inside of Dataverse can be found in the li
 
 * [Manage Dataverse Auditing](https://learn.microsoft.com/en-us/power-platform/admin/enable-use-comprehensive-auditing)
 
-> For GCC only, you will need to use the classic Dynamics 365 settings page to enable audit logs getting sent to the O365 Security and Compliance Center.  From the Power Apps home page, click on Settings (gear icon) > Advanced settings > Settings > Auditing > Global Audit Settings.
-
 ## Azure Active Directory Conditional Access
 The sovereign cloud specific AAD applications for conditional access are below,
 

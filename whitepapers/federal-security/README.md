@@ -90,7 +90,9 @@ You can easily swap out the web application above with a Power Pages web applica
 
 ![Power Pages & Azure Application Gateway Diagram](images/PowerPagesAppGatewayDiagram.png)
 
-Below we have great documentation on how to configure a Power Pages Portal with Azure Front Door.  While today we recommend Azure Application Gateway, the documentation for Azure Front Door below can also be applied with an Azure Application Gateway instance.
+Below we have great documentation on how to configure a Power Pages Portal with Azure Front Door.  While today we recommend Azure Application Gateway, the documentation for Azure Front Door below can also be applied with an Azure Application Gateway instance.  
+
+> Today Power Pages does not support Azure Front Door ID filtering. Once Power Pages supports Azure Front Door ID filtering (i.e. ````X-Azure-FDID```` header values) we will update this guidance to use Azure Front Door instead.
 
 * [Set up Azure Front Door with portals](https://learn.microsoft.com/en-us/power-apps/maker/portals/azure-front-door)
 

@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.20.0
+    - uses: rojopolis/spellcheck-github-actions@0.29.0
       name: Spellcheck
       with:
         task_name: Markdown

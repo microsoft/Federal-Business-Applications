@@ -7,7 +7,7 @@ Below we have included all past session recordings, as well as future sessions t
  
 ## Past Sessions
 * [December 8, 2022 Recording](https://youtu.be/OvncrX4gS8Q)
-	* Microsoft MTC - Rules Engine in the Power Platform
+	* Microsoft Technology Center - Rules Engine in the Power Platform
 
 * [October 19, 2022 Recording](https://youtu.be/U6QEMicjQUI)
 	* NetImpact Strategies - Authority to Operate Accelerator

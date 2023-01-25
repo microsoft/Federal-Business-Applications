@@ -4,8 +4,8 @@ Below we have included all past session recordings, as well as future sessions t
 ## Upcoming Sessions
 
 * February 9, 2023 @ 2:00 PM EST: [Registration Link Here](https://msit.events.teams.microsoft.com/event/2eca5d51-643b-4e25-8441-d56ee9ee81d0@72f988bf-86f1-41af-91ab-2d7cd011db47)
-	* How to build a Virtual Agent chat BOT and Extend it with
-		* BOT’s are everywhere, In this session we will talk about the proliferation of BOT’s in the Federal Government and show how BOT technologies can be extended with Azure and Cognitive services to improve customer support or internal teams. This session will enable you to leave with ideas on how your organization can scale and support your constituents by utilizing advanced BOT concepts and implementations.
+	* How to build a Virtual Agent Chatbot and Extend it with
+		* Chatbot’s are everywhere, In this session we will talk about the proliferation of chatbot’s in the Federal Government and show how chatbot technologies can be extended with Azure and Cognitive services to improve customer support or internal teams. This session will enable you to leave with ideas on how your organization can scale and support your constituents by utilizing advanced chatbot concepts and implementations.
  
 ## Past Sessions
 * [December 8, 2022 Recording](https://youtu.be/OvncrX4gS8Q)

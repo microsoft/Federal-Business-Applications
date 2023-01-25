@@ -16,6 +16,8 @@ CBP
 CDN
 Chargeback
 chargeback
+chatbot
+Chatbot
 CIDR
 CISA
 CISA's

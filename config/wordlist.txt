@@ -54,6 +54,7 @@ GUID
 Hyperautomation
 IAM
 iFrame
+Integrations
 IPv6
 JSON
 MSOnline
@@ -69,6 +70,7 @@ OpenAPI
 PDF
 PDF's
 PII
+PIV
 PowerShell
 prebuilt
 programmatically

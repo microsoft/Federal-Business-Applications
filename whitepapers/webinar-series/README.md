@@ -3,13 +3,13 @@ Below we have included all past session recordings, as well as future sessions t
 
 ## Upcoming Sessions
 
-* [April 27, 2023 Registration Page](https://msit.events.teams.microsoft.com/event/1a04a736-4fdf-465d-a8a4-80b0913c24cf@72f988bf-86f1-41af-91ab-2d7cd011db47)
-	* Leverage Adobe's e-Signatures and Digital Signature, through it's native integration, to: 
-		* Enhance Security and Meet Security Requirements via PIV Card Signature Experience 
-		* Support Risk Management and Integrations by Supporting Optimal Security from Unknown Users, Citizens, Vendors, and more 
-		* Better Manage Change Management Through it's Strong Partnership with Microsoft.
+* Coming Soon!
  
 ## Past Sessions
+
+* [April 27, 2023 Recording](https://youtu.be/HX9enNzfv0k)
+	* Leverage Adobe's e-Signatures and Digital Signature with the Power Platform
+
 * [February 9, 2023 Recording](https://youtu.be/WcSjCOhu0Wk)
 	* How to build a Virtual Agent Chatbot and Extend it with Azure
 

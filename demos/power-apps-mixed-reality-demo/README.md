@@ -1,4 +1,4 @@
-# Power Apps Mixed Reality - Take Measurments Demo
+# Power Apps Mixed Reality - Take Measurements Demo
 
 ## Overview
 This is a simple canvas app to demonstrate the Mixed Reality Measurements control available in Power Apps today.  The control allows the user to measure width, height and depth of objects in their space.  For more on the control see: https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/mixed-reality-component-measure-distance

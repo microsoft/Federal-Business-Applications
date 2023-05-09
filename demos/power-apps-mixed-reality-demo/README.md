@@ -12,6 +12,6 @@ The solution includes the following:
 - MR Demo Segment: a Dataverse table to store each segment of a measurement (e.g. height, width and depth of an object)
 
 ## Requirements
-This solution requires a premium license (Power Apps Per User or Per App).
+This solution requires a premium license (Power Apps Per User or Per App).  It has been successfully tested in GCC
 
 

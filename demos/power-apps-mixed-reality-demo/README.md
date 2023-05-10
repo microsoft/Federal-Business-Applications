@@ -6,7 +6,7 @@ This is a simple canvas app to demonstrate the Mixed Reality Measurements contro
 ## Solution Details
 The solution includes the following:
 - Measurement Tool: a canvas App w/ Mixed Reality Measurement control
-- MR Demo - Save Measurements: A flow that saves the data from the measurment control to Dataverse
+- MR Demo - Save Measurements: A flow that saves the data from the measurement control to Dataverse
 - MR Demo Measurement: a Dataverse table to store the measurements taken
 - MR Demo Photo: a Dataverse table to store photos taken related to each measurement
 - MR Demo Segment: a Dataverse table to store each segment of a measurement (e.g. height, width and depth of an object)

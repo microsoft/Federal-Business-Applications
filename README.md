@@ -20,8 +20,9 @@ Below is a listing of the sample solutions available.  These sample solution fil
 | [D365 or Model-Driven Power Apps & Teams Click-To-Dial](demos/d365-click-to-dial-teams/README.md) | :heavy_check_mark: | | |
 | [DevOps with GitHub Actions](demos/devops/README.md)| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Electronic Signature Canvas App](demos/electronic-signatures/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Electronic Signature PDF Flow](demos/pdf-electronic-signatures/README.md) | :heavy_check_mark: |  |  |
+| [Mixed Reality - Take Measurements Demo](demos/power-apps-mixed-reality-demo/README.md) | :heavy_check_mark: |  |  |
 | [govDelivery Custom Connector](demos/govDelivery/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [Electronic Signature PDF Flow](demos/pdf-electronic-signatures/README.md) | :heavy_check_mark: |  |  |
 | [PII Redaction with Power Automate](demos/pii-redaction/README.md) | :heavy_check_mark: | :heavy_check_mark: |  |
 | [Populating Dataverse with ArcGIS Data Using Power Automate](demos/power-automate-arcgis-http/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Power Query Custom Data Connector for Power Automate REST APIs](demos/powerquery-connector-power-automate-rest-api-gcc/README.md) | :heavy_check_mark: | | |

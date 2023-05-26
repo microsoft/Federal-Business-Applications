@@ -11,6 +11,10 @@ The solution includes the following:
 - MR Demo Photo: a Dataverse table to store photos taken related to each measurement
 - MR Demo Segment: a Dataverse table to store each segment of a measurement (e.g. height, width and depth of an object)
 
+Sample solution file can be downloaded here,
+
+[Mixed Reality Proof of Concept Solution File](files/MixedRealityPOC_1_0_0_4.zip)
+
 ## Requirements
 This solution requires a premium license (Power Apps Per User or Per App).  It has been successfully tested in GCC
 

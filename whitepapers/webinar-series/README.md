@@ -3,9 +3,12 @@ Below we have included all past session recordings, as well as future sessions t
 
 ## Upcoming Sessions
 
-* May 24th 2PM - 3 PM EST - _PII Redaction and Obfuscation Accelerator_ - [Registration Link](https://msit.events.teams.microsoft.com/event/16e22235-0d4c-4d85-9c31-854018847e16@72f988bf-86f1-41af-91ab-2d7cd011db47)
+* Coming Soon!
  
 ## Past Sessions
+
+* [May 24, 2023 Recording](https://youtu.be/E8PajCZ7Jz0)
+	* PII Redaction and Obfuscation Accelerator
 
 * [April 27, 2023 Recording](https://youtu.be/HX9enNzfv0k)
 	* Leverage Adobe's e-Signatures and Digital Signature with the Power Platform

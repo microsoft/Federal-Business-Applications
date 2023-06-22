@@ -125,6 +125,23 @@ Use the following Azure for Government service tags to get the IP ranges that Po
 * ````AzureCloud.usdodcentral````
 * ````AzureCloud.usdodeast````
 
+# Microsoft 365 Message Center
+We also recommend that you set up monitoring for the Microsoft 365 Message Center to get notified to updates and changes that we announce ahead of time that could impact network and firewall policies you have configured.  Details of the Microsoft 365 Message Center can be found on the public documentation page below,
+
+[Microsoft 365 Message Center Documentation](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/message-center?view=o365-worldwide)
+
+For Microsoft Business Applications, we recommend monitoring the following services,
+
+* Dynamics 365 Apps
+* Finance and Operations Apps
+* Microsoft Dataverse
+* Microsoft Power Automate
+* Microsoft Power Automate in Microsoft 365
+* Power Apps
+* Power Apps in Microsoft 365
+* Power BI
+* Power Platform
+
 # Data Gateway Configuration
 Power Platform's data gateway enables you to combine on premise data with your data in the cloud.  More details on the data gateway can be found in our public docs below,
 

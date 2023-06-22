@@ -6,7 +6,7 @@ In commercial tenants, there is [an “Add to Teams” menu option](https://powe
 This “easy button” is not available in the US government clouds today (as of June 2023). This document outlines the steps to follow to add canvas app as an app in Teams that can be used by users in your tenant.
 
 # Requirements
-You will need necessary permissions to upload an app to your tenant.  For more on the required permissions see [LINK]
+You will need necessary permissions to upload an app to your tenant.  For more on the required permissions see [Manage custom and sideloaded app policies and settings](https://learn.microsoft.com/en-us/microsoftteams/teams-custom-app-policies-and-settings)
 
 This will only work for GCC tenants. As of today (June 2023), side loading apps in Teams is not supported in GCC-High, DoD or higher. 
 

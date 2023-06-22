@@ -1,4 +1,4 @@
-# Purpose
+# Add to Teams Workaround for GCC 
 In commercial tenants, there is [an “Add to Teams” menu option](https://powerapps.microsoft.com/en-us/blog/add-your-canvas-apps-to-microsoft-teams/) to easily add a Power App to Microsoft Teams.  
 
 ![Add to Teams side panel](https://powerappsblogscdn.azureedge.net/wp-content/uploads/2021/05/side-panel.png)

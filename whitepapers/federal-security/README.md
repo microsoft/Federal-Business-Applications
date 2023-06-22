@@ -110,7 +110,8 @@ When designing a Power Page, we highly recommend reviewing the security controls
 # Power Platform / D365 Endpoint URLs
 Use the following public documentation page to get the full list of internet URLs to allow for Power Platform and D365 cloud services.  Make sure to filter to your US Government cloud region (i.e. GCC, GCC High or DOD).
 
-* [Endpoint URLs to Allow List](https://learn.microsoft.com/en-us/power-platform/admin/online-requirements#internet-urls-to-allow)
+* [Power Platform Government Endpoint URLs for Allow List](https://learn.microsoft.com/en-us/power-platform/admin/online-requirements#internet-urls-to-allow)
+* [Dynamics 365 Government Endpoint URLs for Allow List](https://learn.microsoft.com/en-us/power-platform/admin/microsoft-dynamics-365-government#dynamics-365-us-government-urls)
 
 # Power Platform / D365 IP Ranges
 Use the following Azure for Government service tags to get the IP ranges that Power Platform / D365 use for GCC, GCC High and DOD cloud regions.  You can find the full list of Azure for Government IP Ranges in the following document,

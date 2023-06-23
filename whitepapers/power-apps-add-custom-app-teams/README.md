@@ -3,8 +3,6 @@ In commercial tenants, there is [an “Add to Teams” menu option](https://powe
 
 <img src="https://powerappsblogscdn.azureedge.net/wp-content/uploads/2021/05/side-panel.png" alt="Add to Teams side panel" width="500px">
 
-![Add to Teams side panel](https://powerappsblogscdn.azureedge.net/wp-content/uploads/2021/05/side-panel.png)
-
 This “easy button” is not available in the US government clouds today (as of June 2023). This document outlines the steps to follow to add canvas app as an app in Teams that can be used by users in your tenant.
 
 # Requirements
@@ -14,7 +12,7 @@ This will only work for GCC tenants. As of today (June 2023), side loading apps 
 
 This document assumes you already have a canvas app ready to be published to Microsoft Teams. You will need the App URL located on the app’s details page. 
 
-![Screenshot of Power Apps example canvas app's Details Screen with the Web Link indicated with a red arrow](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/e1e82293-d748-445f-9daf-cc7af837a57a)
+<img src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/e1e82293-d748-445f-9daf-cc7af837a57a" alt="Screenshot of Power Apps example canvas app's Details Screen with the Web Link indicated with a red arrow" width="500px">
 
 For more on creating a canvas app, see [What are canvas apps?](https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/getting-started)
 
@@ -47,7 +45,8 @@ You’ll need two icons
 The color version of your icon displays in most Teams scenarios and must be 192x192 pixels. Your icon symbol (96x96 pixels) can be any color, but it must sit on a solid or fully transparent square background.
 
 Teams automatically crops your icon to display a square with rounded corners in multiple scenarios and a hexagonal shape in bot scenarios. To crop the symbol without losing any detail, include 48 pixels of padding around your symbol.
-![Image of the color icon with dimesniosn indicated along with examples of how the icon is dispalyed in various parts of Microsoft Teams](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/f11a46b9-8c13-4b1e-aa7a-ab03bcd9eaca)
+
+<img src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/f11a46b9-8c13-4b1e-aa7a-ab03bcd9eaca" alt="Image of the color icon with dimesniosn indicated along with examples of how the icon is dispalyed in various parts of Microsoft Teams" width="500px">
 
 ### Outline icon
 An outline icon displays in two scenarios:
@@ -56,7 +55,7 @@ An outline icon displays in two scenarios:
   
 The icon must be 32x32 pixels. It can be white with a transparent background or transparent with a white background (no other colors are permitted). The outline icon should not have any extra padding around the symbol.
 
-![Image of the the outline icon with dimensions indicated and exmaples of how the icon appears in Microsoft Teams](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/3f583831-5be4-43a5-8c5d-aeaba621d9a4)
+<img  alt="Image of the the outline icon with dimensions indicated and exmaples of how the icon appears in Microsoft Teams" src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/3f583831-5be4-43a5-8c5d-aeaba621d9a4" width="500px">
 
 For more, see [App Icons](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/apps-package#app-icons)
 
@@ -125,15 +124,15 @@ To get started, Add the Developer Portal (if not already installed) For more see
 
 Open Developer Portal and Click **+ New app**
 
-![Screenshot of Microsoft Teams Developer Portal app with +New app button indicated with a red arrow](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/05e4a470-61ec-4b0c-9d99-fe7f166b9031)
+<img src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/05e4a470-61ec-4b0c-9d99-fe7f166b9031" alt="Screenshot of Microsoft Teams Developer Portal app with +New app button indicated with a red arrow" width="500px">
 
 Next give the app a name
 
-![Screenshot of Microsoft Teams Add app dialog](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/3f04f29b-9f9c-49e1-a559-317ec449e02e)
+<img src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/3f04f29b-9f9c-49e1-a559-317ec449e02e" alt="Screenshot of Microsoft Teams Add app dialog" width="500px">
 
 Next, fill in the fields.  
 
-![Screenshot of Microsoft Teams Developer Portal Basic Information tab](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/671392c8-91c4-4323-a889-db10cc80b4ea)
+<img src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/671392c8-91c4-4323-a889-db10cc80b4ea" alt="Screenshot of Microsoft Teams Developer Portal Basic Information tab" width="500px">
 
 The following are required:
 *	**Short Name** (defaults to what you typed on the previous screen)
@@ -146,22 +145,23 @@ The following are required:
   
 Then click on **Branding** and attach the two icons and select Accent color
 
-![Screenshot of Microsoft Teams Developer Portal with Branding tab indicated with a red arrow](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/b1d5adb7-021c-43f5-a736-aebef37a4503)
+<img alt="Screenshot of Microsoft Teams Developer Portal with Branding tab indicated with a red arrow"  src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/b1d5adb7-021c-43f5-a736-aebef37a4503" width="500px">
 
 Then click **App features** and select **Personal App**
 
-![Screenshot of Microsoft Teams Developer Portal App features tab with Personal app button indicated with a red arrow](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/35bb11ec-fa2d-4c0e-93bd-512fc73bb16a)
+<img src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/35bb11ec-fa2d-4c0e-93bd-512fc73bb16a" alt="Screenshot of Microsoft Teams Developer Portal App features tab with Personal app button indicated with a red arrow" width="500px">
 
 Then click **Create your first personal app tab**
 
-![Screenshot of the Create your first personal app tab button](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/b5260a0e-84b5-4c36-bcb5-5b7abb67d8fa)
+<img alt="Screenshot of the Create your first personal app tab button"  src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/b5260a0e-84b5-4c36-bcb5-5b7abb67d8fa" width="500px">
 
 Fill in the required fields.  Tip: Paste the app URL copied from Power Apps details page for **Content URL** and click **Confirm**
 
-![Screenshot of the form to Add a tab to your personal app](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/c433562c-9b65-477d-9218-8ba075312a42)
+<img src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/c433562c-9b65-477d-9218-8ba075312a42" alt="Screenshot of the form to Add a tab to your personal app" width="500px">
 
 Then click **Save**
-![Screenshot of Microft Teams Personal app screen with Save button indicated with a red arrow](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/3926e25f-02b6-4fc8-80ef-929f1fe9b27d)
+
+<img src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/3926e25f-02b6-4fc8-80ef-929f1fe9b27d" alt="Screenshot of Microft Teams Personal app screen with Save button indicated with a red arrow" width="500px">
 
 [Back to top](#steps)
 
@@ -169,15 +169,15 @@ Then click **Save**
 Use the built in validation tool to confirm the app is ready to be published.
 On the **Dashboard**, in Team store validation, click **View details** 
 
-![Screenshot of Microsoft Teams Developer Portal app Dashboard Teams Store validation tile](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/dbf40a00-06f6-4d0e-a200-dcfb0eb6535e)
+<img src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/dbf40a00-06f6-4d0e-a200-dcfb0eb6535e" alt="Screenshot of Microsoft Teams Developer Portal app Dashboard Teams Store validation tile">
 
 Address any errors and warnings before downloading the package
 
-![Scrreenshot of the details screen with three errors listed](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/f5fb20cc-158c-4d6e-9d04-49cf2f1cee35)
+<img src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/f5fb20cc-158c-4d6e-9d04-49cf2f1cee35" alt="Scrreenshot of the details screen with three errors listed" width="500px">
 
 Use the App submission checklist then click Download app package
 
-![Screenshot of the App submission checklist indicated with a red outline and an arrow indicating the Download app packaged button](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/24a6df38-8be1-4374-8358-b2769d121095)
+<img src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/24a6df38-8be1-4374-8358-b2769d121095" alt="Screenshot of the App submission checklist indicated with a red outline and an arrow indicating the Download app packaged button" width="500px">
 
 [Back to top](#steps)
 
@@ -192,18 +192,20 @@ If you don't have the necessary permissions to publish the app yourself, your Te
 
 Click **Apps** on the left rail, then click **Manage your Apps**, then click **Upload App**
 
-![Screenshot of Microsoft Teams with Apps button on left rail indicated with a red arrow and the Upload an app button indicated with a red arrow](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/60245531-fbbe-4259-8dfc-5f667e9da870)
+<img src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/60245531-fbbe-4259-8dfc-5f667e9da870" alt="Screenshot of Microsoft Teams with Apps button on left rail indicated with a red arrow and the Upload an app button indicated with a red arrow" width="500px">
 
 Click **Upload a custom app**
 
-![Screenshot of the pop-up Upload an app dialog with two buttons. The Upload a custom app button is indicated with a red arrow](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/73cd762a-fb77-4ac3-a739-0bb2f166ad96)
+<img src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/73cd762a-fb77-4ac3-a739-0bb2f166ad96" alt="Screenshot of the pop-up Upload an app dialog with two buttons. The Upload a custom app button is indicated with a red arrow">
 
 Select Zip file
 Confirm details are correct and click **Add**
-![Screenshot of the app details with the Add button](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/3b343b8b-1915-4ba9-a3f6-e25f219f9398)
+
+<img src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/3b343b8b-1915-4ba9-a3f6-e25f219f9398" alt="Screenshot of the app details with the Add button" width="500px">
 
 Wait a few moments and then the app should load. Note: the **About** tab is created automatically. 
-![Screenshot of the app loaded into teams](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/1ade0751-ac44-42fd-aba9-5264a93db801)
+
+<img src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/1ade0751-ac44-42fd-aba9-5264a93db801" alt="Screenshot of the app loaded into teams" width="500px">
 
 For more see [Upload your custom app](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/apps-upload)
 
@@ -213,24 +215,24 @@ For more see [Upload your custom app](https://learn.microsoft.com/en-us/microsof
 
 If you’d like your app to be available to your entire organization, you can submit it for approval and when it’s approved, it will appear in the Built for your org section of the Teams App Store:
 
-![Screenshot of Microsoft Teams with the Built in your org tab indicated with a red arrow](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/037a1d29-938d-498f-b281-1349822dd823)
+<img src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/037a1d29-938d-498f-b281-1349822dd823" alt="Screenshot of Microsoft Teams with the Built in your org tab indicated with a red arrow">
 
 Click **Apps** and then click **Upload an app**
 
-![Screenshot of Microsoft Teams with Apps button on left rail indicated with a red arrow and the Upload an app button indicated with a red arrow](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/60245531-fbbe-4259-8dfc-5f667e9da870)
+<img src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/60245531-fbbe-4259-8dfc-5f667e9da870" alt="Screenshot of Microsoft Teams with Apps button on left rail indicated with a red arrow and the Upload an app button indicated with a red arrow" width="500px">
 
 Click **Submit an app to your org**
 
-![Screenshot of the pop-up Upload an app dialog with two buttons. The Submit an app to your org button is indicated with a red arrow](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/dee6a35a-c351-429b-b626-10844f11a54e)
+<img src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/dee6a35a-c351-429b-b626-10844f11a54e" alt="Screenshot of the pop-up Upload an app dialog with two buttons. The Submit an app to your org button is indicated with a red arrow" width="500px">
 
 Choose the Zip file
 If successful, you should see the following confirmation pop-up
 
-![Screenshot of the success pop-up with the View your requests button](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/74f139a5-99a1-4ca1-983f-db54ce869619)
+<img src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/74f139a5-99a1-4ca1-983f-db54ce869619" alt="Screenshot of the success pop-up with the View your requests button">
 
 Click **View your requests** to see your request and monitor it’s progress
 
-![Screenshot of your pending requests](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/cce53ded-9f7a-4f07-a4d1-e3883f19bbff)
+<img src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/cce53ded-9f7a-4f07-a4d1-e3883f19bbff" alt="Screenshot of your pending requests">
 
 At this point, your Teams Admin will need to approve (or reject) your app.  We strongly recommend working with your Teams Admin before, during and after the upload process to ensure as smooth deployment.
 

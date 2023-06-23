@@ -184,6 +184,8 @@ Below are two different methods to publishing your app in Microsoft Teams.
 * **[Option 1](#option-1-side-loading):** *"Side Loading"* is useful if the app is for you or a smalle number of people (e.g. your team)
 * **[Option 2](#option-2-publish-to-your-org):** *Publish to Your Org* allows you to make your app available in the Teams store for your entire organization. **This requires a Teams Admin approval**.
 
+If you don't have the necessary permissions to publish the app yourself, your Teams Administrator can do it from the Teams Admin center.  Click here for more details: [Publish a custom app by uploading an app package](https://learn.microsoft.com/en-us/microsoftteams/upload-custom-apps)
+
 ## Option 1: "Side Loading"
 
 Click **Apps** on the left rail, then click **Manage your Apps**, then click **Upload App**

@@ -18,13 +18,13 @@ For more on creating a canvas app, see [What are canvas apps?](https://learn.mic
 
 # Steps
 1. [Create Teams App Package](#create-teams-app-package)
-   - [Create Icons] (#create-icons)
+   - [Create Icons](#create-icons)
    - [Create App Manifest](#create-app-manifest)
-   - [Tip: Use Developer Portal]{#tip-use-developer-portal)
+   - [Tip: Use Developer Portal](#tip-use-developer-portal)
 3. [Before you publish](#before-you-publish)
 4. [Publish App](#publish-app)
-   - [Option 1](#option-1-side-loading)
-   - [Option 2](#option-2-publish-to-your-org)
+   - [Option 1: "Side Loading"](#option-1-side-loading)
+   - [Option 2: Publish to Your Org](#option-2-publish-to-your-org)
 
 
 
@@ -203,6 +203,8 @@ Wait a few moments and then the app should load. Note: the **About** tab is crea
 
 For more see [Upload your custom app](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/apps-upload)
 
+[Back to top](#steps)
+
 ## Option 2: Publish to Your Org
 
 If you’d like your app to be available to your entire organization, you can submit it for approval and when it’s approved, it will appear in the Built for your org section of the Teams App Store:
@@ -229,3 +231,5 @@ Click **View your requests** to see your request and monitor it’s progress
 At this point, your Teams Admin will need to approve (or reject) your app.  We strongly recommend working with your Teams Admin before, during and after the upload process to ensure as smooth deployment.
 
 For more see: [User requests for admins](https://learn.microsoft.com/en-us/MicrosoftTeams/user-requests-approve-apps)
+
+[Back to top](#steps)

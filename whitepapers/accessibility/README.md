@@ -1,4 +1,4 @@
-# 508 Accessiblity Conformance
+# 508 Accessibility Conformance
 Microsoft provides Accessibility Conformance Reports (ACRs) for all of our products and services.  The link to those reports can be found below,
 
 [Microsoft Accessibility Conformance Reports](https://www.microsoft.com/en-us/accessibility/conformance-reports)
@@ -15,7 +15,7 @@ The table below summarizes the key Power Platform ACRs and how to find them,
 | Power BI | Power BI | The Power BI service in the web |
 | Power BI | Power BI Desktop | The Power BI Desktop tool to create and author Power BI reports |
 | Power Automate | Power Automate | The Power Automate service |
-| Power Virtual Agents | Power Virtual Agents | The Power Virutal Agents service |
+| Power Virtual Agents | Power Virtual Agents | The Power Virtual Agents service |
 
 ## Dynamics 365
 

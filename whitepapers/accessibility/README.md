@@ -8,7 +8,7 @@ We recorded a webinar all around Microsoft's commitment to Section 508 and how t
 
 [Federal Business Applications Webinar - Accessibility - March 2022](https://www.youtube.com/watch?v=ZlbyuP12zr4)
 
-## Power Platform Reports
+## Power Platform ACRs
 
 The table below summarizes the key Power Platform ACRs and how to find them,
 
@@ -22,7 +22,7 @@ The table below summarizes the key Power Platform ACRs and how to find them,
 | Power Automate | Power Automate | The Power Automate service |
 | Power Virtual Agents | Power Virtual Agents | The Power Virtual Agents service |
 
-## Dynamics 365
+## Dynamics 365 ACRs
 
 For Dynamics 365 ACRs, search for ````Dyanmics 365````, then filter to the 1st party application you want to review the ACRs for.  For example:
 

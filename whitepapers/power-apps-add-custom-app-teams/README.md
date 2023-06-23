@@ -1,6 +1,8 @@
 # Add to Teams Workaround for GCC 
 In commercial tenants, there is [an “Add to Teams” menu option](https://powerapps.microsoft.com/en-us/blog/add-your-canvas-apps-to-microsoft-teams/) to easily add a Power App to Microsoft Teams.  
 
+<img src="https://powerappsblogscdn.azureedge.net/wp-content/uploads/2021/05/side-panel.png" alt="Add to Teams side panel" width="500px">
+
 ![Add to Teams side panel](https://powerappsblogscdn.azureedge.net/wp-content/uploads/2021/05/side-panel.png)
 
 This “easy button” is not available in the US government clouds today (as of June 2023). This document outlines the steps to follow to add canvas app as an app in Teams that can be used by users in your tenant.

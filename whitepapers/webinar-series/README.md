@@ -7,7 +7,7 @@ Below we have included all past session recordings, as well as future sessions t
  
 ## Past Sessions
 
-* [May 24, 2023 Recording](https://youtu.be/E8PajCZ7Jz0)
+* [May 24, 2023 Recording](https://youtu.be/tkCY1Fj2A9M)
 	* PII Redaction and Obfuscation Accelerator
 
 * [April 27, 2023 Recording](https://youtu.be/HX9enNzfv0k)

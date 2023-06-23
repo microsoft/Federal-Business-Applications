@@ -1,4 +1,6 @@
 AAD
+ACR
+ACRs
 Analytics
 analytics
 API
@@ -75,6 +77,8 @@ PowerShell
 prebuilt
 programmatically
 RPA
+Runtime
+runtime
 SaaS
 SCuBA
 SDK

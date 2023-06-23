@@ -1,4 +1,4 @@
-# 508 Accessibility Conformance
+# Section 508 Accessibility Conformance
 Microsoft provides Accessibility Conformance Reports (ACRs) for all of our products and services.  The link to those reports can be found below,
 
 [Microsoft Accessibility Conformance Reports](https://www.microsoft.com/en-us/accessibility/conformance-reports)

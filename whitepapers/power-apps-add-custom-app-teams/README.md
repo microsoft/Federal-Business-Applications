@@ -6,7 +6,7 @@ In commercial tenants, there is [an “Add to Teams” menu option](https://powe
 This “easy button” is not available in the US government clouds today (as of June 2023). This document outlines the steps to follow to add canvas app as an app in Teams that can be used by users in your tenant.
 
 # Requirements
-You will need necessary permissions to upload an app to your tenant.  For more on the required permissions see [Manage custom and sideloaded app policies and settings](https://learn.microsoft.com/en-us/microsoftteams/teams-custom-app-policies-and-settings)
+You will need necessary permissions to upload an app to your tenant.  For more on the required permissions see [Manage custom and side-loaded app policies and settings](https://learn.microsoft.com/en-us/microsoftteams/teams-custom-app-policies-and-settings)
 
 This will only work for GCC tenants. As of today (June 2023), side loading apps in Teams is not supported in GCC-High, DoD or higher. 
 
@@ -183,7 +183,7 @@ Use the App submission checklist then click Download app package
 
 # Publish App
 Below are two different methods to publishing your app in Microsoft Teams. 
-* **[Option 1](#option-1-side-loading):** *"Side Loading"* is useful if the app is for you or a smalle number of people (e.g. your team)
+* **[Option 1](#option-1-side-loading):** *"Side Loading"* is useful if the app is for you or a small number of people (e.g. your team)
 * **[Option 2](#option-2-publish-to-your-org):** *Publish to Your Org* allows you to make your app available in the Teams store for your entire organization. **This requires a Teams Admin approval**.
 
 If you don't have the necessary permissions to publish the app yourself, your Teams Administrator can do it from the Teams Admin center.  Click here for more details: [Publish a custom app by uploading an app package](https://learn.microsoft.com/en-us/microsoftteams/upload-custom-apps)

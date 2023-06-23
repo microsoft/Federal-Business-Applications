@@ -3,6 +3,11 @@ Microsoft provides Accessibility Conformance Reports (ACRs) for all of our produ
 
 [Microsoft Accessibility Conformance Reports](https://www.microsoft.com/en-us/accessibility/conformance-reports)
 
+## Accessibility Webinar
+We recorded a webinar all around Microsoft's commitment to Section 508 and how that is applied to Microsoft Business Applications.  The link to the webinar video can be found below,
+
+[Federal Business Applications Webinar - Accessibility - March 2022](https://www.youtube.com/watch?v=ZlbyuP12zr4)
+
 ## Power Platform Reports
 
 The table below summarizes the key Power Platform ACRs and how to find them,

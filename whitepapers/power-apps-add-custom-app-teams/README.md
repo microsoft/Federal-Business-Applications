@@ -16,6 +16,9 @@ This document assumes you already have a canvas app ready to be published to Mic
 
 For more on creating a canvas app, see [What are canvas apps?](https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/getting-started)
 
+# Steps
+1. [Create Teams App Package](#create-teams-app-package)
+
 # Create Teams App Package
 Before you can publish a canvas app to teams, you must “wrap” the app in a Teams app package.
 

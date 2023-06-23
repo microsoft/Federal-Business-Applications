@@ -18,6 +18,18 @@ For more on creating a canvas app, see [What are canvas apps?](https://learn.mic
 
 # Steps
 1. [Create Teams App Package](#create-teams-app-package)
+   - [Create Icons] (#create-icons)
+   - [Create App Manifest](#create-app-manifest)
+   - [Tip: Use Developer Portal]{#tip-use-developer-portal)
+3. [Before you publish](#before-you-publish)
+4. [Publish App](#publish-app)
+   - [Option 1](#option-1-side-loading)
+   - [Option 2](#option-2-publish-to-your-org)
+
+
+
+
+
 
 # Create Teams App Package
 Before you can publish a canvas app to teams, you must “wrap” the app in a Teams app package.
@@ -45,6 +57,8 @@ The icon must be 32x32 pixels. It can be white with a transparent background or 
 ![Image of the the outline icon with dimensions indicated and exmaples of how the icon appears in Microsoft Teams](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/3f583831-5be4-43a5-8c5d-aeaba621d9a4)
 
 For more, see [App Icons](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/apps-package#app-icons)
+
+[Back to top](#steps)
 
 ## Create App Manifest
 The App Manifest is a JSON file that describes how your app is configured, including its capabilities, required resources, and other important attributes.
@@ -100,7 +114,9 @@ Here is an example of the Manifest JSON:
     ]
 }
 ```
-## Use Developer Portal
+[Back to top](#steps)
+
+## Tip: Use Developer Portal
 While you can create the app package manually, we recommend using the Developer Portal app in Teams.  Note: as of June 2023, the Developer Portal is listed as GCC Beta.  It may or may not be available in your tenant depending on your administrator’s settings. 
 
 To get started, Add the Developer Portal (if not already installed) For more see: [Add an app to Microsoft Teams](https://support.microsoft.com/en-us/office/add-an-app-to-microsoft-teams-b2217706-f7ed-4e64-8e96-c413afd02f77)
@@ -118,7 +134,7 @@ Next, fill in the fields.
 ![Screenshot of Microsoft Teams Developer Portal Basic Information tab](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/671392c8-91c4-4323-a889-db10cc80b4ea)
 
 The following are required:
-*	**Short Name ** (defaults to what you typed on the previous screen)
+*	**Short Name** (defaults to what you typed on the previous screen)
 *	**Short Description**
 *	**Long Description**
 *	**Developer Information**
@@ -145,6 +161,8 @@ Fill in the required fields.  Tip: Paste the app URL copied from Power Apps deta
 Then click **Save**
 ![Screenshot of Microft Teams Personal app screen with Save button indicated with a red arrow](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/3926e25f-02b6-4fc8-80ef-929f1fe9b27d)
 
+[Back to top](#steps)
+
 # Before you publish
 Use the built in validation tool to confirm the app is ready to be published.
 On the **Dashboard**, in Team store validation, click **View details** 
@@ -159,7 +177,14 @@ Use the App submission checklist then click Download app package
 
 ![Screenshot of the App submission checklist indicated with a red outline and an arrow indicating the Download app packaged button](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/24a6df38-8be1-4374-8358-b2769d121095)
 
-# Publish (or Side-Load) the App
+[Back to top](#steps)
+
+# Publish App
+Below are two different methods to publishing your app in Microsoft Teams. 
+* **[Option 1](#option-1-side-loading):** *"Side Loading"* is useful if the app is for you or a smalle number of people (e.g. your team)
+* **[Option 2](#option-2-publish-to-your-org):** *Publish to Your Org* allows you to make your app available in the Teams store for your entire organization. **This requires a Teams Admin approval**.
+
+## Option 1: "Side Loading"
 
 Click **Apps** on the left rail, then click **Manage your Apps**, then click **Upload App**
 
@@ -178,7 +203,7 @@ Wait a few moments and then the app should load. Note: the **About** tab is crea
 
 For more see [Upload your custom app](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/deploy-and-publish/apps-upload)
 
-# Alternative Method: Publish to Your Org
+## Option 2: Publish to Your Org
 
 If you’d like your app to be available to your entire organization, you can submit it for approval and when it’s approved, it will appear in the Built for your org section of the Teams App Store:
 

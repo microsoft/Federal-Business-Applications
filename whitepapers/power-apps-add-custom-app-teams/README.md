@@ -38,7 +38,7 @@ A Teams app package has two components:
 *	App Manifest
 *	App Icons
 
-## Icons
+## Create Icons
 You’ll need two icons
 
 ### Color Icon

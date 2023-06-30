@@ -7,6 +7,9 @@ Below we have included all past session recordings, as well as future sessions t
  
 ## Past Sessions
 
+* [June 21, 2023 Recording](https://youtu.be/VU3EzlHuGPM)
+	* Trials, Tribulations and Triumphs of a Power Platform Center of Excellence in the Federal Government Sphere
+
 * [May 24, 2023 Recording](https://youtu.be/tkCY1Fj2A9M)
 	* PII Redaction and Obfuscation Accelerator
 

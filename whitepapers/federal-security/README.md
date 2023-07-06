@@ -63,6 +63,7 @@ The sovereign cloud specific AAD applications for conditional access are below,
 | Power Apps | ```` Microsoft PowerApps ```` | ```` 475226c6-020e-4fb2-8a90-7a972cbfc1d4 ```` |
 | Power Automate | ```` Microsoft Flow ```` | ```` 7df0a125-d3be-4c96-aa54-591f83ff541c ```` |
 | Dataverse / Dynamics 365 | ```` Common Data Service ```` | ```` 00000007-0000-0000-c000-000000000000 ```` |
+| Power BI | ```` Microsoft Power BI Government Cloud ```` | ```` fc4979e5-0aa5-429f-b13a-5d1365be5566 ```` |
 
 ### GCC High AAD Application Details
 | Service | AAD Application Name | AAD Application ID |

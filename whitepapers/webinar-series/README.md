@@ -4,7 +4,7 @@ Below we have included all past session recordings, as well as future sessions t
 ## Upcoming Sessions
 
 * [November 2, 2023] (event registration: https://msit.events.teams.microsoft.com/event/416b8dcb-53fb-4d59-834d-c67d87870032@72f988bf-86f1-41af-91ab-2d7cd011db47)
-	* AI, AI, AI! Using AI for Bizapps
+	* AI, AI, AI! Using AI for Microsoft Business Applications
  
 ## Past Sessions
 

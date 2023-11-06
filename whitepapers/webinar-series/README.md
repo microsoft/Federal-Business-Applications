@@ -3,10 +3,15 @@ Below we have included all past session recordings, as well as future sessions t
 
 ## Upcoming Sessions
 
-* [November 2, 2023] (event registration: https://msit.events.teams.microsoft.com/event/416b8dcb-53fb-4d59-834d-c67d87870032@72f988bf-86f1-41af-91ab-2d7cd011db47)
-	* AI, AI, AI! Using AI for Microsoft Business Applications
+* Coming Soon!
  
 ## Past Sessions
+
+* [November 2, 2023 Recording](https://youtu.be/Ta2B6RDOJ_8?si=AsT8pBsLicAuNbnx)
+	* All things AI and the Power Platform
+
+* [August 31, 2023 Recording](https://youtu.be/ZD35akpRFmk?si=xkkpo10wgb5FEiqU)
+	* Cross Cloud collaboration with the Power Platform and Entra ID via B2B.
 
 * [June 21, 2023 Recording](https://youtu.be/VU3EzlHuGPM)
 	* Trials, Tribulations and Triumphs of a Power Platform Center of Excellence in the Federal Government Sphere

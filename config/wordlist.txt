@@ -42,6 +42,7 @@ DoD
 dropdown
 Dynamics
 Ebook
+Entra
 executeQueries
 ExpressRoute
 FedRAMP

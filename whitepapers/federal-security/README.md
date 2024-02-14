@@ -2,13 +2,13 @@
 The goal of this whitepaper is to have a single place to refer for US Federal security and accreditation resources for Power Platform and GCC.
 
 # FedRAMP Packages
-* [Azure Commercial FedRAMP Package](https://marketplace.fedramp.gov/#!/product/azure-commercial-cloud?sort=productName)
+* [Azure Commercial FedRAMP Package](https://marketplace.fedramp.gov/products/F1209051525)
   * Includes only commercial Power Platform and D365 services
-* [Azure for Government FedRAMP Package](https://marketplace.fedramp.gov/#!/product/azure-government-includes-dynamics-365?sort=productName)
+* [Azure for Government FedRAMP Package](https://marketplace.fedramp.gov/products/F1603087869)
   * Includes both GCC and GCC High environments for Power Platform and D365 services
-* [Office 365 Multi-Tenant & Supporting Services](https://marketplace.fedramp.gov/#!/product/office-365-multi-tenant--supporting-services?sort=productName)
+* [Office 365 Multi-Tenant & Supporting Services](https://marketplace.fedramp.gov/products/MSO365MT)
   * Office 365 GCC
-* [Microsoft Office 365 GCC High](https://marketplace.fedramp.gov/#!/product/microsoft-office-365-gcc-high?sort=productName)
+* [Microsoft Office 365 GCC High](https://marketplace.fedramp.gov/products/FR1824057433)
   * Office 365 GCC High
   
 If you need to request any of the actual FedRAMP packages from Microsoft, please send a request to azurefedramp@microsoft.com.

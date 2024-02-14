@@ -24,7 +24,7 @@ CISA's Secure Cloud Business Applications (SCuBA) official website can be found 
 
 CISA has published M365 Minimum Viable Secure Configuration Baseline documents for various Microsoft products.  Below is a link to the entire GitHub repository,
 
-[SCuBA M365 Security Baseline Assessment Tool](https://github.com/cisagov/ScubaGear)
+[SCuBA M365 Security Baseline Assessment Tool on GitHub](https://github.com/cisagov/ScubaGear)
 
 The security baseline recommendations Power Platform and Power BI can be found below,
 

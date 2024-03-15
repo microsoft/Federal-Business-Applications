@@ -24,6 +24,10 @@ During Phase 1, admins will be able to "opt in" to this at the environment level
 
 ![Power Platform Admin Center GenAI Controls](images/GenAI_OptIn_Overview_01.png)
 
-The consent options you will have are below,
+The consent options you will have are below.  Both of the consent options are optional.  You do not need to require one to enable the other.
 
 ![Power Platform Admin Center GenAI Consent Options](images/GenAI_OptIn_Overview_02.png)
+
+Mapping the consent options from the Power Platform Admin Center you can see which checkbox enables which integration features.
+
+![Power Platform Admin Center GenAI Consent Options](images/GenAI_OptIn_Overview_03.png)

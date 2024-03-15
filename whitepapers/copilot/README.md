@@ -31,3 +31,17 @@ The consent options you will have are below.  Both of the consent options are op
 Mapping the consent options from the Power Platform Admin Center you can see which checkbox enables which integration features.
 
 ![Power Platform Admin Center GenAI Consent Options](images/GenAI_OptIn_Overview_03.png)
+
+## Phase 1: Timeline
+Below outlines when you can expect to see Power Platform / D365 Copilot capabilities with the Phase 1 rollout,
+
+* Spring 2024 (GCC & GCC High)
+  * AI Builder
+    * [Create text using custom prompt](https://learn.microsoft.com/en-us/ai-builder/create-a-custom-prompt)
+  * Copilot Studio
+    * [Generative AI in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-gpt-overview)
+  * Power Apps Copilot
+* Summer 2024 (GCC & GCC High)
+  * D365 Customer Service
+  * Power Pages
+  * Power Automate

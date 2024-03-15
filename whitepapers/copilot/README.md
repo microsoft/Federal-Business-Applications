@@ -20,5 +20,10 @@ Phase 1 will leverage Azure Commercial Azure OpenAI to enable Copilot capabiliti
 
 ![Copilot Opt In Architecture](images/CopilotPhase1Architecture.png)
 
-During Phase 1, admins will be able to "opt in" to this at the environment level to turn these capabilities on.  The consent options you will have are below,
+During Phase 1, admins will be able to "opt in" to this at the environment level to turn these capabilities on.  Below shows when you can find these settings at the environment level,
 
+![Power Platform Admin Center GenAI Controls](images/GenAI_OptIn_Overview_01.png)
+
+The consent options you will have are below,
+
+![Power Platform Admin Center GenAI Consent Options](images/GenAI_OptIn_Overview_02.png)

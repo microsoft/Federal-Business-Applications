@@ -14,6 +14,11 @@ We have a wealth of documentation on our public documentation site for how we en
   * [Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/responsible-ai-overview)
 * Dynamics 365
   * [D365 Customer Service](https://learn.microsoft.com/en-us/dynamics365/customer-service/implement/responsible-ai-overview)
+ 
+## Azure OpenAI
+Azure OpenAI is the service that all Copilot features are built upon. The Azure OpenAI Service is fully controlled by Microsoft; Microsoft hosts the OpenAI models in Microsoft’s Azure environment and the Service does NOT interact with any services operated by OpenAI (e.g. ChatGPT, or the OpenAI API).  For a full description of Azure OpenAI's data, privacy and security details, you can find them in the link below,
+
+* [Data, privacy, and security for Azure OpenAI Service](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/data-privacy)
 
 ## Phase 1: Opt In with Azure Commercial
 Phase 1 will leverage Azure Commercial Azure OpenAI to enable Copilot capabilities.  The diagram below outlines how this will work.

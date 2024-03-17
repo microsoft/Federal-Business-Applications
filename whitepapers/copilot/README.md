@@ -4,7 +4,7 @@ The goal of this whitepaper is to serve as a guide for all US Federal customers 
 This document will continue to evolve as we roll out more features and functionality overtime.
 
 ## Responsible AI
-We have a wealth of documentation on our public documentation site for how we ensure Microsoft's Responsible AI framework is followed for all Microsoft Business Applications products
+Every Microsoft Business Applications service has their own dedicated Responsible AI page on our public documentation site.  Below we have summarized the links for all Power Platform and D365 services and their associated Responsible AI page,
 
 * [Power Platform](https://learn.microsoft.com/en-us/power-platform/responsible-ai-overview)
   * [Power Apps](https://learn.microsoft.com/en-us/power-apps/maker/common/responsible-ai-overview/)
@@ -16,9 +16,23 @@ We have a wealth of documentation on our public documentation site for how we en
   * [D365 Customer Service](https://learn.microsoft.com/en-us/dynamics365/customer-service/implement/responsible-ai-overview)
  
 ## Azure OpenAI
-Azure OpenAI is the service that all Copilot features are built upon. The Azure OpenAI Service is fully controlled by Microsoft; Microsoft hosts the OpenAI models in Microsoft’s Azure environment and the Service does NOT interact with any services operated by OpenAI (e.g. ChatGPT, or the OpenAI API).  For a full description of Azure OpenAI's data, privacy and security details, you can find them in the link below,
+Azure OpenAI is the service that all Copilot features are built upon. 
+
+> The Azure OpenAI Service is fully controlled by Microsoft; Microsoft hosts the OpenAI models in Microsoft’s Azure environment and the Service does NOT interact with any services operated by OpenAI (e.g. ChatGPT, or the OpenAI API).
+
+For a full description of Azure OpenAI's data, privacy and security details, you can find them in the link below,
 
 * [Data, privacy, and security for Azure OpenAI Service](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/data-privacy)
+
+## Copilot Data and Security for Power Platform and D365
+We have a detailed writeup and FAQ on our public docs in the link below,
+
+* [FAQ for Copilot in Power Platform and D365](https://learn.microsoft.com/en-us/power-platform/faqs-copilot-data-security-privacy)
+
+### Prompt Injection / Jailbreak Attack
+All Power Platform and D365 services are required to protect against prompt injections (ie jailbreak attacks).  We outline the common injection attacks and how we mitigate for those in our Azure OpenAI service in the documentation page below,
+
+* [Azure OpenAI Jailbreak Risk Detection](https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/jailbreak-detection)
 
 ## Phase 1: Opt In with Azure Commercial
 Phase 1 will leverage Azure Commercial Azure OpenAI to enable Copilot capabilities.  The diagram below outlines how this will work.

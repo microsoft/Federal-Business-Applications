@@ -4,7 +4,7 @@ The goal of this whitepaper is to serve as a guide for all US Federal customers 
 This document will continue to evolve as we roll out more features and functionality overtime.
 
 ## Responsible AI
-Every Microsoft Business Applications service has their own dedicated Responsible AI page on our public documentation site.  Below we have summarized the links for all Power Platform and D365 services and their associated Responsible AI page,
+Every Microsoft Business Applications service has their own dedicated Responsible AI page on our public documentation site.  Below we have summarized the links for all Power Platform and D365 services and their associated Responsible AI page.
 
 * [Power Platform](https://learn.microsoft.com/en-us/power-platform/responsible-ai-overview)
   * [Power Apps](https://learn.microsoft.com/en-us/power-apps/maker/common/responsible-ai-overview/)

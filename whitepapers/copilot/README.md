@@ -29,7 +29,7 @@ We have a detailed writeup and FAQ on our public docs in the link below,
 
 * [FAQ for Copilot in Power Platform and D365](https://learn.microsoft.com/en-us/power-platform/faqs-copilot-data-security-privacy)
 
-### Prompt Injection / Jailbreak Attack
+### Prompt Injection / Jailbreak Attack Protections
 All Power Platform and D365 services are required to protect against prompt injections (ie jailbreak attacks).  We outline the common injection attacks and how we mitigate for those in our Azure OpenAI service in the documentation page below,
 
 * [Azure OpenAI Jailbreak Risk Detection](https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/jailbreak-detection)

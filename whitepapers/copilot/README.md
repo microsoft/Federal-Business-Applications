@@ -12,7 +12,7 @@ Every Microsoft Business Applications service has their own dedicated Responsibl
   * [Power Pages](https://learn.microsoft.com/en-us/power-pages/responsible-ai-overview/)
   * [AI Builder](https://learn.microsoft.com/en-us/ai-builder/responsible-ai-overview)
   * [Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/responsible-ai-overview)
-* Dynamics 365
+* [Dynamics 365](https://learn.microsoft.com/en-us/dynamics365/responsible-ai-overview)
   * [D365 Customer Service](https://learn.microsoft.com/en-us/dynamics365/customer-service/implement/responsible-ai-overview)
  
 ## Azure OpenAI

@@ -46,7 +46,13 @@ Below outlines when you can expect to see Power Platform / D365 Copilot capabili
   * Copilot Studio
     * [Generative AI in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-gpt-overview)
   * Power Apps Copilot
+    * [Build apps through conversation](https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/ai-conversations-create-app)
+    * [Describe the new table](https://learn.microsoft.com/en-us/power-apps/user/well-written-input-text-copilot)
+    * [Draft with Copilot](https://learn.microsoft.com/en-us/power-apps/user/well-written-input-text-copilot)
 * Summer 2024 (GCC & GCC High)
   * D365 Customer Service
+    * [Managed D365 Customer Service Copilot Features](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-copilot-features)
   * Power Pages
+    * [Overview of Power Pages Copilot Features](https://learn.microsoft.com/en-us/power-pages/configure/ai-copilot-overview)
   * Power Automate
+    * [Power Automate Clow Flows with Copilot](https://learn.microsoft.com/en-us/power-automate/get-started-with-copilot)

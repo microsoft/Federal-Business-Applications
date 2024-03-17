@@ -37,7 +37,7 @@ All Power Platform and D365 services are required to protect against prompt inje
 ### Testing Copilot for Quality and Security
 Every new Copilot product and language model iteration must pass an internal responsible AI review before it can be launched. Before release, we use a process called "red teaming" (in which a team simulates an enemy attack, finding and exploiting weaknesses to help the organization improve its defenses) to assess potential risks in harmful content, jailbreak scenarios, and grounded responses. After release, we use automated testing and manual and automated evaluation tools to assess the quality of Copilot responses.
 
-## Phase 1: Opt In with Azure Commercial
+## Phase 1: Opt In with Azure Commercial Azure OpenAI
 Phase 1 will leverage Azure Commercial Azure OpenAI to enable Copilot capabilities.  The diagram below outlines how this will work.
 
 ![Copilot Opt In Architecture](images/CopilotPhase1Architecture.png)
@@ -73,3 +73,8 @@ Below outlines when you can expect to see Power Platform / D365 Copilot capabili
     * [Overview of Power Pages Copilot Features](https://learn.microsoft.com/en-us/power-pages/configure/ai-copilot-overview)
   * Power Automate
     * [Power Automate Clow Flows with Copilot](https://learn.microsoft.com/en-us/power-automate/get-started-with-copilot)
+
+## Phase 2: Azure for Government Azure OpenAI
+Phase 2 will leverage Azure for Government Azure OpenAI to enable Copilot capabilities.  The diagram below outlines how this will work.  The product group is still working on timelines and roadmaps for this.
+
+![Copilot Azure for Government Architecture](images/CopilotPhase2Architecture.png)

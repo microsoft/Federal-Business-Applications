@@ -78,9 +78,10 @@ Mapping the consent options from the Power Platform Admin Center you can see whi
 ## Phase 1: Timeline
 Below outlines when you can expect to see Power Platform / D365 Copilot capabilities with the Phase 1 rollout,
 
+* Available Today (GCC & GCC High)
+   * AI Builder
+     * [Create text using custom prompt](https://learn.microsoft.com/en-us/ai-builder/create-a-custom-prompt)
 * Spring 2024 (GCC & GCC High)
-  * AI Builder
-    * [Create text using custom prompt](https://learn.microsoft.com/en-us/ai-builder/create-a-custom-prompt)
   * Copilot Studio
     * [Generative AI in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-gpt-overview)
   * Power Apps Copilot

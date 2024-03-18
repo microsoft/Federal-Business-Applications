@@ -13,7 +13,7 @@ You must have the following to use this solution:
 2. Azure Government Subscription
 3. Azure Storage Account
 4. 2 Azure Blob Storage Containers (source for audio and destination for transcripts)
-5. Azure Speech to Text key
+5. Azure Batch Speech to Text key
 6. SharePoint List with attachments enabled
 
 ## What's in the solution?
@@ -31,16 +31,16 @@ You must have the following to use this solution:
   - Transcripts
   - Recogonized Phrases
   - Transcript
-- Environment Variables - Note: these will need to be updated on import
+- Environment Variables - *Note: these will need to be updated on import*
   - SharePoint Site
   - SharePoint List
   - Speech to Text Key
   - Speech to Text Region
   - Azure Blob Destination SAS URL
-    - note: this requires a SAS URI be generated and the container must allow for anonmyous access.  Additional info, and other more secure methods are described [here](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/batch-transcription-create?pivots=rest-api#specify-a-destination-container-url)
+    - *note: this requires a SAS URI be generated and the container must allow for anonmyous access.  Additional info, and other more secure methods are described [here](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/batch-transcription-create?pivots=rest-api#specify-a-destination-container-url)*
 - Web Resources
   - Icons for each table
-- Connection References - Note: these will need to be updated on import
+- Connection References - *Note: these will need to be updated on import*
   - Azure Batch Speech to Text
   - Azure Blob Storage
   - Microsoft Dataverse
@@ -49,8 +49,8 @@ You must have the following to use this solution:
 ## Limitations
 As of 3/18/2024, there appears to be some limitatins with what you can do with the OOTB Azure Speech Service Connector and Azure Blob Storage Connector.  As a result, this solution implements two workarounds:
 1. The flows connecting to Azure Speech Services (02a-02c) use the HTTP connector to directly reference the [Azure Batch Speech-to-Text API](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/batch-transcription).
-2. Because the [Azure Blob Storage trigger](https://learn.microsoft.com/en-us/connectors/azureblob/#triggers) doesn't get triggered by the creation files in a subfolder, this solution uses a loop to wait for the transcription to be completed in flow 02b.
+2. Because the [Azure Blob Storage trigger](https://learn.microsoft.com/en-us/connectors/azureblob/#triggers) doesn't get triggered by the creation of files in a subfolder, this solution uses a loop to wait for the transcription to be completed in flow 02b.
 
 ## Security and Protecting Keys
-This solution is not intended for production or senstive data. If you intend to use this, please replace the environment variable Speech to Text Key (which is an unencrypted text string) into an Secret envrionment variable (leveraging Azure Key Vault). For more check out this: [Use environment variables for Azure Key Vault secrets](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/environmentvariables-azure-key-vault-secrets)
+This solution is **NOT** intended for production or senstive data. If you intend to use this, please replace the environment variable Speech to Text Key (which is an unencrypted text string) into an Secret envrionment variable (leveraging Azure Key Vault). For more check out this: [Use environment variables for Azure Key Vault secrets](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/environmentvariables-azure-key-vault-secrets)
  

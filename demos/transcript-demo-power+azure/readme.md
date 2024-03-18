@@ -35,4 +35,13 @@ You must have the following to use this solution:
   - SharePoint List
   - Speech to Text Key
   - Speech to Text Region
+- Web Resources
+  - Icons for each table
+- Connection References - Note: these will need to be updated on import
+  - Azure Batch Speech to Text
+  - Azure Blob Storage
+  - Microsoft Dataverse
+  - SharePoint
+
+
  

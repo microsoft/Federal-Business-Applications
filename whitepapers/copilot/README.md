@@ -18,7 +18,17 @@ Every Microsoft Business Applications service has their own dedicated Responsibl
 ## Azure OpenAI
 Azure OpenAI is the service that all Copilot features are built upon. 
 
-> The Azure OpenAI Service is fully controlled by Microsoft; Microsoft hosts the OpenAI models in Microsoft’s Azure environment and the Service does NOT interact with any services operated by OpenAI (e.g. ChatGPT, or the OpenAI API).
+> [!IMPORTANT] 
+> Your prompts (inputs) and completions (outputs), your embeddings, and your training data:
+> 
+> * are NOT available to other customers.
+> * are NOT available to OpenAI.
+> * are NOT used to improve OpenAI models.
+> * are NOT used to improve any Microsoft or 3rd party products or services.
+> * are NOT used for automatically improving Azure OpenAI models for your use in your resource (The models are stateless, unless you explicitly fine-tune models with your training data).
+> 
+> Your fine-tuned Azure OpenAI models are available exclusively for your use.
+The Azure OpenAI Service is fully controlled by Microsoft; Microsoft hosts the OpenAI models in Microsoft’s Azure environment and the Service does NOT interact with any services operated by OpenAI (e.g. ChatGPT, or the OpenAI API).
 
 For a full description of Azure OpenAI's data, privacy and security details, you can find them in the link below,
 
@@ -30,7 +40,7 @@ We have a detailed writeup and FAQ on our public docs in the link below,
 * [FAQ for Copilot in Power Platform and D365](https://learn.microsoft.com/en-us/power-platform/faqs-copilot-data-security-privacy)
 
 ### Prompt Injection / Jailbreak Attack Protections
-All Power Platform and D365 services are required to protect against prompt injections (ie jailbreak attacks).  We outline the common injection attacks and how we mitigate for those in our Azure OpenAI service in the documentation page below,
+All Power Platform and D365 services are required to protect against prompt injections (i.e. jailbreak attacks).  We outline the common injection attacks and how we mitigate for those in our Azure OpenAI service in the documentation page below,
 
 * [Azure OpenAI Jailbreak Risk Detection](https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/jailbreak-detection)
 
@@ -49,7 +59,11 @@ Phase 1 will leverage Azure Commercial Azure OpenAI to enable Copilot capabiliti
 
 ![Copilot Opt In Architecture](images/CopilotPhase1Architecture.png)
 
-During Phase 1, admins will be able to "opt in" to this at the environment level to turn these capabilities on.  Below shows when you can find these settings at the environment level,
+During Phase 1, tenant level admins (i.e. Power Platform Administrator, Global Administrator) will be able to "opt in" to this at the environment level to turn these capabilities on.  
+
+> [!NOTE] Environment Admins can see the setting, however if they try to change it they will receive an error message.
+
+Below shows when you can find these settings at the environment level,
 
 ![Power Platform Admin Center GenAI Controls](images/GenAI_OptIn_Overview_01.png)
 

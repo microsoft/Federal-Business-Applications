@@ -7,11 +7,11 @@ This document will continue to evolve as we roll out more features and functiona
 Every Microsoft Business Applications service has their own dedicated Responsible AI page on our public documentation site.  Below we have summarized the links for all Power Platform and D365 services and their associated Responsible AI page.
 
 * [Power Platform](https://learn.microsoft.com/en-us/power-platform/responsible-ai-overview)
+  * [AI Builder](https://learn.microsoft.com/en-us/ai-builder/responsible-ai-overview)
+  * [Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/responsible-ai-overview)
   * [Power Apps](https://learn.microsoft.com/en-us/power-apps/maker/common/responsible-ai-overview/)
   * [Power Automate](https://learn.microsoft.com/en-us/power-automate/responsible-ai-overview/)
   * [Power Pages](https://learn.microsoft.com/en-us/power-pages/responsible-ai-overview/)
-  * [AI Builder](https://learn.microsoft.com/en-us/ai-builder/responsible-ai-overview)
-  * [Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/responsible-ai-overview)
 * [Dynamics 365](https://learn.microsoft.com/en-us/dynamics365/responsible-ai-overview)
   * [D365 Customer Service](https://learn.microsoft.com/en-us/dynamics365/customer-service/implement/responsible-ai-overview)
  
@@ -33,6 +33,18 @@ The Azure OpenAI Service is fully controlled by Microsoft; Microsoft hosts the O
 For a full description of Azure OpenAI's data, privacy and security details, you can find them in the link below,
 
 * [Data, privacy, and security for Azure OpenAI Service](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/data-privacy)
+
+## Bing Integration
+Some features in Power Platform and D365 can also leverage the Bing index to combine public website search results into Copilot features.  Integrating with Bing is completely optional, is turned off by default and is not required to take advantage of Copilot capabilities.
+
+> [!NOTE] Bing is not included in the scope of the FedRAMP package for Azure Commercial or Azure for Government.
+
+Examples of Bing integration with Copilot capabilities are listed below,
+
+* Copilot Studio
+   * [Search public data or use a Bing Custom Search for generative answers](https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-bing)
+ * D365 Customer Service
+   * [Write an Email: add trusted webpages as sources](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/copilot-enable-help-pane#add-trusted-webpages-as-sources)
 
 ## Copilot Data and Security for Power Platform and D365
 We have a detailed writeup and FAQ on our public docs in the link below,

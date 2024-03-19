@@ -155,9 +155,26 @@ This section will cover how the solution works.
 ## Demo Transcript app (canvas)
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/60e1f755-59e2-4748-b463-d7b5233b9846)
 
+### App Properties & Settings
+Several settings and properties were changed.  Note that any preview features should **not** be used for production apps. 
+
+**Display -> Scale To Fit**
+Set to off to allow for responsive resizing. Recommend if different form factors maybe used by users (e.g. phone, tablet, laptop)
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/0478df24-4d16-491d-955d-f353d21ae58d)
+
+**General -> Modern controls and themes**
+Set to on to allow for modern controls/themes in the app.  Note that some modern controls are in GA and others are still in preview at this time. 
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/608b1497-841b-4e9b-bbd6-79c6b5c062ce)
+
+
+### Screens
 The canvas app has two screens: 
 1. Main Screen
 2. Transcript Demo Screen
+
+Both screens use containers to help control the flow of the controls when resizing the app for different resolutions.  It is based on the Sidbar screen template.
+
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/1ba43b2a-0c9e-4413-a5f2-f9153b7716f4)
 
 ### Main Screen
 
@@ -251,7 +268,7 @@ The canvas app has two screens:
    ```
 **btnUploadFile_Main**: Used to upload the selected file to SPO list.  
 - **AccessibleLabel**: ```"Upload the selected file"```
-- DisplayMode: Default mode disabled. Only enabled (Edit mode) when attachment is selected and file is MP3 or WAV
+- **DisplayMode**: _Default mode disabled. Only enabled (Edit mode) when attachment is selected and file is MP3 or WAV_
   ```
    If(
     IsEmpty(attFileToUpload.Attachments),
@@ -261,7 +278,7 @@ The canvas app has two screens:
     DisplayMode.Disabled
    )
   ```
-- **OnSelect**: When clicked, shows the loading spinner and submits the form to SPO list
+- **OnSelect**: _When clicked, shows the loading spinner and submits the form to SPO list_
    ```
    // Show the loading spinner
    Set(
@@ -271,8 +288,12 @@ The canvas app has two screens:
    //Submit the form (frmUpload) to upload file to SharePoint list
    SubmitForm(frmUpload)
    ```
+- **Text**: ```"Upload"```
 
-  
+**btnCancelUpload_Main**: Clears the form (frmUpload)
+- **OnSelect**: ```ResetForm(frmUpload)```
+- **Text**: ```"Cancel"```
+
 
 
 

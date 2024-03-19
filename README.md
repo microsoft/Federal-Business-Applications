@@ -1,6 +1,6 @@
 # US Government Business Applications Demo Repository
 
-Welcome to the US Government Business Applications Demo Repository.  This repository was created to showcase sample solutions that run in the Power Platform and D365 in our various US sovereign government clouds. 
+Welcome to the US Government Business Applications Demo Repository.  This repository was created to showcase sample solutions that run in the Power Platform and Dynamics 365 in our various US sovereign government clouds. 
 
 ![US Federal Biz Apps Logo](https://repository-images.githubusercontent.com/377017613/deaf534a-73aa-4b26-a3e5-a384b8bf158a)
 
@@ -16,8 +16,8 @@ Below is a listing of the sample solutions available.  These sample solution fil
 | [Azure Computer Vision Canvas App](demos/azure-computer-vision/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Book a Room Template App](demos/Book-Room/README.MD) | :heavy_check_mark: | :heavy_check_mark: |  |
 | [Chargeback & License Management](demos/chargeback/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [D365 Fraud Protection](demos/d365-fraud-protection/d365-fraud-protection.pdf) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [D365 or Model-Driven Power Apps & Teams Click-To-Dial](demos/d365-click-to-dial-teams/README.md) | :heavy_check_mark: | | |
+| [Dynamics 365 Fraud Protection](demos/d365-fraud-protection/d365-fraud-protection.pdf) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [Dynamics 365 or Model-Driven Power Apps & Teams Click-To-Dial](demos/d365-click-to-dial-teams/README.md) | :heavy_check_mark: | | |
 | [DevOps with GitHub Actions](demos/devops/README.md)| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Electronic Signature Canvas App](demos/electronic-signatures/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Mixed Reality - Take Measurements Demo](demos/power-apps-mixed-reality-demo/README.md) | :heavy_check_mark: |  |  |
@@ -44,9 +44,9 @@ Below is a listing of the sample solutions available.  These sample solution fil
 
 Below are whitepapers that have been created specifically for use in the US Government sovereign cloud regions.
 
-* [Power Platform / D365 Gov Architecture](whitepapers/power-plat-d365-architecture/README.md)
-* [Power Platform / D365 Federal Security Recommendations](whitepapers/federal-security/README.md)
-* [Power Platform / D365 Copilot Resources](whitepapers/copilot/README.md)
+* [Power Platform / Dynamics 365 Gov Architecture](whitepapers/power-plat-d365-architecture/README.md)
+* [Power Platform / Dynamics 365 Federal Security Recommendations](whitepapers/federal-security/README.md)
+* [Power Platform / Dynamics 365 Copilot Resources](whitepapers/copilot/README.md)
 * [Azure Synapse Link Integration](whitepapers/power-platform-azure-synapse/README.md)
 * [Consume Commercial Azure Storage Resources from Power Platform GCC](https://github.com/microsoft/Federal-Business-Applications/wiki/PowerApps-Connecting-from-GCC-to-any-Endpoint-including-Commercial-Azure)
 * [Creating US Government Support Tickets](whitepapers/power-platform-support/README.md)
@@ -84,10 +84,10 @@ We recently launched a new Federal Business Applications webinar series.  Past r
 * [Power CAT Adoption Maturity Model](https://powerapps.microsoft.com/en-us/blog/power-cat-adoption-maturity-model-repeatable-patterns-for-successful-power-platform-adoption/)
 * [AI Builder Labs](https://docs.microsoft.com/en-us/ai-builder/learn-ai-builder)
 
-### D365
+### Dynamics 365
 
-* [D365 Learning Paths](https://docs.microsoft.com/en-us/learn/dynamics365/)
-* [D365 Certifications](https://docs.microsoft.com/en-us/learn/certifications/browse/?technology=Microsoft%20Dynamics%20365&products=dynamics-365)
+* [Dynamics 365 Learning Paths](https://docs.microsoft.com/en-us/learn/dynamics365/)
+* [Dynamics 365 Certifications](https://docs.microsoft.com/en-us/learn/certifications/browse/?technology=Microsoft%20Dynamics%20365&products=dynamics-365)
 
 ### Power BI
 

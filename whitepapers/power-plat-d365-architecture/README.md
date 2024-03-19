@@ -1,19 +1,19 @@
-# US Government Power Platform / D365 Architecture
+# US Government Power Platform / Dynamics 365 Architecture
 
 ## US Government Specific Documentation
 
 * [Power Automate US Government Docs](https://docs.microsoft.com/en-us/power-automate/us-govt)
 * [Power Apps US Government Docs](https://docs.microsoft.com/en-us/power-platform/admin/powerapps-us-government)
-* [D365 US Government Docs](https://docs.microsoft.com/en-us/power-platform/admin/microsoft-dynamics-365-government)
+* [Dynamics 365 US Government Docs](https://docs.microsoft.com/en-us/power-platform/admin/microsoft-dynamics-365-government)
 
 ## US Government Feature Parity Documentation
 
-[US Government Power Platform / D365 Feature Matrix](https://aka.ms/BAPFunctionalParity)
+[US Government Power Platform / Dynamics 365 Feature Matrix](https://aka.ms/BAPFunctionalParity)
 
 ## US Government Cloud Video Recordings
-Below is a presentation recording covering US Gov Cloud specific architecture of Power Platform and D365 at a Meetup group talk.  The video recording can be found below,
+Below is a presentation recording covering US Gov Cloud specific architecture of Power Platform and Dynamics 365 at a Meetup group talk.  The video recording can be found below,
 
-[Power Platform / D365 US Government Cloud Overview](https://www.youtube.com/watch?v=027gVhqt1l0&t=101s)
+[Power Platform / Dynamics 365 US Government Cloud Overview](https://www.youtube.com/watch?v=027gVhqt1l0&t=101s)
 
 There's also a great video that overviews all of Microsoft's Sovereign Clouds,
 

@@ -3,9 +3,9 @@ The goal of this whitepaper is to have a single place to refer for US Federal se
 
 # FedRAMP Packages
 * [Azure Commercial FedRAMP Package](https://marketplace.fedramp.gov/products/F1209051525)
-  * Includes only commercial Power Platform and D365 services
+  * Includes only commercial Power Platform and Dynamics 365 services
 * [Azure for Government FedRAMP Package](https://marketplace.fedramp.gov/products/F1603087869)
-  * Includes both GCC and GCC High environments for Power Platform and D365 services
+  * Includes both GCC and GCC High environments for Power Platform and Dynamics 365 services
 * [Office 365 Multi-Tenant & Supporting Services](https://marketplace.fedramp.gov/products/MSO365MT)
   * Office 365 GCC
 * [Microsoft Office 365 GCC High](https://marketplace.fedramp.gov/products/FR1824057433)
@@ -33,16 +33,16 @@ The security baseline recommendations Power Platform and Power BI can be found b
 
 # TIC 3.0 for Internal Agency Use
 
-For internal Agency use of Power Platform and D365, our services leverage the security and auditing capabilities of Microsoft 365.  We have a great blog series that outlines how Microsoft 365 services align to TIC.  The blog links can be found below,
+For internal Agency use of Power Platform and Dynamics 365, our services leverage the security and auditing capabilities of Microsoft 365.  We have a great blog series that outlines how Microsoft 365 services align to TIC.  The blog links can be found below,
 
 * [Part 1 - Securing Mobile](https://devblogs.microsoft.com/azuregov/securing-mobile-designing-saas-service-implementations-to-meet-federal-tic-policy-1-of-4/)
 * [Part 2 - Securing the Endpoint](https://devblogs.microsoft.com/azuregov/securing-the-endpoint-designing-saas-service-implementations-to-meet-federal-policy-2-of-4/)
 * [Part 3 - Securing the Platform](https://techcommunity.microsoft.com/t5/public-sector-blog/securing-the-platform-designing-saas-service-implementations-to/ba-p/1192088)
 * [Part 4 - Auditing and Logging](https://techcommunity.microsoft.com/t5/public-sector-blog/auditing-and-logging-designing-saas-service-implementations-to/ba-p/1550810)
 
-## Power Platform / D365 Auditing
+## Power Platform / Dynamics 365 Auditing
 
-You can view all of the audit logs specific to Power Platform and D365 the same way you would for all other O365 services as described in the blog articles above.  Details on each Power Platform / D365 service and their corresponding auditing types that get logged can be found in our documentation pages below,
+You can view all of the audit logs specific to Power Platform and Dynamics 365 the same way you would for all other O365 services as described in the blog articles above.  Details on each Power Platform / Dynamics 365 service and their corresponding auditing types that get logged can be found in our documentation pages below,
 
 * [Power Apps Audit Logs](https://learn.microsoft.com/en-us/power-platform/admin/logging-powerapps)
 * [Power Automate Audit Logs](https://learn.microsoft.com/en-us/power-platform/admin/logging-power-automate)
@@ -108,14 +108,14 @@ When designing a Power Page, we highly recommend reviewing the security controls
 
 * [Power Pages Security Controls](https://learn.microsoft.com/en-us/power-pages/security/power-pages-security)
 
-# Power Platform / D365 Endpoint URLs
-Use the following public documentation page to get the full list of internet URLs to allow for Power Platform and D365 cloud services.  Make sure to filter to your US Government cloud region (i.e. GCC, GCC High or DOD).
+# Power Platform / Dynamics 365 Endpoint URLs
+Use the following public documentation page to get the full list of internet URLs to allow for Power Platform and Dynamics 365 cloud services.  Make sure to filter to your US Government cloud region (i.e. GCC, GCC High or DOD).
 
 * [Power Platform Government Endpoint URLs for Allow List](https://learn.microsoft.com/en-us/power-platform/admin/online-requirements#internet-urls-to-allow)
 * [Dynamics 365 Government Endpoint URLs for Allow List](https://learn.microsoft.com/en-us/power-platform/admin/microsoft-dynamics-365-government#dynamics-365-us-government-urls)
 
-# Power Platform / D365 IP Ranges
-Use the following Azure for Government service tags to get the IP ranges that Power Platform / D365 use for GCC, GCC High and DOD cloud regions.  You can find the full list of Azure for Government IP Ranges in the following document,
+# Power Platform / Dynamics 365 IP Ranges
+Use the following Azure for Government service tags to get the IP ranges that Power Platform / Dynamics 365 use for GCC, GCC High and DOD cloud regions.  You can find the full list of Azure for Government IP Ranges in the following document,
 
 * [Azure for Government IP Ranges](https://www.microsoft.com/en-us/download/details.aspx?id=57063)
 

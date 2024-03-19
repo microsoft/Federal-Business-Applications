@@ -20,7 +20,7 @@ You must have the following to use this solution:
 1. Power Apps Premium license
 2. Azure Government Subscription
 3. Azure Storage Account
-4. 2 Azure Blob Storage Containers (source for audio and destination for transcripts)
+4. **Two** Azure Blob Storage Containers (source for audio and destination for transcripts)
 5. Azure Batch Speech to Text key
 6. SharePoint List with attachments enabled
 
@@ -61,4 +61,46 @@ As of 3/18/2024, there appears to be some limitatins with what you can do with t
 
 ## Security and Protecting Keys
 This solution is **NOT** intended for production or senstive data. If you intend to use this, please replace the environment variable Speech to Text Key (which is an unencrypted text string) into an Secret envrionment variable (leveraging Azure Key Vault). For more check out this: [Use environment variables for Azure Key Vault secrets](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/environmentvariables-azure-key-vault-secrets)
- 
+
+# User Guide
+There are two apps in this solution: a canvas app for end users and a model-driven app for developers and admins
+
+## Demo Transcript App (canvas app)
+This app is designed to let users upload an audio file, then edit the subsquent transcript that is generated.  
+
+### Upload Audio File
+To get started, upload click the attachment control
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/54e6defe-62f3-4476-9769-014f2420029e)
+
+Please select MP3 or WAV file.  Note: this demo oly supports these two formats, but [Azure Batch Speech to Text supports the following formats](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/batch-transcription-audio-data?tabs=portal#supported-audio-formats-and-codecs):
+- WAV
+- MP3
+- OPUS/OGG
+- FLAC
+- WMA
+- AAC
+- ALAW in WAV container
+- MULAW in WAV container
+- AMR
+- WebM
+- M4A
+- SPEEX
+
+Once selected, click **Upload**.  The audio file is then uploaded as an attachment to a new item in your SharePoint list.  *Note: this is only required due to current [limitations](#limitations) with Azure Blob Storage connector in Power Apps.*
+
+Behind the scenes, Power Automate executes a series of flows to generate the transcript (via Azure Batch Speech to Text services) and then load the transcript into Dataverse
+
+### View/Edit Transcript
+After the transcript is loaded into Dataverse, the transcript will appear in the app on the left hand side. You may need to refresh the app to see the latest data. 
+
+Click the transcript you'd like to view/edit
+
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/a6eefbc0-8ef4-4db9-b7e4-db8a455d7960)
+
+This takes you to the next screen.  Click the play button to start audio playback.  As the audio plays, the current phrase will appear and update to nmatch the playhead's time code.
+
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/bbc37e6e-8995-4667-b214-2a24a8833757)
+
+
+
+

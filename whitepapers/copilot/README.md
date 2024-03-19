@@ -109,6 +109,6 @@ Below outlines when you can expect to see Power Platform / D365 Copilot capabili
     * [Power Automate Cloud Flows with Copilot](https://learn.microsoft.com/en-us/power-automate/get-started-with-copilot)
 
 ## Phase 2: Azure for Government Azure OpenAI
-Phase 2 will leverage Azure for Government Azure OpenAI to enable Copilot capabilities.  The diagram below outlines how this will work.  The product group is still working on timelines and roadmaps for this.
+Phase 2 will leverage Azure for Government Azure OpenAI to enable Copilot capabilities.  The diagram below outlines how this will work.  The product group is still working on timelines and roadmap for this phase.
 
 ![Copilot Azure for Government Architecture](images/CopilotPhase2Architecture.png)

@@ -10,6 +10,7 @@ approvers
 AppSource
 ArcGIS
 ATO
+Bing
 BizApps
 bolded
 BPF
@@ -42,6 +43,7 @@ DoD
 dropdown
 Dynamics
 Ebook
+embeddings
 Entra
 executeQueries
 ExpressRoute
@@ -70,6 +72,7 @@ OData
 Omnichannel
 OneDrive
 OpenAPI
+OpenAI
 PDF
 PDF's
 PII
@@ -92,6 +95,7 @@ th
 UI
 Valter
 WAF
+webpages
 whitepaper
 Whitepapers
 whitepapers

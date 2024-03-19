@@ -176,19 +176,60 @@ The canvas app has two screens:
 **attFileToUpload**: This control has several properties that have been customized:
 - **AccesibleLabel**: ``` "File to attach (upload) and transcribe" ```
 - **AddAttachmentText**: ```"Select file"```
-- **Color**: ```If(Right(First(Self.Attachments).Name,3) = "mp3" Or Right(First(Self.Attachments).Name,3) = "wav",Color.Black,IsEmpty(Self.Attachments),Color.Black,Color.Red)```
-   - _This changes color to red if selected file is not MP3 or WAV_
+- **Color**:  _This changes color to red if selected file is not MP3 or WAV_
+  ```
+  If(
+    Right(
+        First(Self.Attachments).Name,
+        3
+    ) = "mp3" Or Right(
+        First(Self.Attachments).Name,
+        3
+    ) = "wav",
+    Color.Black,
+    IsEmpty(Self.Attachments),
+    Color.Black,
+    Color.Red
+   )
+  ```
 - **Height**: ```100```
 - **MaxAttachments**: ```1```
    - _If you want to allow for batch uploads, increase this option, but performance may suffer for larger files. _
 - **MaxAttachmentSize**: ```1000```
-- **OnAddFile**:
-- **OnRemoveFile**:
-- 
+   - _In MB_
+- **MaxAttachmentText**: *This code does some basic data validation to check if the selected file is MP3 or WAV* 
+  ```
+  If(
+    Right(
+        First(Self.Attachments).Name,
+        3
+    ) = "mp3" Or Right(
+        First(Self.Attachments).Name,
+        3
+    ) = "wav",
+    "File Selected. Please click Upload",
+    "Error:  Only .mp3 and .wav file formats are supported"
+   )
+  ```
+- **NoAttachmentsText**: ```"There is nothing selected."```
+- **OnAddFile**: *Stores the first selected file in a variable. IF you allow for more than one attachment, you'll to refactor this *
+```
+   Set(
+    glbSelectedFileName,
+    First(attFileToUpload.Attachments).Name
+   )
+  ```
+- **OnRemoveFile**: *Clears the variable*
+  ```
+  Set(
+    glbSelectedFileName,
+    Blank()
+   )
+   ```
 
-- **NoAttachmentsText**
-- **MaxAttachmentText**: ``` If(Right(First(Self.Attachments).Name,3) = "mp3" Or Right(First(Self.Attachments).Name,3) = "wav","File Selected. Please click Upload","Error:  Only .mp3 and .wav file formats are supported") ```
-   - *This code does some basic data validation to check if the selected file is MP3 or WAV*
+
+
+
 
 
 

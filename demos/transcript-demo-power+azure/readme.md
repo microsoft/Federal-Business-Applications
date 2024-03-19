@@ -109,6 +109,27 @@ There two things you can edit:
 
 
 #### Edit Transcript Text
-Click the Edit button.  You can now update any of the text in the transcript text box.  After you make the changes, click Save
+Click the **Edit** button.  You can now update any of the text in the transcript text box.  After you make the changes, click **Save**
+
+### Identify/Assign Speaker
+If you'd like to replace the speaker number with the name of the speaker, select the speaker name from the dropdown.  If the name isn't list, click New Speaker button and fill out the **Name** field and click **Save**
+
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/7f3e495c-a2c9-429e-8e6a-e368373439a3)
+
+After assigning the speaker click **Save**.  A pop-up will appear:
+
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/3fed044e-bdbd-4801-9165-21f19755fd37)
+
+If you want to update every instance of the speaker number with the selected speaker, click **Yes**. Otherwise, click **No**. If you click **Yes**, it will take a little longer to save the changes.
+
+## Demo Transcript Admin App (model driven)
+
+The other app exists mostly for developers, but might also prove useful for admins.  It gives you access to all three tables and the ability to view the additional metadata captured by Azure Speech to Text. 
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/c88bdb6f-4f18-45b9-b4cb-d8b0b4dd7560)
+
+
+
+
+
 
 

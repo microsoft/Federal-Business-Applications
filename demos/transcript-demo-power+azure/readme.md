@@ -210,7 +210,7 @@ The form is connected to the SharePoint list. In my demo, it's a simple list wit
    ```
 - **Width**: ```Parent.Width ```
 
-**Title_DataCard**: _This card is hidden and updated via variable (set by **attFileToUpload**). _
+**Title_DataCard**: _This card is hidden and updated via variable (set by **attFileToUpload**)._
 - **Default**: ```glbSelectedFileName```
 - **Visible**: ```false```
 
@@ -235,7 +235,7 @@ The form is connected to the SharePoint list. In my demo, it's a simple list wit
   ```
 - **Height**: ```100```
 - **MaxAttachments**: ```1```
-   - _If you want to allow for batch uploads, increase this option, but performance may suffer for larger files. _
+   - _If you want to allow for batch uploads, increase this option, but performance may suffer for larger files. Also some other parts of the app may need to be refactored if you allow more than 1 file at a time_
 - **MaxAttachmentSize**: ```1000```
    - _In MB_
 - **MaxAttachmentText**: *This code does some basic data validation to check if the selected file is MP3 or WAV* 
@@ -295,7 +295,32 @@ The form is connected to the SharePoint list. In my demo, it's a simple list wit
 - **OnSelect**: ```ResetForm(frmUpload)```
 - **Text**: ```"Cancel"```
 
-
+**galTranscripts_Main**: 
+Displays **all** the available transcripts in the Transcripts table. Some properties were customized:
+- **AccessibleLabel**: ```"All the available transcripts to review/edit"```
+- **Items**: ```Transcripts```
+- **OnSelect**: _When item is selected, store a copy of the **Recognized Phrases** for the selected transcript in a collection (**colPhrases**) and sort the collection in acensinding order by the '**Offset in Seconds**', then go to the **Transcript Demo Screen**_  
+   ```
+   ClearCollect(
+       colPhrases,
+       SortByColumns(
+           Filter(
+               'Recognized Phrases',
+               Transcript.Transcript = ThisItem.Transcript
+           ),
+           "demo_offsetinseconds",
+           SortOrder.Ascending
+       )
+   );
+   //Store the currently selected transcript in a global variable
+   Set(
+       glbSelectedTranscript,
+       ThisItem
+   );
+   //Navigate to the Transcript Demo Screen
+   Navigate('Transcript Demo Screen')
+   ```
+- **Width**: ```Parent.Width-Parent.PaddingLeft*2```
 
 
 

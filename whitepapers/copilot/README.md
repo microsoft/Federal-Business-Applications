@@ -37,7 +37,8 @@ For a full description of Azure OpenAI's data, privacy and security details, you
 ## Bing Integration
 Some features in Power Platform and D365 can also leverage the Bing index to combine public website search results into Copilot features.  Integrating with Bing is completely optional, is turned off by default and is not required to take advantage of Copilot capabilities.
 
-> [!NOTE] Bing is not included in the scope of the FedRAMP package for Azure Commercial or Azure for Government.
+> [!NOTE]
+> Bing is not included in the scope of the FedRAMP package for Azure Commercial or Azure for Government.  This is why this setting is turned off by default.
 
 Examples of Bing integration with Copilot capabilities are listed below,
 
@@ -57,7 +58,7 @@ All Power Platform and D365 services are required to protect against prompt inje
 * [Azure OpenAI Jailbreak Risk Detection](https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/jailbreak-detection)
 
 ### Testing Copilot for Quality and Security
-> Every new Copilot product and language model iteration must pass an internal responsible AI review before it can be launched. Before release, we use a process called "red teaming" (in which a team simulates an enemy attack, finding and exploiting weaknesses to help the organization improve its defenses) to assess potential risks in harmful content, jailbreak scenarios, and grounded responses. After release, we use automated testing and manual and automated evaluation tools to assess the quality of Copilot responses.
+Every new Copilot product and language model iteration must pass an internal responsible AI review before it can be launched. Before release, we use a process called "red teaming" (in which a team simulates an enemy attack, finding and exploiting weaknesses to help the organization improve its defenses) to assess potential risks in harmful content, jailbreak scenarios, and grounded responses. After release, we use automated testing and manual and automated evaluation tools to assess the quality of Copilot responses.
 
 ### DLP Policies
 Copilot features in Power Platform and Dynamics 365 do not have elevated security permissions to view data that otherwise could not be viewed.  This means that access control assigned to data in Dataverse still is obeyed by Copilot features.
@@ -71,9 +72,8 @@ Phase 1 will leverage Azure Commercial Azure OpenAI to enable Copilot capabiliti
 
 ![Copilot Opt In Architecture](images/CopilotPhase1Architecture.png)
 
-During Phase 1, tenant level admins (i.e. Power Platform Administrator, Global Administrator) will be able to "opt in" to this at the environment level to turn these capabilities on.  
-
-> [!NOTE] Environment Admins can see the setting, however if they try to change it they will receive an error message.
+> [!NOTE]
+> During Phase 1, tenant level admins (i.e. Power Platform Administrator, Global Administrator) will be able to "opt in" to this at the environment level to turn these capabilities on. Environment Admins can see the setting, however if they try to change it they will receive an error message.
 
 Below shows when you can find these settings at the environment level,
 

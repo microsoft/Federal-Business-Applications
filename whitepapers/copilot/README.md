@@ -1,5 +1,5 @@
 # Federal Copilot Resources for Microsoft Business Applications
-The goal of this whitepaper is to serve as a guide for all US Federal customers to understand how Copilot across US Federal sovereign clouds is rolling out for Power Platform and Dynamics 365.  We also want to outline our Microsoft Responsible AI framework, demonstrate what security protections we put in place for end users and organizational data, as well as illustrate architecture diagrams of how all of this works.  
+The goal of this whitepaper is to serve as a guide for all US Federal customers to understand how Copilot across US Government sovereign clouds is rolling out for Power Platform and Dynamics 365.  We also want to outline our Microsoft Responsible AI framework, demonstrate what security protections we put in place for end users and organizational data, as well as illustrate architecture diagrams of how all of this works.  
 
 This document will continue to evolve as we roll out more features and functionality overtime.
 
@@ -61,7 +61,9 @@ All Power Platform and Dynamics 365 services are required to protect against pro
 Every new Copilot product and language model iteration must pass an internal responsible AI review before it can be launched. Before release, we use a process called "red teaming" (in which a team simulates an enemy attack, finding and exploiting weaknesses to help the organization improve its defenses) to assess potential risks in harmful content, jailbreak scenarios, and grounded responses. After release, we use automated testing and manual and automated evaluation tools to assess the quality of Copilot responses.
 
 ### DLP Policies
-Copilot features in Power Platform and Dynamics 365 do not have elevated security permissions to view data that otherwise could not be viewed.  This means that access control assigned to data in Dataverse still is obeyed by Copilot features.
+Copilot features in Power Platform and Dynamics 365 do not have elevated security permissions to view data that otherwise could not be viewed.  This means that access control assigned to data in Dataverse still is obeyed by Copilot features.  Full details on Dataverse security roles and permissions can be found below,
+
+* [Dataverse Security Roles and Permissions](https://learn.microsoft.com/en-us/power-platform/admin/security-roles-privileges)
 
 Existing security controls like [Data Loss Prevention Policies](https://learn.microsoft.com/en-us/power-platform/admin/wp-data-loss-prevention) still apply to Copilot features including Copilot Studio,
 
@@ -88,7 +90,10 @@ Mapping the consent options from the Power Platform Admin Center you can see whi
 ![Power Platform Admin Center GenAI Consent Options](images/GenAI_OptIn_Overview_03.png)
 
 ## Phase 1: Timeline
-Below outlines when you can expect to see Power Platform / Dynamics 365 Copilot capabilities with the Phase 1 rollout,
+Below outlines target timelines for Power Platform / Dynamics 365 Copilot capabilities with the Phase 1 rollout.  
+
+> [!NOTE]
+> These dates are for planning purposes only and are subject to change without notice.
 
 * Available Today (GCC & GCC High)
    * AI Builder

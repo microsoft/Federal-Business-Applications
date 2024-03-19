@@ -171,7 +171,30 @@ The canvas app has two screens:
 - glbMode: Used on the next screen to toggle between Edit and View display modes via the Edit Button
   
 #### Controls
-**frmUpload**: The form is connected to the SharePoint list. In my demo, it's a simple list with only one field, **Title**.  
+**frmUpload**: The form is connected to the SharePoint list. In my demo, it's a simple list with only one field, **Title**.  Some of properties have been updated:
+- **DefaultMode**: ```FormMode.New```
+- **OnSuccess**: *When the form successfully creates the SPO list item, THEN run three functions concurrently (to improve performance)*
+  ```
+  Concurrent(
+    //Hide the loading spinner
+    Set(
+        glbShowSpinner,
+        false
+    ),
+    //Show the success message
+    Set(
+        glbShowSuccess,
+        true
+    ),
+    //Reset the upload form
+    ResetForm(frmUpload)
+   )
+   ```
+- **Width**: ```Parent.Width ```
+
+**Title_DataCard**: _This card is hidden and updated via variable (set by **attFileToUpload**). _
+- **Default**: ```glbSelectedFileName```
+- **Visible**: ```false```
 
 **attFileToUpload**: This control has several properties that have been customized:
 - **AccesibleLabel**: ``` "File to attach (upload) and transcribe" ```
@@ -212,7 +235,7 @@ The canvas app has two screens:
    )
   ```
 - **NoAttachmentsText**: ```"There is nothing selected."```
-- **OnAddFile**: *Stores the first selected file in a variable. IF you allow for more than one attachment, you'll to refactor this *
+- **OnAddFile**: *Stores the first selected file in a variable. IF you allow for more than one attachment, you'll need to refactor this*
 ```
    Set(
     glbSelectedFileName,
@@ -226,7 +249,30 @@ The canvas app has two screens:
     Blank()
    )
    ```
+**btnUploadFile_Main**: Used to upload the selected file to SPO list.  
+- **AccessibleLabel**: ```"Upload the selected file"```
+- DisplayMode: Default mode disabled. Only enabled (Edit mode) when attachment is selected and file is MP3 or WAV
+  ```
+   If(
+    IsEmpty(attFileToUpload.Attachments),
+    DisplayMode.Disabled,
+    Right(First(attFileToUpload.Attachments).Name,3) = "mp3" Or Right(First(attFileToUpload.Attachments).Name,3) = "wav",
+    DisplayMode.Edit,
+    DisplayMode.Disabled
+   )
+  ```
+- **OnSelect**: When clicked, shows the loading spinner and submits the form to SPO list
+   ```
+   // Show the loading spinner
+   Set(
+       glbShowSpinner,
+       true
+   );
+   //Submit the form (frmUpload) to upload file to SharePoint list
+   SubmitForm(frmUpload)
+   ```
 
+  
 
 
 

@@ -174,12 +174,21 @@ The canvas app has two screens:
 **frmUpload**: The form is connected to the SharePoint list. In my demo, it's a simple list with only one field, **Title**.  
 
 **attFileToUpload**: This control has several properties that have been customized:
-- OnAddFile:
-- OnRemoveFile:
-- MaxAttachments
-- MaxAttachmentSize
-- NoAttachmentsText
-- MaxAttachmentText
-- AddAttachmentText
-- Height
+- **AccesibleLabel**: ``` "File to attach (upload) and transcribe" ```
+- **AddAttachmentText**: ```"Select file"```
+- **Color**: ```If(Right(First(Self.Attachments).Name,3) = "mp3" Or Right(First(Self.Attachments).Name,3) = "wav",Color.Black,IsEmpty(Self.Attachments),Color.Black,Color.Red)```
+   - _This changes color to red if selected file is not MP3 or WAV_
+- **Height**: ```100```
+- **MaxAttachments**: ```1```
+   - _If you want to allow for batch uploads, increase this option, but performance may suffer for larger files. _
+- **MaxAttachmentSize**: ```1000```
+- **OnAddFile**:
+- **OnRemoveFile**:
+- 
+
+- **NoAttachmentsText**
+- **MaxAttachmentText**: ``` If(Right(First(Self.Attachments).Name,3) = "mp3" Or Right(First(Self.Attachments).Name,3) = "wav","File Selected. Please click Upload","Error:  Only .mp3 and .wav file formats are supported") ```
+   - *This code does some basic data validation to check if the selected file is MP3 or WAV*
+
+
 

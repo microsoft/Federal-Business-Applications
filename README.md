@@ -46,7 +46,7 @@ Below are whitepapers that have been created specifically for use in the US Gove
 
 * [Power Platform / D365 Gov Architecture](whitepapers/power-plat-d365-architecture/README.md)
 * [Power Platform / D365 Federal Security Recommendations](whitepapers/federal-security/README.md)
-* [Power Platfrom / D365 Copilot Resources](whitepapers/copilot/README.md)
+* [Power Platform / D365 Copilot Resources](whitepapers/copilot/README.md)
 * [Azure Synapse Link Integration](whitepapers/power-platform-azure-synapse/README.md)
 * [Consume Commercial Azure Storage Resources from Power Platform GCC](https://github.com/microsoft/Federal-Business-Applications/wiki/PowerApps-Connecting-from-GCC-to-any-Endpoint-including-Commercial-Azure)
 * [Creating US Government Support Tickets](whitepapers/power-platform-support/README.md)

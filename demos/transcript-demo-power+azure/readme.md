@@ -158,12 +158,12 @@ This section will cover how the solution works.
 ### App Properties & Settings
 Several settings and properties were changed.  Note that any preview features should **not** be used for production apps. 
 
-**Display -> Scale To Fit**
-Set to off to allow for responsive resizing. Recommend if different form factors maybe used by users (e.g. phone, tablet, laptop)
+**Display -> Scale To Fit**  
+Set to off to allow for responsive resizing. Recommend if different form factors maybe used by users (e.g. phone, tablet, laptop)  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/0478df24-4d16-491d-955d-f353d21ae58d)
 
-**General -> Modern controls and themes**
-Set to on to allow for modern controls/themes in the app.  Note that some modern controls are in GA and others are still in preview at this time. 
+**General -> Modern controls and themes**  
+Set to on to allow for modern controls/themes in the app.  Note that some modern controls are in GA and others are still in preview at this time.   
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/608b1497-841b-4e9b-bbd6-79c6b5c062ce)
 
 
@@ -181,14 +181,15 @@ Both screens use containers to help control the flow of the controls when resizi
 #### Properties
 
 **OnVisible**: When the screen loads, several global variables are set:
-- glbShowSuccess: Used to show/hide the Success message when upload is completed
-- glbSelectedFileName: Stores the file name of the selected file
-- glbSelectedTranscript: Stores the selected transcript from from the left hand gallery (galTranscripts_Main)
-- glbCurrentPhrase: Used on the next screen, to identify the current recogonized phrase based on the current playback point in the audio controller
-- glbMode: Used on the next screen to toggle between Edit and View display modes via the Edit Button
+- **glbShowSuccess**: Used to show/hide the Success message when upload is completed
+- **glbSelectedFileName**: Stores the file name of the selected file
+- **glbSelectedTranscript**: Stores the selected transcript from from the left hand gallery (galTranscripts_Main)
+- **glbCurrentPhrase**: Used on the next screen, to identify the current recogonized phrase based on the current playback point in the audio controller
+- **glbMode**: Used on the next screen to toggle between Edit and View display modes via the Edit Button
   
 #### Controls
-**frmUpload**: The form is connected to the SharePoint list. In my demo, it's a simple list with only one field, **Title**.  Some of properties have been updated:
+**frmUpload**:  
+The form is connected to the SharePoint list. In my demo, it's a simple list with only one field, **Title**.  Some of properties have been updated:  
 - **DefaultMode**: ```FormMode.New```
 - **OnSuccess**: *When the form successfully creates the SPO list item, THEN run three functions concurrently (to improve performance)*
   ```

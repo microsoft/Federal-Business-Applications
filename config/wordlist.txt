@@ -23,6 +23,7 @@ chatbot
 Chatbot
 chatbot's
 Chatbot's
+ChatGPT
 CIDR
 CISA
 CISA's
@@ -73,6 +74,7 @@ Omnichannel
 OneDrive
 OpenAPI
 OpenAI
+OpenAI's
 PDF
 PDF's
 PII
@@ -80,6 +82,8 @@ PIV
 PowerShell
 prebuilt
 programmatically
+roadmap
+rollout
 RPA
 Runtime
 runtime
@@ -99,4 +103,5 @@ webpages
 whitepaper
 Whitepapers
 whitepapers
+writeup
 workspaces

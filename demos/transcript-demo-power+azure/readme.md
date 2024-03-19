@@ -27,7 +27,7 @@ You must have the following to use this solution:
 4. **Two** Azure Blob Storage Containers (source for audio and destination for transcripts)
 5. Azure Batch Speech to Text key
 6. SharePoint List with attachments enabled
-7. 
+   
 [^ Top](#contents)
 
 ## What's in the solution?

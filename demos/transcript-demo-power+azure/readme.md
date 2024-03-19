@@ -9,11 +9,15 @@ This demo is designed to illustrate the "better together" story of Azure + Power
 - [What's in the solution?](#whats-in-the-solution)
 - [Limitations](#limitations)
 - [Security and Protecting Keys](#security-and-protecting-keys)
+- [User Guide](#user-guide)
+- [Developer Guide](#developer-guide)
 
 ***
 
 ## Supported Clouds
 This demo was built in a GCC-High tenant.  If you are using a GCC tenant, note that you will need an Azure Gov subscription to connect directly to [Azure Blob Storage](https://powerautomate.microsoft.com/en-us/connectors/details/shared_azureblob/azure-blob-storage/) and [Azure Speech to Text](https://powerautomate.microsoft.com/en-us/connectors/details/shared_cognitiveservicesspe/azure-batch-speech-to-text/) from Power Apps and Power Automate via the out of the box (OOTB) connectors.  There is a workaround described [here](https://github.com/microsoft/Federal-Business-Applications/wiki/PowerApps-Connecting-from-GCC-to-any-Endpoint-including-Commercial-Azure). 
+
+[^ Top](#contents)
 
 ## Prerequisites
 You must have the following to use this solution:
@@ -23,6 +27,8 @@ You must have the following to use this solution:
 4. **Two** Azure Blob Storage Containers (source for audio and destination for transcripts)
 5. Azure Batch Speech to Text key
 6. SharePoint List with attachments enabled
+7. 
+[^ Top](#contents)
 
 ## What's in the solution?
 - Apps
@@ -54,19 +60,29 @@ You must have the following to use this solution:
   - Microsoft Dataverse
   - SharePoint
 
+[^ Top](#contents)
+
 ## Limitations
 As of 3/18/2024, there appears to be some limitatins with what you can do with the OOTB Azure Speech Service Connector and Azure Blob Storage Connector.  As a result, this solution implements two workarounds:
 1. The flows connecting to Azure Speech Services (02a-02c) use the HTTP connector to directly reference the [Azure Batch Speech-to-Text API](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/batch-transcription).
 2. Because the [Azure Blob Storage trigger](https://learn.microsoft.com/en-us/connectors/azureblob/#triggers) doesn't get triggered by the creation of files in a subfolder, this solution uses a loop to wait for the transcription to be completed in flow 02b.
 
+[^ Top](#contents)
+
 ## Security and Protecting Keys
 This solution is **NOT** intended for production or senstive data. If you intend to use this, please replace the environment variable Speech to Text Key (which is an unencrypted text string) into an Secret envrionment variable (leveraging Azure Key Vault). For more check out this: [Use environment variables for Azure Key Vault secrets](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/environmentvariables-azure-key-vault-secrets)
 
+[^ Top](#contents)
+***
 # User Guide
 There are two apps in this solution: a canvas app for end users and a model-driven app for developers and admins
 
+[^ Top](#contents)
+
 ## Demo Transcript App (canvas app)
 This app is designed to let users upload an audio file, then edit the subsquent transcript that is generated.  
+
+[^ Top](#contents)
 
 ### Upload Audio File
 To get started, upload click the attachment control
@@ -90,6 +106,8 @@ Once selected, click **Upload**.  The audio file is then uploaded as an attachme
 
 Behind the scenes, Power Automate executes a series of flows to generate the transcript (via Azure Batch Speech to Text services) and then load the transcript into Dataverse
 
+[^ Top](#contents)
+
 ### View/Edit Transcript
 After the transcript is loaded into Dataverse, the transcript will appear in the app on the left hand side. You may need to refresh the app to see the latest data. 
 
@@ -107,6 +125,7 @@ There two things you can edit:
 
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/9558df96-cbab-4ce4-bbe2-4cdffd920f1a)
 
+[^ Top](#contents)
 
 #### Edit Transcript Text
 Click the **Edit** button.  You can now update any of the text in the transcript text box.  After you make the changes, click **Save**
@@ -127,8 +146,9 @@ If you want to update every instance of the speaker number with the selected spe
 The other app exists mostly for developers, but might also prove useful for admins.  It gives you access to all three tables and the ability to view the additional metadata captured by Azure Speech to Text. 
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/c88bdb6f-4f18-45b9-b4cb-d8b0b4dd7560)
 
-[Top](#contents)
-
+[^ Top](#contents)
+***
+# Developer Guide
 
 
 

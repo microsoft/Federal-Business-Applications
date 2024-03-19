@@ -10,6 +10,7 @@ approvers
 AppSource
 ArcGIS
 ATO
+Bing
 BizApps
 bolded
 BPF
@@ -22,6 +23,7 @@ chatbot
 Chatbot
 chatbot's
 Chatbot's
+ChatGPT
 CIDR
 CISA
 CISA's
@@ -42,6 +44,7 @@ DoD
 dropdown
 Dynamics
 Ebook
+embeddings
 Entra
 executeQueries
 ExpressRoute
@@ -70,6 +73,8 @@ OData
 Omnichannel
 OneDrive
 OpenAPI
+OpenAI
+OpenAI's
 PDF
 PDF's
 PII
@@ -77,6 +82,8 @@ PIV
 PowerShell
 prebuilt
 programmatically
+roadmap
+rollout
 RPA
 Runtime
 runtime
@@ -92,7 +99,9 @@ th
 UI
 Valter
 WAF
+webpages
 whitepaper
 Whitepapers
 whitepapers
+writeup
 workspaces

@@ -47,7 +47,7 @@ Examples of Bing integration with Copilot capabilities are listed below,
    * [Write an Email: add trusted webpages as sources](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/copilot-enable-help-pane#add-trusted-webpages-as-sources)
 
 ## Copilot Data and Security for Power Platform and D365
-We have a detailed writeup and FAQ on our public docs in the link below,
+We have a detailed writeup and FAQ of some of our most common questions customers ask around security and data privacy for Copilot features across Power Platform and D365.  The link can be found below,
 
 * [FAQ for Copilot in Power Platform and D365](https://learn.microsoft.com/en-us/power-platform/faqs-copilot-data-security-privacy)
 

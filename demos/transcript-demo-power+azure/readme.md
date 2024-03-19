@@ -172,7 +172,7 @@ The canvas app has two screens:
 1. Main Screen
 2. Transcript Demo Screen
 
-Both screens use containers to help control the flow of the controls when resizing the app for different resolutions.  It is based on the Sidbar screen template.
+Both screens use containers to help control the flow of the controls when resizing the app for different resolutions.  Their layouts are based on the Sidebar screen template.
 
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/1ba43b2a-0c9e-4413-a5f2-f9153b7716f4)
 
@@ -185,7 +185,7 @@ Both screens use containers to help control the flow of the controls when resizi
 - **glbSelectedFileName**: Stores the file name of the selected file
 - **glbSelectedTranscript**: Stores the selected transcript from from the left hand gallery (galTranscripts_Main)
 - **glbCurrentPhrase**: Used on the next screen, to identify the current recogonized phrase based on the current playback point in the audio controller
-- **glbMode**: Used on the next screen to toggle between Edit and View display modes via the Edit Button
+- **glbMode**: Used on the next screen to toggle between Edit and View display modes via the **Edit** Button
   
 #### Controls
 **frmUpload**:  
@@ -235,7 +235,7 @@ The form is connected to the SharePoint list. In my demo, it's a simple list wit
   ```
 - **Height**: ```100```
 - **MaxAttachments**: ```1```
-   - _If you want to allow for batch uploads, increase this option, but performance may suffer for larger files. Also some other parts of the app may need to be refactored if you allow more than 1 file at a time_
+   - _If you want to allow for batch uploads, increase this option, but performance may suffer for larger files. Also some other parts of the solution may need to be refactored if you allow more than 1 file at a time_
 - **MaxAttachmentSize**: ```1000```
    - _In MB_
 - **MaxAttachmentText**: *This code does some basic data validation to check if the selected file is MP3 or WAV* 
@@ -322,7 +322,58 @@ Displays **all** the available transcripts in the Transcripts table. Some proper
    ```
 - **Width**: ```Parent.Width-Parent.PaddingLeft*2```
 
+### Transcript Demo Screen
+This screen has several containers. Some of these are used to for pop-up windows, while most are used to structure the controls.  
 
+#### Controls
+
+**contSpinnerBg**: Contains the loading spinner and is only visible when **glbShowSpinner** = true  
+**contPopUpUpdateAllSpeakersBg**: Is only visible when **gblShowPopUpUpdateAllSpeakers** = true  
+**contPopUpAddSpeaker**: Only visible when **glbShowPopUpAddSpeaker** = true 
+
+**timerTranscript**:   
+Used to update variables based on the playhead of the audio control (**audRecordingPlayback**). Some of the properties have been customized:
+- **Duration**: _This is in milliseconds. 1000 = 1 second_  
+  ```1000```
+- **OnTimerEnd**: _Every second, update the current phrase (glbCurrentPhrase)_
+  ```
+   Set(
+       glbCurrentPhrase,
+       LookUp(
+           ShowColumns(
+               colPhrases,
+               "demo_display",
+               "demo_offsetinseconds",
+               "demo_outset",
+               "demo_phrasenumber",
+               "demo_speaker",
+               "demo_SpeakerLookup",
+               "demo_Transcript",
+               "demo_recognizedphrasesid",
+               "demo_durationinseconds"
+           ),
+           // Current phrase is between the offset in seconds and the outset
+           demo_offsetinseconds <= Trunc(audRecordingPlayback.Time) And demo_outset >= Trunc(audRecordingPlayback.Time)
+       )
+      )
+   ```
+- **Repeat**: ```true```
+- **Start**: ```glbStartTimer```
+- **Visible**: ```false```
+
+**audRecordingPlayback**  
+Used to playback the original audio (stored in Azure Blob Storage)
+- **Media**: ```glbSelectedTranscript.'Source URL'```
+- **DisplayMode**: _If user is editing the current phrase, disable this so they can't move the playhead (and change the current phrase)_
+  ```
+  If(
+    glbMode = DisplayMode.Edit,
+    DisplayMode.Disabled,
+    DisplayMode.Edit
+   )
+   ```
+- **Fill**: ```PowerAppsTheme.Colors.Primary```
+   - Note: PowerAppsTheme is the default theme.  You can replace the default theme with your own. 
 
 
 

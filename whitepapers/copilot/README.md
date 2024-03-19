@@ -4,7 +4,7 @@ The goal of this whitepaper is to serve as a guide for all US Federal customers 
 This document will continue to evolve as we roll out more features and functionality overtime.
 
 ## Responsible AI
-Every Microsoft Business Applications service has their own dedicated Responsible AI page on our public documentation site.  Below we have summarized the links for all Power Platform and D365 services and their associated Responsible AI page.
+Every Microsoft Business Applications service has their own dedicated Responsible AI page on our public documentation site.  Below we have summarized the links for all Power Platform and Dynamics 365 services and their associated Responsible AI page.
 
 * [Power Platform](https://learn.microsoft.com/en-us/power-platform/responsible-ai-overview)
   * [AI Builder](https://learn.microsoft.com/en-us/ai-builder/responsible-ai-overview)
@@ -13,7 +13,7 @@ Every Microsoft Business Applications service has their own dedicated Responsibl
   * [Power Automate](https://learn.microsoft.com/en-us/power-automate/responsible-ai-overview/)
   * [Power Pages](https://learn.microsoft.com/en-us/power-pages/responsible-ai-overview/)
 * [Dynamics 365](https://learn.microsoft.com/en-us/dynamics365/responsible-ai-overview)
-  * [D365 Customer Service](https://learn.microsoft.com/en-us/dynamics365/customer-service/implement/responsible-ai-overview)
+  * [Dynamics 365 Customer Service](https://learn.microsoft.com/en-us/dynamics365/customer-service/implement/responsible-ai-overview)
  
 ## Azure OpenAI
 Azure OpenAI is the service that all Copilot features are built upon. 
@@ -35,7 +35,7 @@ For a full description of Azure OpenAI's data, privacy and security details, you
 * [Data, privacy, and security for Azure OpenAI Service](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/data-privacy)
 
 ## Bing Integration
-Some features in Power Platform and D365 can also leverage the Bing index to combine public website search results into Copilot features.  Integrating with Bing is completely optional, is turned off by default and is not required to take advantage of Copilot capabilities.
+Some features in Power Platform and Dynamics 365 can also leverage the Bing index to combine public website search results into Copilot features.  Integrating with Bing is completely optional, is turned off by default and is not required to take advantage of Copilot capabilities.
 
 > [!NOTE]
 > Bing is not included in the scope of the FedRAMP package for Azure Commercial or Azure for Government.  This is why this setting is turned off by default.
@@ -44,16 +44,16 @@ Examples of Bing integration with Copilot capabilities are listed below,
 
 * Copilot Studio
    * [Search public data or use a Bing Custom Search for generative answers](https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-bing)
- * D365 Customer Service
+ * Dynamics 365 Customer Service
    * [Write an Email: add trusted webpages as sources](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/copilot-enable-help-pane#add-trusted-webpages-as-sources)
 
-## Copilot Data and Security for Power Platform and D365
-We have a detailed writeup and FAQ of some of our most common questions customers ask around security and data privacy for Copilot features across Power Platform and D365.  The link can be found below,
+## Copilot Data and Security for Power Platform and Dynamics 365
+We have a detailed writeup and FAQ of some of our most common questions customers ask around security and data privacy for Copilot features across Power Platform and Dynamics 365.  The link can be found below,
 
-* [FAQ for Copilot in Power Platform and D365](https://learn.microsoft.com/en-us/power-platform/faqs-copilot-data-security-privacy)
+* [FAQ for Copilot in Power Platform and Dynamics 365](https://learn.microsoft.com/en-us/power-platform/faqs-copilot-data-security-privacy)
 
 ### Prompt Injection / Jailbreak Attack Protections
-All Power Platform and D365 services are required to protect against prompt injections (i.e. jailbreak attacks).  We outline the common injection attacks and how we mitigate for those in our Azure OpenAI service in the documentation page below,
+All Power Platform and Dynamics 365 services are required to protect against prompt injections (i.e. jailbreak attacks).  We outline the common injection attacks and how we mitigate for those in our Azure OpenAI service in the documentation page below,
 
 * [Azure OpenAI Jailbreak Risk Detection](https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/jailbreak-detection)
 
@@ -88,7 +88,7 @@ Mapping the consent options from the Power Platform Admin Center you can see whi
 ![Power Platform Admin Center GenAI Consent Options](images/GenAI_OptIn_Overview_03.png)
 
 ## Phase 1: Timeline
-Below outlines when you can expect to see Power Platform / D365 Copilot capabilities with the Phase 1 rollout,
+Below outlines when you can expect to see Power Platform / Dynamics 365 Copilot capabilities with the Phase 1 rollout,
 
 * Available Today (GCC & GCC High)
    * AI Builder
@@ -101,8 +101,8 @@ Below outlines when you can expect to see Power Platform / D365 Copilot capabili
     * [Describe the new table](https://learn.microsoft.com/en-us/power-apps/user/well-written-input-text-copilot)
     * [Draft with Copilot](https://learn.microsoft.com/en-us/power-apps/user/well-written-input-text-copilot)
 * Summer 2024 (GCC & GCC High)
-  * D365 Customer Service
-    * [Managed D365 Customer Service Copilot Features](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-copilot-features)
+  * Dynamics 365 Customer Service
+    * [Managed Dynamics 365 Customer Service Copilot Features](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-copilot-features)
   * Power Pages
     * [Overview of Power Pages Copilot Features](https://learn.microsoft.com/en-us/power-pages/configure/ai-copilot-overview)
   * Power Automate

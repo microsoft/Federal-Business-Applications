@@ -161,14 +161,25 @@ The canvas app has two screens:
 
 ### Main Screen
 
+#### Properties
+
 **OnVisible**: When the screen loads, several global variables are set:
 - glbShowSuccess: Used to show/hide the Success message when upload is completed
 - glbSelectedFileName: Stores the file name of the selected file
 - glbSelectedTranscript: Stores the selected transcript from from the left hand gallery (galTranscripts_Main)
 - glbCurrentPhrase: Used on the next screen, to identify the current recogonized phrase based on the current playback point in the audio controller
-- glbMode: Used on the next screen to toggle between Edit and View display modes via the Edit Button 
-
+- glbMode: Used on the next screen to toggle between Edit and View display modes via the Edit Button
+  
+#### Controls
 **frmUpload**: The form is connected to the SharePoint list. In my demo, it's a simple list with only one field, **Title**.  
 
-**attFileToUpload**: When the user selects a file via this control, the 
+**attFileToUpload**: This control has several properties that have been customized:
+- OnAddFile:
+- OnRemoveFile:
+- MaxAttachments
+- MaxAttachmentSize
+- NoAttachmentsText
+- MaxAttachmentText
+- AddAttachmentText
+- Height
 

@@ -4,6 +4,14 @@ This demo is designed to illustrate the "better together" story of Azure + Power
 
 ![canvas app - main screen](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/45514b7e-ab60-4daa-95a6-cd227f1a45f0)
 
+# Contents
+- [Supported Clouds](#supported-clouds)
+- [What's in the solution?](#whats-in-the-solution)
+- [Limitations](#limitations)
+- [Security and Protecting Keys](#security-and-protecting-keys)
+
+***
+
 ## Supported Clouds
 This demo was built in a GCC-High tenant.  If you are using a GCC tenant, note that you will need an Azure Gov subscription to connect directly to [Azure Blob Storage](https://powerautomate.microsoft.com/en-us/connectors/details/shared_azureblob/azure-blob-storage/) and [Azure Speech to Text](https://powerautomate.microsoft.com/en-us/connectors/details/shared_cognitiveservicesspe/azure-batch-speech-to-text/) from Power Apps and Power Automate via the out of the box (OOTB) connectors.  There is a workaround described [here](https://github.com/microsoft/Federal-Business-Applications/wiki/PowerApps-Connecting-from-GCC-to-any-Endpoint-including-Commercial-Azure). 
 

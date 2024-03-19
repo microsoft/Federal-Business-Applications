@@ -101,6 +101,14 @@ This takes you to the next screen.  Click the play button to start audio playbac
 
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/bbc37e6e-8995-4667-b214-2a24a8833757)
 
+There two things you can edit:
+1. Text of the current phrase
+2. Identify/Assign speaker
 
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/9558df96-cbab-4ce4-bbe2-4cdffd920f1a)
+
+
+#### Edit Transcript Text
+Click the Edit button.  You can now update any of the text in the transcript text box.  After you make the changes, click Save
 
 

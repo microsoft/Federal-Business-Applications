@@ -239,7 +239,7 @@ Used to update variables based on the playhead of the audio control (**audRecord
 - **Start**: ```glbStartTimer```
 - **Visible**: ```false```
 
-**The following controls are located inside container(s). The path/location will be indicated in paranthesis. **
+**The following controls are located inside container(s). The path/location will be indicated in paranthesis.**  
 
 **audRecordingPlayback**  _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert)_
 Used to playback the original audio (stored in Azure Blob Storage)
@@ -276,5 +276,5 @@ _Note: only visible when **NOT** in edit mode_
 - **Text**:```"Edit"```
 - **Visible** ```Not(glbMode=DisplayMode.Edit)```
 
-
+**btnSave_Transcript**
 [^Top](#contents)

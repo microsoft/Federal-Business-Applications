@@ -859,7 +859,7 @@ Master flow that is triggered when a file is uploaded to the Azure Blob storage 
 
 Here's breakdown of each action:
 - **When a blob is added or modified (properties only) (V2)**: Flow is triggered when a new blob is created in the specified container
-  - In this demo, the container is called "speech-to-text-demo" ** You will need to update this trigger with your storage account and container**
+  - In this demo, the container is called "speech-to-text-demo" **You will need to update this trigger with your storage account and container**
 - **Create SAS URI by path (V2)**: Creates a Shared Access String URI path with read-only permissions set to expire 1 year later.  
   ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/932db720-558c-4953-9c85-e3f828eecd8c)  
 
@@ -876,8 +876,148 @@ Here's breakdown of each action:
   - _Note: this step is optional and will not be necessary if you write directly to Azure Blob from the canvas app (recommended)_
 - **Apply to each**: Loop through each item in the SharePoint List (should only be 1 item)
   - **Delete item**: Delete each SharePoint list item
+    
 [^Top](#contents)
 ### 02a Child Flow- Create Transcription (HTTP)
+Calls the Azure Speech Services REST API to transcribe the audio file. Note: the OOTB Azure Speech Services connector wasn't working as of 3/18/24 in GCC-High. I recommend re-factoring if/when possible to use OOTB connector
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/cb5831f5-a9c9-4238-bce0-4eb23169fae4)
+
+Here's a breakdown of the actions:
+- **Manually trigger a flow**: Triggered from the the flow [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#)
+- **HTTP**: Due to limitations at the time of this writing, the solution leverages the Azure Batch Speech to Text REST API instead of the Azure Batch Speech to Text connector.
+  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/6a2b2f84-c9c6-41b9-be0f-7baf803e0ef4)
+
+  Here are the parameters passed:
+  - **Method**: ```POST```
+  - **URI**: ```https://usgovvirginia.api.cognitive.microsoft.us/speechtotext/v3.1/transcriptions```
+  - **Headers**:
+    -   **Content-Type**: ```application/json```
+    -   **Ocp-Apim-Subscription-Key**: ```@parameters('Speech To Text Key (demo_SpeechToTextKey)')```
+    -   **Body**: 
+      ```
+      {
+        "title": "Transcription",
+        "model": null,
+        "properties": {
+          "diarizationEnabled": true,
+          "wordLevelTimestampsEnabled": false,
+          "displayFormWordLevelTimestampsEnabled": false,
+          "channels": [
+            0
+          ],
+          "destinationContainerUrl": "@{parameters('Azure Blob Destination SAS URL (demo_AzureBlobDestinationSASURL)')}",
+          "punctuationMode": "None",
+          "profanityFilterMode": "None",
+          "diarization": {
+            "speakers": {
+              "minCount": 1,
+              "maxCount": 4
+            }
+          }
+        },
+        "contentUrls": [
+          "@{triggerBody()['text']}"
+        ],
+        "displayName": "test-@{utcNow()}",
+        "locale": "en-US"
+      }
+      ```
+      There are more options you can pass to the REST API. See full documentation [here](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/rest-speech-to-text#transcriptions)
+- **Response**: Pass back the output of the previous action
+  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/77039fce-2ad0-42f2-9c24-1319b4a7f9d2)
+  Here are the paramters:
+  - **Status Code**: ```200```
+  - **Body**: ```@{body('HTTP')}```
+  - **Response Body JSON Schema**:
+    ```
+    {
+        "type": "object",
+        "properties": {
+            "self": {
+                "type": "string"
+            },
+            "model": {
+                "type": "object",
+                "properties": {
+                    "self": {
+                        "type": "string"
+                    }
+                }
+            },
+            "links": {
+                "type": "object",
+                "properties": {
+                    "files": {
+                        "type": "string"
+                    }
+                }
+            },
+            "properties": {
+                "type": "object",
+                "properties": {
+                    "diarizationEnabled": {
+                        "type": "boolean"
+                    },
+                    "wordLevelTimestampsEnabled": {
+                        "type": "boolean"
+                    },
+                    "displayFormWordLevelTimestampsEnabled": {
+                        "type": "boolean"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "channels": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    },
+                    "punctuationMode": {
+                        "type": "string"
+                    },
+                    "profanityFilterMode": {
+                        "type": "string"
+                    },
+                    "diarization": {
+                        "type": "object",
+                        "properties": {
+                            "speakers": {
+                                "type": "object",
+                                "properties": {
+                                    "minCount": {
+                                        "type": "integer"
+                                    },
+                                    "maxCount": {
+                                        "type": "integer"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "lastActionDateTime": {
+                "type": "string"
+            },
+            "status": {
+                "type": "string"
+            },
+            "createdDateTime": {
+                "type": "string"
+            },
+            "locale": {
+                "type": "string"
+            },
+            "displayName": {
+                "type": "string"
+            }
+        }
+    }
+    ```
+
+
+  
 [^Top](#contents)
 ### 02b Child Flow - Loop Until Transcript Complete
 [^Top](#contents)

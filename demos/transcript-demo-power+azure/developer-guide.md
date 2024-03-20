@@ -304,7 +304,7 @@ _Note: only visible when in edit mode_
 **btnCancel_Transcript**_(contMainTranscriptVert->contFooterTranscriptHoriz)_     
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/c26cdcec-d1a9-494e-b872-d759a875108d)
 
-  _Note: Only visible when in edit mode_  
+  _Note: Only visible when in Edit mode_  
 - **AccessibleLabel**:```"Cancel the edits to the current phrase"```
 - **Appearance**: ```'ButtonCanvas.Appearance'.Outline```
 - **OnSelect**: Resets controls and app to View mode
@@ -383,6 +383,8 @@ _Note: only visible when in edit mode_
 - **Width**: ```Self.Height```
 
 **btnNewSpeaker_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/08151b97-e2bb-404b-9638-b85eed23d579)
+
 - **AccessibleLabel**: ```"Add new speaker"```
 - **Appearance**: ```'ButtonCanvas.Appearance'.Subtle```
 - **OnSelect**: Show the Add Speaker Pop Up
@@ -585,6 +587,18 @@ Allows user to type time code (HH:MM:SS) to jump to part of recording (and trans
   ```
 - **Width**: ```100```
 
+**contPopUpAddSpeaker** 
+Only visible when user clicks + New Speaker button (btnNewSpeaker_Transcript)
+- **Fill**: ```RGBA(255, 255, 255, 1)```
+- **Height**: ```txtCurrentPhrase_Transcript.Height-10```
+- **PaddingLeft**: ```10```
+- **PaddingRight**: ```5```
+- **PaddingTop**: ```5```
+- **Border Radius** (**RadiusBottomLeft**, **RadiusBottomRight**, **RadiusTopLeft**, **RadiusTopRight**): ```20```
+- **Visible**: ```glbShowPopUpAddSpeaker```
+- **X**: ```contMainBodyTranscriptHoriz.Width+contMainBodyTranscriptHoriz.X-Self.Width```
+- **Y**: ```contMainBodyTranscriptHoriz.Y+contSpeakerTranscriptHoriz.Height+5```
+  
 
 [^Top](#contents)
 

@@ -1042,7 +1042,7 @@ Here's a breakdown of each action:
    Inside the following actions happen for each loop:
   - **Reset variable varWait**: At the start of each loop, reset to 500  - 
   - **HTTP Get Transcript Status**:  Attempts to retrieve the transcription status using the Azure Batch Speech to Text REST API.
-    ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/89475946-26fd-4464-9f31-fc1d23c480db)
+    ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/89475946-26fd-4464-9f31-fc1d23c480db)  
     With the following parameters:
     - **Method**: ```GET```
     - **URI**: ```@{triggerBody()['text']}```
@@ -1050,14 +1050,17 @@ Here's a breakdown of each action:
     - **Headers**:
       -  **Ocp-Apim-Subscription-Key**: ```@parameters('Speech To Text Key (demo_SpeechToTextKey)')```
   - **If Fail, wait and try again**: A second Do Until loop only runs when the previous action fails.  The HTTP action fails until the transcription has started. This can take several minutes depending on Azure resources.
-    The loop ends when varWait equals 0
-    ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/8843295d-a675-4773-8b4f-8666af01cf7d)
-    _Note: the Configure Run After is set to only run this action when the previous action fails_
-    ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d16a3d5e-d379-4dc5-bce5-10cdc2ada818)
-  - **Parse JSON**: This action (and subsequent actions) only run when the previous action is skipped.
-    ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/a5b034fd-938d-4c72-9683-1642d1a16df6)
-    The follow parameters are passed:
-    - **Content**: ```@{body('HTTP_Get_Transcript_Status')}```
+    The loop ends when varWait equals 0  
+    ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/8843295d-a675-4773-8b4f-8666af01cf7d)  
+    _Note: the Configure Run After is set to only run this action when the previous action fails_  
+    ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d16a3d5e-d379-4dc5-bce5-10cdc2ada818)  
+  - **Parse JSON**: This action (and subsequent actions) only run when the previous action is skipped.  
+    ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/a5b034fd-938d-4c72-9683-1642d1a16df6)  
+    ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/e08d8dcd-dfeb-4e42-8025-43743c8af9f6)  
+
+    The follow parameters are passed:  
+    - **Content**: Pass the output of the **HTTP Get Transcript Status** action
+      ```@{body('HTTP_Get_Transcript_Status')}```
     - **Schema**:
       ```
       {
@@ -1140,6 +1143,16 @@ Here's a breakdown of each action:
           }
       }
       ```
+  - **If Status is Success**: A conditional control that checks if the status is Succeeded  
+    ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/e427bb29-fb80-45f5-9270-c60e80538695)  
+    - **If Yes**: Then update **varCompleted** to ```true```
+      ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/20a888d9-ee4e-4771-a902-43209066957c)
+    - If no: Reset the varWait and do another loop (do until):  
+      ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/fd7aa5ef-23cd-4540-aa9c-e86e841d227a)  
+
+      - **Reset varWait to 5000**
+      - **If not Succeeded, Wait and Try Again**: Do Until **varWait** equals ```0```
+        -  **Decrement variable  varWait by 1**
 
 
 [^Top](#contents)

@@ -375,5 +375,17 @@ _Note: only visible when in edit mode_
   ```
 - **Text**: ```"+ New Speaker"```
 - **Visible**: ```glbMode=DisplayMode.Edit```
-  
+
+**lblSourceFileName_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
+- **FillPortions**: ```4```
+- **Text**: ```"Source: " & glbSelectedTranscript.'Source File Name'```
+
+**btnJumpToInPoint** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
+- **AccessibleLabel**: ```"Jump to In Point"```
+- **Appearance**: ```'ButtonCanvas.Appearance'.Outline```
+- **OnSelect**: ```Set(glbJumpToTime,glbCurrentPhrase.demo_offsetinseconds)```
+- **Text**: ```"↦"1```
+- **Visible**: ```glbMode=DisplayMode.View```
+
+ 
 [^Top](#contents)

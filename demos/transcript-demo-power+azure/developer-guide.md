@@ -1021,16 +1021,25 @@ Here's a breakdown of the actions:
 [^Top](#contents)
 ### 02b Child Flow - Loop Until Transcript Complete
 Due to issue/limitation of the [Azure Blob Storage trigger]([url](https://learn.microsoft.com/en-us/connectors/azureblob/)) on file create/update, I had to create a flow that waits for the transcription to complete. Use caution when looping. If possible, re-factor to trigger when transcript file is completed.  
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/cf3f6466-3fd5-416b-9699-df0fab9d6e9a)
-Here's a breakdown of each action:
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/cf3f6466-3fd5-416b-9699-df0fab9d6e9a)  
+Here's a breakdown of each action:  
 - **Manually trigger flow**: Child flow is triggered from [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#02---azure---when-audio-file-created-in-blob-storage---create-transcript) and receives a text parameter with the transcriptions path
 - **Initialize variable  varWait**: Creates a variable with these paramters
   ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/116b2c78-df66-43a0-939d-8ec2a0f24501)
 
   - Name: ```varWait```
   - Type: ```Integer```
-  - Value: ```500```
+  - Value: ```500```  
     _Higher the number, the longer the wait_
+- **Initialize variable varCompleted**: Creates variable with these parameters:
+  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/dd18c404-2229-4e65-ab61-cac2eeb6525e)
+
+  - Name: ```varCompleted```
+  - Type: ```Boolean```
+  - Value: ```@{false}```
+- **Do until**:  This loops until **varComplete** is **true**.  Inside the following actions happen for each loop:
+  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/1e4d24fa-20e9-4860-aa92-f2d3996b4960)
+
 [^Top](#contents)
 ### 02c Child Flow - Get Transcript Results
 [^Top](#contents)

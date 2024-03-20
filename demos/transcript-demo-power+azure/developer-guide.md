@@ -1431,8 +1431,8 @@ Here is a breakdown of eacha action:
   ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/416c5a63-ec8b-4c81-bed5-77d70912aa65)  
   With the following parameters: 
     - **Table name**: ```Transcripts```
-    - **Duration**: ```@{div(float(body('Parse_JSON')?['durationInTicks']),10000000.00)}```
-      - _Note: Uses ```div()``` and ```float()``` functions to return the duration in seconds with two decimal points_
+    - **Duration**: ```@{div(int(body('Parse_JSON')?['durationInTicks']),10000000.00)}```
+      - _Note: Uses ```div()``` and ```int()``` functions to return the duration in seconds with two decimal points_
     - **Duration in Ticks**: ```@{int(body('Parse_JSON')?['durationInTicks'])}```
       - _Note: Uses ```int()``` to convert **durationInTicks** from **Parse JSON** into integer_ 
     - **Source File Name**: ```@{triggerBody()['text_1']}```
@@ -1441,16 +1441,24 @@ Here is a breakdown of eacha action:
     - **Time Stamp**: ```@{body('Parse_JSON')?['timestamp']}```
 - **Apply to each**: For each Recognized Phrase (from Parse JSON), perform the following action:
   - **Add a new row to Recognized Phrases**: Add each recogonized phrase to the Recogonized Phrases table  
-    ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/9a6baf65-f178-450d-bc2a-13ef28e0b4b0)
+    ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/9a6baf65-f178-450d-bc2a-13ef28e0b4b0)  
     with the following parameters:
     - **Table name**: ```Recognized Phrases```
     - **Confidence**: ```@{first(items('Apply_to_each')['nBest'])?['confidence']}```
+      - _Note: The ```first()``` function is used to avoid another For Each loop. See Rest API documentation for more on **nBest**_
     - **Display**: ```@{first(items('Apply_to_each')['nBest'])?['display']}```
+      - _Note: The ```first()``` function is used to avoid another For Each loop. See Rest API documentation for more on **nBest**_
     - **Duration in Seconds**: ```@{div(int(items('Apply_to_each')?['durationInTicks']),10000000.00)```
+      - _Note: Uses ```div()``` and ```int()``` functions to return the duration in seconds with two decimal points_
     - **Duration in Ticks**: ```@{int(items('Apply_to_each')?['durationInTicks'])}```
+      - _Note: Uses ```int()``` to convert **durationInTicks** from **Parse JSON** into integer_ 
     - **Offset in Seconds**: ```@{div(int(items('Apply_to_each')?['offsetInTicks']),10000000.00)}```
+      - _Note: Uses ```div()``` and ```int()``` functions to return the duration in seconds with two decimal points_
     - **Offset in Ticks**: ```@{int(items('Apply_to_each')?['offsetInTicks'])}```
+      - _Note: Uses ```int()``` to convert **offsetInTicks** from **Parse JSON** into integer_ 
     - **Speaker**: ```@{items('Apply_to_each')?['speaker']}```
-    - **ranscript (Transcripts)**: ```demo_transcripts(@{outputs('Add_a_new_row')?['body/demo_transcriptid']})```
-
+    - **Transcript (Transcripts)**: ```demo_transcripts(@{outputs('Add_a_new_row')?['body/demo_transcriptid']})```
+      - _Note: This relates the recognized phrase to it's parent record in the Transcripts table_
+- **Response**: Returns **Status**: ```200``` to parent flow if no issues/errors.
+  
 [^Top](#contents)

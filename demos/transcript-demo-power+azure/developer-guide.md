@@ -1023,22 +1023,124 @@ Here's a breakdown of the actions:
 Due to issue/limitation of the [Azure Blob Storage trigger]([url](https://learn.microsoft.com/en-us/connectors/azureblob/)) on file create/update, I had to create a flow that waits for the transcription to complete. Use caution when looping. If possible, re-factor to trigger when transcript file is completed.  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/cf3f6466-3fd5-416b-9699-df0fab9d6e9a)  
 Here's a breakdown of each action:  
-- **Manually trigger flow**: Child flow is triggered from [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#02---azure---when-audio-file-created-in-blob-storage---create-transcript) and receives a text parameter with the transcriptions path
+- **Manually trigger flow**: Child flow is triggered from parent flow [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#02---azure---when-audio-file-created-in-blob-storage---create-transcript) and receives a text parameter with the transcriptions path
 - **Initialize variable  varWait**: Creates a variable with these paramters
   ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/116b2c78-df66-43a0-939d-8ec2a0f24501)
 
-  - Name: ```varWait```
-  - Type: ```Integer```
-  - Value: ```500```  
+  - **Name**: ```varWait```
+  - **Type**: ```Integer```
+  - **Value**: ```500```  
     _Higher the number, the longer the wait_
 - **Initialize variable varCompleted**: Creates variable with these parameters:
   ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/dd18c404-2229-4e65-ab61-cac2eeb6525e)
 
-  - Name: ```varCompleted```
-  - Type: ```Boolean```
-  - Value: ```@{false}```
-- **Do until**:  This loops until **varComplete** is **true**.  Inside the following actions happen for each loop:
+  - **Name**: ```varCompleted```
+  - **Type**: ```Boolean```
+  - **Value**: ```@{false}```
+- **Do until**:  This loops until **varComplete** is **true**. 
   ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/1e4d24fa-20e9-4860-aa92-f2d3996b4960)
+   Inside the following actions happen for each loop:
+  - **Reset variable varWait**: At the start of each loop, reset to 500  - 
+  - **HTTP Get Transcript Status**:  Attempts to retrieve the transcription status using the Azure Batch Speech to Text REST API.
+    ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/89475946-26fd-4464-9f31-fc1d23c480db)
+    With the following parameters:
+    - **Method**: ```GET```
+    - **URI**: ```@{triggerBody()['text']}```
+      _This is the path passed to the flow from the parent flow  [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#02---azure---when-audio-file-created-in-blob-storage---create-transcript)_
+    - **Headers**:
+      -  **Ocp-Apim-Subscription-Key**: ```@parameters('Speech To Text Key (demo_SpeechToTextKey)')```
+  - **If Fail, wait and try again**: A second Do Until loop only runs when the previous action fails.  The HTTP action fails until the transcription has started. This can take several minutes depending on Azure resources.
+    The loop ends when varWait equals 0
+    ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/8843295d-a675-4773-8b4f-8666af01cf7d)
+    _Note: the Configure Run After is set to only run this action when the previous action fails_
+    ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d16a3d5e-d379-4dc5-bce5-10cdc2ada818)
+  - **Parse JSON**: This action (and subsequent actions) only run when the previous action is skipped.
+    ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/a5b034fd-938d-4c72-9683-1642d1a16df6)
+    The follow parameters are passed:
+    - **Content**: ```@{body('HTTP_Get_Transcript_Status')}```
+    - **Schema**:
+      ```
+      {
+          "type": "object",
+          "properties": {
+              "self": {
+                  "type": "string"
+              },
+              "model": {
+                  "type": "object",
+                  "properties": {
+                      "self": {
+                          "type": "string"
+                      }
+                  }
+              },
+              "links": {
+                  "type": "object",
+                  "properties": {
+                      "files": {
+                          "type": "string"
+                      }
+                  }
+              },
+              "properties": {
+                  "type": "object",
+                  "properties": {
+                      "diarizationEnabled": {
+                          "type": "boolean"
+                      },
+                      "wordLevelTimestampsEnabled": {
+                          "type": "boolean"
+                      },
+                      "displayFormWordLevelTimestampsEnabled": {
+                          "type": "boolean"
+                      },
+                      "channels": {
+                          "type": "array",
+                          "items": {
+                              "type": "integer"
+                          }
+                      },
+                      "punctuationMode": {
+                          "type": "string"
+                      },
+                      "profanityFilterMode": {
+                          "type": "string"
+                      },
+                      "duration": {
+                          "type": "string"
+                      },
+                      "languageIdentification": {
+                          "type": "object",
+                          "properties": {
+                              "candidateLocales": {
+                                  "type": "array",
+                                  "items": {
+                                      "type": "string"
+                                  }
+                              }
+                          }
+                      }
+                  }
+              },
+              "lastActionDateTime": {
+                  "type": "string"
+              },
+              "status": {
+                  "type": "string"
+              },
+              "createdDateTime": {
+                  "type": "string"
+              },
+              "locale": {
+                  "type": "string"
+              },
+              "displayName": {
+                  "type": "string"
+              }
+          }
+      }
+      ```
+
 
 [^Top](#contents)
 ### 02c Child Flow - Get Transcript Results

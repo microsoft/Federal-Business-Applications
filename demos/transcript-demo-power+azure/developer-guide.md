@@ -4,9 +4,9 @@ This document is for developers to help them understand *how* the solution works
 
 ## Contents
 - [Demo Transcript app (canvas)](#Demo-Transcript-app-canvas)
-  - [App Properties & Settings](#App-Properties-&-Settings)
+  - [App Properties & Settings](#App-Properties-Settings)
   - [Screens](#Screens)
-  - [Main Screen](#main-creen)
+  - [Main Screen](#main-screen)
     - [Properties](#properties)
     - [Controls](#main-screen-controls)
   - [Transcript Demo Screen](#Transcript-Demo-Screen)
@@ -27,6 +27,7 @@ Set to off to allow for responsive resizing. Recommend if different form factors
 Set to on to allow for modern controls/themes in the app.  Note that some modern controls are in GA and others are still in preview at this time.   
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/608b1497-841b-4e9b-bbd6-79c6b5c062ce)
 
+[^Top](#contents)
 
 ### Screens
 The canvas app has two screens: 
@@ -36,6 +37,8 @@ The canvas app has two screens:
 Both screens use containers to help control the flow of the controls when resizing the app for different resolutions.  Their layouts are based on the Sidebar screen template.
 
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/1ba43b2a-0c9e-4413-a5f2-f9153b7716f4)
+
+[^Top](#contents)
 
 ### Main Screen
 
@@ -183,6 +186,8 @@ Displays **all** the available transcripts in the Transcripts table. Some proper
    ```
 - **Width**: ```Parent.Width-Parent.PaddingLeft*2```
 
+[^Top](#contents)
+
 ### Transcript Demo Screen
 This screen has several containers. Some of these are used to for pop-up windows, while most are used to structure the controls.  
 
@@ -232,6 +237,8 @@ Used to playback the original audio (stored in Azure Blob Storage)
     DisplayMode.Disabled,
     DisplayMode.Edit
    )
+
+[^Top](#contents)
    ```
 - **Fill**: ```PowerAppsTheme.Colors.Primary```
    - Note: PowerAppsTheme is the default theme.  You can replace the default theme with your own. 

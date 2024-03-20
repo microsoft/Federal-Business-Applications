@@ -854,7 +854,9 @@ Here's a detailed breakdown of each action:
 
 [^Top](#contents)
 ### 02 - Azure - When Audio File Created in Blob Storage - Create Transcript  
-Master flow that is triggered when a file is uploaded to the Azure Blob storage container. Then it transcribes the audio file (via Azure Speech Services) and then loads that transcript into Dataverse and optionally, removes the source audio from the SP list
+Master flow that is triggered when a file is uploaded to the Azure Blob storage container. Then it transcribes the audio file (via Azure Speech Services) and then loads that transcript into Dataverse and optionally, removes the source audio from the SP list.
+
+For more on the Azure Batch Speech to Text transcription click [here]([url](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/batch-transcription)): 
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/0e732828-5de0-40e1-80d5-3a6190dda29e)  
 
 Here's breakdown of each action:
@@ -883,8 +885,8 @@ Calls the Azure Speech Services REST API to transcribe the audio file. Note: the
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/cb5831f5-a9c9-4238-bce0-4eb23169fae4)
 
 Here's a breakdown of the actions:
-- **Manually trigger a flow**: Triggered from the the flow [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#)
-- **HTTP**: Due to limitations at the time of this writing, the solution leverages the Azure Batch Speech to Text REST API instead of the Azure Batch Speech to Text connector.
+- **Manually trigger a flow**: Triggered from the the flow [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#02---azure---when-audio-file-created-in-blob-storage---create-transcript)
+- **HTTP**: Due to limitations at the time of this writing, the solution leverages the Azure Batch Speech to Text REST API instead of the Azure Batch Speech to Text connector.  
   ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/6a2b2f84-c9c6-41b9-be0f-7baf803e0ef4)
 
   Here are the parameters passed:
@@ -925,7 +927,7 @@ Here's a breakdown of the actions:
       There are more options you can pass to the REST API. See full documentation [here](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/rest-speech-to-text#transcriptions)
 - **Response**: Pass back the output of the previous action
   ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/77039fce-2ad0-42f2-9c24-1319b4a7f9d2)
-  Here are the paramters:
+  Here are the parameters:
   - **Status Code**: ```200```
   - **Body**: ```@{body('HTTP')}```
   - **Response Body JSON Schema**:
@@ -1015,8 +1017,6 @@ Here's a breakdown of the actions:
         }
     }
     ```
-
-
   
 [^Top](#contents)
 ### 02b Child Flow - Loop Until Transcript Complete

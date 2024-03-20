@@ -1169,6 +1169,195 @@ Here is a breakdown of each action:
   - **URI**: ```@{triggerBody()['text']}```
   - **Headers**:
       -  **Ocp-Apim-Subscription-Key**: ```@parameters('Speech To Text Key (demo_SpeechToTextKey)')```
+- **Parse JSON**: Takes the output (JSON) from the previous action and parses it
+  - **Content**: ```@{body('HTTP_Get_Transcript_Files')}```
+  - **Shema**:
+    ```
+    {
+        "type": "object",
+        "properties": {
+            "values": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "self": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "kind": {
+                            "type": "string"
+                        },
+                        "properties": {
+                            "type": "object",
+                            "properties": {
+                                "size": {
+                                    "type": "integer"
+                                }
+                            }
+                        },
+                        "createdDateTime": {
+                            "type": "string"
+                        },
+                        "links": {
+                            "type": "object",
+                            "properties": {
+                                "contentUrl": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "required": [
+                        "self",
+                        "name",
+                        "kind",
+                        "properties",
+                        "createdDateTime",
+                        "links"
+                    ]
+                }
+            }
+        }
+    }
+    ```
+  - **Filter array - contenturl 0.json**: Filters the array of files returned to the one (contenturl_0.json) with the actual transcript  
+    ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/10d067f2-7320-41db-b76e-8e6fe75a5fc6)
+  - **HTTP Get Transcript**: Get's the actual transcript (JSON) via the REST API  
+    ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/b808a290-4a1d-4a67-a1df-777ae1322e5c)
+    Here are the paramters passed:
+    - **Method**: ```GET```
+    - **URI**: ```@{first(body('Filter_array_-_contenturl_0.json'))?['links']?['contenturl']}```
+      **_Note_**: _This flow uses the ```first()``` function to avoid the need for For Each loop. IF you are submitting mutliple files at one time to transcribe, please replace with a For Each control_  
+    - **Headers**:
+        -  **Ocp-Apim-Subscription-Key**: ```@parameters('Speech To Text Key (demo_SpeechToTextKey)')```
+  - **Response**: Sends the full transcript JSON back to the parent flow.  
+    ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/1c7045dc-fe01-4cb7-acc5-3b852f32dacb)  
+
+    The paramters are:
+    - **Status Code**: ```200```
+    - **Body**: ```@{body('HTTP_Get_Transcript')}```
+    - **Response Body JSON Schema**:
+      ```
+      {
+          "type": "object",
+          "properties": {
+              "source": {
+                  "type": "string"
+              },
+              "timestamp": {
+                  "type": "string"
+              },
+              "durationInTicks": {
+                  "type": "integer"
+              },
+              "duration": {
+                  "type": "string"
+              },
+              "combinedRecognizedPhrases": {
+                  "type": "array",
+                  "items": {
+                      "type": "object",
+                      "properties": {
+                          "channel": {
+                              "type": "integer"
+                          },
+                          "lexical": {
+                              "type": "string"
+                          },
+                          "itn": {
+                              "type": "string"
+                          },
+                          "maskedITN": {
+                              "type": "string"
+                          },
+                          "display": {
+                              "type": "string"
+                          }
+                      },
+                      "required": [
+                          "channel",
+                          "lexical",
+                          "itn",
+                          "maskedITN",
+                          "display"
+                      ]
+                  }
+              },
+              "recognizedPhrases": {
+                  "type": "array",
+                  "items": {
+                      "type": "object",
+                      "properties": {
+                          "recognitionStatus": {
+                              "type": "string"
+                          },
+                          "channel": {
+                              "type": "integer"
+                          },
+                          "speaker": {
+                              "type": "integer"
+                          },
+                          "offset": {
+                              "type": "string"
+                          },
+                          "duration": {
+                              "type": "string"
+                          },
+                          "offsetInTicks": {
+                              "type": "integer"
+                          },
+                          "durationInTicks": {
+                              "type": "integer"
+                          },
+                          "nBest": {
+                              "type": "array",
+                              "items": {
+                                  "type": "object",
+                                  "properties": {
+                                      "confidence": {
+                                          "type": "number"
+                                      },
+                                      "lexical": {
+                                          "type": "string"
+                                      },
+                                      "itn": {
+                                          "type": "string"
+                                      },
+                                      "maskedITN": {
+                                          "type": "string"
+                                      },
+                                      "display": {
+                                          "type": "string"
+                                      }
+                                  },
+                                  "required": [
+                                      "confidence",
+                                      "lexical",
+                                      "itn",
+                                      "maskedITN",
+                                      "display"
+                                  ]
+                              }
+                          }
+                      },
+                      "required": [
+                          "recognitionStatus",
+                          "channel",
+                          "speaker",
+                          "offset",
+                          "duration",
+                          "offsetInTicks",
+                          "durationInTicks",
+                          "nBest"
+                      ]
+                  }
+              }
+          }
+      }
+      ```
 
 [^Top](#contents)
 ### 02d Child Flow - Parse Transcript and Load into Dataverse

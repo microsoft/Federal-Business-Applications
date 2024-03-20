@@ -311,5 +311,22 @@ _Note: only visible when in edit mode_
 - **Visible**: ```glbMode=DisplayMode.Edit```
 
 **txtCurrentPhrase_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert)_ 
+- **AccessibleLabel**: ```"Transcript of the current phrase (based current time code)"```
+- **DisplayMode**: If variable glbMode is blank, default to View mode
+  ```Coalesce(glbMode,DisplayMode.View)```
+- **Mode**: ```'TextInputCanvas.Mode'.Multiline```
+- **Value**: Get the current phrase based on the current playback position (audRecordingPlayback). Return the first phrase where the current playback time is greater than or equal to the phrase's offset in seconds (i.e. in point) and less than or equal to the outset.
+  ```
+  LookUp(
+    colPhrases,
+    'Offset in Seconds' <= Int(audRecordingPlayback.Time) And Outset >= Round(
+        audRecordingPlayback.Time,
+        2
+    )
+  ).Display
+  ```
+- **Width**: ```Parent.Width```
 
+**lblCurrentSpeaker_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_
+- 
 [^Top](#contents)

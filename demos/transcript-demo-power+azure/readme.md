@@ -9,7 +9,7 @@ This demo is designed to illustrate the "better together" story of Azure + Power
 - [What's in the solution?](#whats-in-the-solution)
 - [Limitations](#limitations)
 - [Security and Protecting Keys](#security-and-protecting-keys)
-- [User Guide](#user-guide)
+- [User Guide](user-guid.md)
 - [Developer Guide](#developer-guide)
 
 ***

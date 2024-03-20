@@ -359,7 +359,7 @@ _Note: only visible when in edit mode_
 - **Text**: ```"Select Speaker"```
 - **Visible**: ```glbMode=DisplayMode.Edit```
 
-**drpSelectSpeaker_Transcript**  _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_
+**drpSelectSpeaker_Transcript**  _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/8e22e6c4-70e6-4328-8a15-2e41d61326d8)
 
 - **AccessibleLabel**: ```"Select speaker from this drop down"```

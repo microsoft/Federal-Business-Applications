@@ -848,9 +848,9 @@ Here's a detailed breakdown of each action:
 - **When an item is created**: Monitors the SharePoint list for new items
 - **Get attachments**: Retrieves all attachments for a particular item
 - **Apply to each**: Loops through each attachment. Note: the app only allows for one upload at a time, but if you increase that limit, this flow will work
-  - Get attachment content: Retrieves the binary content for the attached file (i.e. audio file)
-  - Create blob (V2): Creates a new blob in the specified container
-    - _Note: You must have an Azure Storage account and container to use this (see [Prerequistes](url))_
+  - **Get attachment content**: Retrieves the binary content for the attached file (i.e. audio file)
+  - **Create blob (V2)**: Creates a new blob in the specified container
+    - _Note: You must have an Azure Storage account and container to use this (see [Prerequistes](transcript-demo-power%2Bazure#prerequisites))_
 
 [^Top](#contents)
 ### 02 - Azure - When Audio File Created in Blob Storage - Create Transcript  
@@ -1020,6 +1020,17 @@ Here's a breakdown of the actions:
   
 [^Top](#contents)
 ### 02b Child Flow - Loop Until Transcript Complete
+Due to issue/limitation of the [Azure Blob Storage trigger]([url](https://learn.microsoft.com/en-us/connectors/azureblob/)) on file create/update, I had to create a flow that waits for the transcription to complete. Use caution when looping. If possible, re-factor to trigger when transcript file is completed.  
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/cf3f6466-3fd5-416b-9699-df0fab9d6e9a)
+Here's a breakdown of each action:
+- **Manually trigger flow**: Child flow is triggered from [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#02---azure---when-audio-file-created-in-blob-storage---create-transcript) and receives a text parameter with the transcriptions path
+- **Initialize variable  varWait**: Creates a variable with these paramters
+  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/116b2c78-df66-43a0-939d-8ec2a0f24501)
+
+  - Name: ```varWait```
+  - Type: ```Integer```
+  - Value: ```500```
+    _Higher the number, the longer the wait_
 [^Top](#contents)
 ### 02c Child Flow - Get Transcript Results
 [^Top](#contents)

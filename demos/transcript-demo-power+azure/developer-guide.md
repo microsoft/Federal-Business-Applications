@@ -327,6 +327,27 @@ _Note: only visible when in edit mode_
   ```
 - **Width**: ```Parent.Width```
 
-**lblCurrentSpeaker_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_
-- 
+**lblCurrentSpeaker_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
+- **Text**: If the speaker dropdown has a selected name, use that. If not, use the value of the speaker name from the current phrase (glbCurrentPhrase). If no name exists, get the speaker value (number) from the current phrase
+  ```
+  "Speaker: " & Coalesce(
+    drpSelectSpeaker_Transcript.Selected.Name,
+    glbCurrentPhrase.demo_SpeakerLookup.Name,
+    glbCurrentPhrase.demo_speaker
+  )
+  '''
+- **Visible**: ```!IsBlank(glbCurrentPhrase)```
+
+**lblSelectSpeaker_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_
+  _Note: only visible when app is in Edit mode_  
+- **Align**: ```'TextCanvas.Align'.End```
+- **Text**: ```"Select Speaker"```
+- **Visible**: ```glbMode=DisplayMode.Edit```
+**drpSelectSpeaker_Transcript**  _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_
+- **AccessibleLabel**: ```"Select speaker from this drop down"```
+- **Items**: ```Filter(Speakers, 'Speakers (Views)'.'Active Speakers')```
+- **Visible**: ```glbMode=DisplayMode.Edit```
+
+
+
 [^Top](#contents)

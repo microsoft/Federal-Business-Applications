@@ -205,7 +205,7 @@ All controls (except one) are stored in horizontal and vertical containers to al
   Contains the loading spinner and is only visible when **glbShowSpinner** = true  
 - **contPopUpUpdateAllSpeakersBg**:  
   Is only visible when **gblShowPopUpUpdateAllSpeakers** = true  
-- **contPopUpAddSpeaker**:  
+- **[contPopUpAddSpeaker](#contPopUpAddSpeaker)**:  
   Only visible when **glbShowPopUpAddSpeaker** = true 
 - **contMainTranscriptVert**:  
   Contains the main UI for this screen including playback and edit controls
@@ -449,7 +449,7 @@ _Note: only visible when in edit mode_
 - **Visible**: ```!IsBlank(glbCurrentPhrase)```
 - **Width**: ```120```
 
-**lblOutpoint_Transcript**: 
+**lblOutpoint_Transcript**: _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d11bac0b-e3fc-4b3b-8dbf-72ce79db931a)
 - **Align**: ```'TextCanvas.Align'.End```
 - **Text**: Display current phrase's out point (outset) in HH:MM:SS
@@ -487,7 +487,7 @@ _Note: only visible when in edit mode_
 - **Visible**: ```!IsBlank(glbCurrentPhrase)```
 - **Width**: ```120```
 
-**lblJumpToTime_Transcript**
+**lblJumpToTime_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/1a360425-3a9f-48af-af57-909b9ed26a7e)
 - **Align**: ```'TextCanvas.Align'.End```
 - **FontColor**: If variable glbJumpToTime exceeds the total duration of the audio file, display red text
@@ -512,7 +512,7 @@ _Note: only visible when in edit mode_
     "Jump To "
   )
   ```
-**txtJumpToTime_Transcript**
+**txtJumpToTime_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
 Allows user to type time code (HH:MM:SS) to jump to part of recording (and transcript)
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d847eef6-59ae-4fa9-bcd6-d2b8efd336d1)
 - **AccessibleLabel**: ```"Type the time you want to jump to (Hours:Minutes:Seconds)"```
@@ -587,6 +587,7 @@ Allows user to type time code (HH:MM:SS) to jump to part of recording (and trans
   ```
 - **Width**: ```100```
 
+<a name="contPopUpAddSpeaker">
 **contPopUpAddSpeaker** 
 Only visible when user clicks + New Speaker button (btnNewSpeaker_Transcript)
 - **Fill**: ```RGBA(255, 255, 255, 1)```

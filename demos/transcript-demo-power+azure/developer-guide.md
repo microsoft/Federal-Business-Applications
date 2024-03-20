@@ -10,7 +10,15 @@ This document is for developers to help them understand *how* the solution works
     - [Properties](#properties)
     - [Controls](#main-screen-controls)
   - [Transcript Demo Screen](#Transcript-Demo-Screen)
-    - [Controls](#controls-1)  
+    - [Controls](#controls-1)
+- [Flows](#flows)
+  - [01 - SPO - When Audio File Uploaded to SPO - Copy to Azure Blob](#01-SPO-When-Audio-File-Uploaded-to-SPO-Copy-to-Azure-Blob)
+  - [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#02-Azure-When-Audio-File-Created-in-Blob-Storage-Create-Transcript)
+  - [02a Child Flow- Create Transcription (HTTP)](url)
+  - [02b Child Flow - Loop Until Transcript Complete](url)
+  - [02c Child Flow - Get Transcript Results](url)
+  - [02d Child Flow - Parse Transcript and Load into Dataverse](url)
+    
 ***
 
 ## Demo Transcript app (canvas)
@@ -825,3 +833,18 @@ This button is hidden, but is called by various other buttons.  This is one tech
 
 [^Top](#contents)
 
+
+## Flows
+[^Top](#contents)
+### 01 - SPO - When Audio File Uploaded to SPO - Copy to Azure Blob
+[^Top](#contents)
+### 02 - Azure - When Audio File Created in Blob Storage - Create Transcript
+[^Top](#contents)
+### 02a Child Flow- Create Transcription (HTTP)
+[^Top](#contents)
+### 02b Child Flow - Loop Until Transcript Complete
+[^Top](#contents)
+### 02c Child Flow - Get Transcript Results
+[^Top](#contents)
+### 02d Child Flow - Parse Transcript and Load into Dataverse
+[^Top](#contents)

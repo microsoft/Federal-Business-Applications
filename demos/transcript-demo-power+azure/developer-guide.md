@@ -603,6 +603,18 @@ Only visible when user clicks + New Speaker button (btnNewSpeaker_Transcript)
 - **X**: ```contMainBodyTranscriptHoriz.Width+contMainBodyTranscriptHoriz.X-Self.Width```
 - **Y**: ```contMainBodyTranscriptHoriz.Y+contSpeakerTranscriptHoriz.Height+5```
   
+**frmAddSpeaker** _(contPopUpAddSpeaker)_
+Submits new speaker name to Speakers table
+- **DataSource**: ```Speakers```
+- **DefaultMode**: ```FormMode.New```
+- ****: Reset form and set glbShowPopUpAddSpeaker to false
+  ```
+  Set(
+    glbShowPopUpAddSpeaker,
+    false
+  );
+  ResetForm(frmAddSpeaker)
+  ```
 
 [^Top](#contents)
 

@@ -3,10 +3,10 @@ There are two apps in this solution: a canvas app for end users and a model-driv
 
 ## Table of Contents
 - [Demo Transcript App (canvas app)](#demo-transcript-app-canvas-app)
-  - [Upload Audio File](#upload-audio-dile)
+  - [Upload Audio File](#upload-audio-file)
   - [View Transcript](#view-transcript)
   - [Edit Transcript](#edit-transcript)
-  - [Identify/Assign Speaker](#identify-assign-peaker)
+  - [Identify/Assign Speaker](#identify-assign-apeaker)
 - [Demo Transcript Admin App (model driven)](#demo-transcript-admin-app-model-driven)
 
 ***
@@ -73,6 +73,7 @@ After assigning the speaker click **Save**.  A pop-up will appear:
 
 If you want to update every instance of the speaker number with the selected speaker, click **Yes**. Otherwise, click **No**. If you click **Yes**, it will take a little longer to save the changes.
 
+[^ Top](#table-of-contents)
 ***
 
 ## Demo Transcript Admin App (model driven)
@@ -80,3 +81,4 @@ If you want to update every instance of the speaker number with the selected spe
 The other app exists mostly for developers, but might also prove useful for admins.  It gives you access to all three tables and the ability to view the additional metadata captured by Azure Speech to Text. 
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/c88bdb6f-4f18-45b9-b4cb-d8b0b4dd7560)
 
+[^ Top](#table-of-contents)

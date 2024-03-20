@@ -1360,5 +1360,73 @@ Here is a breakdown of each action:
       ```
 
 [^Top](#contents)
-### 02d Child Flow - Parse Transcript and Load into Dataverse
+### 02d Child Flow - Parse Transcript and Load into Dataverse  
+Parses the transcript file and loads into Dataverse. One record in the Transcripts table for the transcription and records in the Recognized Phrases for each phrase returned by Azure Speech Services
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/17200620-119d-4a0e-8465-371648e26579)
+
+Here is a breakdown of eacha action:
+- **Manually trigger a flow**:  Child flow is triggered from parent flow [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#02---azure---when-audio-file-created-in-blob-storage---create-transcript) and receives three parameters
+  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/e0177581-1daf-417b-99a4-6cd87984af3a)
+  - **Transcript**
+  - **File Name**
+  - **File Size**
+- **Parse JSON**  
+  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/0c27ca9d-3f9a-4e14-bcc9-2b70ba966e2d)
+  - **Content**: ```@{triggerBody()['text']}```
+  - **Schema**:
+    ```
+    {
+        "type": "object",
+        "properties": {
+            "source": {
+                "type": "string"
+            },
+            "timestamp": {
+                "type": "string"
+            },
+            "durationInTicks": {
+                "type": "number"
+            },
+            "recognizedPhrases": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "recognitionStatus": {
+                            "type": "string"
+                        },
+                        "channel": {
+                            "type": "integer"
+                        },
+                        "speaker": {
+                            "type": "integer"
+                        },
+                        "offsetInTicks": {
+                            "type": "number"
+                        },
+                        "durationInTicks": {
+                            "type": "number"
+                        },
+                        "nBest": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "confidence": {
+                                        "type": "number"
+                                    },
+                                    "display": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ```
+
+
 [^Top](#contents)

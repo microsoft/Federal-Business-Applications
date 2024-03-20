@@ -655,7 +655,7 @@ Full screen container that has an opqaue fill and is only visible when **gblShow
 - **Width**: ```Parent.Width```
 
 
-**contPopUpUpdateAllSpeakers** _(contPopUpUpdateAllSpeakersBg)_
+**contPopUpUpdateAllSpeakers** _(contPopUpUpdateAllSpeakersBg)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/341528f9-2ae8-46e5-92d5-63041fda8e0a)
 - **DropShadow**: ```DropShadow.ExtraBold```
 - **Fill**: ```RGBA(255, 255, 255, 1)```

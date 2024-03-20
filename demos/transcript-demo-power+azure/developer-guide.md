@@ -833,8 +833,10 @@ This button is hidden, but is called by various other buttons.  This is one tech
 
 [^Top](#contents)
 
+*** 
 
 ## Flows
+There are six flows in this solution.  They are designed to run sequentially (hence the numbering).   
 [^Top](#contents)
 ### 01 - SPO - When Audio File Uploaded to SPO - Copy to Azure Blob
 [^Top](#contents)

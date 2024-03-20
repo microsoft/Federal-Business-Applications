@@ -644,5 +644,181 @@ Submits new speaker name to Speakers table
   ResetForm(frmAddSpeaker)
   ```
 - **Text**: ```"Cancel"```
+
+**contPopUpUpdateAllSpeakersBg** <a name="contPopUpUpdateAllSpeakersBg"></a>
+Full screen container that has an opqaue fill and is only visible when **gblShowPopUpUpdateAllSpeakers** = **true**
+- **Fill**: ```RGBA(255, 255, 255, 0.65)```
+- **Height**: Parent.Height
+- **LayoutAlignItems**: ```LayoutAlignItems.Center```
+- **LayoutJustifyContent**: ```LayoutJustifyContent.Center```
+- **Visible**: ```gblShowPopUpUpdateAllSpeakers```
+- **Width**: ```Parent.Width```
+
+
+**contPopUpUpdateAllSpeakers** _(contPopUpUpdateAllSpeakersBg)_
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/341528f9-2ae8-46e5-92d5-63041fda8e0a)
+- **DropShadow**: ```DropShadow.ExtraBold```
+- **Fill**: ```RGBA(255, 255, 255, 1)```
+- **Height**: ```Self.Width*.6```
+- **LayoutAlignItems**: ```LayoutAlignItems.Center```
+- **LayoutJustifyContent**: ```LayoutJustifyContent.Center```
+- **Border Radius** (**RadiusBottomLeft**, **RadiusBottomRight**, **RadiusTopLeft**, **RadiusTopRight**): ```25```
+
+**btnPopUpUpdateAllSpeakersYes**  
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/5c28730e-97a4-47e8-840c-fec5aa5db699)
+- **AccessibleLabel**: Dynamcially update accessible label based on the current phrase and the selected speaker name
+  ```
+  "Yes - For all the speakers equal to " & glbCurrentPhrase.demo_speaker & " please update Speaker (Lookup) to  " & drpSelectSpeaker_Transcript.Selected.Name
+  ```
+- **OnSelect**:
+  ```
+  //If user clicks Yes button
+  //THEN hide the Update All Speakers pop-up
+  Set(
+      gblShowPopUpUpdateAllSpeakers,
+      false
+  );
+  //THEN set flag (glbUpdateAllSpeakers) to true
+  Set(
+      gblUpdateAllSpeakers,
+      true
+  );
+  //Then select the hidden button (with the actual save formulas)
+  Select(btnSaveHidden);
+  ```
+- **Text**: ```"Yes"```
+
+**btnPopUpUpdateAllSpeakersNo**  
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d0d07751-9058-4a01-aa02-44ad298e468f)
+- **AccessibleLabel**: ```"Please do not update all speakers to the selected speaker"```
+- **Appearance**: ```'ButtonCanvas.Appearance'.Secondary```
+- **OnSelect**:
+  ```
+  //IF user clicks No
+  //THEN hide the Update All Speakers pop-up
+  Set(
+      gblShowPopUpUpdateAllSpeakers,
+      false
+  );
+  //THEN set flag (gblUpdateAllSpeakers) to FALSE
+  Set(
+      gblUpdateAllSpeakers,
+      false
+  );
+  //Then select the hidden button (with the actual save formulas)
+  Select(btnSaveHidden);
+  ```
+- **Text**: ```"No"```
+
+**btnSaveHidden**
+This button is hidden, but is called by various other buttons.  This is one technique to create reusable code/functions in Power Apps
+- **AccessibleLabel**: ```"This is a hidden control - used for saving the edits to the current phrase"```
+- **OnSelect**: 
+  ```
+  /*
+      This section of code is used to update the current recognized phrase.  
+      Optionally: if the Speaker was updated, it also can loop through and update all instances of a Speaker Lookup for the selected Speaker. 
+      This loop only happens if the user clicks Yes when the Update All Speakers popup appears
+  */
+  // Show Spinner
+  Set(
+      glbShowSpinner,
+      true
+  );
+  //Patch the current recognized phrase with contents of the Current Phrase input (txtCurrentPhrase)
+  Patch(
+      'Recognized Phrases',
+      LookUp(
+          'Recognized Phrases',
+          'Offset in Seconds' <= Int(audRecordingPlayback.Time) And Outset >= Round(
+              audRecordingPlayback.Time,
+              2
+          )
+      ),
+      {
+          Display: txtCurrentPhrase_Transcript.Value,
+          'Speaker Lookup': drpSelectSpeaker_Transcript.Selected
+      }
+  );
+  // If user selected "Yes" to Update All Speakers, then loop through and update every phrase record with selected speaker
+  If(
+      gblUpdateAllSpeakers,
+      // Collect all Recognized Phrases that match the current speaker (e.g. 1)
+      ClearCollect(
+          colUpdateAllPhrasesForSelectedSpeaker,
+          Filter(
+              'Recognized Phrases',
+              Speaker = LookUp(
+                  colPhrases,
+                  'Offset in Seconds' > Int(audRecordingPlayback.Time) And Outset > Round(
+                      audRecordingPlayback.Time,
+                      2
+                  )
+              ).Speaker
+          )
+      );
+      //Then loop through the phrases (colUpdateAllPhrasesForSelectedSpeaker) and update Speaker Lookup to the currently selected speaker (drpSelectSpeaker)
+      ForAll(
+          colUpdateAllPhrasesForSelectedSpeaker As AllPhrases,
+          Patch(
+              'Recognized Phrases',
+              LookUp(
+                  'Recognized Phrases' As CurrentPhrase,
+                  CurrentPhrase.'Recognized Phrases' = AllPhrases[@demo_recognizedphrasesid]
+              ),
+              {'Speaker Lookup': drpSelectSpeaker_Transcript.Selected}
+          )
+      )
+  );
+  //Do remaining functions concurrently to save time:
+  Concurrent(
+  //Reload the Recognized Phrases into a local collection (will playback performance, but will be slow to load for larger Transcripts)
+      ClearCollect(
+          colPhrases,
+          SortByColumns(
+              Filter(
+                  'Recognized Phrases',
+                  Transcript.Transcript = glbSelectedTranscript.Transcript
+              ),
+              "demo_offsetinseconds",
+              SortOrder.Ascending
+          )
+      ),
+  //Refresh Current Phrase (glbCurrentPhrase)
+      Set(
+          glbCurrentPhrase,
+          LookUp(
+              ShowColumns(
+                  'Recognized Phrases',
+                  "demo_display",
+                  "demo_durationinseconds",
+                  "demo_offsetinseconds",
+                  "demo_outset",
+                  "demo_phrasenumber",
+                  "demo_speaker",
+                  "demo_SpeakerLookup",
+                  "demo_Transcript",
+                  "demo_recognizedphrasesid"
+              ),
+              demo_offsetinseconds <= Trunc(audRecordingPlayback.Time) And demo_outset >= Trunc(audRecordingPlayback.Time)
+          )
+      ),
+  //Reset variable (glbMode) to View Mode (DisplayMode.View
+      Set(
+          glbMode,
+          DisplayMode.View
+      ),
+  //Reset Speaker Drop Down
+      Reset(drpSelectSpeaker_Transcript)
+  );
+  //Hide Spinnner
+  Set(
+      glbShowSpinner,
+      false
+  );
+  ```
+- **Visible**: ```false```
+
+
 [^Top](#contents)
 

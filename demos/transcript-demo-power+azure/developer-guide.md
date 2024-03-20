@@ -1443,14 +1443,14 @@ Here is a breakdown of eacha action:
   - **Add a new row to Recognized Phrases**: Add each recogonized phrase to the Recogonized Phrases table  
     ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/9a6baf65-f178-450d-bc2a-13ef28e0b4b0)
     with the following parameters:
-    - **Table name**
-    - **Confidence**
-    - **Display**
-    - **Duration in Seconds**
-    - **Duration in Ticks**
-    - **Offset in Seconds**
-    - **Offset in Ticks**
-    - **Speaker**
-    - **ranscript (Transcripts)**
+    - **Table name**: ```Recognized Phrases```
+    - **Confidence**: ```@{first(items('Apply_to_each')['nBest'])?['confidence']}```
+    - **Display**: ```@{first(items('Apply_to_each')['nBest'])?['display']}```
+    - **Duration in Seconds**: ```@{div(int(items('Apply_to_each')?['durationInTicks']),10000000.00)```
+    - **Duration in Ticks**: ```@{int(items('Apply_to_each')?['durationInTicks'])}```
+    - **Offset in Seconds**: ```@{div(int(items('Apply_to_each')?['offsetInTicks']),10000000.00)}```
+    - **Offset in Ticks**: ```@{int(items('Apply_to_each')?['offsetInTicks'])}```
+    - **Speaker**: ```@{items('Apply_to_each')?['speaker']}```
+    - **ranscript (Transcripts)**: ```demo_transcripts(@{outputs('Add_a_new_row')?['body/demo_transcriptid']})```
 
 [^Top](#contents)

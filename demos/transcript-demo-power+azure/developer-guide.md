@@ -203,7 +203,7 @@ All controls (except one) are stored in horizontal and vertical containers to al
 
 - **contSpinnerBg**:  
   Contains the loading spinner and is only visible when **glbShowSpinner** = true  
-- **contPopUpUpdateAllSpeakersBg**:  
+- **[contPopUpUpdateAllSpeakersBg](#contPopUpUpdateAllSpeakersBg)**:  
   Is only visible when **gblShowPopUpUpdateAllSpeakers** = true  
 - **[contPopUpAddSpeaker](#contPopUpAddSpeaker)**:  
   Only visible when **glbShowPopUpAddSpeaker** = true 
@@ -242,7 +242,7 @@ Used to update variables based on the playhead of the audio control (**audRecord
 
 **The following controls are located inside container(s). The path/location will be indicated in paranthesis.**  
 
-**audRecordingPlayback**  _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert)_
+**audRecordingPlayback**  _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/4d4feed5-64ae-4b99-bb2c-9d0fe8815037)
 
 Used to playback the original audio (stored in Azure Blob Storage)
@@ -256,7 +256,7 @@ Used to playback the original audio (stored in Azure Blob Storage)
    )
    ```
 - **Fill**: ```PowerAppsTheme.Colors.Primary```
-   - Note: PowerAppsTheme is the default theme.  You can replace the default theme with your own.
+   - Note: PowerAppsTheme is the default theme.  You can replace the default theme with your own.  
      ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/05fc98ea-a851-426d-b878-1ca3d53fea08)
 
  - **Media**: ```glbSelectedTranscript.'Source URL'```
@@ -319,7 +319,7 @@ _Note: only visible when in edit mode_
 - **Text**: ```"Cancel"```
 - **Visible**: ```glbMode=DisplayMode.Edit```
 
-**txtCurrentPhrase_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert)_ 
+**txtCurrentPhrase_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/98c3429a-cd78-4f37-b203-525eab121cf1)
 
 - **AccessibleLabel**: ```"Transcript of the current phrase (based current time code)"```
@@ -351,7 +351,7 @@ _Note: only visible when in edit mode_
   '''
 - **Visible**: ```!IsBlank(glbCurrentPhrase)```
 
-**lblSelectSpeaker_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_
+**lblSelectSpeaker_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/4d0bf4e0-766c-4cb1-ac55-da19173be8c6)
 
   _Note: only visible when app is in Edit mode_  
@@ -607,7 +607,7 @@ Only visible when user clicks + New Speaker button (btnNewSpeaker_Transcript)
 Submits new speaker name to Speakers table  
 - **DataSource**: ```Speakers```
 - **DefaultMode**: ```FormMode.New```
-- ****: Reset form and set glbShowPopUpAddSpeaker to false
+- **OnSelect**: Reset form and set glbShowPopUpAddSpeaker to false
   ```
   Set(
     glbShowPopUpAddSpeaker,
@@ -668,7 +668,10 @@ Full screen container that has an opqaue fill and is only visible when **gblShow
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/5c28730e-97a4-47e8-840c-fec5aa5db699)
 - **AccessibleLabel**: Dynamcially update accessible label based on the current phrase and the selected speaker name
   ```
-  "Yes - For all the speakers equal to " & glbCurrentPhrase.demo_speaker & " please update Speaker (Lookup) to  " & drpSelectSpeaker_Transcript.Selected.Name
+  "Yes - For all the speakers equal to " &
+  glbCurrentPhrase.demo_speaker &
+  " please update Speaker (Lookup) to  " &
+  drpSelectSpeaker_Transcript.Selected.Name
   ```
 - **OnSelect**:
   ```
@@ -689,7 +692,7 @@ Full screen container that has an opqaue fill and is only visible when **gblShow
 - **Text**: ```"Yes"```
 
 **btnPopUpUpdateAllSpeakersNo**  
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d0d07751-9058-4a01-aa02-44ad298e468f)
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d0d07751-9058-4a01-aa02-44ad298e468f)  
 - **AccessibleLabel**: ```"Please do not update all speakers to the selected speaker"```
 - **Appearance**: ```'ButtonCanvas.Appearance'.Secondary```
 - **OnSelect**:

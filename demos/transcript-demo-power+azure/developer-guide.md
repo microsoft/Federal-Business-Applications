@@ -410,5 +410,40 @@ _Note: only visible when in edit mode_
 - **Text**: ```"↦"1```
 - **Visible**: ```glbMode=DisplayMode.View```
 
- 
+**lblInPoint_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
+ ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/483a374f-8295-48de-b13d-a6f060a828ed)
+ - **Text**: Display the current time in HH:MM:SS format
+   ```
+   " In: " & Text(
+    RoundDown(
+        glbCurrentPhrase.demo_offsetinseconds / 3600,
+        0
+    ),
+    "00"
+    ) & ":" & Text(
+        RoundDown(
+            If(
+                Mod(
+                    glbCurrentPhrase.demo_offsetinseconds,
+                    3600
+                ) > 0,
+                Mod(
+                    glbCurrentPhrase.demo_offsetinseconds,
+                    3600
+                ) / 60,
+                glbCurrentPhrase.demo_offsetinseconds / 60
+            ),
+            0
+        ),
+        "00"
+    ) & ":" & Text(
+        Mod(
+            glbCurrentPhrase.demo_offsetinseconds,
+            60
+        ),
+        "00"
+      )
+  ```
+
 [^Top](#contents)
+

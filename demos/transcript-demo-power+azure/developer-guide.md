@@ -881,12 +881,12 @@ Here's breakdown of each action:
     
 [^Top](#contents)
 ### 02a Child Flow- Create Transcription (HTTP)
-Calls the Azure Speech Services REST API to transcribe the audio file. Note: the OOTB Azure Speech Services connector wasn't working as of 3/18/24 in GCC-High. I recommend re-factoring if/when possible to use OOTB connector
+Calls the [Azure Speech Services REST API](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/rest-speech-to-text#transcriptions) to transcribe the audio file. Note: the OOTB Azure Speech Services connector wasn't working as of 3/18/24 in GCC-High. I recommend re-factoring if/when possible to use OOTB connector
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/cb5831f5-a9c9-4238-bce0-4eb23169fae4)
 
 Here's a breakdown of the actions:
 - **Manually trigger a flow**: Triggered from the the flow [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#02---azure---when-audio-file-created-in-blob-storage---create-transcript)
-- **HTTP**: Due to limitations at the time of this writing, the solution leverages the Azure Batch Speech to Text REST API instead of the Azure Batch Speech to Text connector.  
+- **HTTP**: Due to limitations at the time of this writing, the solution leverages the [Azure Batch Speech to Text REST API](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/rest-speech-to-text#transcriptions) instead of the Azure Batch Speech to Text connector.  
   ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/6a2b2f84-c9c6-41b9-be0f-7baf803e0ef4)
 
   Here are the parameters passed:
@@ -1041,7 +1041,7 @@ Here's a breakdown of each action:
   ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/1e4d24fa-20e9-4860-aa92-f2d3996b4960)
    Inside the following actions happen for each loop:
   - **Reset variable varWait**: At the start of each loop, reset to 500  - 
-  - **HTTP Get Transcript Status**:  Attempts to retrieve the transcription status using the Azure Batch Speech to Text REST API.  
+  - **HTTP Get Transcript Status**:  Attempts to retrieve the transcription status using the [Azure Batch Speech to Text REST API](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/rest-speech-to-text#transcriptions).  
     ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/89475946-26fd-4464-9f31-fc1d23c480db)  
     With the following parameters:
     - **Method**: ```GET```
@@ -1157,7 +1157,7 @@ Here's a breakdown of each action:
 
 [^Top](#contents)
 ### 02c Child Flow - Get Transcript Results
-Use Azure Speech Services REST API to retrieve the transcription files (report and content) using the Path provided by previous flow. 
+Use [Azure Speech Services REST API](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/rest-speech-to-text#transcriptions) to retrieve the transcription files (report and content) using the Path provided by previous flow. 
 NOTE: Due to issues with OOTB Azure Speech Services connector, I leveraged the HTTP connector to call the Azure Speech Services REST API. I recommend re-factoring to use the OOTB connector if/when possible  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/1c282b5c-d74d-47f7-9f9a-3a6a27ab6129)  
 Here is a breakdown of each action:
@@ -1445,9 +1445,9 @@ Here is a breakdown of eacha action:
     with the following parameters:
     - **Table name**: ```Recognized Phrases```
     - **Confidence**: ```@{first(items('Apply_to_each')['nBest'])?['confidence']}```
-      - _Note: The ```first()``` function is used to avoid another For Each loop. See Rest API documentation for more on **nBest**_
+      - _Note: The ```first()``` function is used to avoid another For Each loop. See [Rest API documentation](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/batch-transcription-get?pivots=rest-api#transcription-result-file) for more on **nBest**_
     - **Display**: ```@{first(items('Apply_to_each')['nBest'])?['display']}```
-      - _Note: The ```first()``` function is used to avoid another For Each loop. See Rest API documentation for more on **nBest**_
+      - _Note: The ```first()``` function is used to avoid another For Each loop. See [Rest API documentation](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/batch-transcription-get?pivots=rest-api#transcription-result-file) for more on **nBest**_
     - **Duration in Seconds**: ```@{div(int(items('Apply_to_each')?['durationInTicks']),10000000.00)```
       - _Note: Uses ```div()``` and ```int()``` functions to return the duration in seconds with two decimal points_
     - **Duration in Ticks**: ```@{int(items('Apply_to_each')?['durationInTicks'])}```

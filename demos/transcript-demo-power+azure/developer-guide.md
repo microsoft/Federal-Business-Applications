@@ -1,6 +1,6 @@
 # Developer Guide
 
-This document is for developers to help them understand *how* the solution works. 
+This document is for developers to help them understand *how* the solution works. Note: not every single control will be detailed.  (e.g. controls like Back buttons will not be explained.)
 
 ## Contents
 - [Demo Transcript app (canvas)](#Demo-Transcript-app-canvas)
@@ -276,5 +276,40 @@ _Note: only visible when **NOT** in edit mode_
 - **Text**:```"Edit"```
 - **Visible** ```Not(glbMode=DisplayMode.Edit)```
 
-**btnSave_Transcript**
+**btnSave_Transcript** _(contMainTranscriptVert->contFooterTranscriptHoriz)_   
+_Note: only visible when in edit mode_  
+- **AccessibleLabel**: ```"Save edits to current phrase"```
+- **OnSelect** If the user selects a speaker in the dropdown, display Add Speaker Pop Up  
+  ```
+  If(
+      !IsBlank(drpSelectSpeaker_Transcript.Selected),
+      Set(
+          gblShowPopUpUpdateAllSpeakers,
+          true
+      ),
+      //Otherwise just save changes
+      Select(btnSaveHidden)
+  );
+  ```
+- **Text**: ```"Save"```
+- **Visible**: ```glbMode=DisplayMode.Edit```
+
+**btnCancel_Transcript**_(contMainTranscriptVert->contFooterTranscriptHoriz)_     
+  _Note: Only visible when in edit mode_  
+- **AccessibleLabel**:```"Cancel the edits to the current phrase"```
+- **Appearance**: ```'ButtonCanvas.Appearance'.Outline```
+- **OnSelect**: Resets controls and app to View mode
+  ```
+  Set(
+    glbMode,
+    DisplayMode.View
+  );
+  Reset(drpSelectSpeaker_Transcript);
+  Reset(txtCurrentPhrase_Transcript)
+  ```
+- **Text**: ```"Cancel"```
+- **Visible**: ```glbMode=DisplayMode.Edit```
+
+**txtCurrentPhrase_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert)_ 
+
 [^Top](#contents)

@@ -214,7 +214,7 @@ All controls (except one) are stored in horizontal and vertical containers to al
 Used to update variables based on the playhead of the audio control (**audRecordingPlayback**). Some of the properties have been customized:
 - **Duration**: This is in milliseconds. 1000 = 1 second  
   ```1000```
-- **OnTimerEnd**: _Every second, update the current phrase (glbCurrentPhrase)_
+- **OnTimerEnd**: Every second, update the current phrase (glbCurrentPhrase)
   ```
    Set(
        glbCurrentPhrase,

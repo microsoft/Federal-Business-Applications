@@ -1365,13 +1365,13 @@ Parses the transcript file and loads into Dataverse. One record in the Transcrip
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/17200620-119d-4a0e-8465-371648e26579)
 
 Here is a breakdown of eacha action:
-- **Manually trigger a flow**:  Child flow is triggered from parent flow [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#02---azure---when-audio-file-created-in-blob-storage---create-transcript) and receives three parameters
-  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/e0177581-1daf-417b-99a4-6cd87984af3a)
+- **Manually trigger a flow**:  Child flow is triggered from parent flow [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#02---azure---when-audio-file-created-in-blob-storage---create-transcript) and receives three parameters  
+  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/e0177581-1daf-417b-99a4-6cd87984af3a)  
   - **Transcript**
   - **File Name**
   - **File Size**
 - **Parse JSON**  
-  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/0c27ca9d-3f9a-4e14-bcc9-2b70ba966e2d)
+  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/0c27ca9d-3f9a-4e14-bcc9-2b70ba966e2d)  
   - **Content**: ```@{triggerBody()['text']}```
   - **Schema**:
     ```
@@ -1439,5 +1439,18 @@ Here is a breakdown of eacha action:
     - **Source File Size**: ```@{triggerBody()['number']}```
     - **Source URL**: ```@{body('Parse_JSON')?['source']}```
     - **Time Stamp**: ```@{body('Parse_JSON')?['timestamp']}```
+- **Apply to each**: For each Recognized Phrase (from Parse JSON), perform the following action:
+  - **Add a new row to Recognized Phrases**: Add each recogonized phrase to the Recogonized Phrases table  
+    ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/9a6baf65-f178-450d-bc2a-13ef28e0b4b0)
+    with the following parameters:
+    - **Table name**
+    - **Confidence**
+    - **Display**
+    - **Duration in Seconds**
+    - **Duration in Ticks**
+    - **Offset in Seconds**
+    - **Offset in Ticks**
+    - **Speaker**
+    - **ranscript (Transcripts)**
 
 [^Top](#contents)

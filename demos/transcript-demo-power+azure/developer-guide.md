@@ -713,8 +713,8 @@ Full screen container that has an opqaue fill and is only visible when **gblShow
   ```
 - **Text**: ```"No"```
 
-**btnSaveHidden**
-This button is hidden, but is called by various other buttons.  This is one technique to create reusable code/functions in Power Apps
+**btnSaveHidden**  
+This button is hidden, but is called by various other buttons.  This is one technique to create reusable code/functions in Power Apps  
 - **AccessibleLabel**: ```"This is a hidden control - used for saving the edits to the current phrase"```
 - **OnSelect**: 
   ```

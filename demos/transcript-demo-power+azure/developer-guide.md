@@ -349,8 +349,8 @@ _Note: only visible when in edit mode_
 - **Items**: ```Filter(Speakers, 'Speakers (Views)'.'Active Speakers')```
 - **Visible**: ```glbMode=DisplayMode.Edit```
 
-**icoClearSelectSpeaker_Transcript**  _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_
-  _Note: only visible when speaker is selected ind dropdown_  
+**icoClearSelectSpeaker_Transcript**  _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
+  _Note: only visible when speaker is selected in dropdown_  
 - **AccessibleLabel**: ```"Clear selected speaker dropdown"```
 - **BorderStyle**: ```BorderStyle.None```
 - **Color**: ```PowerAppsTheme.Colors.Primary```
@@ -363,4 +363,17 @@ _Note: only visible when in edit mode_
 - **Visible**: ```!IsBlank(drpSelectSpeaker_Transcript.Selected)```
 - **Width**: ```Self.Height```
 
+**btnNewSpeaker_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
+- **AccessibleLabel**: ```"Add new speaker"```
+- **Appearance**: ```'ButtonCanvas.Appearance'.Subtle```
+- **OnSelect**: Show the Add Speaker Pop Up
+  ```
+  Set(
+      glbShowPopUpAddSpeaker,
+      true
+  )
+  ```
+- **Text**: ```"+ New Speaker"```
+- **Visible**: ```glbMode=DisplayMode.Edit```
+  
 [^Top](#contents)

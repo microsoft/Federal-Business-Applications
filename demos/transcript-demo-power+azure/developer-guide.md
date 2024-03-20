@@ -1,6 +1,17 @@
 # Developer Guide
 
-This section will cover how the solution works.
+This document is for developers to help them understand *how* the solution works. 
+
+## Contents
+- [Demo Transcript app (canvas)](#Demo-Transcript-app-canvas)
+  - [App Properties & Settings](#App-Properties-&-Settings)
+  - [Screens](#Screens)
+  - [Main Screen](#main-creen)
+    - [Properties](#properties)
+    - [Controls](#main-screen-controls)
+  - [Transcript Demo Screen](#Transcript-Demo-Screen)
+    - [Controls](#Controls)  
+***
 
 ## Demo Transcript app (canvas)
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/60e1f755-59e2-4748-b463-d7b5233b9846)
@@ -36,7 +47,7 @@ Both screens use containers to help control the flow of the controls when resizi
 - **glbSelectedTranscript**: Stores the selected transcript from from the left hand gallery (galTranscripts_Main)
 - **glbCurrentPhrase**: Used on the next screen, to identify the current recogonized phrase based on the current playback point in the audio controller
 - **glbMode**: Used on the next screen to toggle between Edit and View display modes via the **Edit** Button
-  
+  <a name="main-screen-controls">
 #### Controls
 **frmUpload**:  
 The form is connected to the SharePoint list. In my demo, it's a simple list with only one field, **Title**.  Some of properties have been updated:  

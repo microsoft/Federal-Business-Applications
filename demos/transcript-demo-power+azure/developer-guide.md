@@ -196,7 +196,7 @@ This screen has several containers. Some of these are used to for pop-up windows
 
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/63b34025-87b9-4ea2-afd6-b1bff33ca32e)
 
-<a name="transcript-demo-screen-controls">
+
 #### Controls
 
 All controls (except one) are stored in horizontal and vertical containers to allow for responsive design when the user's screen resolution and aspect ratio change.  Briefly, here are the containers and what they do:

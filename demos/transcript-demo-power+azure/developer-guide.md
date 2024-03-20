@@ -243,6 +243,8 @@ Used to update variables based on the playhead of the audio control (**audRecord
 **The following controls are located inside container(s). The path/location will be indicated in paranthesis.**  
 
 **audRecordingPlayback**  _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert)_
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/4d4feed5-64ae-4b99-bb2c-9d0fe8815037)
+
 Used to playback the original audio (stored in Azure Blob Storage)
 - **Media**: ```glbSelectedTranscript.'Source URL'```
 - **DisplayMode**: If user is editing the current phrase, disable this so they can't move the playhead (and change the current phrase)
@@ -265,6 +267,8 @@ Used to playback the original audio (stored in Azure Blob Storage)
  - **Width**: ```Parent.Width```
 
 **btnEdit_Transcript** _(contMainTranscriptVert->contFooterTranscriptHoriz)_  
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/21d4b135-ab8f-4761-8b3f-9527367f5cd6)
+
 _Note: only visible when **NOT** in edit mode_
 - **AccessibleLabel**: ```"Edit the current phrase"```
 - **OnSelect**:
@@ -278,6 +282,8 @@ _Note: only visible when **NOT** in edit mode_
 - **Visible** ```Not(glbMode=DisplayMode.Edit)```
 
 **btnSave_Transcript** _(contMainTranscriptVert->contFooterTranscriptHoriz)_   
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/6b7670e6-c99f-4693-9158-2262df8cd618)
+
 _Note: only visible when in edit mode_  
 - **AccessibleLabel**: ```"Save edits to current phrase"```
 - **OnSelect** If the user selects a speaker in the dropdown, display Add Speaker Pop Up  
@@ -296,6 +302,8 @@ _Note: only visible when in edit mode_
 - **Visible**: ```glbMode=DisplayMode.Edit```
 
 **btnCancel_Transcript**_(contMainTranscriptVert->contFooterTranscriptHoriz)_     
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/c26cdcec-d1a9-494e-b872-d759a875108d)
+
   _Note: Only visible when in edit mode_  
 - **AccessibleLabel**:```"Cancel the edits to the current phrase"```
 - **Appearance**: ```'ButtonCanvas.Appearance'.Outline```
@@ -312,6 +320,8 @@ _Note: only visible when in edit mode_
 - **Visible**: ```glbMode=DisplayMode.Edit```
 
 **txtCurrentPhrase_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert)_ 
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/98c3429a-cd78-4f37-b203-525eab121cf1)
+
 - **AccessibleLabel**: ```"Transcript of the current phrase (based current time code)"```
 - **DisplayMode**: If variable glbMode is blank, default to View mode
   ```Coalesce(glbMode,DisplayMode.View)```
@@ -329,6 +339,8 @@ _Note: only visible when in edit mode_
 - **Width**: ```Parent.Width```
 
 **lblCurrentSpeaker_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/22d1f4da-33fc-46bc-9526-fd5e9653ae52)
+
 - **Text**: If the speaker dropdown has a selected name, use that. If not, use the value of the speaker name from the current phrase (glbCurrentPhrase). If no name exists, get the speaker value (number) from the current phrase
   ```
   "Speaker: " & Coalesce(
@@ -340,16 +352,23 @@ _Note: only visible when in edit mode_
 - **Visible**: ```!IsBlank(glbCurrentPhrase)```
 
 **lblSelectSpeaker_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/4d0bf4e0-766c-4cb1-ac55-da19173be8c6)
+
   _Note: only visible when app is in Edit mode_  
 - **Align**: ```'TextCanvas.Align'.End```
 - **Text**: ```"Select Speaker"```
 - **Visible**: ```glbMode=DisplayMode.Edit```
+
 **drpSelectSpeaker_Transcript**  _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/8e22e6c4-70e6-4328-8a15-2e41d61326d8)
+
 - **AccessibleLabel**: ```"Select speaker from this drop down"```
 - **Items**: ```Filter(Speakers, 'Speakers (Views)'.'Active Speakers')```
 - **Visible**: ```glbMode=DisplayMode.Edit```
 
 **icoClearSelectSpeaker_Transcript**  _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/c58b5e2f-3201-4899-8fb8-263c48b76709)
+
   _Note: only visible when speaker is selected in dropdown_  
 - **AccessibleLabel**: ```"Clear selected speaker dropdown"```
 - **BorderStyle**: ```BorderStyle.None```
@@ -377,10 +396,14 @@ _Note: only visible when in edit mode_
 - **Visible**: ```glbMode=DisplayMode.Edit```
 
 **lblSourceFileName_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/465e84fc-d20b-41ea-b3c0-cb8d5c7f876b)
+
 - **FillPortions**: ```4```
 - **Text**: ```"Source: " & glbSelectedTranscript.'Source File Name'```
 
 **btnJumpToInPoint** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/28f01fac-1537-425b-99f8-f7c3c532327f)
+
 - **AccessibleLabel**: ```"Jump to In Point"```
 - **Appearance**: ```'ButtonCanvas.Appearance'.Outline```
 - **OnSelect**: ```Set(glbJumpToTime,glbCurrentPhrase.demo_offsetinseconds)```

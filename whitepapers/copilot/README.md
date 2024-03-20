@@ -98,6 +98,7 @@ Below outlines target timelines for Power Platform / Dynamics 365 Copilot capabi
 * Available Today (GCC & GCC High)
    * AI Builder
      * [Create text using custom prompt](https://learn.microsoft.com/en-us/ai-builder/create-a-custom-prompt)
+        * Getting started? Check out the [AI Builder prompt engineering guide](https://go.microsoft.com/fwlink/?linkid=2255775)
 * Spring 2024 (GCC & GCC High)
   * Copilot Studio
     * [Generative AI in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-gpt-overview)

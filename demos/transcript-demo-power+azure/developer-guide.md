@@ -839,8 +839,43 @@ This button is hidden, but is called by various other buttons.  This is one tech
 There are six flows in this solution.  They are designed to run sequentially (hence the numbering).   
 [^Top](#contents)
 ### 01 - SPO - When Audio File Uploaded to SPO - Copy to Azure Blob
+This flow is kicked off when the user uploads/attaches a file to the SharePoint list via the Power App.  
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/0db99ce3-b1bc-4465-aef9-d32b148f1d82)
+
+Note: SharePoint was used due a current limitation with the Azure Blob Storage connector in GCC-High (as of 3/20/24).  I recommend connecting directly to Azure Blob Storage from the canvas app if possible
+
+Here's a detailed breakdown of each action:
+- **When an item is created**: Monitors the SharePoint list for new items
+- **Get attachments**: Retrieves all attachments for a particular item
+- **Apply to each**: Loops through each attachment. Note: the app only allows for one upload at a time, but if you increase that limit, this flow will work
+  - Get attachment content: Retrieves the binary content for the attached file (i.e. audio file)
+  - Create blob (V2): Creates a new blob in the specified container
+    - _Note: You must have an Azure Storage account and container to use this (see [Prerequistes](url))_
+
 [^Top](#contents)
-### 02 - Azure - When Audio File Created in Blob Storage - Create Transcript
+### 02 - Azure - When Audio File Created in Blob Storage - Create Transcript  
+Master flow that is triggered when a file is uploaded to the Azure Blob storage container. Then it transcribes the audio file (via Azure Speech Services) and then loads that transcript into Dataverse and optionally, removes the source audio from the SP list
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/0e732828-5de0-40e1-80d5-3a6190dda29e)  
+
+Here's breakdown of each action:
+- **When a blob is added or modified (properties only) (V2)**: Flow is triggered when a new blob is created in the specified container
+  - In this demo, the container is called "speech-to-text-demo" ** You will need to update this trigger with your storage account and container**
+- **Create SAS URI by path (V2)**: Creates a Shared Access String URI path with read-only permissions set to expire 1 year later.  
+  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/932db720-558c-4953-9c85-e3f828eecd8c)  
+
+- **Run a Child Flow - Create Transcription (HTTP)**: Calls the child flow () and passes the SAS URI from previous action
+- **Run a Child Flow - Loop Until Complete**: Calls the child flow () and passes the path (URL) of the transcriptions (from the previous child flow)
+- **Run a Child Flow - Get Transcript Results**: Calls the child flow () and passes the path of the transcription files (from previous child flow)
+- **Run a Child Flow - Parse Transcript and Load into Dataverse**: Calls the child flow () and passes the following parameters:  
+  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/3547c0d4-aa1a-4f60-9f27-fc859b26b7f2)
+
+  - **Transcript**: ```string(outputs('Run_a_Child_Flow_-_Get_Transcript_Results')?['Body'])```
+  - **File Name** ```@{triggerOutputs()?['body/DisplayName']}```
+  - **File Size**: ```@{triggerOutputs()?['body/Size']}```
+- **Get Items**: Get all items from the SharePoint list
+  - _Note: this step is optional and will not be necessary if you write directly to Azure Blob from the canvas app (recommended)_
+- **Apply to each**: Loop through each item in the SharePoint List (should only be 1 item)
+  - **Delete item**: Delete each SharePoint list item
 [^Top](#contents)
 ### 02a Child Flow- Create Transcription (HTTP)
 [^Top](#contents)

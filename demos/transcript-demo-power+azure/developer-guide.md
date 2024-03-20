@@ -403,8 +403,8 @@ _Note: only visible when in edit mode_
 - **FillPortions**: ```4```
 - **Text**: ```"Source: " & glbSelectedTranscript.'Source File Name'```
 
-**btnJumpToInPoint** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/28f01fac-1537-425b-99f8-f7c3c532327f)
+**btnJumpToInPoint** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_    
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/28f01fac-1537-425b-99f8-f7c3c532327f)  
 
 - **AccessibleLabel**: ```"Jump to In Point"```
 - **Appearance**: ```'ButtonCanvas.Appearance'.Outline```
@@ -413,7 +413,7 @@ _Note: only visible when in edit mode_
 - **Visible**: ```glbMode=DisplayMode.View```
 
 **lblInPoint_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
- ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/483a374f-8295-48de-b13d-a6f060a828ed)
+ ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/483a374f-8295-48de-b13d-a6f060a828ed)  
  - **Text**: Display the current phrase's in point (Offset in Seconds) in HH:MM:SS format
    ```
    " In: " & Text(
@@ -450,7 +450,7 @@ _Note: only visible when in edit mode_
 - **Width**: ```120```
 
 **lblOutpoint_Transcript**: _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d11bac0b-e3fc-4b3b-8dbf-72ce79db931a)
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d11bac0b-e3fc-4b3b-8dbf-72ce79db931a)  
 - **Align**: ```'TextCanvas.Align'.End```
 - **Text**: Display current phrase's out point (outset) in HH:MM:SS
   ```
@@ -488,7 +488,7 @@ _Note: only visible when in edit mode_
 - **Width**: ```120```
 
 **lblJumpToTime_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/1a360425-3a9f-48af-af57-909b9ed26a7e)
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/1a360425-3a9f-48af-af57-909b9ed26a7e)  
 - **Align**: ```'TextCanvas.Align'.End```
 - **FontColor**: If variable glbJumpToTime exceeds the total duration of the audio file, display red text
   ```
@@ -513,8 +513,9 @@ _Note: only visible when in edit mode_
   )
   ```
 **txtJumpToTime_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d847eef6-59ae-4fa9-bcd6-d2b8efd336d1)  
 Allows user to type time code (HH:MM:SS) to jump to part of recording (and transcript)
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d847eef6-59ae-4fa9-bcd6-d2b8efd336d1)
+
 - **AccessibleLabel**: ```"Type the time you want to jump to (Hours:Minutes:Seconds)"```
 - **FontColor**:
   ```
@@ -588,7 +589,9 @@ Allows user to type time code (HH:MM:SS) to jump to part of recording (and trans
 - **Width**: ```100```
 
 <a name="contPopUpAddSpeaker">
-**contPopUpAddSpeaker** 
+**contPopUpAddSpeaker**  
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/edbb1d88-5c0b-46b0-9255-ef5f0dceb74e)
+
 Only visible when user clicks + New Speaker button (btnNewSpeaker_Transcript)
 - **Fill**: ```RGBA(255, 255, 255, 1)```
 - **Height**: ```txtCurrentPhrase_Transcript.Height-10```

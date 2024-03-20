@@ -603,8 +603,8 @@ Only visible when user clicks + New Speaker button (btnNewSpeaker_Transcript)
 - **X**: ```contMainBodyTranscriptHoriz.Width+contMainBodyTranscriptHoriz.X-Self.Width```
 - **Y**: ```contMainBodyTranscriptHoriz.Y+contSpeakerTranscriptHoriz.Height+5```
   
-**frmAddSpeaker** _(contPopUpAddSpeaker)_
-Submits new speaker name to Speakers table
+**frmAddSpeaker** _(contPopUpAddSpeaker)_  
+Submits new speaker name to Speakers table  
 - **DataSource**: ```Speakers```
 - **DefaultMode**: ```FormMode.New```
 - ****: Reset form and set glbShowPopUpAddSpeaker to false
@@ -616,5 +616,33 @@ Submits new speaker name to Speakers table
   ResetForm(frmAddSpeaker)
   ```
 
+**btnAddSpeakerSave** _(contPopUpAddSpeaker->contPopUpAddSpeakerButtons)_  
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/221e4be6-985b-468d-8d2d-be65ae77c297)
+
+- **AccessibleLabel**: ```"Save the new speaker"```
+- **DisplayMode**: If Name field is blank, disable button
+  ```
+  If(
+    IsBlank(Name_DataCard_Value.Value),
+    DisplayMode.Disabled,
+    DisplayMode.Edit
+  )
+  ```
+- **OnSelect**: ```SubmitForm(frmAddSpeaker);```
+- **Text**: ```"Save"```
+
+**btnAddSpeakerCancel** _(contPopUpAddSpeaker->contPopUpAddSpeakerButtons)_  
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/f288d3da-a2be-4203-928c-625bb8efc987)
+- **AccessibleLabel**: ```"Cancel adding the new speaker"```
+- **Appearance**: ```'ButtonCanvas.Appearance'.Secondary```
+- **OnSelect**: Reset form and hide the Add New Speaker pop-up
+  ```
+  Set(
+    glbShowPopUpAddSpeaker,
+    false
+  );
+  ResetForm(frmAddSpeaker)
+  ```
+- **Text**: ```"Cancel"```
 [^Top](#contents)
 

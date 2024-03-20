@@ -10,7 +10,7 @@ This document is for developers to help them understand *how* the solution works
     - [Properties](#properties)
     - [Controls](#main-screen-controls)
   - [Transcript Demo Screen](#Transcript-Demo-Screen)
-    - [Controls](#transcript-demo-screen-controls)  
+    - [Controls](#controls-1)  
 ***
 
 ## Demo Transcript app (canvas)

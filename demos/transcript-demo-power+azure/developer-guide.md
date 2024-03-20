@@ -12,12 +12,12 @@ This document is for developers to help them understand *how* the solution works
   - [Transcript Demo Screen](#Transcript-Demo-Screen)
     - [Controls](#controls-1)
 - [Flows](#flows)
-  - [01 - SPO - When Audio File Uploaded to SPO - Copy to Azure Blob](#01-SPO-When-Audio-File-Uploaded-to-SPO-Copy-to-Azure-Blob)
-  - [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#02-Azure-When-Audio-File-Created-in-Blob-Storage-Create-Transcript)
-  - [02a Child Flow- Create Transcription (HTTP)](url)
-  - [02b Child Flow - Loop Until Transcript Complete](url)
-  - [02c Child Flow - Get Transcript Results](url)
-  - [02d Child Flow - Parse Transcript and Load into Dataverse](url)
+  - [01 - SPO - When Audio File Uploaded to SPO - Copy to Azure Blob](#01---spo---when-audio-file-uploaded-to-spo---copy-to-azure-blob)
+  - [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#02---azure---when-audio-file-created-in-blob-storage---create-transcript)
+  - [02a Child Flow- Create Transcription (HTTP)](#02a-child-flow--create-transcription-http)
+  - [02b Child Flow - Loop Until Transcript Complete](#02b-child-flow---loop-until-transcript-complete)
+  - [02c Child Flow - Get Transcript Results](#02c-child-flow---get-transcript-results)
+  - [02d Child Flow - Parse Transcript and Load into Dataverse](#02d-child-flow---parse-transcript-and-load-into-dataverse)
     
 ***
 

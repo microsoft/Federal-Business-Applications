@@ -10,7 +10,7 @@ This document is for developers to help them understand *how* the solution works
     - [Properties](#properties)
     - [Controls](#main-screen-controls)
   - [Transcript Demo Screen](#Transcript-Demo-Screen)
-    - [Controls](#Controls)  
+    - [Controls](#transcript-demo-screen-controls)  
 ***
 
 ## Demo Transcript app (canvas)
@@ -196,6 +196,7 @@ This screen has several containers. Some of these are used to for pop-up windows
 
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/63b34025-87b9-4ea2-afd6-b1bff33ca32e)
 
+<a name="transcript-demo-screen-controls">
 #### Controls
 
 All controls (except one) are stored in horizontal and vertical containers to allow for responsive design when the user's screen resolution and aspect ratio change.  Briefly, here are the containers and what they do:
@@ -348,6 +349,18 @@ _Note: only visible when in edit mode_
 - **Items**: ```Filter(Speakers, 'Speakers (Views)'.'Active Speakers')```
 - **Visible**: ```glbMode=DisplayMode.Edit```
 
-
+**icoClearSelectSpeaker_Transcript**  _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_
+  _Note: only visible when speaker is selected ind dropdown_  
+- **AccessibleLabel**: ```"Clear selected speaker dropdown"```
+- **BorderStyle**: ```BorderStyle.None```
+- **Color**: ```PowerAppsTheme.Colors.Primary```
+- **Fill**: ```ColorValue("#F5F5F5")```
+- **Icon**: ```Icon.Cancel```
+- **Height**: ```drpSelectSpeaker_Transcript.Height```
+- **OnSelect**: ```Reset(drpSelectSpeaker_Transcript)```
+- **PaddingTop**: ```10```
+- **PaddingBottom**, **PaddingRight**, **PaddingLeft**: ```Self.PaddingTop```
+- **Visible**: ```!IsBlank(drpSelectSpeaker_Transcript.Selected)```
+- **Width**: ```Self.Height```
 
 [^Top](#contents)

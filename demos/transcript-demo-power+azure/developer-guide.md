@@ -41,6 +41,9 @@ Both screens use containers to help control the flow of the controls when resizi
 [^Top](#contents)
 
 ### Main Screen
+This screen is used to upload audio files and select transcripts to view/edit. 
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/09573b6d-538c-4e8a-b49c-3b5d98b92a45)
+
 
 #### Properties
 
@@ -55,7 +58,7 @@ Both screens use containers to help control the flow of the controls when resizi
 **frmUpload**:  
 The form is connected to the SharePoint list. In my demo, it's a simple list with only one field, **Title**.  Some of properties have been updated:  
 - **DefaultMode**: ```FormMode.New```
-- **OnSuccess**: *When the form successfully creates the SPO list item, THEN run three functions concurrently (to improve performance)*
+- **OnSuccess**: When the form successfully creates the SPO list item, THEN run three functions concurrently (to improve performance)
   ```
   Concurrent(
     //Hide the loading spinner
@@ -74,14 +77,14 @@ The form is connected to the SharePoint list. In my demo, it's a simple list wit
    ```
 - **Width**: ```Parent.Width ```
 
-**Title_DataCard**: _This card is hidden and updated via variable (set by **attFileToUpload**)._
+**Title_DataCard**: This card is hidden and updated via variable (set by **attFileToUpload**).
 - **Default**: ```glbSelectedFileName```
 - **Visible**: ```false```
 
 **attFileToUpload**: This control has several properties that have been customized:
 - **AccesibleLabel**: ``` "File to attach (upload) and transcribe" ```
 - **AddAttachmentText**: ```"Select file"```
-- **Color**:  _This changes color to red if selected file is not MP3 or WAV_
+- **Color**:  This changes color to red if selected file is not MP3 or WAV
   ```
   If(
     Right(
@@ -99,10 +102,10 @@ The form is connected to the SharePoint list. In my demo, it's a simple list wit
   ```
 - **Height**: ```100```
 - **MaxAttachments**: ```1```
-   - _If you want to allow for batch uploads, increase this option, but performance may suffer for larger files. Also some other parts of the solution may need to be refactored if you allow more than 1 file at a time_
+   - If you want to allow for batch uploads, increase this option, but performance may suffer for larger files. Also some other parts of the solution may need to be refactored if you allow more than 1 file at a time
 - **MaxAttachmentSize**: ```1000```
    - _In MB_
-- **MaxAttachmentText**: *This code does some basic data validation to check if the selected file is MP3 or WAV* 
+- **MaxAttachmentText**: This code does some basic data validation to check if the selected file is MP3 or WAV 
   ```
   If(
     Right(
@@ -117,7 +120,7 @@ The form is connected to the SharePoint list. In my demo, it's a simple list wit
    )
   ```
 - **NoAttachmentsText**: ```"There is nothing selected."```
-- **OnAddFile**: *Stores the first selected file in a variable. IF you allow for more than one attachment, you'll need to refactor this*
+- **OnAddFile**: Stores the first selected file in a variable. IF you allow for more than one attachment, you'll need to refactor this
 ```
    Set(
     glbSelectedFileName,
@@ -133,7 +136,7 @@ The form is connected to the SharePoint list. In my demo, it's a simple list wit
    ```
 **btnUploadFile_Main**: Used to upload the selected file to SPO list.  
 - **AccessibleLabel**: ```"Upload the selected file"```
-- **DisplayMode**: _Default mode disabled. Only enabled (Edit mode) when attachment is selected and file is MP3 or WAV_
+- **DisplayMode**: Default mode disabled. Only enabled (Edit mode) when attachment is selected and file is MP3 or WAV
   ```
    If(
     IsEmpty(attFileToUpload.Attachments),
@@ -143,7 +146,7 @@ The form is connected to the SharePoint list. In my demo, it's a simple list wit
     DisplayMode.Disabled
    )
   ```
-- **OnSelect**: _When clicked, shows the loading spinner and submits the form to SPO list_
+- **OnSelect**: When clicked, shows the loading spinner and submits the form to SPO list
    ```
    // Show the loading spinner
    Set(
@@ -163,7 +166,7 @@ The form is connected to the SharePoint list. In my demo, it's a simple list wit
 Displays **all** the available transcripts in the Transcripts table. Some properties were customized:
 - **AccessibleLabel**: ```"All the available transcripts to review/edit"```
 - **Items**: ```Transcripts```
-- **OnSelect**: _When item is selected, store a copy of the **Recognized Phrases** for the selected transcript in a collection (**colPhrases**) and sort the collection in acensinding order by the '**Offset in Seconds**', then go to the **Transcript Demo Screen**_  
+- **OnSelect**: When item is selected, store a copy of the **Recognized Phrases** for the selected transcript in a collection (**colPhrases**) and sort the collection in acensinding order by the '**Offset in Seconds**', then go to the **Transcript Demo Screen**  
    ```
    ClearCollect(
        colPhrases,
@@ -191,15 +194,24 @@ Displays **all** the available transcripts in the Transcripts table. Some proper
 ### Transcript Demo Screen
 This screen has several containers. Some of these are used to for pop-up windows, while most are used to structure the controls.  
 
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/63b34025-87b9-4ea2-afd6-b1bff33ca32e)
+
 #### Controls
 
-**contSpinnerBg**: Contains the loading spinner and is only visible when **glbShowSpinner** = true  
-**contPopUpUpdateAllSpeakersBg**: Is only visible when **gblShowPopUpUpdateAllSpeakers** = true  
-**contPopUpAddSpeaker**: Only visible when **glbShowPopUpAddSpeaker** = true 
+All controls (except one) are stored in horizontal and vertical containers to allow for responsive design when the user's screen resolution and aspect ratio change.  Briefly, here are the containers and what they do:
+
+- **contSpinnerBg**:  
+  Contains the loading spinner and is only visible when **glbShowSpinner** = true  
+- **contPopUpUpdateAllSpeakersBg**:  
+  Is only visible when **gblShowPopUpUpdateAllSpeakers** = true  
+- **contPopUpAddSpeaker**:  
+  Only visible when **glbShowPopUpAddSpeaker** = true 
+- **contMainTranscriptVert**:  
+  Contains the main UI for this screen including playback and edit controls
 
 **timerTranscript**:   
 Used to update variables based on the playhead of the audio control (**audRecordingPlayback**). Some of the properties have been customized:
-- **Duration**: _This is in milliseconds. 1000 = 1 second_  
+- **Duration**: This is in milliseconds. 1000 = 1 second  
   ```1000```
 - **OnTimerEnd**: _Every second, update the current phrase (glbCurrentPhrase)_
   ```
@@ -227,18 +239,42 @@ Used to update variables based on the playhead of the audio control (**audRecord
 - **Start**: ```glbStartTimer```
 - **Visible**: ```false```
 
-**audRecordingPlayback**  
+**The following controls are located inside container(s). The path/location will be indicated in paranthesis. **
+
+**audRecordingPlayback**  _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert)_
 Used to playback the original audio (stored in Azure Blob Storage)
 - **Media**: ```glbSelectedTranscript.'Source URL'```
-- **DisplayMode**: _If user is editing the current phrase, disable this so they can't move the playhead (and change the current phrase)_
+- **DisplayMode**: If user is editing the current phrase, disable this so they can't move the playhead (and change the current phrase)
   ```
   If(
     glbMode = DisplayMode.Edit,
     DisplayMode.Disabled,
     DisplayMode.Edit
    )
-
-[^Top](#contents)
    ```
 - **Fill**: ```PowerAppsTheme.Colors.Primary```
-   - Note: PowerAppsTheme is the default theme.  You can replace the default theme with your own. 
+   - Note: PowerAppsTheme is the default theme.  You can replace the default theme with your own.
+     ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/05fc98ea-a851-426d-b878-1ca3d53fea08)
+
+ - **Media**: ```glbSelectedTranscript.'Source URL'```
+ - **OnEnd**: ```Set(glbStartTimer,false);```
+ - **OnPause**: ```Set(glbStartTimer,false);```
+ - **OnStart**: ```Set(glbStartTimer,true);```
+ - **StartTime**: ```glbJumpToTime```
+ - **Width**: ```Parent.Width```
+
+**btnEdit_Transcript** _(contMainTranscriptVert->contFooterTranscriptHoriz)_  
+_Note: only visible when **NOT** in edit mode_
+- **AccessibleLabel**: ```"Edit the current phrase"```
+- **OnSelect**:
+  ```
+  Set(
+    glbMode,
+    DisplayMode.Edit
+  )
+  ```
+- **Text**:```"Edit"```
+- **Visible** ```Not(glbMode=DisplayMode.Edit)```
+
+
+[^Top](#contents)

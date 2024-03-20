@@ -412,7 +412,7 @@ _Note: only visible when in edit mode_
 
 **lblInPoint_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/483a374f-8295-48de-b13d-a6f060a828ed)
- - **Text**: Display the current time in HH:MM:SS format
+ - **Text**: Display the current phrase's in point (Offset in Seconds) in HH:MM:SS format
    ```
    " In: " & Text(
     RoundDown(
@@ -443,7 +443,148 @@ _Note: only visible when in edit mode_
         ),
         "00"
       )
+    ```
+- **Visible**: ```!IsBlank(glbCurrentPhrase)```
+- **Width**: ```120```
+
+**lblOutpoint_Transcript**: 
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d11bac0b-e3fc-4b3b-8dbf-72ce79db931a)
+- **Align**: ```'TextCanvas.Align'.End```
+- **Text**: Display current phrase's out point (outset) in HH:MM:SS
   ```
+   "Out: " & Text(
+      RoundDown(
+          glbCurrentPhrase.demo_outset / 3600,
+          0
+      ),
+      "00"
+  ) & ":" & Text(
+      RoundDown(
+          If(
+              Mod(
+                  glbCurrentPhrase.demo_outset,
+                  3600
+              ) > 0,
+              Mod(
+                  glbCurrentPhrase.demo_outset,
+                  3600
+              ) / 60,
+              glbCurrentPhrase.demo_outset / 60
+          ),
+          0
+      ),
+      "00"
+  ) & ":" & Text(
+      Mod(
+          glbCurrentPhrase.demo_outset,
+          60
+      ),
+      "00"
+  ) & " "
+  ```
+- **Visible**: ```!IsBlank(glbCurrentPhrase)```
+- **Width**: ```120```
+
+**lblJumpToTime_Transcript**
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/1a360425-3a9f-48af-af57-909b9ed26a7e)
+- **Align**: ```'TextCanvas.Align'.End```
+- **FontColor**: If variable glbJumpToTime exceeds the total duration of the audio file, display red text
+  ```
+  If(
+    glbJumpToTime > RoundUp(
+        glbSelectedTranscript.Duration,
+        0
+    ),
+    Color.Red,
+    Color.Black
+  )
+  ```
+- **Text**: If variable glbJumpToTime exceeds the total duration of the audio file, display error message, otherwise "Jump To"
+  ```
+  If(
+    glbJumpToTime > RoundUp(
+        glbSelectedTranscript.Duration,
+        0
+    ),
+    "Cannot exceed total duration ",
+    "Jump To "
+  )
+  ```
+**txtJumpToTime_Transcript**
+Allows user to type time code (HH:MM:SS) to jump to part of recording (and transcript)
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d847eef6-59ae-4fa9-bcd6-d2b8efd336d1)
+- **AccessibleLabel**: ```"Type the time you want to jump to (Hours:Minutes:Seconds)"```
+- **FontColor**:
+  ```
+  If(
+    glbJumpToTime > RoundUp(
+        glbSelectedTranscript.Duration,
+        0
+    ),
+    Color.Red,
+    Color.Black
+  )
+  ```
+- **OnChange**: 
+  ```
+  //If string value doesn't equal 8 (the length of the string 00:00:00), do nothing
+  If(
+      Len(Self.Value) = 8,
+      //Convert string (HH:MM:SS format) into seconds and store in variable glbJumpToTime
+      Set(
+          glbJumpToTime,
+          Value(
+              Left(
+                  Self.Value,
+                  2
+              )
+          ) * 3600 + Value(
+              Mid(
+                  Self.Value,
+                  4,
+                  2
+              )
+          ) * 60 + Value(
+              Right(
+                  Self.Value,
+                  2
+              )
+          )
+      );
+      //Refresh current phrase
+      Set(
+          glbCurrentPhrase,
+          LookUp(
+              colPhrases,
+          // Current phrase is between the offset in seconds and the outset
+              demo_offsetinseconds <= Trunc(audRecordingPlayback.Time) And demo_outset >= Trunc(audRecordingPlayback.Time)
+          )
+      )
+  )
+  ```
+- **Value**: Display current playback time in HH:MM:SS
+  ```
+  Text(
+      RoundDown(
+          audRecordingPlayback.Time / 3600,
+          0
+      ),
+      "00"
+  ) & ":" & Text(
+      RoundDown(
+          audRecordingPlayback.Time / 60,0
+      ),
+      "00"
+  ) & ":" & Text(
+      Mod(
+          audRecordingPlayback.Time,
+          60
+      ),
+      "00"
+  )
+  ```
+- **Width**: ```100```
+
 
 [^Top](#contents)
 

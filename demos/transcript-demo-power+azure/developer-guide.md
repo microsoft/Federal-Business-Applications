@@ -1427,6 +1427,17 @@ Here is a breakdown of eacha action:
         }
     }
     ```
-
+  - **Add a new row**: Adds a new row to the Transcripts table  
+  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/416c5a63-ec8b-4c81-bed5-77d70912aa65)  
+  With the following parameters: 
+    - **Table name**: ```Transcripts```
+    - **Duration**: ```@{div(float(body('Parse_JSON')?['durationInTicks']),10000000.00)}```
+      - _Note: Uses ```div()``` and ```float()``` functions to return the duration in seconds with two decimal points_
+    - **Duration in Ticks**: ```@{int(body('Parse_JSON')?['durationInTicks'])}```
+      - _Note: Uses ```int()``` to convert **durationInTicks** from **Parse JSON** into integer_ 
+    - **Source File Name**: ```@{triggerBody()['text_1']}```
+    - **Source File Size**: ```@{triggerBody()['number']}```
+    - **Source URL**: ```@{body('Parse_JSON')?['source']}```
+    - **Time Stamp**: ```@{body('Parse_JSON')?['timestamp']}```
 
 [^Top](#contents)

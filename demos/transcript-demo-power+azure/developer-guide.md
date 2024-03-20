@@ -588,7 +588,7 @@ Allows user to type time code (HH:MM:SS) to jump to part of recording (and trans
   ```
 - **Width**: ```100```
 
-<a name="contPopUpAddSpeaker"/>
+<a name="contPopUpAddSpeaker"></a>
 **contPopUpAddSpeaker**  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/edbb1d88-5c0b-46b0-9255-ef5f0dceb74e)
 

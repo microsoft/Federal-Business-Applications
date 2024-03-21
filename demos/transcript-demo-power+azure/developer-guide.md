@@ -48,6 +48,24 @@ Here is a breakdown of each custom column inclulding data type and description
 
 
 ### Recognized Phrases
+A separate record is created for each recognized phrase determined by Azure Batch Speech-To-Text services.  
+#### Columns
+Here is a breakdown of each custom column including data type and description
+| **Display Name**      | **Schema Name**           | **Data Type**                 | **Description** |
+| :-----------        | :----------            | :--------                  | :---------- |
+| Display  | demo display  | Multiple lines of text  | Actual text of the current phrase determined by Azure Batch Speech to Text servies |
+| Duration in Seconds  | demo_durationinseconds  | Decimal  | Flow converts  Duration in Ticks to seconds |
+| Duration in Ticks  | demo_durationinticks   | Single line of text        | Use text data type because ticks are too large to store in whole number (integer) and Big Integer type has issues when importing solution | 
+| Offset in Seconds  | demo_offsetinseconds  | Decimal  | Flow converts Offset in Ticks to seconds |
+| Offset in Ticks    | demo_offsetinticks |  Single of text  | Use text data type because ticks are too large to store in whole number (integer) and Big Integer type has issues when importing solution | 
+| Outset  | demo_outset  | Decimal (FX) | Power FX formula column that determines the outset (or out point) for the current phrase in seconds. Forumula: ```'Duration in Seconds'+'Offset in Seconds'``` |
+| Phrase Number  | demo_phrasenumber  | # Autonumber  | Auto generated number used as the Primary Name for the record |
+| Recognized Phrases  | demo_recognizedphrasesid  | Unique identifier          | Unique GUID of the this record |
+| Speaker  | demo_speaker |  Whole number  | When diarization is enabled for Azure Batch Speech to Text, it returns a number for each unique speaker it detects.  | 
+| Speaker Lookup  | demo_speakerlookup  | Lookup |  Related table: Speaker.  This relates the phrase to a speaker record (created by the user) |
+| Transcript  | demo_transcript  | Lookup | Related table: Transcript.  This relates the phrase to it's parent Transcript record |
+
+
 ### Speaker
 
 ## Demo Transcript app (canvas)

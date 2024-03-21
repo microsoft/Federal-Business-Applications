@@ -10,7 +10,7 @@ There are two apps in this solution: a canvas app for end users and a model-driv
 - [Demo Transcript Admin App (model driven)](#demo-transcript-admin-app-model-driven)
 
 
-[← Back to Read Me](readme.md)
+[← Back to Read Me](readme.md#contents)
 
 ***
 

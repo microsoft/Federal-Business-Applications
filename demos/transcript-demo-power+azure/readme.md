@@ -44,7 +44,6 @@ You must have the following to use this solution:
 - Flows
   - 01 - SPO - When Audio File Uploaded to SPO - Copy to Azure Blob
   - 02 - Azure - When Audio File Created in Blob Storage - Create Transcript
-    - 02a Child Flow - Create Transcription (HTTP)
     - 02b Child Flow - Loop Until Transcript is Complete
     - 02c Child Flow - Get Transcript Results
     - 02d Child Flow - Parse Transcript and Load into a Dataverse

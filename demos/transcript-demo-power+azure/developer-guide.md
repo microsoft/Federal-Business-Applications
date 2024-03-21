@@ -67,6 +67,13 @@ Here is a breakdown of each custom column including data type and description
 
 
 ### Speaker
+User can create a record for each speaker involved in a transcript.  
+#### Columns
+Here is a breakdown of each custom column including data type and description
+| **Display Name**      | **Schema Name**           | **Data Type**                 | **Description** |
+| :-----------        | :----------            | :--------                  | :---------- |
+| Name  | demo_name  | Single line of text  | Speaker name and Primary column |
+| Speaker  | demo_speakerid   | Unique identifier | Unique GUID of the this record |
 
 ## Demo Transcript app (canvas)
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/60e1f755-59e2-4748-b463-d7b5233b9846)

@@ -1,7 +1,7 @@
 # User Guide
 There are two apps in this solution: a canvas app for end users and a model-driven app for developers and admins
 
-## Table of Contents
+## Contents
 - [Demo Transcript App (canvas app)](#demo-transcript-app-canvas-app)
   - [Upload Audio File](#upload-audio-file)
   - [View Transcript](#view-transcript)
@@ -9,12 +9,15 @@ There are two apps in this solution: a canvas app for end users and a model-driv
   - [Identify/Assign Speaker](#identify-assign-apeaker)
 - [Demo Transcript Admin App (model driven)](#demo-transcript-admin-app-model-driven)
 
+
+[← Back to Read Me](readme.md)
+
 ***
 
 ## Demo Transcript App (canvas app)
 This app is designed to let users upload an audio file, then edit the subsquent transcript that is generated.  
 
-[^ Top](#table-of-contents)
+[^ Top](#contents)
 
 ### Upload Audio File
 To get started, upload click the attachment control
@@ -38,7 +41,7 @@ Once selected, click **Upload**.  The audio file is then uploaded as an attachme
 
 Behind the scenes, Power Automate executes a series of flows to generate the transcript (via Azure Batch Speech to Text services) and then load the transcript into Dataverse
 
-[^ Top](#table-of-contents)
+[^ Top](#contents)
 
 ### View Transcript
 After the transcript is loaded into Dataverse, the transcript will appear in the app on the left hand side. You may need to refresh the app to see the latest data. 
@@ -57,7 +60,7 @@ There two things you can edit:
 
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/9558df96-cbab-4ce4-bbe2-4cdffd920f1a)
 
-[^ Top](#table-of-contents)
+[^ Top](#contents)
 
 #### Edit Transcript
 Click the **Edit** button.  You can now update any of the text in the transcript text box.  After you make the changes, click **Save**
@@ -73,7 +76,7 @@ After assigning the speaker click **Save**.  A pop-up will appear:
 
 If you want to update every instance of the speaker number with the selected speaker, click **Yes**. Otherwise, click **No**. If you click **Yes**, it will take a little longer to save the changes.
 
-[^ Top](#table-of-contents)
+[^ Top](#contents)
 ***
 
 ## Demo Transcript Admin App (model driven)
@@ -81,4 +84,4 @@ If you want to update every instance of the speaker number with the selected spe
 The other app exists mostly for developers, but might also prove useful for admins.  It gives you access to all three tables and the ability to view the additional metadata captured by Azure Speech to Text. 
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/c88bdb6f-4f18-45b9-b4cb-d8b0b4dd7560)
 
-[^ Top](#table-of-contents)
+[^ Top](#contents)

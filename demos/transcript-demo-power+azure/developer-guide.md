@@ -14,7 +14,6 @@ This document is for developers to help them understand *how* the solution works
 - [Flows](#flows)
   - [01 - SPO - When Audio File Uploaded to SPO - Copy to Azure Blob](#01---spo---when-audio-file-uploaded-to-spo---copy-to-azure-blob)
   - [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#02---azure---when-audio-file-created-in-blob-storage---create-transcript)
-  - [02a Child Flow- Create Transcription (HTTP)](#02a-child-flow--create-transcription-http)
   - [02b Child Flow - Loop Until Transcript Complete](#02b-child-flow---loop-until-transcript-complete)
   - [02c Child Flow - Get Transcript Results](#02c-child-flow---get-transcript-results)
   - [02d Child Flow - Parse Transcript and Load into Dataverse](#02d-child-flow---parse-transcript-and-load-into-dataverse)
@@ -858,7 +857,7 @@ Here's a detailed breakdown of each action:
 Master flow that is triggered when a file is uploaded to the Azure Blob storage container. Then it transcribes the audio file (via Azure Speech Services) and then loads that transcript into Dataverse and optionally, removes the source audio from the SP list.
 
 For more on the Azure Batch Speech to Text transcription click [here]([url](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/batch-transcription)): 
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/0e732828-5de0-40e1-80d5-3a6190dda29e)  
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/2a9d5968-8aa0-472e-b2b5-43dab942c610)
 
 Here's breakdown of each action:
 - **When a blob is added or modified (properties only) (V2)**: Flow is triggered when a new blob is created in the specified container
@@ -866,31 +865,10 @@ Here's breakdown of each action:
 - **Create SAS URI by path (V2)**: Creates a Shared Access String URI path with read-only permissions set to expire 1 year later.  
   ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/932db720-558c-4953-9c85-e3f828eecd8c)  
 
-- **Run a Child Flow - Create Transcription (HTTP)**: Calls the child flow () and passes the SAS URI from previous action
-- **Run a Child Flow - Loop Until Complete**: Calls the child flow () and passes the path (URL) of the transcriptions (from the previous child flow)
-- **Run a Child Flow - Get Transcript Results**: Calls the child flow () and passes the path of the transcription files (from previous child flow)
-- **Run a Child Flow - Parse Transcript and Load into Dataverse**: Calls the child flow () and passes the following parameters:  
-  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/3547c0d4-aa1a-4f60-9f27-fc859b26b7f2)
-
-  - **Transcript**: ```string(outputs('Run_a_Child_Flow_-_Get_Transcript_Results')?['Body'])```
-  - **File Name** ```@{triggerOutputs()?['body/DisplayName']}```
-  - **File Size**: ```@{triggerOutputs()?['body/Size']}```
-- **Get Items**: Get all items from the SharePoint list
-  - _Note: this step is optional and will not be necessary if you write directly to Azure Blob from the canvas app (recommended)_
-- **Apply to each**: Loop through each item in the SharePoint List (should only be 1 item)
-  - **Delete item**: Delete each SharePoint list item
-    
-[^Top](#contents)
-### 02a Child Flow- Create Transcription (HTTP)
-Calls the [Azure Speech Services REST API](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/rest-speech-to-text#transcriptions) to transcribe the audio file. Note: the OOTB Azure Speech Services connector wasn't working as of 3/18/24 in GCC-High. I recommend re-factoring if/when possible to use OOTB connector
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/cb5831f5-a9c9-4238-bce0-4eb23169fae4)
-
-Here's a breakdown of the actions:
-- **Manually trigger a flow**: Triggered from the the flow [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#02---azure---when-audio-file-created-in-blob-storage---create-transcript)
-- **HTTP**: Due to limitations at the time of this writing, the solution leverages the [Azure Batch Speech to Text REST API](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/rest-speech-to-text#transcriptions) instead of the Azure Batch Speech to Text connector.  
-  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/6a2b2f84-c9c6-41b9-be0f-7baf803e0ef4)
-
-  Here are the parameters passed:
+- **HTTP**: Due to limitations at the time of this writing, the solution leverages the [Azure Batch Speech to Text REST API](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/rest-speech-to-text#transcriptions) instead of the Azure Batch Speech to Text connector. I recommend re-factoring if/when possible to use OOTB connector when possible.
+   
+  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/6a2b2f84-c9c6-41b9-be0f-7baf803e0ef4)  
+   Here are the parameters passed:  
   - **Method**: ```POST```
   - **URI**: ```https://usgovvirginia.api.cognitive.microsoft.us/speechtotext/v3.1/transcriptions```
   - **Headers**:
@@ -926,13 +904,12 @@ Here's a breakdown of the actions:
       }
       ```
       There are more options you can pass to the REST API. See full documentation [here](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/rest-speech-to-text#transcriptions)
-- **Response**: Pass back the output of the previous action
-  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/77039fce-2ad0-42f2-9c24-1319b4a7f9d2)
-  Here are the parameters:
-  - **Status Code**: ```200```
-  - **Body**: ```@{body('HTTP')}```
-  - **Response Body JSON Schema**:
-    ```
+- **Parse JSON**: Parses the body (output) of the HTTP action.
+  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/08198429-189a-4b8c-b8a2-3b878a4199f9)
+   Here are the parameters:
+  - **Content**: ```@{body('HTTP')}```
+  - **Schema**
+     ```
     {
         "type": "object",
         "properties": {
@@ -1019,7 +996,21 @@ Here's a breakdown of the actions:
     }
     ```
   
+- **Run a Child Flow - Loop Until Complete**: Calls the child flow () and passes the path (URL) of the transcriptions (from the previous child flow)
+- **Run a Child Flow - Get Transcript Results**: Calls the child flow () and passes the path of the transcription files (from previous child flow)
+- **Run a Child Flow - Parse Transcript and Load into Dataverse**: Calls the child flow () and passes the following parameters:  
+  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/3547c0d4-aa1a-4f60-9f27-fc859b26b7f2)
+
+  - **Transcript**: ```string(outputs('Run_a_Child_Flow_-_Get_Transcript_Results')?['Body'])```
+  - **File Name** ```@{triggerOutputs()?['body/DisplayName']}```
+  - **File Size**: ```@{triggerOutputs()?['body/Size']}```
+- **Get Items**: Get all items from the SharePoint list
+  - _Note: this step is optional and will not be necessary if you write directly to Azure Blob from the canvas app (recommended)_
+- **Apply to each**: Loop through each item in the SharePoint List (should only be 1 item)
+  - **Delete item**: Delete each SharePoint list item
+    
 [^Top](#contents)
+
 ### 02b Child Flow - Loop Until Transcript Complete
 Due to issue/limitation of the [Azure Blob Storage trigger]([url](https://learn.microsoft.com/en-us/connectors/azureblob/)) on file create/update, I had to create a flow that waits for the transcription to complete. Use caution when looping. If possible, re-factor to trigger when transcript file is completed.  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/cf3f6466-3fd5-416b-9699-df0fab9d6e9a)  

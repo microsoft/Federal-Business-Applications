@@ -21,11 +21,11 @@ This demo was built in a GCC-High tenant.  If you are using a GCC tenant, note t
 
 ## Prerequisites
 You must have the following to use this solution:
-1. Power Apps Premium license
-2. Azure Government Subscription
-3. Azure Storage Account
-4. **Two** Azure Blob Storage Containers (source for audio and destination for transcripts)
-5. Azure Batch Speech to Text key
+1. [Power Apps Premium license](https://powerapps.microsoft.com/en-us/pricing/)
+2. [Azure Government](https://azure.microsoft.com/en-us/explore/global-infrastructure/government/) Subscription
+3. [Azure Storage Account](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview)
+4. **Two** [Azure Blob Storage Containers](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction) (source for audio and destination for transcripts)
+5. [Azure Batch Speech to Text](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/batch-transcription) key
 6. SharePoint List with attachments enabled
    
 [^ Top](#contents)

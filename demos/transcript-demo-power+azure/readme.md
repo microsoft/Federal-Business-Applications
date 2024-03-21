@@ -6,6 +6,7 @@ This demo is designed to illustrate the "better together" story of Azure + Power
 
 # Contents
 - [Release Notes](#release-notes)
+- [Installation Guide](installation-guide.md)
 - [Supported Clouds](#supported-clouds)
 - [What's in the solution?](#whats-in-the-solution)
 - [Limitations](#limitations)

@@ -1,6 +1,6 @@
 # Developer Guide
 
-This document is for developers to help them understand *how* the solution works. Note: not every single control will be detailed.  (e.g. controls like Back buttons will not be explained.)
+This document is for developers to help them understand *how* the solution works. Note: not every single control will be detailed.  (e.g. controls like back buttons will not be explained.)
 
 ## Contents
 - [Demo Transcript app (canvas)](#Demo-Transcript-app-canvas)
@@ -18,7 +18,8 @@ This document is for developers to help them understand *how* the solution works
   - [02b Child Flow - Loop Until Transcript Complete](#02b-child-flow---loop-until-transcript-complete)
   - [02c Child Flow - Get Transcript Results](#02c-child-flow---get-transcript-results)
   - [02d Child Flow - Parse Transcript and Load into Dataverse](#02d-child-flow---parse-transcript-and-load-into-dataverse)
-    
+
+[← Back to Read Me](readme.md#contents)
 ***
 
 ## Demo Transcript app (canvas)

@@ -21,8 +21,8 @@ function Invoke-RetryCommand {
         [parameter(Mandatory, ValueFromPipeline)] 
         [ValidateNotNullOrEmpty()]
         [scriptblock] $ScriptBlock,
-        [int] $RetryCount = 3,
-        [int] $TimeoutInSecs = 30,
+        [int] $RetryCount = 1,
+        [int] $TimeoutInSecs = 3,
         [string] $SuccessMessage = "Command executed successfuly!",
         [string] $FailureMessage = "Failed to execute the command"
         )        

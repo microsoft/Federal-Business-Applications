@@ -70,7 +70,7 @@ Existing security controls like [Data Loss Prevention Policies](https://learn.mi
 * [Block Power Platform Connectors from Microsoft Copilot Studio copilots](https://learn.microsoft.com/en-us/microsoft-copilot-studio/dlp-example-4?tabs=webapp)
 
 ## Phase 1: Opt In with Azure Commercial Azure OpenAI
-Phase 1 will leverage Azure Commercial Azure OpenAI in United States datacenter regions to enable Copilot capabilities.  The diagram below outlines how this will work.
+Phase 1 will leverage Azure Commercial Azure OpenAI in United States data center regions to enable Copilot capabilities.  The diagram below outlines how this will work.
 
 ![Copilot Opt In Architecture](images/CopilotPhase1Architecture.png)
 

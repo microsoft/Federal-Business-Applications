@@ -69,6 +69,22 @@ Existing security controls like [Data Loss Prevention Policies](https://learn.mi
 
 * [Block Power Platform Connectors from Microsoft Copilot Studio copilots](https://learn.microsoft.com/en-us/microsoft-copilot-studio/dlp-example-4?tabs=webapp)
 
+## Auditing
+
+### AI Builder Audit Logs
+All interactions with AI Builder models are audited in Dataverse.  Details on how to view this can be found in the documentation page below,
+
+* [AI Builder Activity Monitoring](https://learn.microsoft.com/en-us/ai-builder/activity-monitoring)
+
+Additionally, the events are audited to the ````AI Event```` Dataverse table if you want to view the raw records for this as well.
+
+### Copilot Studio Audit Logs
+Copilot Studio transcripts are retained for 30 days inside of Dataverse.  They are stored in the ````ConversationTranscript```` Dataverse table.
+
+More details can be found below in our public documentation on this feature,
+
+* [Copilot Studio Conversation Transcripts](https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-sessions-transcripts)
+
 ## Phase 1: Opt In with Azure Commercial Azure OpenAI
 Phase 1 will leverage Azure Commercial Azure OpenAI in United States data center regions to enable Copilot capabilities.  The diagram below outlines how this will work.
 

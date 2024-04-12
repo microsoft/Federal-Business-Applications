@@ -139,7 +139,7 @@ Below outlines target timelines for Power Platform / Dynamics 365 Copilot capabi
     * [Draft with Copilot](https://learn.microsoft.com/en-us/power-apps/user/well-written-input-text-copilot)
 * Summer 2024 (GCC & GCC High)
   * Dynamics 365 Customer Service
-    * [Managed Dynamics 365 Customer Service Copilot Features](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-copilot-features)
+    * [Manage Dynamics 365 Customer Service Copilot Features](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-copilot-features)
   * Power Pages
     * [Overview of Power Pages Copilot Features](https://learn.microsoft.com/en-us/power-pages/configure/ai-copilot-overview)
   * Power Automate

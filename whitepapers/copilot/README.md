@@ -85,6 +85,18 @@ More details can be found below in our public documentation on this feature,
 
 * [Copilot Studio Conversation Transcripts](https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-sessions-transcripts)
 
+### Dynamics 365 Customer Service Copilot Audit Logs
+When agents use Copilot in Dynamics 365 Customer Service, chat transcripts are stored in the following Dataverse tables,
+
+* ````msdyn_copilotinteraction````
+* ````msdyn_copilotinteractiondata````
+* ````msdyn_copilottranscript````
+* ````msdyn_copilottranscriptdata````
+
+More details can be found below in our public documentation on this,
+
+* [Dynamics 365 Copilot Transcripts](https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/download-copilot-transcript-data)
+
 ## Phase 1: Opt In with Azure Commercial Azure OpenAI
 Phase 1 will leverage Azure Commercial Azure OpenAI in United States data center regions to enable Copilot capabilities.  The diagram below outlines how this will work.
 

@@ -105,6 +105,9 @@ Mapping the consent options from the Power Platform Admin Center you can see whi
 
 ![Power Platform Admin Center GenAI Consent Options](images/GenAI_OptIn_Overview_03.png)
 
+> [!NOTE]
+> Microsoft encrypts all Azure traffic within a region or between regions using MACsec, which relies on AES-128 block cipher for encryption. This traffic stays entirely within the Microsoft global network backbone and never enters the public internet.
+
 ## Phase 1: Timeline
 Below outlines target timelines for Power Platform / Dynamics 365 Copilot capabilities with the Phase 1 rollout.  
 

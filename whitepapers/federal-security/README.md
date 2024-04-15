@@ -17,7 +17,7 @@ A visual diagram of our FedRAMP packages above for a GCC customer is shown below
  
 ![FedRAMP Package Diagram](images/FedRAMP_Diagrams.png)
 
-**How does data travel from Office365 GCC to Power Platform GCC?** 
+### How does data travel from Office365 GCC to Power Platform GCC?  
 Microsoft maintains a **private**, global network infrastructure that seamlessly interconnects all of our data centers. This dedicated network ensures that **communications between Azure Government and Azure Commercial services occur over Microsoft's secure, high-speed fiber network, rather than the public internet**. Our intelligent networking stack ensures that data travels efficiently within our ecosystem, providing reliable and secure connectivity for all services.
 
 # CISA Recommended Security Baseline

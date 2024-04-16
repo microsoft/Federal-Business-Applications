@@ -10,7 +10,9 @@
 # are created by Microsoft
 param (
     [switch]$CertifiedOnly = $false,
-    [switch]$MicrosoftOnly = $false
+    [switch]$MicrosoftOnly = $false,
+    [int] $RetryCount = 3,
+    [int] $TimeoutInSecs = 30
 )
 
 # Reusing Retry-Command from Ridicurious's blog
@@ -21,8 +23,6 @@ function Invoke-RetryCommand {
         [parameter(Mandatory, ValueFromPipeline)] 
         [ValidateNotNullOrEmpty()]
         [scriptblock] $ScriptBlock,
-        [int] $RetryCount = 3,
-        [int] $TimeoutInSecs = 30,
         [string] $SuccessMessage = "Command executed successfuly!",
         [string] $FailureMessage = "Failed to execute the command"
         )        

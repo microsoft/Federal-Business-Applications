@@ -98,7 +98,12 @@ More details can be found below in our public documentation on this,
 * [Dynamics 365 Copilot Transcripts](https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/download-copilot-transcript-data)
 
 ## Phase 1: Opt In with Azure Commercial Azure OpenAI
-Phase 1 will leverage Azure Commercial Azure OpenAI in United States data center regions to enable Copilot capabilities.  The diagram below outlines how this will work.
+Phase 1 leverages Azure Commercial **United States based data center regions** to enable Copilot capabilities across Power Platform and Dynamics 365.  More details on this can be found in our documentation page below,
+
+* [Copilot Geographic Availability Documentation](https://learn.microsoft.com/en-us/power-platform/admin/geographical-availability-copilot)
+
+
+The diagram below outlines how this works for GCC and GCC High calling Azure Commercial (US data center regions) for Copilot capabilities.
 
 ![Copilot Opt In Architecture](images/CopilotPhase1Architecture.png)
 

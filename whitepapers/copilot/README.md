@@ -137,6 +137,8 @@ Below outlines target timelines for Power Platform / Dynamics 365 Copilot capabi
       * [AI Builder prompt engineering guide](https://go.microsoft.com/fwlink/?linkid=2255775)
   * Copilot Studio
     * [Generative AI in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-gpt-overview)
+  * Power Pages
+    * [Overview of Power Pages Copilot Features](https://learn.microsoft.com/en-us/power-pages/configure/ai-copilot-overview)
 * Spring 2024 (GCC & GCC High)
   * Power Apps Copilot
     * [Build apps through conversation](https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/ai-conversations-create-app)
@@ -145,8 +147,6 @@ Below outlines target timelines for Power Platform / Dynamics 365 Copilot capabi
 * Summer 2024 (GCC & GCC High)
   * Dynamics 365 Customer Service
     * [Manage Dynamics 365 Customer Service Copilot Features](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-copilot-features)
-  * Power Pages
-    * [Overview of Power Pages Copilot Features](https://learn.microsoft.com/en-us/power-pages/configure/ai-copilot-overview)
   * Power Automate
     * [Power Automate Cloud Flows with Copilot](https://learn.microsoft.com/en-us/power-automate/get-started-with-copilot)
 

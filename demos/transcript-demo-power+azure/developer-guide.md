@@ -578,26 +578,23 @@ _(contMainTranscriptVert->contFooterTranscriptHoriz)_
 - **Text**: ```"Cancel"```
 - **Visible**: ```glbMode=DisplayMode.Edit```
 
-**txtCurrentPhrase_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert)_  
+##### txtCurrentPhrase_Transcript** 
+_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/98c3429a-cd78-4f37-b203-525eab121cf1)
 
 - **AccessibleLabel**: ```"Transcript of the current phrase (based current time code)"```
 - **DisplayMode**: If variable glbMode is blank, default to View mode
   ```Coalesce(glbMode,DisplayMode.View)```
+- **FontSize**:```20```
 - **Mode**: ```'TextInputCanvas.Mode'.Multiline```
-- **Value**: Get the current phrase based on the current playback position (audRecordingPlayback). Return the first phrase where the current playback time is greater than or equal to the phrase's offset in seconds (i.e. in point) and less than or equal to the outset.
+- **Value**: Return the current phrase (glbCurrentPhrase) Display column value
   ```
-  LookUp(
-    colPhrases,
-    'Offset in Seconds' <= Int(audRecordingPlayback.Time) And Outset >= Round(
-        audRecordingPlayback.Time,
-        2
-    )
-  ).Display
+  glbCurrentPhrase.Display
   ```
 - **Width**: ```Parent.Width```
 
-**lblCurrentSpeaker_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
+##### lblCurrentSpeaker_Transcript
+_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/22d1f4da-33fc-46bc-9526-fd5e9653ae52)
 
 - **Text**: If the speaker dropdown has a selected name, use that. If not, use the value of the speaker name from the current phrase (glbCurrentPhrase). If no name exists, get the speaker value (number) from the current phrase
@@ -610,7 +607,8 @@ _(contMainTranscriptVert->contFooterTranscriptHoriz)_
   '''
 - **Visible**: ```!IsBlank(glbCurrentPhrase)```
 
-**lblSelectSpeaker_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
+##### lblSelectSpeaker_Transcript
+_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/4d0bf4e0-766c-4cb1-ac55-da19173be8c6)
 
   _Note: only visible when app is in Edit mode_  
@@ -618,14 +616,18 @@ _(contMainTranscriptVert->contFooterTranscriptHoriz)_
 - **Text**: ```"Select Speaker"```
 - **Visible**: ```glbMode=DisplayMode.Edit```
 
-**drpSelectSpeaker_Transcript**  _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
+#####  drpSelectSpeaker_Transcript
+_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/8e22e6c4-70e6-4328-8a15-2e41d61326d8)
 
 - **AccessibleLabel**: ```"Select speaker from this drop down"```
-- **Items**: ```Filter(Speakers, 'Speakers (Views)'.'Active Speakers')```
+- **Items**: ```Filter(Speakers, Transcript.Transcript=glbSelectedTranscript.Transcript)```
+  - _Only returns speakers already related to current transcript._
 - **Visible**: ```glbMode=DisplayMode.Edit```
+  - _Only visible when app is in Edit mode_    
 
-**icoClearSelectSpeaker_Transcript**  _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
+##### icoClearSelectSpeaker_Transcript
+_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/c58b5e2f-3201-4899-8fb8-263c48b76709)
 
   _Note: only visible when speaker is selected in dropdown_  

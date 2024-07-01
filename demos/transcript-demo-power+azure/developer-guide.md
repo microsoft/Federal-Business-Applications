@@ -390,26 +390,22 @@ Displays **all** the available transcripts in the Transcripts table. Some proper
 ### Transcript Demo Screen
 This screen has several containers. Some of these are used to for pop-up windows, while most are used to structure the controls.  
 
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/63b34025-87b9-4ea2-afd6-b1bff33ca32e)
-
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/1da2865b-c81e-433a-851c-5fba650bbbfc)
 
 #### Controls
 
 All controls (except two) are stored in horizontal and vertical containers to allow for responsive design when the user's screen resolution and aspect ratio change.  Briefly, here are the containers and what they do:
-
-- **contSpinnerTranscriptBg**:  
-  Contains the loading spinner and is only visible when **glbShowSpinner** = true  
-- **[contPopUpUpdateAllSpeakersBg](#contPopUpUpdateAllSpeakersBg)**:  
-  Is only visible when **gblShowPopUpUpdateAllSpeakers** = true  
-- **[contPopUpAddSpeaker](#contPopUpAddSpeaker)**:  
-  Only visible when **glbShowPopUpAddSpeaker** = true 
-- **contMainTranscriptVert**:  
-  Contains the main UI for this screen including playback and edit controls
-- **pdfFileTranscript**:
-  Displays the PDF version of the transcript. Only visible when Transcript File is attached to record and the **Trancript (PDF)** tab is selected
+| **Control** | **Description** |
+| :-----------   | :-----------   |
+| **contSpinnerTranscriptBg** | Contains the loading spinner and is only visible when **glbShowSpinner** = true  |
+| **[contPopUpUpdateAllSpeakersBg](#contPopUpUpdateAllSpeakersBg)** | Is only visible when **gblShowPopUpUpdateAllSpeakers** = true   |
+| **[contPopUpAddSpeaker](#contPopUpAddSpeaker)** | Only visible when **glbShowPopUpAddSpeaker** = true  |
+| **contMainTranscriptVert** | Contains the main UI for this screen including playback and edit controls |
+| **pdfFileTranscript** | Displays the PDF version of the transcript. Only visible when Transcript File is attached to record and the **Trancript (PDF)** tab is selected |
+| **[timerTranscript](#timerTranscript)** | Used to update variables based on the playhead of the audio control (**audRecordingPlayback**). Some of the properties have been customized |
 
 ##### timerTranscript   
-Used to update variables based on the playhead of the audio control (**audRecordingPlayback**). Some of the properties have been customized:
+
 - **Duration**: This is in milliseconds. 1000 = 1 second  
   ```1000```
 - **OnTimerStart**: Every second, update the current phrase (glbCurrentPhrase)
@@ -476,11 +472,16 @@ Used to playback the original audio (stored in Azure Blob Storage)
  - **StartTime**: ```glbJumpToTime```
  - **Width**: ```Parent.Width```
 
-**btnEdit_Transcript** _(contMainTranscriptVert->contFooterTranscriptHoriz)_  
+##### btnEdit_Transcript
+_(contMainTranscriptVert->contFooterTranscriptHoriz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/21d4b135-ab8f-4761-8b3f-9527367f5cd6)
 
-_Note: only visible when **NOT** in edit mode_
+_Note: only visible when **NOT** in edit mode and glbSelectedTranscript is NOT blank_
 - **AccessibleLabel**: ```"Edit the current phrase"```
+- **Appearance**:```'ButtonCanvas.Appearance'.Transparent```
+- **DisplayMode**:```If (tabMainTranscript.Selected.Value="Transcript (PDF)",DisplayMode.Disabled,DisplayMode.Edit)```
+- **Icon**:```"Edit"```
+- **IconStyle**:```'ButtonCanvas.IconStyle'.Outline```
 - **OnSelect**:
   ```
   Set(
@@ -489,34 +490,82 @@ _Note: only visible when **NOT** in edit mode_
   )
   ```
 - **Text**:```"Edit"```
-- **Visible** ```Not(glbMode=DisplayMode.Edit)```
+- **Visible** ```Not(glbMode=DisplayMode.Edit) And !IsBlank(glbSelectedTranscript)```
 
-**btnSave_Transcript** _(contMainTranscriptVert->contFooterTranscriptHoriz)_   
+##### btnSave_Transcript
+_(contMainTranscriptVert->contFooterTranscriptHoriz)_   
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/6b7670e6-c99f-4693-9158-2262df8cd618)
 
 _Note: only visible when in edit mode_  
 - **AccessibleLabel**: ```"Save edits to current phrase"```
-- **OnSelect** If the user selects a speaker in the dropdown, display Add Speaker Pop Up  
+- **Appearance**:```'ButtonCanvas.Appearance'.Transparent```
+- **Icon**:```"Save"```
+- **IconStyle**:```'ButtonCanvas.IconStyle'.Outline```
+- **OnSelect**: Button behaves differently depending on the tab selected. See comments for more details 
   ```
-  If(
-      !IsBlank(drpSelectSpeaker_Transcript.Selected),
-      Set(
-          gblShowPopUpUpdateAllSpeakers,
-          true
-      ),
+   If(
+      //If Playback tab is selected
+      tabMainTranscript.Selected.Value = "Playback",
+      //Display popup and determine if every instance of the current Speaker value (e.g. 1) should be set to the selected speaker value for all records in this transcript
+      If(
+          !IsBlank(drpSelectSpeaker_Transcript.Selected),
+          Set(
+              gblShowPopUpUpdateAllSpeakers,
+              true
+          ),
       //Otherwise just save changes
-      Select(btnSaveHidden)
-  );
+          Select(btnSaveHidden)
+      ),
+      // If Summary tab is selected
+      tabMainTranscript.Selected.Value = "Summary",
+      //Set spinner label
+      Set(glbSpinnerLabel,"Saving");
+      // Show spinnner
+      Set(
+          glbShowSpinner,
+          true
+      );
+      //Update current Transcript record with updated summary and update variable (glbSelectedTranscript) with result
+  Set(
+          glbSelectedTranscript,
+          Patch(
+              Transcripts,
+              LookUp(
+                  Transcripts,
+                  Transcript = glbSelectedTranscript.Transcript
+              ),
+              {Summary: txtSummaryTranscript.Value}
+          )
+      );
+      // If No Errors...
+  If(
+          IsEmpty(Errors(Transcripts)),
+      //.... Reset display mode to View
+          Set(
+              glbMode,
+              DisplayMode.View
+          )
+      );
+      //Hide Spinner
+  Set(
+          glbShowSpinner,
+          false
+      );
+      
+  )
   ```
 - **Text**: ```"Save"```
 - **Visible**: ```glbMode=DisplayMode.Edit```
 
-**btnCancel_Transcript**_(contMainTranscriptVert->contFooterTranscriptHoriz)_     
+##### btnCancel_Transcript
+_(contMainTranscriptVert->contFooterTranscriptHoriz)_     
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/c26cdcec-d1a9-494e-b872-d759a875108d)
 
   _Note: Only visible when in Edit mode_  
 - **AccessibleLabel**:```"Cancel the edits to the current phrase"```
 - **Appearance**: ```'ButtonCanvas.Appearance'.Outline```
+- **Icon**:```"Dismiss"```
+- **IconStyle**:```"Outline"```
 - **OnSelect**: Resets controls and app to View mode
   ```
   Set(

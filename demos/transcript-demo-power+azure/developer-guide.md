@@ -104,152 +104,286 @@ Both screens use containers to help control the flow of the controls when resizi
 
 ### Main Screen
 This screen is used to upload audio files and select transcripts to view/edit. 
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/09573b6d-538c-4e8a-b49c-3b5d98b92a45)
+![Screenshot of Power Apps Studio with Main Screen selected](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/64881327-c8dd-40be-b663-14290ac78cae)
+
 
 
 #### Properties
 
 **OnVisible**: When the screen loads, several global variables are set:
+- **glbShowSpinner**: Used to show/hide loading spinner
+- **glbSpinnerLabel**: Used to display next next to loading spinner
 - **glbShowSuccess**: Used to show/hide the Success message when upload is completed
 - **glbSelectedFileName**: Stores the file name of the selected file
 - **glbSelectedTranscript**: Stores the selected transcript from from the left hand gallery (galTranscripts_Main)
 - **glbCurrentPhrase**: Used on the next screen, to identify the current recogonized phrase based on the current playback point in the audio controller
 - **glbMode**: Used on the next screen to toggle between Edit and View display modes via the **Edit** Button
+
+In addition to setting variables, two controls are reset (see below for more on each control):
+- **attFileToUploadMain**
+- **inpTotalSpeakersMain**
+  
   <a name="main-screen-controls">
 #### Controls
-**frmUpload**:  
-The form is connected to the SharePoint list. In my demo, it's a simple list with only one field, **Title**.  Some of properties have been updated:  
-- **DefaultMode**: ```FormMode.New```
-- **OnSuccess**: When the form successfully creates the SPO list item, THEN run three functions concurrently (to improve performance)
-  ```
-  Concurrent(
-    //Hide the loading spinner
-    Set(
-        glbShowSpinner,
-        false
-    ),
-    //Show the success message
-    Set(
-        glbShowSuccess,
-        true
-    ),
-    //Reset the upload form
-    ResetForm(frmUpload)
-   )
-   ```
-- **Width**: ```Parent.Width ```
-
-**Title_DataCard**: This card is hidden and updated via variable (set by **attFileToUpload**).
-- **Default**: ```glbSelectedFileName```
-- **Visible**: ```false```
-
-**attFileToUpload**: This control has several properties that have been customized:
-- **AccesibleLabel**: ``` "File to attach (upload) and transcribe" ```
-- **AddAttachmentText**: ```"Select file"```
-- **Color**:  This changes color to red if selected file is not MP3 or WAV
+##### attFileToUpload:  
+This control allows user to upload a file. The control validates file size and file format:
+- The API has a limit of 100 Mb, so the control is limited to 100 Mb.
+- The Speach to Text API only accepts the following formats:
+  - MP3
+  - WAV
+  - AAC
+  - OPUS
+  - OGG
+  - FLAC
+  - WMA
+  - AMR
+  - WEBM
+  - M4A
+  - SPEEX
+It has several properties customized:
+- **AccessibleLabel**: ```"File to attach (upload) and transcribe"```
+- **AddAttachmentText**: ```"Select audio file (100 MB Max)"```
+- **Color**: This changes color to red if selected file is not supported audio file
   ```
   If(
-    Right(
-        First(Self.Attachments).Name,
-        3
-    ) = "mp3" Or Right(
-        First(Self.Attachments).Name,
-        3
-    ) = "wav",
+    //IF Attachment is supported format
+    Lower(
+        Right(
+            First(attFileToUploadMain.Attachments).Name,
+            3
+        )
+    ) in colSupportedFileFormats,
+    // THEN Color is Black
     Color.Black,
+    // IF no attachment is selected
     IsEmpty(Self.Attachments),
+    // THEN color is black
     Color.Black,
+    // ELSE (Error) color is red
     Color.Red
-   )
+  )
   ```
 - **Height**: ```100```
 - **MaxAttachments**: ```1```
    - If you want to allow for batch uploads, increase this option, but performance may suffer for larger files. Also some other parts of the solution may need to be refactored if you allow more than 1 file at a time
 - **MaxAttachmentSize**: ```1000```
    - _In MB_
-- **MaxAttachmentText**: This code does some basic data validation to check if the selected file is MP3 or WAV 
+- **MaxAttachmentText**: This code does some basic data validation to check if the selected file is supported format
   ```
   If(
-    Right(
-        First(Self.Attachments).Name,
-        3
-    ) = "mp3" Or Right(
-        First(Self.Attachments).Name,
-        3
-    ) = "wav",
+    //IF Attachment is supported format
+        Lower(
+            Right(
+                First(attFileToUploadMain.Attachments).Name,
+                3
+            )
+        ) in colSupportedFileFormats,
     "File Selected. Please click Upload",
-    "Error:  Only .mp3 and .wav file formats are supported"
-   )
+    // ELSE display error
+    "Error:  Only these file formats are supported: " &  Replace(glbListSupportedFileFormats,Len(glbListSupportedFileFormats)-1,1,"")
+  )
   ```
 - **NoAttachmentsText**: ```"There is nothing selected."```
-- **OnAddFile**: Stores the first selected file in a variable. IF you allow for more than one attachment, you'll need to refactor this
-```
-   Set(
-    glbSelectedFileName,
-    First(attFileToUpload.Attachments).Name
-   )
+- **OnAddFile**: Stores the selected file in a global variable (glbSelectedFileName).
+  _IF you allow for more than one attachment, you'll need to refactor this_
   ```
-- **OnRemoveFile**: *Clears the variable*
+  Set(
+    glbSelectedFileName,
+    First(attFileToUploadMain.Attachments).Name
+  )
+  ```
+- **OnRemoveFile**: When file is removed, clears variable
   ```
   Set(
     glbSelectedFileName,
     Blank()
-   )
-   ```
-**btnUploadFile_Main**: Used to upload the selected file to SPO list.  
+  )
+  ```
+- **Width**: ```Parent.Width - 60 ```
+
+
+
+##### inpTotalSpeakersMain
+Number input field that indicates how many speakers should Azure Speech to Text services look for.
+- **AccessibleLabel**: ```"Enter the total number of speakers in the audio file"```
+- **Max**: ```36```
+  - Azure Speech To Text services has a limit of 36 speakers for diarization
+- **Min**: ```1```
+- **Value**: ```0``` 
+
+##### btnUploadFile_Main 
+Used to upload the selected file to Azure Blob Storage (via Power Automate flow)
 - **AccessibleLabel**: ```"Upload the selected file"```
-- **DisplayMode**: Default mode disabled. Only enabled (Edit mode) when attachment is selected and file is MP3 or WAV
+- **DisplayMode**: Default mode disabled. Only enabled (Edit mode) when file is attached, the format is correct and the total speakers is greater than zero
   ```
-   If(
-    IsEmpty(attFileToUpload.Attachments),
-    DisplayMode.Disabled,
-    Right(First(attFileToUpload.Attachments).Name,3) = "mp3" Or Right(First(attFileToUpload.Attachments).Name,3) = "wav",
-    DisplayMode.Edit,
-    DisplayMode.Disabled
-   )
+   // If total speakers isn't set (min 1), disable this button
+  If(
+      inpTotalSpeakersMain.Value>0,
+      // If No attachment, disable button
+      If(
+          IsEmpty(attFileToUploadMain.Attachments),
+          DisplayMode.Disabled,
+          //IF Attachment is supported format
+          Lower(
+              Right(
+                  First(attFileToUploadMain.Attachments).Name,
+                  3
+              )
+          ) in colSupportedFileFormats,
+          // THEN Enable button
+          DisplayMode.Edit,
+          //ELSE disable button
+          DisplayMode.Disabled
+      ),
+      //ELSE disable button
+      DisplayMode.Disabled
+  )
   ```
-- **OnSelect**: When clicked, shows the loading spinner and submits the form to SPO list
+- **OnSelect**: When clicked, shows the loading spinner and calls the Power Automate Flow 
    ```
    // Show the loading spinner
-   Set(
-       glbShowSpinner,
-       true
-   );
-   //Submit the form (frmUpload) to upload file to SharePoint list
-   SubmitForm(frmUpload)
+  Set(
+      glbShowSpinner,
+      true
+  );
+  //Set loading spinner label
+  Set(
+      glbSpinnerLabel,
+      "Uploading..."
+  );
+  // Store response from flow in variable (glbResponseUpload)
+  Set(
+      glbResponseUpload,
+      //Run flow to upload the file and kickoff the transcript process
+      '01-PowerApps-UploadtoAzureBlob'.Run(
+          inpTotalSpeakersMain.Value,
+          {
+              file: {
+                  name: First(attFileToUploadMain.Attachments).Name,
+                  contentBytes: First(attFileToUploadMain.Attachments).Value
+              }
+          }
+      )
+  );
+  // Check for error uploading file
+  IfError(
+      glbResponseUpload,
+      //Notify user of error
+      Notify(
+          "Error: " & FirstError.Message,
+          NotificationType.Error
+      );
+      //Hide the loading spinner
+  Set(
+          glbShowSpinner,
+          false
+      ),
+  //IF Successful then
+      Concurrent(
+      //Hide the loading spinner
+          Set(
+              glbShowSpinner,
+              false
+          ),
+      //Show the success message
+          Set(
+              glbShowSuccess,
+              true
+          ),
+          //Reset Attachment Control
+          Reset(attFileToUploadMain),
+          // Reset Total Speakers input
+          Reset(inpTotalSpeakersMain)
+      )
+  )
    ```
 - **Text**: ```"Upload"```
 
-**btnCancelUpload_Main**: Clears the form (frmUpload)
-- **OnSelect**: ```ResetForm(frmUpload)```
+##### btnCancelUpload_Main
+Resets the controls (attFileToUploadMain, inpTotalSpeakersMain)
+- **OnSelect**:
+  ```
+  //Reset upload attachment and total number of speakers controls
+  Reset(attFileToUploadMain);
+  // Reset the total speakers input field
+  Reset(inpTotalSpeakersMain)
+  ```
 - **Text**: ```"Cancel"```
 
-**galTranscripts_Main**: 
+##### galTranscripts_Main
 Displays **all** the available transcripts in the Transcripts table. Some properties were customized:
-- **AccessibleLabel**: ```"All the available transcripts to review/edit"```
+- **AccessibleLabel**: ```"List of all the transcripts"```
 - **Items**: ```SortByColumns(Transcripts,"createdon",SortOrder.Descending)```
-- **OnSelect**: When item is selected, store a copy of the **Recognized Phrases** for the selected transcript in a collection (**colPhrases**) and sort the collection in acensinding order by the '**Offset in Seconds**', then go to the **Transcript Demo Screen**  
+- **LayoutMinHeight**: ```284```
+- **TemplateSize**:```274```
+- **Width**: ```Parent.Width-Parent.PaddingLeft-Parent.PaddingRight-Parent.LayoutGap```
+  
+##### btnEditTranscript_Main
+- **AccessibleLabel**: ```"Click view and edit this transcript"```
+- **Appearance**:```'ButtonCanvas.Appearance'.Secondary```
+- **Icon**: ```"MoreHorizontal"```
+- **Layout**:```'ButtonCanvas.Layout'.IconAfter```
+- **OnSelect**: When item is selected, store a copy of the **Recognized Phrases** for the selected transcript in a collection (**colPhrases**) and sort the collection in acensinding order by the '**Offset in Seconds**', then store the selected Transcript record in a global varilable (**glbSelectedTranscript**), then set a variable (**glbCurrentPhrase**) to the first phrase of colPhrases,  then go to the **Transcript Demo Screen**  
    ```
-   ClearCollect(
-       colPhrases,
-       SortByColumns(
-           Filter(
-               'Recognized Phrases',
-               Transcript.Transcript = ThisItem.Transcript
-           ),
-           "demo_offsetinseconds",
-           SortOrder.Ascending
-       )
-   );
-   //Store the currently selected transcript in a global variable
-   Set(
-       glbSelectedTranscript,
-       ThisItem
-   );
-   //Navigate to the Transcript Demo Screen
-   Navigate('Transcript Demo Screen')
+   //Set spinner label and show spinner
+  Set(
+      glbSpinnerLabel,
+      "Loading..."
+  );
+  Set(
+      glbShowSpinner,
+      true
+  );
+  //When item is selected
+  //Store a copy of the Recognized Phrases for the selected transcript in a collection (colPhrases)
+  // And sort the collection in acensinding order by the 'Offset in Seconds'
+  ClearCollect(
+      colPhrases,
+      SortByColumns(
+          Filter(
+              ShowColumns(
+                  'Recognized Phrases',
+                  Display,
+                  'Duration in Seconds',
+                  'Duration in Ticks',
+                  'Offset (HH:MM:SS)',
+                  'Offset in Seconds',
+                  'Offset in Ticks',
+                  Outset,
+                  'Outset (HH:MM:SS)',
+                  'Phrase Number',
+                  Speaker,
+                  'Speaker Lookup',
+                  Transcript,
+                  'Recognized Phrases'
+              ),
+              demo_Transcript.Transcript = ThisItem.Transcript
+          ),
+          "demo_offsetinseconds",
+          SortOrder.Ascending
+      )
+  );
+  //Store the currently selected transcript in a global variable
+  Set(
+      glbSelectedTranscript,
+      ThisItem
+  );
+  //Set current phrase (glbCurrentPhrase) to the first item in the phrases collection (colPhrases)
+  Set(
+      glbCurrentPhrase,
+      First(colPhrases)
+  );
+  //Navigate to the Transcript Demo Screen
+  Navigate('Transcript Demo Screen');
+  //Hide Spinner
+  Set(
+      glbShowSpinner,
+      false
+  );
+
    ```
-- **Width**: ```Parent.Width-Parent.PaddingLeft*2```
+- **Text**: ```Details```
+- **Width**:```100```
 
 [^Top](#contents)
 
@@ -261,9 +395,9 @@ This screen has several containers. Some of these are used to for pop-up windows
 
 #### Controls
 
-All controls (except one) are stored in horizontal and vertical containers to allow for responsive design when the user's screen resolution and aspect ratio change.  Briefly, here are the containers and what they do:
+All controls (except two) are stored in horizontal and vertical containers to allow for responsive design when the user's screen resolution and aspect ratio change.  Briefly, here are the containers and what they do:
 
-- **contSpinnerBg**:  
+- **contSpinnerTranscriptBg**:  
   Contains the loading spinner and is only visible when **glbShowSpinner** = true  
 - **[contPopUpUpdateAllSpeakersBg](#contPopUpUpdateAllSpeakersBg)**:  
   Is only visible when **gblShowPopUpUpdateAllSpeakers** = true  
@@ -271,32 +405,36 @@ All controls (except one) are stored in horizontal and vertical containers to al
   Only visible when **glbShowPopUpAddSpeaker** = true 
 - **contMainTranscriptVert**:  
   Contains the main UI for this screen including playback and edit controls
+- **pdfFileTranscript**:
+  Displays the PDF version of the transcript. Only visible when Transcript File is attached to record and the **Trancript (PDF)** tab is selected
 
-**timerTranscript**:   
+##### timerTranscript   
 Used to update variables based on the playhead of the audio control (**audRecordingPlayback**). Some of the properties have been customized:
 - **Duration**: This is in milliseconds. 1000 = 1 second  
   ```1000```
-- **OnTimerEnd**: Every second, update the current phrase (glbCurrentPhrase)
+- **OnTimerStart**: Every second, update the current phrase (glbCurrentPhrase)
   ```
-   Set(
-       glbCurrentPhrase,
-       LookUp(
-           ShowColumns(
-               colPhrases,
-               "demo_display",
-               "demo_offsetinseconds",
-               "demo_outset",
-               "demo_phrasenumber",
-               "demo_speaker",
-               "demo_SpeakerLookup",
-               "demo_Transcript",
-               "demo_recognizedphrasesid",
-               "demo_durationinseconds"
-           ),
-           // Current phrase is between the offset in seconds and the outset
-           demo_offsetinseconds <= Trunc(audRecordingPlayback.Time) And demo_outset >= Trunc(audRecordingPlayback.Time)
-       )
+  Set(
+      glbCurrentPhrase,
+      LookUp(
+          ShowColumns(
+              colPhrases,
+              Display,
+              'Offset in Seconds',
+              Outset,
+              'Phrase Number',
+              Speaker,
+              'Speaker Lookup',
+              Transcript,
+              'Recognized Phrases',
+              'Duration in Seconds',
+              'Offset (HH:MM:SS)',
+              'Outset (HH:MM:SS)'
+          ),
+          // Current phrase is between the offset in seconds and the outset
+          demo_offsetinseconds <= Trunc(audRecordingPlayback.Time) And demo_outset >= Trunc(audRecordingPlayback.Time)
       )
+  )
    ```
 - **Repeat**: ```true```
 - **Start**: ```glbStartTimer```
@@ -304,7 +442,12 @@ Used to update variables based on the playhead of the audio control (**audRecord
 
 **The following controls are located inside container(s). The path/location will be indicated in paranthesis.**  
 
-**audRecordingPlayback**  _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert)_  
+#####txtSummaryTranscript 
+Used to display and edit AI generated summary of transcript
+- 
+
+##### audRecordingPlayback  
+_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/4d4feed5-64ae-4b99-bb2c-9d0fe8815037)
 
 Used to playback the original audio (stored in Azure Blob Storage)

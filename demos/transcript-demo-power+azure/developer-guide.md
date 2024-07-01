@@ -444,14 +444,20 @@ Used to update variables based on the playhead of the audio control (**audRecord
 
 #####txtSummaryTranscript 
 Used to display and edit AI generated summary of transcript
-- 
+- **AccessibleLabel**:```"AI Generated summary using Azure OpenAI"```
+- **Appearance**:```If(glbMode=DisplayMode.Edit,'TextInputCanvas.Appearance'.FilledDarker,'TextInputCanvas.Appearance'.FilledLighter)```
+- **DisplayMode**:```glbMode```
+- **Mode**:``````
+- ****:```'TextInputCanvas.Mode'.Multiline```
+- **Value**:```LookUp(Transcripts,Transcript=glbSelectedTranscript.Transcript).Summary```
+- **Width**:```Parent.Width-Parent.PaddingLeft-Parent.PaddingRight```
 
 ##### audRecordingPlayback  
 _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/4d4feed5-64ae-4b99-bb2c-9d0fe8815037)
 
 Used to playback the original audio (stored in Azure Blob Storage)
-- **Media**: ```glbSelectedTranscript.'Source URL'```
+- **AccessibleLabel**:```"Playback control for the selected transcript's original audio recording"```
 - **DisplayMode**: If user is editing the current phrase, disable this so they can't move the playhead (and change the current phrase)
   ```
   If(
@@ -461,10 +467,9 @@ Used to playback the original audio (stored in Azure Blob Storage)
    )
    ```
 - **Fill**: ```PowerAppsTheme.Colors.Primary```
-   - Note: PowerAppsTheme is the default theme.  You can replace the default theme with your own.  
+  - Note: PowerAppsTheme is the default theme.  You can replace the default theme with your own.  
      ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/05fc98ea-a851-426d-b878-1ca3d53fea08)
-
- - **Media**: ```glbSelectedTranscript.'Source URL'```
+- **Media**: ```glbSelectedTranscript.'Source URL'```
  - **OnEnd**: ```Set(glbStartTimer,false);```
  - **OnPause**: ```Set(glbStartTimer,false);```
  - **OnStart**: ```Set(glbStartTimer,true);```

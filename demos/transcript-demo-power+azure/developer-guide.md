@@ -568,7 +568,7 @@ Displays the PDF version of the transcript. Only visible when Transcript File is
 - **Visible**: ```false```
 
 ##### txtSummaryTranscript 
-_(contMainTranscriptVert/contMainBodyTranscriptHoriz/contMainBodySummaryTranscriptVert)_
+_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz)_
 
 Used to display and edit AI generated summary of transcript
 - **AccessibleLabel**:```"AI Generated summary using Azure OpenAI"```
@@ -580,7 +580,7 @@ Used to display and edit AI generated summary of transcript
 - **Width**:```Parent.Width-Parent.PaddingLeft-Parent.PaddingRight```
 
 ##### audRecordingPlayback  
-_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert)_  
+_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/4d4feed5-64ae-4b99-bb2c-9d0fe8815037)
 
 Used to playback the original audio (stored in Azure Blob Storage)
@@ -604,7 +604,7 @@ Used to playback the original audio (stored in Azure Blob Storage)
  - **Width**: ```Parent.Width```
 
 ##### btnEdit_Transcript
-_(contMainTranscriptVert->contFooterTranscriptHoriz)_  
+_(cont_Transcript_4_Vert/cont_Transcript_4_2_Horiz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/21d4b135-ab8f-4761-8b3f-9527367f5cd6)
 
 _Note: only visible when **NOT** in edit mode and glbSelectedTranscript is NOT blank_
@@ -624,7 +624,7 @@ _Note: only visible when **NOT** in edit mode and glbSelectedTranscript is NOT b
 - **Visible** ```Not(glbMode=DisplayMode.Edit) And !IsBlank(glbSelectedTranscript)```
 
 ##### btnSave_Transcript
-_(contMainTranscriptVert->contFooterTranscriptHoriz)_   
+_(cont_Transcript_4_Vert/cont_Transcript_4_2_Horiz)_     
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/6b7670e6-c99f-4693-9158-2262df8cd618)
 
 _Note: only visible when in edit mode_  
@@ -689,7 +689,7 @@ _Note: only visible when in edit mode_
 - **Visible**: ```glbMode=DisplayMode.Edit```
 
 ##### btnCancel_Transcript
-_(contMainTranscriptVert->contFooterTranscriptHoriz)_     
+_(cont_Transcript_4_Vert/cont_Transcript_4_2_Horiz)_      
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/c26cdcec-d1a9-494e-b872-d759a875108d)
 
   _Note: Only visible when in Edit mode_  
@@ -709,8 +709,8 @@ _(contMainTranscriptVert->contFooterTranscriptHoriz)_
 - **Text**: ```"Cancel"```
 - **Visible**: ```glbMode=DisplayMode.Edit```
 
-##### txtCurrentPhrase_Transcript** 
-_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert)_  
+##### txtCurrentPhrase_Transcript
+_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/98c3429a-cd78-4f37-b203-525eab121cf1)
 
 - **AccessibleLabel**: ```"Transcript of the current phrase (based current time code)"```
@@ -725,7 +725,7 @@ _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVer
 - **Width**: ```Parent.Width```
 
 ##### lblCurrentSpeaker_Transcript
-_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
+_(cont_Transcript_4_3_1_1_2_1_Horiz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/22d1f4da-33fc-46bc-9526-fd5e9653ae52)
 
 - **Text**: If the speaker dropdown has a selected name, use that. If not, use the value of the speaker name from the current phrase (glbCurrentPhrase). If no name exists, get the speaker value (number) from the current phrase
@@ -774,7 +774,7 @@ _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVer
 - **Visible**: ```!IsBlank(drpSelectSpeaker_Transcript.Selected)```
 - **Width**: ```Self.Height```
 
-**btnNewSpeaker_Transcript** 
+#####  btnNewSpeaker_Transcript
 _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/08151b97-e2bb-404b-9638-b85eed23d579)
 
@@ -790,14 +790,14 @@ _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVer
 - **Text**: ```"+ New Speaker"```
 - **Visible**: ```glbMode=DisplayMode.Edit```
 
-**lblSourceFileName_Transcript** 
+#####  lblSourceFileName_Transcript
 _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/465e84fc-d20b-41ea-b3c0-cb8d5c7f876b)
 
 - **FillPortions**: ```4```
 - **Text**: ```"Source: " & glbSelectedTranscript.'Source File Name'```
 
-**btnJumpToInPoint** 
+#####  btnJumpToInPoint
 _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_    
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/28f01fac-1537-425b-99f8-f7c3c532327f)  
 
@@ -807,7 +807,7 @@ _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVer
 - **Text**: ```"↦"1```
 - **Visible**: ```glbMode=DisplayMode.View```
 
-**lblInPoint_Transcript** 
+#####  lblInPoint_Transcript
 _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/483a374f-8295-48de-b13d-a6f060a828ed)  
  - **Text**: Display the current phrase's in point (Offset in Seconds) in HH:MM:SS format
@@ -845,7 +845,7 @@ _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVer
 - **Visible**: ```!IsBlank(glbCurrentPhrase)```
 - **Width**: ```120```
 
-**lblOutpoint_Transcript**: 
+#####  lblOutpoint_Transcript
 _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d11bac0b-e3fc-4b3b-8dbf-72ce79db931a)  
 - **Align**: ```'TextCanvas.Align'.End```
@@ -884,7 +884,8 @@ _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVer
 - **Visible**: ```!IsBlank(glbCurrentPhrase)```
 - **Width**: ```120```
 
-**lblJumpToTime_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
+#####  lblJumpToTime_Transcript
+_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/1a360425-3a9f-48af-af57-909b9ed26a7e)  
 - **Align**: ```'TextCanvas.Align'.End```
 - **FontColor**: If variable glbJumpToTime exceeds the total duration of the audio file, display red text
@@ -909,7 +910,8 @@ _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVer
     "Jump To "
   )
   ```
-**txtJumpToTime_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
+#####  txtJumpToTime_Transcript
+_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d847eef6-59ae-4fa9-bcd6-d2b8efd336d1)  
 Allows user to type time code (HH:MM:SS) to jump to part of recording (and transcript)
 
@@ -985,8 +987,7 @@ Allows user to type time code (HH:MM:SS) to jump to part of recording (and trans
   ```
 - **Width**: ```100```
 
-<a name="contPopUpAddSpeaker"></a>
-**contPopUpAddSpeaker**  
+#####  cont_Transcript_3_Vert
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/edbb1d88-5c0b-46b0-9255-ef5f0dceb74e)
 
 Only visible when user clicks + New Speaker button (btnNewSpeaker_Transcript)
@@ -1000,7 +1001,8 @@ Only visible when user clicks + New Speaker button (btnNewSpeaker_Transcript)
 - **X**: ```contMainBodyTranscriptHoriz.Width+contMainBodyTranscriptHoriz.X-Self.Width```
 - **Y**: ```contMainBodyTranscriptHoriz.Y+contSpeakerTranscriptHoriz.Height+5```
   
-**frmAddSpeaker** _(contPopUpAddSpeaker)_  
+##### frmAddSpeaker
+_(cont_Transcript_3_Vert)_  
 Submits new speaker name to Speakers table  
 - **DataSource**: ```Speakers```
 - **DefaultMode**: ```FormMode.New```
@@ -1013,7 +1015,8 @@ Submits new speaker name to Speakers table
   ResetForm(frmAddSpeaker)
   ```
 
-**btnAddSpeakerSave** _(contPopUpAddSpeaker->contPopUpAddSpeakerButtons)_  
+##### btnAddSpeakerSave
+_(contPopUpAddSpeaker->contPopUpAddSpeakerButtons)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/221e4be6-985b-468d-8d2d-be65ae77c297)
 
 - **AccessibleLabel**: ```"Save the new speaker"```
@@ -1028,7 +1031,8 @@ Submits new speaker name to Speakers table
 - **OnSelect**: ```SubmitForm(frmAddSpeaker);```
 - **Text**: ```"Save"```
 
-**btnAddSpeakerCancel** _(contPopUpAddSpeaker->contPopUpAddSpeakerButtons)_  
+##### btnAddSpeakerCancel
+_(contPopUpAddSpeaker->contPopUpAddSpeakerButtons)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/f288d3da-a2be-4203-928c-625bb8efc987)
 - **AccessibleLabel**: ```"Cancel adding the new speaker"```
 - **Appearance**: ```'ButtonCanvas.Appearance'.Secondary```
@@ -1041,8 +1045,8 @@ Submits new speaker name to Speakers table
   ResetForm(frmAddSpeaker)
   ```
 - **Text**: ```"Cancel"```
-
-**contPopUpUpdateAllSpeakersBg** <a name="contPopUpUpdateAllSpeakersBg"></a>
+- 
+##### cont_Transcript_2_Vert
 Full screen container that has an opqaue fill and is only visible when **gblShowPopUpUpdateAllSpeakers** = **true**
 - **Fill**: ```RGBA(255, 255, 255, 0.65)```
 - **Height**: Parent.Height
@@ -1052,7 +1056,8 @@ Full screen container that has an opqaue fill and is only visible when **gblShow
 - **Width**: ```Parent.Width```
 
 
-**contPopUpUpdateAllSpeakers** _(contPopUpUpdateAllSpeakersBg)_  
+##### cont_Transcript_2_1_Vert
+_(cont_Transcript_2_Vert)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/341528f9-2ae8-46e5-92d5-63041fda8e0a)
 - **DropShadow**: ```DropShadow.ExtraBold```
 - **Fill**: ```RGBA(255, 255, 255, 1)```
@@ -1061,7 +1066,7 @@ Full screen container that has an opqaue fill and is only visible when **gblShow
 - **LayoutJustifyContent**: ```LayoutJustifyContent.Center```
 - **Border Radius** (**RadiusBottomLeft**, **RadiusBottomRight**, **RadiusTopLeft**, **RadiusTopRight**): ```25```
 
-**btnPopUpUpdateAllSpeakersYes**  
+##### btnPopUpUpdateAllSpeakersYes 
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/5c28730e-97a4-47e8-840c-fec5aa5db699)
 - **AccessibleLabel**: Dynamcially update accessible label based on the current phrase and the selected speaker name
   ```
@@ -1088,7 +1093,7 @@ Full screen container that has an opqaue fill and is only visible when **gblShow
   ```
 - **Text**: ```"Yes"```
 
-**btnPopUpUpdateAllSpeakersNo**  
+##### btnPopUpUpdateAllSpeakersNo
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d0d07751-9058-4a01-aa02-44ad298e468f)  
 - **AccessibleLabel**: ```"Please do not update all speakers to the selected speaker"```
 - **Appearance**: ```'ButtonCanvas.Appearance'.Secondary```
@@ -1110,7 +1115,7 @@ Full screen container that has an opqaue fill and is only visible when **gblShow
   ```
 - **Text**: ```"No"```
 
-**btnSaveHidden**  
+##### btnSaveHidden  
 This button is hidden, but is called by various other buttons.  This is one technique to create reusable code/functions in Power Apps  
 - **AccessibleLabel**: ```"This is a hidden control - used for saving the edits to the current phrase"```
 - **OnSelect**: 
@@ -1218,11 +1223,16 @@ This button is hidden, but is called by various other buttons.  This is one tech
   );
   ```
 - **Visible**: ```false```
+- 
+##### shpFileTranscript
 
+##### btnDownloadTranscriptFile
+
+##### btnRefreshTranscriptFile
 
 [^Top](#contents)
 
-*** 
+******* 
 
 ## Flows
 There are six flows in this solution.  They are designed to run sequentially (hence the numbering).   

@@ -108,14 +108,24 @@ This screen is used to upload audio files and select transcripts to view/edit.
 
 #### Properties
 
-**OnVisible**: When the screen loads, several global variables are set:
-- **glbShowSpinner**: Used to show/hide loading spinner
-- **glbSpinnerLabel**: Used to display next next to loading spinner
-- **glbShowSuccess**: Used to show/hide the Success message when upload is completed
-- **glbSelectedFileName**: Stores the file name of the selected file
-- **glbSelectedTranscript**: Stores the selected transcript from from the left hand gallery (galTranscripts_Main)
-- **glbCurrentPhrase**: Used on the next screen, to identify the current recogonized phrase based on the current playback point in the audio controller
-- **glbMode**: Used on the next screen to toggle between Edit and View display modes via the **Edit** Button
+- **OnVisible**: When the screen loads, several global variables are set:
+  - **glbShowSpinner**: Used to show/hide loading spinner
+  - **glbSpinnerLabel**: Used to display next next to loading spinner
+  - **glbShowSuccess**: Used to show/hide the Success message when upload is completed
+  - **glbSelectedFileName**: Stores the file name of the selected file
+  - **glbSelectedTranscript**: Stores the selected transcript from from the left hand gallery (galTranscripts_Main)
+  - **glbCurrentPhrase**: Used on the next screen, to identify the current recogonized phrase based on the current playback point in the audio controller
+  - **glbMode**: Used on the next screen to toggle between Edit and View display modes via the **Edit** Button
+- **StartScreen** : ```'Main Screen'```
+- **Formulas** : Sets static variables
+  ```
+  // Supported file formats:
+  colSupportedFileFormats = ["mp3","wav","aac","opus","ogg","flac","wma","amr","webm","m4a","speex"];
+  //Source: https://learn.microsoft.com/en-us/azure/ai-services/speech-service/batch-transcription-audio-data?tabs=portal#supported-audio-formats-and-codecs
+  
+  // List of supported formats:
+  glbListSupportedFileFormats = Concat(colSupportedFileFormats,ThisRecord.Value & ", ");
+  ```
 
 In addition to setting variables, two controls are reset (see below for more on each control):
 - **attFileToUploadMain**
@@ -151,6 +161,8 @@ In addition to setting variables, two controls are reset (see below for more on 
 | cont_Main_2_2_Horiz | shpSpacerRightMain | Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container. |
 
 **_Many controls are located inside container(s). The path/location will be indicated in paranthesis._**  
+
+[^Top](#contents)
 
 ##### attFileToUpload:  
 _(contAllMainHoriz/contBottomMainHoriz/contRightMainVert)_

@@ -106,8 +106,6 @@ Both screens use containers to help control the flow of the controls when resizi
 This screen is used to upload audio files and select transcripts to view/edit. 
 ![Screenshot of Power Apps Studio with Main Screen selected](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/64881327-c8dd-40be-b663-14290ac78cae)
 
-
-
 #### Properties
 
 **OnVisible**: When the screen loads, several global variables are set:
@@ -132,7 +130,7 @@ In addition to setting variables, two controls are reset (see below for more on 
 | [btnUploadFile_Main](#btnUploadFile_Main) | Used to upload the selected file to Azure Blob Storage (via Power Automate flow) |
 | [btnCancelUpload_Main](#btnCancelUpload_Main) | Resets the controls (attFileToUploadMain, inpTotalSpeakersMain) |
 | [galTranscripts_Main](#galTranscripts_Main) | Displays **all** the available transcripts in the Transcripts table |
-| [btnEditTranscript_Main](#btnEditTranscript_Main) | Selects the transcript and opens it in the [Transcript Demo Screen](#TranscriptDemoScreen) |
+| [btnEditTranscript_Main](#btnEditTranscript_Main) | Selects the transcript and opens it in the [Transcript Demo Screen](#transcript-demo-screen) |
 
 
 ##### attFileToUpload:  

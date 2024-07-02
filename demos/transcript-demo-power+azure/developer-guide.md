@@ -1381,7 +1381,7 @@ For more on the Azure Batch Speech to Text transcription click[https://learn.mic
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/0422b020-a414-4b64-8d25-cce87663307b)
 
 Here's breakdown of each action:
-- **Manuall trigger a flow **: This child low is triggered by 01 - Power Apps - Upload to Azure Blob flow.  It has three parameters:
+- **Manually trigger a flow**: This child low is triggered by 01 - Power Apps - Upload to Azure Blob flow.  It has three parameters:
   - **TotalSpeakers**: How many speakers should Azure Speech to Text services expect (for diarization)
   - **BlobPath**: Path of the blob uploaded in the 01 - Power Apps - Upload to Azure Blob flow
   - **FileName**: Name of the file uploaded in the 01 - Power Apps - Upload to Azure Blob flow 

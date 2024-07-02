@@ -165,7 +165,7 @@ In addition to setting variables, two controls are reset (see below for more on 
 [^Top](#contents)
 
 ##### attFileToUpload:  
-_(contAllMainHoriz/contBottomMainHoriz/contRightMainVert)_
+_(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)_
 
 This control allows user to upload a file. The control validates file size and file format:
 - The API has a limit of 100 Mb, so the control is limited to 100 Mb.
@@ -245,7 +245,7 @@ It has several properties customized:
   
 
 ##### inpTotalSpeakersMain
-_(contAllMainHoriz/contBottomMainHoriz/contRightMainVert)_
+_(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)_
 
 Number input field that indicates how many speakers should Azure Speech to Text services look for.
 - **AccessibleLabel**: ```"Enter the total number of speakers in the audio file"```
@@ -256,7 +256,7 @@ Number input field that indicates how many speakers should Azure Speech to Text 
 
 
 ##### btnUploadFile_Main 
-_(contAllMainHoriz/contBottomMainHoriz/contRightMainVert/contButtonsRightMainHoriz)_
+_(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_1_1_Horiz)_
 
 Used to upload the selected file to Azure Blob Storage (via Power Automate flow)
 - **AccessibleLabel**: ```"Upload the selected file"```
@@ -346,7 +346,7 @@ Used to upload the selected file to Azure Blob Storage (via Power Automate flow)
 - **Text**: ```"Upload"```
 
 ##### btnCancelUpload_Main
-_(contAllMainHoriz/contBottomMainHoriz/contRightMainVert/contButtonsRightMainHoriz)_
+_(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_1_1_Horiz)_
 
 Resets the controls (attFileToUploadMain, inpTotalSpeakersMain)
 - **OnSelect**:
@@ -359,7 +359,7 @@ Resets the controls (attFileToUploadMain, inpTotalSpeakersMain)
 - **Text**: ```"Cancel"```
 
 ##### galTranscripts_Main
-_(contAllMainHoriz/contBottomMainHoriz/contSiderbarMainVert)_
+_(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert)_
 
 Displays **all** the available transcripts in the Transcripts table. Some properties were customized:
 - **AccessibleLabel**: ```"List of all the transcripts"```
@@ -369,7 +369,7 @@ Displays **all** the available transcripts in the Transcripts table. Some proper
 - **Width**: ```Parent.Width-Parent.PaddingLeft-Parent.PaddingRight-Parent.LayoutGap```
   
 ##### btnEditTranscript_Main
-_(contAllMainHoriz/contBottomMainHoriz/contSiderbarMainVert/galTranscripts_Main/contTranscriptsHoriz/)_
+_(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert/galTranscripts_Main/cont_Main_2_2_2_1_Horiz)_
 
 - **AccessibleLabel**: ```"Click view and edit this transcript"```
 - **Appearance**:```'ButtonCanvas.Appearance'.Secondary```
@@ -438,7 +438,7 @@ _(contAllMainHoriz/contBottomMainHoriz/contSiderbarMainVert/galTranscripts_Main/
 - **Width**:```100```
 
 ##### btnRefreshTranscript_Main
-_(contAllMainHoriz/contBottomMainHoriz/contSiderbarMainVert)_
+_(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_2_1_Horiz/cont_Main_2_2_2_Vert)_
 
 Refreshes the **Transcripts** table
 - **AccessibleLabel**:```"Refresh the list of transcripts"```
@@ -449,6 +449,9 @@ Refreshes the **Transcripts** table
 - **OnSelect**:```Refresh(Transcripts)```
 
 [^Top](#contents)
+
+---------
+
 
 ### Transcript Demo Screen
 This screen has several containers. Some of these are used to for pop-up windows, while most are used to structure the controls.  

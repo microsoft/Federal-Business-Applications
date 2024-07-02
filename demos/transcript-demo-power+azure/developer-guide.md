@@ -93,8 +93,8 @@ Set to on to allow for modern controls/themes in the app.  Note that some modern
 
 ### Screens
 The canvas app has two screens: 
-1. Main Screen
-2. Transcript Demo Screen
+1. [Main Screen](#main-screen)
+2. [Transcript Demo Screen](#Transcript-Demo-Screen)
 
 Both screens use containers to help control the flow of the controls when resizing the app for different resolutions.  Their layouts are based on the Sidebar screen template.
 
@@ -132,8 +132,11 @@ In addition to setting variables, two controls are reset (see below for more on 
 | [galTranscripts_Main](#galTranscripts_Main) | Displays **all** the available transcripts in the Transcripts table |
 | [btnEditTranscript_Main](#btnEditTranscript_Main) | Selects the transcript and opens it in the [Transcript Demo Screen](#transcript-demo-screen) |
 
+**_Many controls are located inside container(s). The path/location will be indicated in paranthesis._**  
 
 ##### attFileToUpload:  
+_(contAllMainHoriz/contBottomMainHoriz/contRightMainVert)_
+
 This control allows user to upload a file. The control validates file size and file format:
 - The API has a limit of 100 Mb, so the control is limited to 100 Mb.
 - The Speach to Text API only accepts the following formats:
@@ -212,6 +215,8 @@ It has several properties customized:
   
 
 ##### inpTotalSpeakersMain
+_(contAllMainHoriz/contBottomMainHoriz/contRightMainVert)_
+
 Number input field that indicates how many speakers should Azure Speech to Text services look for.
 - **AccessibleLabel**: ```"Enter the total number of speakers in the audio file"```
 - **Max**: ```36```
@@ -221,6 +226,8 @@ Number input field that indicates how many speakers should Azure Speech to Text 
 
 
 ##### btnUploadFile_Main 
+_(contAllMainHoriz/contBottomMainHoriz/contRightMainVert/contButtonsRightMainHoriz)_
+
 Used to upload the selected file to Azure Blob Storage (via Power Automate flow)
 - **AccessibleLabel**: ```"Upload the selected file"```
 - **DisplayMode**: Default mode disabled. Only enabled (Edit mode) when file is attached, the format is correct and the total speakers is greater than zero
@@ -309,6 +316,8 @@ Used to upload the selected file to Azure Blob Storage (via Power Automate flow)
 - **Text**: ```"Upload"```
 
 ##### btnCancelUpload_Main
+_(contAllMainHoriz/contBottomMainHoriz/contRightMainVert/contButtonsRightMainHoriz)_
+
 Resets the controls (attFileToUploadMain, inpTotalSpeakersMain)
 - **OnSelect**:
   ```
@@ -320,6 +329,8 @@ Resets the controls (attFileToUploadMain, inpTotalSpeakersMain)
 - **Text**: ```"Cancel"```
 
 ##### galTranscripts_Main
+_()_
+
 Displays **all** the available transcripts in the Transcripts table. Some properties were customized:
 - **AccessibleLabel**: ```"List of all the transcripts"```
 - **Items**: ```SortByColumns(Transcripts,"createdon",SortOrder.Descending)```
@@ -328,6 +339,8 @@ Displays **all** the available transcripts in the Transcripts table. Some proper
 - **Width**: ```Parent.Width-Parent.PaddingLeft-Parent.PaddingRight-Parent.LayoutGap```
   
 ##### btnEditTranscript_Main
+_()_
+
 - **AccessibleLabel**: ```"Click view and edit this transcript"```
 - **Appearance**:```'ButtonCanvas.Appearance'.Secondary```
 - **Icon**: ```"MoreHorizontal"```
@@ -445,9 +458,9 @@ All controls (except two) are stored in horizontal and vertical containers to al
 - **Start**: ```glbStartTimer```
 - **Visible**: ```false```
 
-**The following controls are located inside container(s). The path/location will be indicated in paranthesis.**  
-
 #####txtSummaryTranscript 
+_()_
+
 Used to display and edit AI generated summary of transcript
 - **AccessibleLabel**:```"AI Generated summary using Azure OpenAI"```
 - **Appearance**:```If(glbMode=DisplayMode.Edit,'TextInputCanvas.Appearance'.FilledDarker,'TextInputCanvas.Appearance'.FilledLighter)```
@@ -652,7 +665,8 @@ _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVer
 - **Visible**: ```!IsBlank(drpSelectSpeaker_Transcript.Selected)```
 - **Width**: ```Self.Height```
 
-**btnNewSpeaker_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
+**btnNewSpeaker_Transcript** 
+_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/08151b97-e2bb-404b-9638-b85eed23d579)
 
 - **AccessibleLabel**: ```"Add new speaker"```
@@ -667,13 +681,15 @@ _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVer
 - **Text**: ```"+ New Speaker"```
 - **Visible**: ```glbMode=DisplayMode.Edit```
 
-**lblSourceFileName_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
+**lblSourceFileName_Transcript** 
+_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/465e84fc-d20b-41ea-b3c0-cb8d5c7f876b)
 
 - **FillPortions**: ```4```
 - **Text**: ```"Source: " & glbSelectedTranscript.'Source File Name'```
 
-**btnJumpToInPoint** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_    
+**btnJumpToInPoint** 
+_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_    
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/28f01fac-1537-425b-99f8-f7c3c532327f)  
 
 - **AccessibleLabel**: ```"Jump to In Point"```
@@ -682,7 +698,8 @@ _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVer
 - **Text**: ```"↦"1```
 - **Visible**: ```glbMode=DisplayMode.View```
 
-**lblInPoint_Transcript** _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
+**lblInPoint_Transcript** 
+_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/483a374f-8295-48de-b13d-a6f060a828ed)  
  - **Text**: Display the current phrase's in point (Offset in Seconds) in HH:MM:SS format
    ```
@@ -719,7 +736,8 @@ _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVer
 - **Visible**: ```!IsBlank(glbCurrentPhrase)```
 - **Width**: ```120```
 
-**lblOutpoint_Transcript**: _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
+**lblOutpoint_Transcript**: 
+_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d11bac0b-e3fc-4b3b-8dbf-72ce79db931a)  
 - **Align**: ```'TextCanvas.Align'.End```
 - **Text**: Display current phrase's out point (outset) in HH:MM:SS

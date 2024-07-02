@@ -16,8 +16,8 @@ This document is for developers to help them understand *how* the solution works
   - [Transcript Demo Screen](#Transcript-Demo-Screen)
     - [Controls](#controls-1)
 - [Flows](#flows)
-  - [01 - SPO - When Audio File Uploaded to SPO - Copy to Azure Blob](#01---spo---when-audio-file-uploaded-to-spo---copy-to-azure-blob)
-  - [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#02---azure---when-audio-file-created-in-blob-storage---create-transcript)
+  - [01 - Power Apps - Upload to Azure Blob](#01---power-apps---upload-to-azure-blob)
+  - [02 -Child Flow - Create Transcript](#02--child-flow---create-transcript)
   - [02b Child Flow - Loop Until Transcript Complete](#02b-child-flow---loop-until-transcript-complete)
   - [02c Child Flow - Get Transcript Results](#02c-child-flow---get-transcript-results)
   - [02d Child Flow - Parse Transcript and Load into Dataverse](#02d-child-flow---parse-transcript-and-load-into-dataverse)
@@ -1377,8 +1377,8 @@ Here's a detailed breakdown of each action:
 ### 02 -Child Flow - Create Transcript  
 Master flow that is triggered from the 01 - Power Apps - Upload to Azure Blob flow. Then it transcribes the audio file (via Azure Speech Services) and then calls several more child flows
 
-For more on the Azure Batch Speech to Text transcription click [here]([url](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/batch-transcription)): 
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/2a9d5968-8aa0-472e-b2b5-43dab942c610)
+For more on the Azure Batch Speech to Text transcription click[https://learn.microsoft.com/en-us/azure/ai-services/speech-service/batch-transcription](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/batch-transcription). 
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/0422b020-a414-4b64-8d25-cce87663307b)
 
 Here's breakdown of each action:
 - **Manuall trigger a flow **: This child low is triggered by 01 - Power Apps - Upload to Azure Blob flow.  It has three parameters:

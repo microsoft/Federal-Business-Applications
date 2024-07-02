@@ -123,13 +123,42 @@ In addition to setting variables, two controls are reset (see below for more on 
   
   <a name="main-screen-controls">
 #### Controls
-| **Name** | **Description** |
-| :-----------        | :----------            |
-| [attFileToUpload](#attFileToUpload) | Allows user to upload a file |
-| [inpTotalSpeakersMain](#inpTotalSpeakersMain) | Number input field that indicates how many speakers should Azure Speech to Text services look for |
-| [btnUploadFile_Main](#btnUploadFile_Main) | Used to upload the selected file to Azure Blob Storage (via Power Automate flow) |
-| [btnCancelUpload_Main](#btnCancelUpload_Main) | Resets the controls (attFileToUploadMain, inpTotalSpeakersMain) |
-| [galTranscripts_Main](#galTranscripts_Main) | Displays **all** the available transcripts in the Transcripts table |
+| **Parent** | **Name** | **Description** |
+| :----------- | :---------- | :---------- |
+| - | cont_Main_1_Vert | |
+| cont_Main_1_Vert | cont_Main_1_1_Horiz | |
+| cont_Main_1_1_Horiz | spinner_Main | |
+| - | cont_Main_2_Vert | |
+| cont_Main_2_Vert | cont_Main_2_1_Horiz  | |
+| cont_Main_2_1_Horiz | headerMain | |
+| cont_Main_2_Vert | cont_Main_2_2_Horiz | |
+| cont_Main_2_2_Horiz | shpSpacerLeftMain | |
+| cont_Main_2_2_Horiz | cont_Main_2_2_1_Vert | |
+| cont_Main_2_2_1_Vert | [attFileToUpload](#attFileToUpload) | Allows user to upload a file |
+| cont_Main_2_2_1_Vert | [inpTotalSpeakersMain](#inpTotalSpeakersMain) | Number input field that indicates how many speakers should Azure Speech to Text services look for |
+| cont_Main_2_2_1_Vert | cont_Main_2_2_1_1_Horiz | |
+| cont_Main_2_2_1_1_Horiz | [btnUploadFile_Main](#btnUploadFile_Main) | Used to upload the selected file to Azure Blob Storage (via Power Automate flow) |
+| cont_Main_2_2_1_1_Horiz | [btnCancelUpload_Main](#btnCancelUpload_Main) | Resets the controls (attFileToUploadMain, inpTotalSpeakersMain) |
+| cont_Main_2_2_Horiz | cont_Main_2_2_2_Vert | |
+| cont_Main_2_2_2_Vert | lblTranscript_Main | |
+| cont_Main_2_2_2_Vert | [galTranscripts_Main](#galTranscripts_Main) | Displays **all** the available transcripts in the Transcripts table |
+| galTranscripts_Main | cont_Main_2_2_2_1_Horiz | |
+| cont_Main_2_2_2_1_Horiz | cont_Main_2_2_2_1_1_Vert | |
+| cont_Main_2_2_2_1_1_Vert | lblTranscriptFileName_Main | |
+| cont_Main_2_2_2_1_1_Vert | lblTranscriptDetails_Main | |
+| cont_Main_2_2_2_1_1_Vert | lblTranscriptSummary | |
+| cont_Main_2_2_2_1_Horiz | btnEditTranscript_Main | |
+| galTranscripts_Main | btnRefreshTranscript_Main | |
+| cont_Main_2_2_Horiz | cont_Main_2_2_3_Vert | |
+| cont_Main_2_2_3_Vert | htmlSuccessMain | |
+| cont_Main_2_2_3_Vert | btnBackSuccessMain | |
+| cont_Main_2_2_Horiz | shpSpacerRightMain | |
+
+
+
+
+
+
 | [btnEditTranscript_Main](#btnEditTranscript_Main) | Selects the transcript and opens it in the [Transcript Demo Screen](#transcript-demo-screen) |
 | [btnRefreshTranscript_Main](#btnRefreshTranscript_Main)| Refreshes the **Transcripts** table |
 

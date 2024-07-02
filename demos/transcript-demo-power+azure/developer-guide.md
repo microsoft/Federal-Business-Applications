@@ -725,7 +725,7 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
 - **Width**: ```Parent.Width```
 
 ##### lblCurrentSpeaker_Transcript
-_(cont_Transcript_4_3_1_1_2_1_Horiz)_  
+_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert/cont_Transcript_4_3_1_1_2_1_Horiz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/22d1f4da-33fc-46bc-9526-fd5e9653ae52)
 
 - **Text**: If the speaker dropdown has a selected name, use that. If not, use the value of the speaker name from the current phrase (glbCurrentPhrase). If no name exists, get the speaker value (number) from the current phrase
@@ -738,17 +738,8 @@ _(cont_Transcript_4_3_1_1_2_1_Horiz)_
   '''
 - **Visible**: ```!IsBlank(glbCurrentPhrase)```
 
-##### lblSelectSpeaker_Transcript
-_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/4d0bf4e0-766c-4cb1-ac55-da19173be8c6)
-
-  _Note: only visible when app is in Edit mode_  
-- **Align**: ```'TextCanvas.Align'.End```
-- **Text**: ```"Select Speaker"```
-- **Visible**: ```glbMode=DisplayMode.Edit```
-
 #####  drpSelectSpeaker_Transcript
-_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
+_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert/cont_Transcript_4_3_1_1_2_1_Horiz)_   
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/8e22e6c4-70e6-4328-8a15-2e41d61326d8)
 
 - **AccessibleLabel**: ```"Select speaker from this drop down"```
@@ -758,7 +749,7 @@ _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVer
   - _Only visible when app is in Edit mode_    
 
 ##### icoClearSelectSpeaker_Transcript
-_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
+_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert/cont_Transcript_4_3_1_1_2_1_Horiz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/c58b5e2f-3201-4899-8fb8-263c48b76709)
 
   _Note: only visible when speaker is selected in dropdown_  
@@ -775,7 +766,7 @@ _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVer
 - **Width**: ```Self.Height```
 
 #####  btnNewSpeaker_Transcript
-_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contSpeakerTranscriptHoriz)_  
+_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert/cont_Transcript_4_3_1_1_2_1_Horiz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/08151b97-e2bb-404b-9638-b85eed23d579)
 
 - **AccessibleLabel**: ```"Add new speaker"```
@@ -790,15 +781,8 @@ _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVer
 - **Text**: ```"+ New Speaker"```
 - **Visible**: ```glbMode=DisplayMode.Edit```
 
-#####  lblSourceFileName_Transcript
-_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/465e84fc-d20b-41ea-b3c0-cb8d5c7f876b)
-
-- **FillPortions**: ```4```
-- **Text**: ```"Source: " & glbSelectedTranscript.'Source File Name'```
-
 #####  btnJumpToInPoint
-_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_    
+_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)_    
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/28f01fac-1537-425b-99f8-f7c3c532327f)  
 
 - **AccessibleLabel**: ```"Jump to In Point"```
@@ -808,7 +792,7 @@ _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVer
 - **Visible**: ```glbMode=DisplayMode.View```
 
 #####  lblInPoint_Transcript
-_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
+_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)_  
  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/483a374f-8295-48de-b13d-a6f060a828ed)  
  - **Text**: Display the current phrase's in point (Offset in Seconds) in HH:MM:SS format
    ```
@@ -846,7 +830,7 @@ _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVer
 - **Width**: ```120```
 
 #####  lblOutpoint_Transcript
-_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
+_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d11bac0b-e3fc-4b3b-8dbf-72ce79db931a)  
 - **Align**: ```'TextCanvas.Align'.End```
 - **Text**: Display current phrase's out point (outset) in HH:MM:SS
@@ -885,7 +869,7 @@ _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVer
 - **Width**: ```120```
 
 #####  lblJumpToTime_Transcript
-_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
+_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)_    
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/1a360425-3a9f-48af-af57-909b9ed26a7e)  
 - **Align**: ```'TextCanvas.Align'.End```
 - **FontColor**: If variable glbJumpToTime exceeds the total duration of the audio file, display red text
@@ -911,7 +895,7 @@ _(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVer
   )
   ```
 #####  txtJumpToTime_Transcript
-_(contMainTranscriptVert->contMainBodyTranscriptHoriz->contMainBodyTranscriptVert->contDetailsTranscriptHoriz)_  
+_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)_   
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d847eef6-59ae-4fa9-bcd6-d2b8efd336d1)  
 Allows user to type time code (HH:MM:SS) to jump to part of recording (and transcript)
 
@@ -1016,7 +1000,7 @@ Submits new speaker name to Speakers table
   ```
 
 ##### btnAddSpeakerSave
-_(contPopUpAddSpeaker->contPopUpAddSpeakerButtons)_  
+_(cont_Transcript_3_Vert/cont_Transcript_3_Vert/cont_Transcript_3_1_Horiz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/221e4be6-985b-468d-8d2d-be65ae77c297)
 
 - **AccessibleLabel**: ```"Save the new speaker"```
@@ -1032,7 +1016,7 @@ _(contPopUpAddSpeaker->contPopUpAddSpeakerButtons)_
 - **Text**: ```"Save"```
 
 ##### btnAddSpeakerCancel
-_(contPopUpAddSpeaker->contPopUpAddSpeakerButtons)_  
+_(cont_Transcript_3_Vert/cont_Transcript_3_Vert/cont_Transcript_3_1_Horiz)_  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/f288d3da-a2be-4203-928c-625bb8efc987)
 - **AccessibleLabel**: ```"Cancel adding the new speaker"```
 - **Appearance**: ```'ButtonCanvas.Appearance'.Secondary```
@@ -1067,6 +1051,7 @@ _(cont_Transcript_2_Vert)_
 - **Border Radius** (**RadiusBottomLeft**, **RadiusBottomRight**, **RadiusTopLeft**, **RadiusTopRight**): ```25```
 
 ##### btnPopUpUpdateAllSpeakersYes 
+_(cont_Transcript_2_Vert/cont_Transcript_2_1_Vert/cont_Transcript_2_1_1_Horiz)_
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/5c28730e-97a4-47e8-840c-fec5aa5db699)
 - **AccessibleLabel**: Dynamcially update accessible label based on the current phrase and the selected speaker name
   ```
@@ -1094,6 +1079,7 @@ _(cont_Transcript_2_Vert)_
 - **Text**: ```"Yes"```
 
 ##### btnPopUpUpdateAllSpeakersNo
+_(cont_Transcript_2_Vert/cont_Transcript_2_1_Vert/cont_Transcript_2_1_1_Horiz)_
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d0d07751-9058-4a01-aa02-44ad298e468f)  
 - **AccessibleLabel**: ```"Please do not update all speakers to the selected speaker"```
 - **Appearance**: ```'ButtonCanvas.Appearance'.Secondary```
@@ -1116,6 +1102,7 @@ _(cont_Transcript_2_Vert)_
 - **Text**: ```"No"```
 
 ##### btnSaveHidden  
+_(cont_Transcript_2_Vert/cont_Transcript_2_1_Vert/cont_Transcript_2_1_1_Horiz)_
 This button is hidden, but is called by various other buttons.  This is one technique to create reusable code/functions in Power Apps  
 - **AccessibleLabel**: ```"This is a hidden control - used for saving the edits to the current phrase"```
 - **OnSelect**: 
@@ -1225,11 +1212,77 @@ This button is hidden, but is called by various other buttons.  This is one tech
 - **Visible**: ```false```
 - 
 ##### shpFileTranscript
+_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_2_Vert)_
+Used to properly size the [pdfFileTranscript](#pdfFileTranscript).  
+**FillPortions**:```1```  
 
 ##### btnDownloadTranscriptFile
+_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_2_Vert/cont_Transcript_4_3_2_1_Horiz)_
+When user clicks this button, it uses the Dataverse Web API to get the transcript file attached to the selected transcript
+- **AccessibleLabel**:```"Click to download transcript PDF"```
+- **Appearance**:```'ButtonCanvas.Appearance'.Primary```
+- **Icon**:```"ArrowDownload"```
+- **Layout**:```"Icon before"```
+- **OnSelect**: For more see: [https://www.matthewdevaney.com/power-apps-download-file-from-dataverse-file-column/](https://www.matthewdevaney.com/power-apps-download-file-from-dataverse-file-column/)
+  ```
+    Download(
+        // Get Web API Endpoint environment variable  and then concat the current transcript GUID and path to the transcript file
+        LookUp(
+            'Environment Variable Values',
+            'Environment Variable Definition'.'Schema Name' = "demo_WebAPIEndpoint"
+        ).Value & "/demo_transcripts(" & glbSelectedTranscript.Transcript & ")/demo_transcriptfile/$value"
+    );
+  ```
+- **Text**:```"Download"```
+- **Width**:```120```
 
 ##### btnRefreshTranscriptFile
-
+_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_2_Vert/cont_Transcript_4_3_2_1_Horiz)_
+Regenerates the PDF file via Power Automate when clicked
+- **AccessibleLabel**:``````
+- ****:```"Click to refresh the transcript PDF"```
+- **Appearance**:``````
+- ****:```'ButtonCanvas.Appearance'.Subtle```
+- **Icon**:```"ArrowClockwise"```
+- **Layout**:```"Icon before"```
+- **OnSelect**: Shows the Loading Spinner, then runs the flow to regenerate the Transcript PDF
+  ```
+  //Set loading spinner label
+  Set(
+      glbSpinnerLabel,
+      "Refreshing..."
+  );
+  //Show loading spinner
+  Set(
+      glbShowSpinner,
+      true
+  );
+  // Run flow (PA-CreateTranscriptDocument) and store success (Yes or No) in local variable (locTranscriptFileCreated)
+  UpdateContext({locTranscriptFileCreated: 'PA-CreateTranscriptDocument'.Run(glbSelectedTranscript.Transcript).success});
+  //If successful, notify user of success. 
+  If(
+      locTranscriptFileCreated = "Yes",
+      Notify(
+          "Transcript file refreshed",
+          NotificationType.Success
+      ),
+      // If not, notify user of failure
+      Notify(
+          "Error: Transcript file refreshed",
+          NotificationType.Error
+      )
+  );
+  // Refresht the datasource (Transcripts)
+  Refresh(Transcripts);
+  // Hide loading spinner
+  Set(
+      glbShowSpinner,
+      false
+  )
+  ```
+- **Text**:```"Regenerate PDF"```
+- **Width**:```200```
+  
 [^Top](#contents)
 
 ******* 

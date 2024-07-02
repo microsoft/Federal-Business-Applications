@@ -1352,36 +1352,43 @@ Regenerates the PDF file via Power Automate when clicked
 ******* 
 
 ## Flows
-There are six flows in this solution.  They are designed to run sequentially (hence the numbering).   
+There are six flows in this solution.  Most are designed to run sequentially (hence the numbering).   
 [▲Top](#contents)
-### 01 - SPO - When Audio File Uploaded to SPO - Copy to Azure Blob
-This flow is kicked off when the user uploads/attaches a file to the SharePoint list via the Power App.  
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/0db99ce3-b1bc-4465-aef9-d32b148f1d82)
+### 01 - Power Apps - Upload to Azure Blob
+Flow is started when user click Upload button in canvas app.  
+![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/06e337aa-0ad7-4047-961a-3a99162aef71)
 
-Note: SharePoint was used due a current limitation with the Azure Blob Storage connector in GCC-High (as of 3/20/24).  I recommend connecting directly to Azure Blob Storage from the canvas app if possible
+_Note there is a parellel branch in this flow. This allows the flow to return a value to the app and effectively end the flow while it continues to execute the child flows in the other branch._ 
 
 Here's a detailed breakdown of each action:
-- **When an item is created**: Monitors the SharePoint list for new items
-- **Get attachments**: Retrieves all attachments for a particular item
-- **Apply to each**: Loops through each attachment. Note: the app only allows for one upload at a time, but if you increase that limit, this flow will work
-  - **Get attachment content**: Retrieves the binary content for the attached file (i.e. audio file)
-  - **Create blob (V2)**: Creates a new blob in the specified container
-    - _Note: You must have an Azure Storage account and container to use this (see [Prerequistes](transcript-demo-power%2Bazure#prerequisites))_
+- **Power Apps (V2)*: Triggered by user in canvas app. Passes two parameters from app:
+  - **Total Speakers**: Total number of speakers in audio file. Used by Azure Speech to Text services for speaker diarization
+  - **File Content**:  Actual audio file. Note: current limitation of 100 Mb
+- ** Create blob (V2)**: Uploads file passed from app.  Parameters include:
+  - **Storage account name**: Uses Azure Blob credentials (set on import). _Note: You must have an Azure Storage account and container to use this (see [Prerequistes](transcript-demo-power%2Bazure#prerequisites))_
+  - **Folder Path**: Uses environment variable (set on import) to point to the destination folder
+  - **Blob name**: Uses guid() + file name (from trigger) to generate a unique file name every time
+  - **Blob content**: Actual content of file
+- **Response**: Returns the Body of the Create blob action to the canvas app.
+- **Run a Child Flow - Create Transcript**:  See below for more details
+    
 
 [▲Top](#contents)
-### 02 - Azure - When Audio File Created in Blob Storage - Create Transcript  
-Master flow that is triggered when a file is uploaded to the Azure Blob storage container. Then it transcribes the audio file (via Azure Speech Services) and then loads that transcript into Dataverse and optionally, removes the source audio from the SP list.
+### 02 -Child Flow - Create Transcript  
+Master flow that is triggered from the 01 - Power Apps - Upload to Azure Blob flow. Then it transcribes the audio file (via Azure Speech Services) and then calls several more child flows
 
 For more on the Azure Batch Speech to Text transcription click [here]([url](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/batch-transcription)): 
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/2a9d5968-8aa0-472e-b2b5-43dab942c610)
 
 Here's breakdown of each action:
-- **When a blob is added or modified (properties only) (V2)**: Flow is triggered when a new blob is created in the specified container
-  - In this demo, the container is called "speech-to-text-demo" **You will need to update this trigger with your storage account and container**
+- **Manuall trigger a flow **: This child low is triggered by 01 - Power Apps - Upload to Azure Blob flow.  It has three parameters:
+  - **TotalSpeakers**: How many speakers should Azure Speech to Text services expect (for diarization)
+  - **BlobPath**: Path of the blob uploaded in the 01 - Power Apps - Upload to Azure Blob flow
+  - **FileName**: Name of the file uploaded in the 01 - Power Apps - Upload to Azure Blob flow 
+- **Intialize variable inMinumSpeakers**:  Set an integer variable to 1 less than the TotalSpeakers value passed to the flow
 - **Create SAS URI by path (V2)**: Creates a Shared Access String URI path with read-only permissions set to expire 1 year later.  
   ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/932db720-558c-4953-9c85-e3f828eecd8c)  
-
-- **HTTP**: Due to limitations at the time of this writing, the solution leverages the [Azure Batch Speech to Text REST API](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/rest-speech-to-text#transcriptions) instead of the Azure Batch Speech to Text connector. I recommend re-factoring if/when possible to use OOTB connector when possible.
+- **HTTP**: Due to limitations at the time of this writing, the solution leverages the [Azure Batch Speech to Text REST API](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/rest-speech-to-text#transcriptions) instead of the Azure Batch Speech to Text connector. I recommend re-factoring to use OOTB connector when possible.
    
   ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/6a2b2f84-c9c6-41b9-be0f-7baf803e0ef4)  
    Here are the parameters passed:  
@@ -1407,18 +1414,19 @@ Here's breakdown of each action:
           "profanityFilterMode": "None",
           "diarization": {
             "speakers": {
-              "minCount": 1,
-              "maxCount": 4
+                        "minCount": "@variables('intMinimumSpeakers')",
+                        "maxCount": "@triggerBody()['number']"
             }
           }
         },
         "contentUrls": [
-          "@{triggerBody()['text']}"
+           "@{outputs('Create_SAS_URI_by_path_(V2)')?['body/WebUrl']}"
         ],
-        "displayName": "test-@{utcNow()}",
+        "displayName": "transcript-@{utcNow()}"
         "locale": "en-US"
       }
       ```
+      
       There are more options you can pass to the REST API. See full documentation [here](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/rest-speech-to-text#transcriptions)
 - **Parse JSON**: Parses the body (output) of the HTTP action.
   ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/08198429-189a-4b8c-b8a2-3b878a4199f9)
@@ -1513,17 +1521,26 @@ Here's breakdown of each action:
     ```
   
 - **Run a Child Flow - Loop Until Complete**: Calls the child flow () and passes the path (URL) of the transcriptions (from the previous child flow)
+- **If Transcript Failed** - Checks if the transcription was successful or not. If it failed, stop the flow and return error.
 - **Run a Child Flow - Get Transcript Results**: Calls the child flow () and passes the path of the transcription files (from previous child flow)
+
+From here, there is a parallel branch to allow for two child flows to run concurrently. In one branch:
+- **Run a child flow - Summarize Transcript**: Passes the FullTranscript text to the child flow.
+  - **FullTranscript**: ```"@first(body('Run_a_Child_Flow_-_Get_Transcript_Results')?['combinedRecognizedPhrases'])?['display']"```
+In the other branch, the following actions are called:
+- **Get Blob Metadata using path (v2)**: Gets the metadata associated with the blob stored in the storage account. Needed to get file size.  Has two parameters:
+  - **Storage account**: Uses Azure Blob credentials (set on import)
+  - **Blob path**: ```@triggerBody()['text']```
 - **Run a Child Flow - Parse Transcript and Load into Dataverse**: Calls the child flow () and passes the following parameters:  
   ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/3547c0d4-aa1a-4f60-9f27-fc859b26b7f2)
-
   - **Transcript**: ```string(outputs('Run_a_Child_Flow_-_Get_Transcript_Results')?['Body'])```
-  - **File Name** ```@{triggerOutputs()?['body/DisplayName']}```
-  - **File Size**: ```@{triggerOutputs()?['body/Size']}```
-- **Get Items**: Get all items from the SharePoint list
-  - _Note: this step is optional and will not be necessary if you write directly to Azure Blob from the canvas app (recommended)_
-- **Apply to each**: Loop through each item in the SharePoint List (should only be 1 item)
-  - **Delete item**: Delete each SharePoint list item
+  - **File Name** ```@{triggerBody()['text_1']}```
+  - **File Size**: ```@{outputs('Get_Blob_Metadata_using_path_(V2)')?['body/Size']}```
+The two branches merge back and the flow continues:
+-  **Update a row - Transcript Summary**:  Stores the AI Builder generated summary in the Transcript record
+-  **Run a child flow - Create Transcript Document**: Passes the transcript Id to the child flow
+  - **TranscriptId":  ```@{body('Run_a_Child_Flow_-_Parse_Transcript_and_Load_into_Dataverse')?['demo_transcriptid']}```
+- **Response**: Child flows require a repsonse action. No data is passed back to the parent flow
     
 [▲Top](#contents)
 

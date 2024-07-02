@@ -243,6 +243,7 @@ It has several properties customized:
   ```
 - **Width**: ```Parent.Width - 60 ```
   
+[↑ Back](#controls)
 
 ##### inpTotalSpeakersMain
 _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)_
@@ -253,7 +254,7 @@ Number input field that indicates how many speakers should Azure Speech to Text 
   - Azure Speech To Text services has a limit of 36 speakers for diarization
 - **Min**: ```1```
 - **Value**: ```0``` 
-
+[↑ Back](#controls)
 
 ##### btnUploadFile_Main 
 _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_1_1_Horiz)_
@@ -344,6 +345,7 @@ Used to upload the selected file to Azure Blob Storage (via Power Automate flow)
   )
    ```
 - **Text**: ```"Upload"```
+[↑ Back](#controls)
 
 ##### btnCancelUpload_Main
 _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_1_1_Horiz)_
@@ -357,6 +359,7 @@ Resets the controls (attFileToUploadMain, inpTotalSpeakersMain)
   Reset(inpTotalSpeakersMain)
   ```
 - **Text**: ```"Cancel"```
+[↑ Back](#controls)
 
 ##### galTranscripts_Main
 _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert)_
@@ -367,6 +370,7 @@ Displays **all** the available transcripts in the Transcripts table. Some proper
 - **LayoutMinHeight**: ```284```
 - **TemplateSize**:```274```
 - **Width**: ```Parent.Width-Parent.PaddingLeft-Parent.PaddingRight-Parent.LayoutGap```
+[↑ Back](#controls)
   
 ##### btnEditTranscript_Main
 _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert/galTranscripts_Main/cont_Main_2_2_2_1_Horiz)_

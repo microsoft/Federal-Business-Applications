@@ -125,6 +125,16 @@ In addition to setting variables, two controls are reset (see below for more on 
   
   <a name="main-screen-controls">
 #### Controls
+| **Name** | **Description** |
+| :-----------        | :----------            |
+| [attFileToUpload](#attFileToUpload) | Allows user to upload a file |
+| [inpTotalSpeakersMain](#inpTotalSpeakersMain) | Number input field that indicates how many speakers should Azure Speech to Text services look for |
+| [btnUploadFile_Main](#btnUploadFile_Main) | Used to upload the selected file to Azure Blob Storage (via Power Automate flow) |
+| [btnCancelUpload_Main](#btnCancelUpload_Main) | Resets the controls (attFileToUploadMain, inpTotalSpeakersMain) |
+| [galTranscripts_Main](#galTranscripts_Main) | Displays **all** the available transcripts in the Transcripts table |
+| [btnEditTranscript_Main](#btnEditTranscript_Main) | Selects the transcript and opens it in the [Transcript Demo Screen](#TranscriptDemoScreen) |
+
+
 ##### attFileToUpload:  
 This control allows user to upload a file. The control validates file size and file format:
 - The API has a limit of 100 Mb, so the control is limited to 100 Mb.
@@ -140,6 +150,7 @@ This control allows user to upload a file. The control validates file size and f
   - WEBM
   - M4A
   - SPEEX
+    
 It has several properties customized:
 - **AccessibleLabel**: ```"File to attach (upload) and transcribe"```
 - **AddAttachmentText**: ```"Select audio file (100 MB Max)"```
@@ -200,8 +211,7 @@ It has several properties customized:
   )
   ```
 - **Width**: ```Parent.Width - 60 ```
-
-
+  
 
 ##### inpTotalSpeakersMain
 Number input field that indicates how many speakers should Azure Speech to Text services look for.
@@ -210,6 +220,7 @@ Number input field that indicates how many speakers should Azure Speech to Text 
   - Azure Speech To Text services has a limit of 36 speakers for diarization
 - **Min**: ```1```
 - **Value**: ```0``` 
+
 
 ##### btnUploadFile_Main 
 Used to upload the selected file to Azure Blob Storage (via Power Automate flow)

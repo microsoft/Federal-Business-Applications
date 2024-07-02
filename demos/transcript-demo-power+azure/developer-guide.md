@@ -440,6 +440,7 @@ _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert/galTranscripts_Main/
    ```
 - **Text**: ```Details```
 - **Width**:```100```
+[↑ Back](#controls)
 
 ##### btnRefreshTranscript_Main
 _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_2_1_Horiz/cont_Main_2_2_2_Vert)_
@@ -538,6 +539,7 @@ Displays the PDF version of the transcript. Only visible when Transcript File is
 - **x**:```contMainBodyTranscriptHoriz.X+contMainBodyTranscriptHoriz.RadiusBottomLeft```
 - **y**:```contMainBodyTranscriptHoriz.Y+contMainBodyTranscriptHoriz.RadiusBottomLeft```
 - **Zoom**:```Zoom.FitHeight```
+[↑ Back](#controls-1)
 
 ##### timerTranscript   
 
@@ -570,6 +572,7 @@ Displays the PDF version of the transcript. Only visible when Transcript File is
 - **Repeat**: ```true```
 - **Start**: ```glbStartTimer```
 - **Visible**: ```false```
+[↑ Back](#controls-1)
 
 ##### txtSummaryTranscript 
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz)_
@@ -582,6 +585,7 @@ Used to display and edit AI generated summary of transcript
 - ****:```'TextInputCanvas.Mode'.Multiline```
 - **Value**:```LookUp(Transcripts,Transcript=glbSelectedTranscript.Transcript).Summary```
 - **Width**:```Parent.Width-Parent.PaddingLeft-Parent.PaddingRight```
+[↑ Back](#controls-1)
 
 ##### audRecordingPlayback  
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert)_  
@@ -606,6 +610,7 @@ Used to playback the original audio (stored in Azure Blob Storage)
  - **OnStart**: ```Set(glbStartTimer,true);```
  - **StartTime**: ```glbJumpToTime```
  - **Width**: ```Parent.Width```
+[↑ Back](#controls-1)
 
 ##### btnEdit_Transcript
 _(cont_Transcript_4_Vert/cont_Transcript_4_2_Horiz)_  
@@ -626,6 +631,7 @@ _Note: only visible when **NOT** in edit mode and glbSelectedTranscript is NOT b
   ```
 - **Text**:```"Edit"```
 - **Visible** ```Not(glbMode=DisplayMode.Edit) And !IsBlank(glbSelectedTranscript)```
+[↑ Back](#controls-1)
 
 ##### btnSave_Transcript
 _(cont_Transcript_4_Vert/cont_Transcript_4_2_Horiz)_     
@@ -691,6 +697,7 @@ _Note: only visible when in edit mode_
   ```
 - **Text**: ```"Save"```
 - **Visible**: ```glbMode=DisplayMode.Edit```
+[↑ Back](#controls-1)
 
 ##### btnCancel_Transcript
 _(cont_Transcript_4_Vert/cont_Transcript_4_2_Horiz)_      
@@ -727,6 +734,7 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
   glbCurrentPhrase.Display
   ```
 - **Width**: ```Parent.Width```
+[↑ Back](#controls-1)
 
 ##### lblCurrentSpeaker_Transcript
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert/cont_Transcript_4_3_1_1_2_1_Horiz)_  
@@ -741,6 +749,7 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
   )
   '''
 - **Visible**: ```!IsBlank(glbCurrentPhrase)```
+[↑ Back](#controls-1)
 
 #####  drpSelectSpeaker_Transcript
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert/cont_Transcript_4_3_1_1_2_1_Horiz)_   
@@ -751,6 +760,7 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
   - _Only returns speakers already related to current transcript._
 - **Visible**: ```glbMode=DisplayMode.Edit```
   - _Only visible when app is in Edit mode_    
+[↑ Back](#controls-1)
 
 ##### icoClearSelectSpeaker_Transcript
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert/cont_Transcript_4_3_1_1_2_1_Horiz)_  
@@ -768,6 +778,7 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
 - **PaddingBottom**, **PaddingRight**, **PaddingLeft**: ```Self.PaddingTop```
 - **Visible**: ```!IsBlank(drpSelectSpeaker_Transcript.Selected)```
 - **Width**: ```Self.Height```
+[↑ Back](#controls-1)
 
 #####  btnNewSpeaker_Transcript
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert/cont_Transcript_4_3_1_1_2_1_Horiz)_  
@@ -794,6 +805,7 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
 - **OnSelect**: ```Set(glbJumpToTime,glbCurrentPhrase.demo_offsetinseconds)```
 - **Text**: ```"↦"1```
 - **Visible**: ```glbMode=DisplayMode.View```
+[↑ Back](#controls-1)
 
 #####  lblInPoint_Transcript
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)_  
@@ -832,6 +844,7 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
     ```
 - **Visible**: ```!IsBlank(glbCurrentPhrase)```
 - **Width**: ```120```
+[↑ Back](#controls-1)
 
 #####  lblOutpoint_Transcript
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)_  
@@ -871,6 +884,7 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
   ```
 - **Visible**: ```!IsBlank(glbCurrentPhrase)```
 - **Width**: ```120```
+[↑ Back](#controls-1)
 
 #####  lblJumpToTime_Transcript
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)_    
@@ -898,6 +912,8 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
     "Jump To "
   )
   ```
+[↑ Back](#controls-1)
+
 #####  txtJumpToTime_Transcript
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)_   
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d847eef6-59ae-4fa9-bcd6-d2b8efd336d1)  
@@ -974,6 +990,7 @@ Allows user to type time code (HH:MM:SS) to jump to part of recording (and trans
   )
   ```
 - **Width**: ```100```
+[↑ Back](#controls-1)
 
 #####  cont_Transcript_3_Vert
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/edbb1d88-5c0b-46b0-9255-ef5f0dceb74e)
@@ -988,6 +1005,7 @@ Only visible when user clicks + New Speaker button (btnNewSpeaker_Transcript)
 - **Visible**: ```glbShowPopUpAddSpeaker```
 - **X**: ```contMainBodyTranscriptHoriz.Width+contMainBodyTranscriptHoriz.X-Self.Width```
 - **Y**: ```contMainBodyTranscriptHoriz.Y+contSpeakerTranscriptHoriz.Height+5```
+[↑ Back](#controls-1)
   
 ##### frmAddSpeaker
 _(cont_Transcript_3_Vert)_  
@@ -1002,6 +1020,7 @@ Submits new speaker name to Speakers table
   );
   ResetForm(frmAddSpeaker)
   ```
+[↑ Back](#controls-1)
 
 ##### btnAddSpeakerSave
 _(cont_Transcript_3_Vert/cont_Transcript_3_Vert/cont_Transcript_3_1_Horiz)_  
@@ -1018,6 +1037,7 @@ _(cont_Transcript_3_Vert/cont_Transcript_3_Vert/cont_Transcript_3_1_Horiz)_
   ```
 - **OnSelect**: ```SubmitForm(frmAddSpeaker);```
 - **Text**: ```"Save"```
+[↑ Back](#controls-1)
 
 ##### btnAddSpeakerCancel
 _(cont_Transcript_3_Vert/cont_Transcript_3_Vert/cont_Transcript_3_1_Horiz)_  
@@ -1033,7 +1053,8 @@ _(cont_Transcript_3_Vert/cont_Transcript_3_Vert/cont_Transcript_3_1_Horiz)_
   ResetForm(frmAddSpeaker)
   ```
 - **Text**: ```"Cancel"```
-- 
+[↑ Back](#controls-1)
+
 ##### cont_Transcript_2_Vert
 Full screen container that has an opqaue fill and is only visible when **gblShowPopUpUpdateAllSpeakers** = **true**
 - **Fill**: ```RGBA(255, 255, 255, 0.65)```
@@ -1042,7 +1063,7 @@ Full screen container that has an opqaue fill and is only visible when **gblShow
 - **LayoutJustifyContent**: ```LayoutJustifyContent.Center```
 - **Visible**: ```gblShowPopUpUpdateAllSpeakers```
 - **Width**: ```Parent.Width```
-
+[↑ Back](#controls-1)
 
 ##### cont_Transcript_2_1_Vert
 _(cont_Transcript_2_Vert)_  
@@ -1053,6 +1074,7 @@ _(cont_Transcript_2_Vert)_
 - **LayoutAlignItems**: ```LayoutAlignItems.Center```
 - **LayoutJustifyContent**: ```LayoutJustifyContent.Center```
 - **Border Radius** (**RadiusBottomLeft**, **RadiusBottomRight**, **RadiusTopLeft**, **RadiusTopRight**): ```25```
+[↑ Back](#controls-1)
 
 ##### btnPopUpUpdateAllSpeakersYes 
 _(cont_Transcript_2_Vert/cont_Transcript_2_1_Vert/cont_Transcript_2_1_1_Horiz)_
@@ -1081,6 +1103,7 @@ _(cont_Transcript_2_Vert/cont_Transcript_2_1_Vert/cont_Transcript_2_1_1_Horiz)_
   Select(btnSaveHidden);
   ```
 - **Text**: ```"Yes"```
+[↑ Back](#controls-1)
 
 ##### btnPopUpUpdateAllSpeakersNo
 _(cont_Transcript_2_Vert/cont_Transcript_2_1_Vert/cont_Transcript_2_1_1_Horiz)_
@@ -1104,6 +1127,7 @@ _(cont_Transcript_2_Vert/cont_Transcript_2_1_Vert/cont_Transcript_2_1_1_Horiz)_
   Select(btnSaveHidden);
   ```
 - **Text**: ```"No"```
+[↑ Back](#controls-1)
 
 ##### btnSaveHidden  
 _(cont_Transcript_2_Vert/cont_Transcript_2_1_Vert/cont_Transcript_2_1_1_Horiz)_
@@ -1214,11 +1238,13 @@ This button is hidden, but is called by various other buttons.  This is one tech
   );
   ```
 - **Visible**: ```false```
-- 
+[↑ Back](#controls-1)
+
 ##### shpFileTranscript
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_2_Vert)_
 Used to properly size the [pdfFileTranscript](#pdfFileTranscript).  
 **FillPortions**:```1```  
+[↑ Back](#controls-1)
 
 ##### btnDownloadTranscriptFile
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_2_Vert/cont_Transcript_4_3_2_1_Horiz)_
@@ -1239,6 +1265,7 @@ When user clicks this button, it uses the Dataverse Web API to get the transcrip
   ```
 - **Text**:```"Download"```
 - **Width**:```120```
+[↑ Back](#controls-1)
 
 ##### btnRefreshTranscriptFile
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_2_Vert/cont_Transcript_4_3_2_1_Horiz)_
@@ -1286,7 +1313,8 @@ Regenerates the PDF file via Power Automate when clicked
   ```
 - **Text**:```"Regenerate PDF"```
 - **Width**:```200```
-  
+[↑ Back](#controls-1)
+
 [^Top](#contents)
 
 ******* 

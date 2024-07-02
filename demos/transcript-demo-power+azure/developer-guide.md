@@ -1391,7 +1391,8 @@ Here's breakdown of each action:
 
 - **HTTP**: Due to limitations at the time of this writing, the solution leverages the [Azure Batch Speech to Text REST API](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/rest-speech-to-text#transcriptions) instead of the Azure Batch Speech to Text connector. I recommend re-factoring to use OOTB connector when possible.
    
-  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/6a2b2f84-c9c6-41b9-be0f-7baf803e0ef4)  
+ ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/0543949e-40cb-4b80-af3e-b50c5c2718e3)
+
    Here are the parameters passed:  
   - **Method**: ```POST```
   - **URI**: ```https://usgovvirginia.api.cognitive.microsoft.us/speechtotext/v3.1/transcriptions```

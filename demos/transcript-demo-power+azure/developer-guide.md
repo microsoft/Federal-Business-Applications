@@ -147,20 +147,12 @@ In addition to setting variables, two controls are reset (see below for more on 
 | cont_Main_2_2_2_1_1_Vert | lblTranscriptFileName_Main | |
 | cont_Main_2_2_2_1_1_Vert | lblTranscriptDetails_Main | |
 | cont_Main_2_2_2_1_1_Vert | lblTranscriptSummary | |
-| cont_Main_2_2_2_1_Horiz | btnEditTranscript_Main | |
-| galTranscripts_Main | btnRefreshTranscript_Main | |
+| cont_Main_2_2_2_1_Horiz | [btnEditTranscript_Main](#btnEditTranscript_Main) | Selects the transcript and opens it in the [Transcript Demo Screen](#transcript-demo-screen) |
+| galTranscripts_Main | [btnRefreshTranscript_Main](#btnRefreshTranscript_Main)| Refreshes the **Transcripts** table |
 | cont_Main_2_2_Horiz | cont_Main_2_2_3_Vert | |
 | cont_Main_2_2_3_Vert | htmlSuccessMain | |
 | cont_Main_2_2_3_Vert | btnBackSuccessMain | |
 | cont_Main_2_2_Horiz | shpSpacerRightMain | |
-
-
-
-
-
-
-| [btnEditTranscript_Main](#btnEditTranscript_Main) | Selects the transcript and opens it in the [Transcript Demo Screen](#transcript-demo-screen) |
-| [btnRefreshTranscript_Main](#btnRefreshTranscript_Main)| Refreshes the **Transcripts** table |
 
 **_Many controls are located inside container(s). The path/location will be indicated in paranthesis._**  
 

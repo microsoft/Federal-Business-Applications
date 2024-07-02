@@ -434,8 +434,8 @@ All controls (except two) are stored in horizontal and vertical containers to al
 | :-----------   | :-----------   |
 | **contSpinnerTranscriptBg** | Contains the loading spinner and is only visible when **glbShowSpinner** = true  |
 | **pdfFileTranscript** | Displays the PDF version of the transcript. Only visible when Transcript File is attached to record and the **Trancript (PDF)** tab is selected |
-| **contMainTranscriptVert** | Contains the main UI for this screen including playback and edit controls |
 | **[timerTranscript](#timerTranscript)** | Used to update variables based on the playhead of the audio control (**audRecordingPlayback**). Some of the properties have been customized |
+| **contMainTranscriptVert** | Contains the main UI for this screen including playback and edit controls |
 | **[txtSummaryTranscript](#txtSummaryTranscript)** | Used to display and edit AI generated summary of transcript|
 | **[audRecordingPlayback](#audRecordingPlayback)** | Used to playback the original audio (stored in Azure Blob Storage) |
 | **[btnEdit_Transcript](#btnEdit_Transcript)** | Used to put screen into edit mode |
@@ -460,6 +460,25 @@ All controls (except two) are stored in horizontal and vertical containers to al
 | **[btnPopUpUpdateAllSpeakersYes](#btnPopUpUpdateAllSpeakersYes)** | |
 | **[btnPopUpUpdateAllSpeakersNo](#btnPopUpUpdateAllSpeakersNo)** | |
 | **[btnSaveHidden](#btnSaveHidden)** | This button is hidden, but is called by various other buttons. This is one technique to create reusable code/functions in Power Apps |
+
+##### pdfFileTranscript
+Displays the PDF version of the transcript. Only visible when Transcript File is attached to record and the Trancript (PDF) tab is selected
+
+- **Document**: ```LookUp(Transcripts,Transcript=glbSelectedTranscript.Transcript).'Transcript File'.Value```
+- **Height**:```shpFileTranscript.Height```
+- **Visible**: Only displays when selected transcript has PDF attached and "Transcript (PDF)" tab is selected
+    ```
+  !IsBlank(
+      LookUp(
+          Transcripts,
+          Transcript = glbSelectedTranscript.Transcript
+      ).'Transcript File'.Value
+  ) And tabMainTranscript.Selected.Value = "Transcript (PDF)"
+    ```
+- **Width**:```contFileTranscript.Width-contFileTranscript.RadiusBottomRight*2```
+- **x**:```contMainBodyTranscriptHoriz.X+contMainBodyTranscriptHoriz.RadiusBottomLeft```
+- **y**:```contMainBodyTranscriptHoriz.Y+contMainBodyTranscriptHoriz.RadiusBottomLeft```
+- **Zoom**:```Zoom.FitHeight```
 
 ##### timerTranscript   
 

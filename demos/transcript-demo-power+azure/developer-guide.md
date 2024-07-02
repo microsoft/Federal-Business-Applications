@@ -89,7 +89,7 @@ Set to off to allow for responsive resizing. Recommend if different form factors
 Set to on to allow for modern controls/themes in the app.  Note that some modern controls are in GA and others are still in preview at this time.   
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/608b1497-841b-4e9b-bbd6-79c6b5c062ce)
 
-[^Top](#contents)
+[▲Top](#contents)
 
 ### Screens
 The canvas app has two screens: 
@@ -100,7 +100,7 @@ Both screens use containers to help control the flow of the controls when resizi
 
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/1ba43b2a-0c9e-4413-a5f2-f9153b7716f4)
 
-[^Top](#contents)
+[▲Top](#contents)
 
 ### Main Screen
 This screen is used to upload audio files and select transcripts to view/edit. 
@@ -162,7 +162,7 @@ In addition to setting variables, two controls are reset (see below for more on 
 
 **_Many controls are located inside container(s). The path/location will be indicated in paranthesis._**  
 
-[^Top](#contents)
+[▲Top](#contents)
 
 ##### attFileToUpload:  
 _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)_
@@ -243,7 +243,7 @@ It has several properties customized:
   ```
 - **Width**: ```Parent.Width - 60 ```
   
-[↑ Back](#controls)
+[▲ Back](#controls)
 
 ##### inpTotalSpeakersMain
 _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)_
@@ -254,7 +254,8 @@ Number input field that indicates how many speakers should Azure Speech to Text 
   - Azure Speech To Text services has a limit of 36 speakers for diarization
 - **Min**: ```1```
 - **Value**: ```0``` 
-[↑ Back](#controls)
+
+[▲ Back](#controls)
 
 ##### btnUploadFile_Main 
 _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_1_1_Horiz)_
@@ -345,7 +346,8 @@ Used to upload the selected file to Azure Blob Storage (via Power Automate flow)
   )
    ```
 - **Text**: ```"Upload"```
-[↑ Back](#controls)
+
+[▲ Back](#controls)
 
 ##### btnCancelUpload_Main
 _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_1_1_Horiz)_
@@ -359,7 +361,8 @@ Resets the controls (attFileToUploadMain, inpTotalSpeakersMain)
   Reset(inpTotalSpeakersMain)
   ```
 - **Text**: ```"Cancel"```
-[↑ Back](#controls)
+
+[▲ Back](#controls)
 
 ##### galTranscripts_Main
 _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert)_
@@ -370,7 +373,8 @@ Displays **all** the available transcripts in the Transcripts table. Some proper
 - **LayoutMinHeight**: ```284```
 - **TemplateSize**:```274```
 - **Width**: ```Parent.Width-Parent.PaddingLeft-Parent.PaddingRight-Parent.LayoutGap```
-[↑ Back](#controls)
+
+[▲ Back](#controls)
   
 ##### btnEditTranscript_Main
 _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert/galTranscripts_Main/cont_Main_2_2_2_1_Horiz)_
@@ -440,7 +444,8 @@ _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert/galTranscripts_Main/
    ```
 - **Text**: ```Details```
 - **Width**:```100```
-[↑ Back](#controls)
+
+[▲ Back](#controls)
 
 ##### btnRefreshTranscript_Main
 _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_2_1_Horiz/cont_Main_2_2_2_Vert)_
@@ -453,7 +458,7 @@ Refreshes the **Transcripts** table
 - **Text**:```"Refresh"```
 - **OnSelect**:```Refresh(Transcripts)```
 
-[^Top](#contents)
+[▲Top](#contents)
 
 ---------
 
@@ -539,7 +544,8 @@ Displays the PDF version of the transcript. Only visible when Transcript File is
 - **x**:```contMainBodyTranscriptHoriz.X+contMainBodyTranscriptHoriz.RadiusBottomLeft```
 - **y**:```contMainBodyTranscriptHoriz.Y+contMainBodyTranscriptHoriz.RadiusBottomLeft```
 - **Zoom**:```Zoom.FitHeight```
-[↑ Back](#controls-1)
+  
+[▲ Back](#controls-1)
 
 ##### timerTranscript   
 
@@ -572,7 +578,8 @@ Displays the PDF version of the transcript. Only visible when Transcript File is
 - **Repeat**: ```true```
 - **Start**: ```glbStartTimer```
 - **Visible**: ```false```
-[↑ Back](#controls-1)
+  
+[▲ Back](#controls-1)
 
 ##### txtSummaryTranscript 
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz)_
@@ -585,7 +592,8 @@ Used to display and edit AI generated summary of transcript
 - ****:```'TextInputCanvas.Mode'.Multiline```
 - **Value**:```LookUp(Transcripts,Transcript=glbSelectedTranscript.Transcript).Summary```
 - **Width**:```Parent.Width-Parent.PaddingLeft-Parent.PaddingRight```
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 ##### audRecordingPlayback  
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert)_  
@@ -610,7 +618,8 @@ Used to playback the original audio (stored in Azure Blob Storage)
  - **OnStart**: ```Set(glbStartTimer,true);```
  - **StartTime**: ```glbJumpToTime```
  - **Width**: ```Parent.Width```
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 ##### btnEdit_Transcript
 _(cont_Transcript_4_Vert/cont_Transcript_4_2_Horiz)_  
@@ -631,7 +640,8 @@ _Note: only visible when **NOT** in edit mode and glbSelectedTranscript is NOT b
   ```
 - **Text**:```"Edit"```
 - **Visible** ```Not(glbMode=DisplayMode.Edit) And !IsBlank(glbSelectedTranscript)```
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 ##### btnSave_Transcript
 _(cont_Transcript_4_Vert/cont_Transcript_4_2_Horiz)_     
@@ -697,7 +707,8 @@ _Note: only visible when in edit mode_
   ```
 - **Text**: ```"Save"```
 - **Visible**: ```glbMode=DisplayMode.Edit```
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 ##### btnCancel_Transcript
 _(cont_Transcript_4_Vert/cont_Transcript_4_2_Horiz)_      
@@ -734,7 +745,8 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
   glbCurrentPhrase.Display
   ```
 - **Width**: ```Parent.Width```
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 ##### lblCurrentSpeaker_Transcript
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert/cont_Transcript_4_3_1_1_2_1_Horiz)_  
@@ -749,7 +761,8 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
   )
   '''
 - **Visible**: ```!IsBlank(glbCurrentPhrase)```
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 #####  drpSelectSpeaker_Transcript
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert/cont_Transcript_4_3_1_1_2_1_Horiz)_   
@@ -760,7 +773,8 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
   - _Only returns speakers already related to current transcript._
 - **Visible**: ```glbMode=DisplayMode.Edit```
   - _Only visible when app is in Edit mode_    
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 ##### icoClearSelectSpeaker_Transcript
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert/cont_Transcript_4_3_1_1_2_1_Horiz)_  
@@ -778,7 +792,8 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
 - **PaddingBottom**, **PaddingRight**, **PaddingLeft**: ```Self.PaddingTop```
 - **Visible**: ```!IsBlank(drpSelectSpeaker_Transcript.Selected)```
 - **Width**: ```Self.Height```
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 #####  btnNewSpeaker_Transcript
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert/cont_Transcript_4_3_1_1_2_1_Horiz)_  
@@ -805,7 +820,8 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
 - **OnSelect**: ```Set(glbJumpToTime,glbCurrentPhrase.demo_offsetinseconds)```
 - **Text**: ```"↦"1```
 - **Visible**: ```glbMode=DisplayMode.View```
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 #####  lblInPoint_Transcript
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)_  
@@ -844,7 +860,8 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
     ```
 - **Visible**: ```!IsBlank(glbCurrentPhrase)```
 - **Width**: ```120```
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 #####  lblOutpoint_Transcript
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)_  
@@ -884,7 +901,8 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
   ```
 - **Visible**: ```!IsBlank(glbCurrentPhrase)```
 - **Width**: ```120```
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 #####  lblJumpToTime_Transcript
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)_    
@@ -912,7 +930,8 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
     "Jump To "
   )
   ```
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 #####  txtJumpToTime_Transcript
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)_   
@@ -990,7 +1009,8 @@ Allows user to type time code (HH:MM:SS) to jump to part of recording (and trans
   )
   ```
 - **Width**: ```100```
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 #####  cont_Transcript_3_Vert
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/edbb1d88-5c0b-46b0-9255-ef5f0dceb74e)
@@ -1005,7 +1025,8 @@ Only visible when user clicks + New Speaker button (btnNewSpeaker_Transcript)
 - **Visible**: ```glbShowPopUpAddSpeaker```
 - **X**: ```contMainBodyTranscriptHoriz.Width+contMainBodyTranscriptHoriz.X-Self.Width```
 - **Y**: ```contMainBodyTranscriptHoriz.Y+contSpeakerTranscriptHoriz.Height+5```
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
   
 ##### frmAddSpeaker
 _(cont_Transcript_3_Vert)_  
@@ -1020,7 +1041,8 @@ Submits new speaker name to Speakers table
   );
   ResetForm(frmAddSpeaker)
   ```
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 ##### btnAddSpeakerSave
 _(cont_Transcript_3_Vert/cont_Transcript_3_Vert/cont_Transcript_3_1_Horiz)_  
@@ -1037,7 +1059,8 @@ _(cont_Transcript_3_Vert/cont_Transcript_3_Vert/cont_Transcript_3_1_Horiz)_
   ```
 - **OnSelect**: ```SubmitForm(frmAddSpeaker);```
 - **Text**: ```"Save"```
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 ##### btnAddSpeakerCancel
 _(cont_Transcript_3_Vert/cont_Transcript_3_Vert/cont_Transcript_3_1_Horiz)_  
@@ -1053,7 +1076,8 @@ _(cont_Transcript_3_Vert/cont_Transcript_3_Vert/cont_Transcript_3_1_Horiz)_
   ResetForm(frmAddSpeaker)
   ```
 - **Text**: ```"Cancel"```
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 ##### cont_Transcript_2_Vert
 Full screen container that has an opqaue fill and is only visible when **gblShowPopUpUpdateAllSpeakers** = **true**
@@ -1063,7 +1087,8 @@ Full screen container that has an opqaue fill and is only visible when **gblShow
 - **LayoutJustifyContent**: ```LayoutJustifyContent.Center```
 - **Visible**: ```gblShowPopUpUpdateAllSpeakers```
 - **Width**: ```Parent.Width```
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 ##### cont_Transcript_2_1_Vert
 _(cont_Transcript_2_Vert)_  
@@ -1074,7 +1099,8 @@ _(cont_Transcript_2_Vert)_
 - **LayoutAlignItems**: ```LayoutAlignItems.Center```
 - **LayoutJustifyContent**: ```LayoutJustifyContent.Center```
 - **Border Radius** (**RadiusBottomLeft**, **RadiusBottomRight**, **RadiusTopLeft**, **RadiusTopRight**): ```25```
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 ##### btnPopUpUpdateAllSpeakersYes 
 _(cont_Transcript_2_Vert/cont_Transcript_2_1_Vert/cont_Transcript_2_1_1_Horiz)_
@@ -1103,7 +1129,8 @@ _(cont_Transcript_2_Vert/cont_Transcript_2_1_Vert/cont_Transcript_2_1_1_Horiz)_
   Select(btnSaveHidden);
   ```
 - **Text**: ```"Yes"```
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 ##### btnPopUpUpdateAllSpeakersNo
 _(cont_Transcript_2_Vert/cont_Transcript_2_1_Vert/cont_Transcript_2_1_1_Horiz)_
@@ -1127,7 +1154,8 @@ _(cont_Transcript_2_Vert/cont_Transcript_2_1_Vert/cont_Transcript_2_1_1_Horiz)_
   Select(btnSaveHidden);
   ```
 - **Text**: ```"No"```
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 ##### btnSaveHidden  
 _(cont_Transcript_2_Vert/cont_Transcript_2_1_Vert/cont_Transcript_2_1_1_Horiz)_
@@ -1238,13 +1266,15 @@ This button is hidden, but is called by various other buttons.  This is one tech
   );
   ```
 - **Visible**: ```false```
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 ##### shpFileTranscript
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_2_Vert)_
 Used to properly size the [pdfFileTranscript](#pdfFileTranscript).  
 **FillPortions**:```1```  
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 ##### btnDownloadTranscriptFile
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_2_Vert/cont_Transcript_4_3_2_1_Horiz)_
@@ -1265,7 +1295,8 @@ When user clicks this button, it uses the Dataverse Web API to get the transcrip
   ```
 - **Text**:```"Download"```
 - **Width**:```120```
-[↑ Back](#controls-1)
+
+[▲ Back](#controls-1)
 
 ##### btnRefreshTranscriptFile
 _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_2_Vert/cont_Transcript_4_3_2_1_Horiz)_
@@ -1313,15 +1344,16 @@ Regenerates the PDF file via Power Automate when clicked
   ```
 - **Text**:```"Regenerate PDF"```
 - **Width**:```200```
-[↑ Back](#controls-1)
 
-[^Top](#contents)
+[▲ Back](#controls-1)
+
+[▲Top](#contents)
 
 ******* 
 
 ## Flows
 There are six flows in this solution.  They are designed to run sequentially (hence the numbering).   
-[^Top](#contents)
+[▲Top](#contents)
 ### 01 - SPO - When Audio File Uploaded to SPO - Copy to Azure Blob
 This flow is kicked off when the user uploads/attaches a file to the SharePoint list via the Power App.  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/0db99ce3-b1bc-4465-aef9-d32b148f1d82)
@@ -1336,7 +1368,7 @@ Here's a detailed breakdown of each action:
   - **Create blob (V2)**: Creates a new blob in the specified container
     - _Note: You must have an Azure Storage account and container to use this (see [Prerequistes](transcript-demo-power%2Bazure#prerequisites))_
 
-[^Top](#contents)
+[▲Top](#contents)
 ### 02 - Azure - When Audio File Created in Blob Storage - Create Transcript  
 Master flow that is triggered when a file is uploaded to the Azure Blob storage container. Then it transcribes the audio file (via Azure Speech Services) and then loads that transcript into Dataverse and optionally, removes the source audio from the SP list.
 
@@ -1493,7 +1525,7 @@ Here's breakdown of each action:
 - **Apply to each**: Loop through each item in the SharePoint List (should only be 1 item)
   - **Delete item**: Delete each SharePoint list item
     
-[^Top](#contents)
+[▲Top](#contents)
 
 ### 02b Child Flow - Loop Until Transcript Complete
 Due to issue/limitation of the [Azure Blob Storage trigger]([url](https://learn.microsoft.com/en-us/connectors/azureblob/)) on file create/update, I had to create a flow that waits for the transcription to complete. Use caution when looping. If possible, re-factor to trigger when transcript file is completed.  
@@ -1631,7 +1663,7 @@ Here's a breakdown of each action:
         -  **Decrement variable  varWait by 1**
 
 
-[^Top](#contents)
+[▲Top](#contents)
 ### 02c Child Flow - Get Transcript Results
 Use [Azure Speech Services REST API](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/rest-speech-to-text#transcriptions) to retrieve the transcription files (report and content) using the Path provided by previous flow. 
 NOTE: Due to issues with OOTB Azure Speech Services connector, I leveraged the HTTP connector to call the Azure Speech Services REST API. I recommend re-factoring to use the OOTB connector if/when possible  
@@ -1835,7 +1867,7 @@ Here is a breakdown of each action:
       }
       ```
 
-[^Top](#contents)
+[▲Top](#contents)
 ### 02d Child Flow - Parse Transcript and Load into Dataverse  
 Parses the transcript file and loads into Dataverse. One record in the Transcripts table for the transcription and records in the Recognized Phrases for each phrase returned by Azure Speech Services
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/17200620-119d-4a0e-8465-371648e26579)
@@ -1937,4 +1969,4 @@ Here is a breakdown of eacha action:
       - _Note: This relates the recognized phrase to it's parent record in the Transcripts table_
 - **Response**: Returns **Status**: ```200``` to parent flow if no issues/errors.
   
-[^Top](#contents)
+[▲Top](#contents)

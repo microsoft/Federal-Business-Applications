@@ -131,6 +131,7 @@ In addition to setting variables, two controls are reset (see below for more on 
 | [btnCancelUpload_Main](#btnCancelUpload_Main) | Resets the controls (attFileToUploadMain, inpTotalSpeakersMain) |
 | [galTranscripts_Main](#galTranscripts_Main) | Displays **all** the available transcripts in the Transcripts table |
 | [btnEditTranscript_Main](#btnEditTranscript_Main) | Selects the transcript and opens it in the [Transcript Demo Screen](#transcript-demo-screen) |
+| [btnRefreshTranscript_Main](#btnRefreshTranscript_Main)| Refreshes the **Transcripts** table |
 
 **_Many controls are located inside container(s). The path/location will be indicated in paranthesis._**  
 
@@ -329,7 +330,7 @@ Resets the controls (attFileToUploadMain, inpTotalSpeakersMain)
 - **Text**: ```"Cancel"```
 
 ##### galTranscripts_Main
-_()_
+_(contAllMainHoriz/contBottomMainHoriz/contSiderbarMainVert)_
 
 Displays **all** the available transcripts in the Transcripts table. Some properties were customized:
 - **AccessibleLabel**: ```"List of all the transcripts"```
@@ -339,7 +340,7 @@ Displays **all** the available transcripts in the Transcripts table. Some proper
 - **Width**: ```Parent.Width-Parent.PaddingLeft-Parent.PaddingRight-Parent.LayoutGap```
   
 ##### btnEditTranscript_Main
-_()_
+_(contAllMainHoriz/contBottomMainHoriz/contSiderbarMainVert/galTranscripts_Main/contTranscriptsHoriz/)_
 
 - **AccessibleLabel**: ```"Click view and edit this transcript"```
 - **Appearance**:```'ButtonCanvas.Appearance'.Secondary```
@@ -406,6 +407,16 @@ _()_
    ```
 - **Text**: ```Details```
 - **Width**:```100```
+
+##### btnRefreshTranscript_Main
+_(contAllMainHoriz/contBottomMainHoriz/contSiderbarMainVert)_
+Refreshes the **Transcripts** table
+- **AccessibleLabel**:```"Refresh the list of transcripts"```
+- **AlignInContainer**:```AlignInContainer.Center```
+- **Appearance**:```'ButtonCanvas.Appearance'.Secondary```
+- **Icon**:```"ArrowClockwise"```
+- **Text**:```"Refresh"```
+- **OnSelect**:```Refresh(Transcripts)```
 
 [^Top](#contents)
 

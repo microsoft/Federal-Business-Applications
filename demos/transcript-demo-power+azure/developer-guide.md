@@ -1395,7 +1395,7 @@ Here's breakdown of each action:
 
    Here are the parameters passed:  
   - **Method**: ```POST```
-  - **URI**: ```https://usgovvirginia.api.cognitive.microsoft.us/speechtotext/v3.1/transcriptions```
+  - **URI**: ```https://XXXXXXX.api.cognitive.microsoft.us/speechtotext/v3.1/transcriptions```
   - **Headers**:
     -   **Content-Type**: ```application/json```
     -   **Ocp-Apim-Subscription-Key**: ```@parameters('Speech To Text Key (demo_SpeechToTextKey)')```

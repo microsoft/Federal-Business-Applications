@@ -477,7 +477,9 @@ All controls (except two) are stored in horizontal and vertical containers to al
 | contPopUpUpdateAllSpeakersButtons | **[btnPopUpUpdateAllSpeakersYes](#btnPopUpUpdateAllSpeakersYes)** | |
 | contPopUpUpdateAllSpeakersButtons | **[btnPopUpUpdateAllSpeakersNo](#btnPopUpUpdateAllSpeakersNo)** | |
 | contPopUpUpdateAllSpeakersButtons | **[btnSaveHidden](#btnSaveHidden)** |  | This button is hidden, but is called by various other buttons. This is one technique to create reusable code/functions in Power Apps |
-| **[txtCurrentPhrase_Transcript](#txtCurrentPhrase_Transcript)** |  | Displays the text of the currently selected phrase |
+| contMainBodyTranscriptVert | contMainSubTranscriptHoriz | |
+| contMainSubTranscriptHoriz | contMainSubTranscriptVert | |
+| contMainSubTranscriptVert | **[txtCurrentPhrase_Transcript](#txtCurrentPhrase_Transcript)** |  Displays the text of the currently selected phrase |
 
 ----------
 

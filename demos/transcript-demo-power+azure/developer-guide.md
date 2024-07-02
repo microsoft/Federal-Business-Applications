@@ -481,16 +481,14 @@ All controls (except two) are stored in horizontal and vertical containers to al
 | - |  **cont_Transcript_4_Vert** | Contains the main UI for this screen including playback and edit controls |
 | cont_Transcript_4_Vert | cont_Transcript_4_1_Horiz | Contains the app header |
 | cont_Transcript_4_1_Horiz | header_Transcript | OOTB Header (modern) control |
-
 | cont_Transcript_4_Vert | cont_Transcript_4_2_Horiz | |
 | cont_Transcript_4_2_Horiz | **[btnEdit_Transcript](#btnEdit_Transcript)** | Used to put screen into edit mode |
 | cont_Transcript_4_2_Horiz | **[btnSave_Transcript](#btnSave_Transcript)** | Used to save changes |
 | cont_Transcript_4_2_Horiz | **[btnCancel_Transcript](#btnCancel_Transcript)** | Resets screen to display mode without saving changes|
 | cont_Transcript_4_Vert | tabMainTranscript | |
 | cont_Transcript_4_Vert | cont_Transcript_4_3_Horiz | |
-
 | cont_Transcript_4_3_Horiz | **[txtSummaryTranscript](#txtSummaryTranscript)** | Used to display and edit AI generated summary of transcript |
-| cont_Transcript_4_3_Horiz | contFileTranscript | |
+| cont_Transcript_4_3_Horiz | cont_Transcript_4_3_2_Vert | |
 | cont_Transcript_4_3_2_Vert | shpFileTranscript | |
 | cont_Transcript_4_3_2_Vert | cont_Transcript_4_3_2_1_Horiz | |
 | cont_Transcript_4_3_2_1_Horiz | btnDownloadTranscriptFile | |
@@ -515,10 +513,9 @@ All controls (except two) are stored in horizontal and vertical containers to al
 | cont_Transcript_4_3_1_2_Horiz | **[lblOutpoint_Transcript:](#lblOutpoint_Transcript)** |  |
 | cont_Transcript_4_3_1_2_Horiz | **[lblJumpToTime_Transcript](#lblJumpToTime_Transcript)** |  |
 | cont_Transcript_4_3_1_2_Horiz | **[txtJumpToTime_Transcript ](#txtJumpToTime_Transcript )** | Allows user to type time code (HH:MM:SS) to jump to part of recording (and transcript) |
-
-| contMainBodyTranscriptVert | contMainSubTranscriptHoriz | |
-| contMainSubTranscriptHoriz | contMainSubTranscriptVert | |
-| contMainSubTranscriptVert | **[txtCurrentPhrase_Transcript](#txtCurrentPhrase_Transcript)** |  Displays the text of the currently selected phrase |
+| cont_Transcript_4_3_1_Vert | cont_Transcript_4_3_1_1_Horiz | |
+| cont_Transcript_4_3_1_1_Horiz | cont_Transcript_4_3_1_1_2_Vert | |
+| cont_Transcript_4_3_1_1_2_Vert | **[txtCurrentPhrase_Transcript](#txtCurrentPhrase_Transcript)** |  Displays the text of the currently selected phrase |
 
 ----------
 

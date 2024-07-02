@@ -125,34 +125,30 @@ In addition to setting variables, two controls are reset (see below for more on 
 #### Controls
 | **Parent** | **Name** | **Description** |
 | :----------- | :---------- | :---------- |
-| - | cont_Main_1_Vert | |
-| cont_Main_1_Vert | cont_Main_1_1_Horiz | |
-| cont_Main_1_1_Horiz | spinner_Main | |
-| - | cont_Main_2_Vert | |
-| cont_Main_2_Vert | cont_Main_2_1_Horiz  | |
-| cont_Main_2_1_Horiz | headerMain | |
-| cont_Main_2_Vert | cont_Main_2_2_Horiz | |
-| cont_Main_2_2_Horiz | shpSpacerLeftMain | |
-| cont_Main_2_2_Horiz | cont_Main_2_2_1_Vert | |
+| - | cont_Main_1_Vert | Only visible when **glbShowSpinner = true** |
+| cont_Main_1_Vert | cont_Main_1_1_Horiz | Creates rounded rectangle with drop shadow |
+| cont_Main_1_1_Horiz | spinner_Main | OOTB Spinner (modern) control |
+| - | cont_Main_2_Vert | Parent container for all other controls below |
+| cont_Main_2_Vert | cont_Main_2_1_Horiz  | Contains the app header |
+| cont_Main_2_1_Horiz | headerMain | OOTB Header (modern) control |
+| cont_Main_2_Vert | cont_Main_2_2_Horiz | Parent container that contains every control below the header |
+| cont_Main_2_2_Horiz | shpSpacerLeftMain | Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container. |
+| cont_Main_2_2_Horiz | cont_Main_2_2_1_Vert | Contains the controls needed to upload a new audio file |
 | cont_Main_2_2_1_Vert | [attFileToUpload](#attFileToUpload) | Allows user to upload a file |
 | cont_Main_2_2_1_Vert | [inpTotalSpeakersMain](#inpTotalSpeakersMain) | Number input field that indicates how many speakers should Azure Speech to Text services look for |
-| cont_Main_2_2_1_Vert | cont_Main_2_2_1_1_Horiz | |
+| cont_Main_2_2_1_Vert | cont_Main_2_2_1_1_Horiz | Contains the buttons to upload audio file (or cancel action) |
 | cont_Main_2_2_1_1_Horiz | [btnUploadFile_Main](#btnUploadFile_Main) | Used to upload the selected file to Azure Blob Storage (via Power Automate flow) |
 | cont_Main_2_2_1_1_Horiz | [btnCancelUpload_Main](#btnCancelUpload_Main) | Resets the controls (attFileToUploadMain, inpTotalSpeakersMain) |
-| cont_Main_2_2_Horiz | cont_Main_2_2_2_Vert | |
-| cont_Main_2_2_2_Vert | lblTranscript_Main | |
+| cont_Main_2_2_Horiz | cont_Main_2_2_2_Vert | Contains controls to display all transcripts available |
 | cont_Main_2_2_2_Vert | [galTranscripts_Main](#galTranscripts_Main) | Displays **all** the available transcripts in the Transcripts table |
-| galTranscripts_Main | cont_Main_2_2_2_1_Horiz | |
-| cont_Main_2_2_2_1_Horiz | cont_Main_2_2_2_1_1_Vert | |
-| cont_Main_2_2_2_1_1_Vert | lblTranscriptFileName_Main | |
-| cont_Main_2_2_2_1_1_Vert | lblTranscriptDetails_Main | |
-| cont_Main_2_2_2_1_1_Vert | lblTranscriptSummary | |
+| galTranscripts_Main | cont_Main_2_2_2_1_Horiz | Contains all controls for individual transcript records |
+| cont_Main_2_2_2_1_Horiz | cont_Main_2_2_2_1_1_Vert | Contains controls to display the transcript details including: <br> <ul><li> lblTranscriptFileName_Main </li><li>lblTranscriptDetails_Main </li><li>lblTranscriptSummary</li></ul>|
 | cont_Main_2_2_2_1_Horiz | [btnEditTranscript_Main](#btnEditTranscript_Main) | Selects the transcript and opens it in the [Transcript Demo Screen](#transcript-demo-screen) |
-| galTranscripts_Main | [btnRefreshTranscript_Main](#btnRefreshTranscript_Main)| Refreshes the **Transcripts** table |
-| cont_Main_2_2_Horiz | cont_Main_2_2_3_Vert | |
-| cont_Main_2_2_3_Vert | htmlSuccessMain | |
-| cont_Main_2_2_3_Vert | btnBackSuccessMain | |
-| cont_Main_2_2_Horiz | shpSpacerRightMain | |
+| cont_Main_2_2_2_Vert | [btnRefreshTranscript_Main](#btnRefreshTranscript_Main)| Refreshes the **Transcripts** table |
+| cont_Main_2_2_Horiz | cont_Main_2_2_3_Vert | Only visible after an upload is completed successfully (i.e. **glbShowSuccess = true**) |
+| cont_Main_2_2_3_Vert | htmlSuccessMain | HTML formatted success message |
+| cont_Main_2_2_3_Vert | btnBackSuccessMain | Takes user "back" to Main screen. i.e. sets **glbShowSuccess** to **false** |
+| cont_Main_2_2_Horiz | shpSpacerRightMain | Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container. |
 
 **_Many controls are located inside container(s). The path/location will be indicated in paranthesis._**  
 

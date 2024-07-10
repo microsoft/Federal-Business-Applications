@@ -475,7 +475,7 @@ All controls (except two) are stored in horizontal and vertical containers to al
 | **Parent** | **Control** | **Description** |
 | :-----------   | :-----------   | :-----------   |
 | - | **cont_Transcript_1_Vert** | Contains the loading spinner and is only visible when **glbShowSpinner** = true  |
-| - | **pdfFileTranscript** | Displays the PDF version of the transcript. Only visible when Transcript File is attached to record and the **Trancript (PDF)** tab is selected |
+| - | **[pdfFileTranscript](#pdffiletranscript)** | Displays the PDF version of the transcript. Only visible when Transcript File is attached to record and the **Trancript (PDF)** tab is selected |
 | - | **[timerTranscript](#timerTranscript)** | Used to update variables based on the playhead of the audio control (**audRecordingPlayback**). Some of the properties have been customized |
 | - | **[cont_Transcript_2_Vert](#cont_Transcript_2_Vert)** | Is only visible when **gblShowPopUpUpdateAllSpeakers** = true   |
 | cont_Transcript_2_Vert | **[cont_Transcript_2_1_Vert](#cont_Transcript_2_1_Vert)** | |

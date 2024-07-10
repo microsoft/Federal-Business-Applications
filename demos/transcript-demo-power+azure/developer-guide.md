@@ -141,10 +141,10 @@ Only visible when **glbShowSpinner = true**
 
 <details>
 <summary>
-&nbsp;&nbsp;&nbsp;&nbsp;<strong>cont_Main_1_1_Horiz</strong></br>
-&nbsp;&nbsp;&nbsp;&nbsp;Creates rounded rectangle with drop shadow
+<strong>cont_Main_1_1_Horiz</strong></br>
+Creates rounded rectangle with drop shadow
 </summary>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>spinner_Main</strong></br> OOTB Spinner (modern) control
+<strong>spinner_Main</strong></br> OOTB Spinner (modern) control
 </details>
 </details>
 

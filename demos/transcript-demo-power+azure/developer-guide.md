@@ -136,11 +136,26 @@ In addition to setting variables, two controls are reset (see below for more on 
 
 <sub><i>Many controls are located inside container(s). The path/location will be indicated in paranthesis.</i></sub>
 
-**cont_Main_1_Vert** </br> Only visible when **glbShowSpinner = true**
+<details>
+<summary>
+        <strong>cont_Main_1_Vert</strong></br>  
+        Only visible when **glbShowSpinner = true** 
+</summary>
 
-**cont_Main_1_1_Horiz** </br> Creates rounded rectangle with drop shadow 
+<details>
+<summary>
+        <strong>cont_Main_1_1_Horiz</strong></br>  
+        Creates rounded rectangle with drop shadow
+</summary>
  
-**spinner_Main** </br> OOTB Spinner (modern) control </br> <sub><i>( cont_Main_1_1_Horiz )</i></sub>
+<details>
+<summary>
+        <strong>spinner_Main</strong></br> 
+        OOTB Spinner (modern) control </br> 
+</summary>
+</details>
+</details>
+</details>
 
 **cont_Main_2_Vert** </br> Parent container for all other controls below 
  
@@ -483,7 +498,7 @@ It has several properties customized:
 - **OnSelect**:```Refresh(Transcripts)```
 </details>
 
-**cont_Main_2_2_3_Vert **</br> Only visible after an upload is completed successfully (i.e. **glbShowSuccess = true**) </br> <sub><i>(cont_Main_2_2_Horiz)</i></sub>
+**cont_Main_2_2_3_Vert** </br> Only visible after an upload is completed successfully (i.e. **glbShowSuccess = true**) </br> <sub><i>(cont_Main_2_2_Horiz)</i></sub>
 
 **htmlSuccessMain** </br> HTML formatted success message </br> <sub><i>(cont_Main_2_2_3_Vert)</i></sub>
 

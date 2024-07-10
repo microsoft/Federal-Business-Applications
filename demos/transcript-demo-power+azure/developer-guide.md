@@ -241,9 +241,10 @@ It has several properties customized:
 
 <details>
 <summary><strong>inpTotalSpeakersMain</strong></br>
-  Number input field that indicates how many speakers should Azure Speech to Text services look for.
+        Number input field that indicates how many speakers should Azure Speech to Text services look for.</br>
+        <sub><i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)</i></sub>
   </summary>
-<sub><i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)</i></sub>
+
 
 
 - **AccessibleLabel**: ```"Enter the total number of speakers in the audio file"```
@@ -383,9 +384,9 @@ It has several properties customized:
 **cont_Main_2_2_2_1_Horiz** </br> Contains all controls for individual transcript records </br> <sub><i>(galTranscripts_Main)</i></sub>
 
 <details>
-<summary><strongcont_Main_2_2_2_1_1_Vert</strong></br>  
+<summary><strong>cont_Main_2_2_2_1_1_Vert</strong></br>  
         Contains controls to display the transcript details</br>
-        <sub><i>(cont_Main_2_2_2_1_Horiz)>)</i></sub>
+        <sub><i>(cont_Main_2_2_2_1_Horiz)</i></sub>
 </summary>
         Including: <br>
         <ul>

@@ -156,30 +156,30 @@ Parent container for all other controls below
 
 <details>
 <summary>
-&nbsp;&nbsp;&nbsp;&nbsp;<strong>cont_Main_2_1_Horiz</strong></br>
-&nbsp;&nbsp;&nbsp;&nbsp;Contains the app header
+<strong>cont_Main_2_1_Horiz</strong></br>
+Contains the app header
 </summary>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>headerMain</strong></br>OOTB Header (modern) control
+;<strong>headerMain</strong></br>OOTB Header (modern) control
 </details>
 
 <details>
 <summary>
-&nbsp;&nbsp;&nbsp;&nbsp;<strong>cont_Main_2_2_Horiz</strong></br> 
-&nbsp;&nbsp;&nbsp;&nbsp;Parent container that contains every control below the header
+<strong>cont_Main_2_2_Horiz</strong></br> 
+Parent container that contains every control below the header
 </summary>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>shpSpacerLeftMain</strong></br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container.
+<strong>shpSpacerLeftMain</strong></br>
+Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container.
 
 <details>
 <summary>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>cont_Main_2_2_1_Vert</strong></br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contains the controls needed to upload a new audio file
+<strong>cont_Main_2_2_1_Vert</strong></br>
+Contains the controls needed to upload a new audio file
 </summary>
 
 <details>
 <summary>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>attFileToUpload</strong></br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Allows user to upload a file
+<strong>attFileToUpload</strong></br>
+Allows user to upload a file
 </summary>
 This control allows user to upload a file. The control validates file size and file format:
 - The API has a limit of 100 Mb, so the control is limited to 100 Mb.

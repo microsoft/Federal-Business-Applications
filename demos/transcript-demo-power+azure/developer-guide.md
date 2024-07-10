@@ -141,10 +141,10 @@ Only visible when **glbShowSpinner = true**
 
 <details>
 <summary>
-<strong>cont_Main_1_1_Horiz</strong></br>
-Creates rounded rectangle with drop shadow
+&nbps;&nbps;&nbps;&nbps;<strong>cont_Main_1_1_Horiz</strong></br>
+&nbps;&nbps;&nbps;&nbps;Creates rounded rectangle with drop shadow
 </summary>
-<strong>spinner_Main</strong></br> OOTB Spinner (modern) control
+&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;<strong>spinner_Main</strong></br> OOTB Spinner (modern) control
 </details>
 </details>
 
@@ -156,29 +156,30 @@ Parent container for all other controls below
 
 <details>
 <summary>
-<strong>cont_Main_2_1_Horiz</strong></br>
-Contains the app header
+&nbps;&nbps;&nbps;&nbps;<strong>cont_Main_2_1_Horiz</strong></br>
+&nbps;&nbps;&nbps;&nbps;Contains the app header
 </summary>
-<strong>headerMain</strong></br>OOTB Header (modern) control
+&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;<strong>headerMain</strong></br>OOTB Header (modern) control
 </details>
 
 <details>
 <summary>
-<strong>cont_Main_2_2_Horiz</strong></br> 
-Parent container that contains every control below the header
+&nbps;&nbps;&nbps;&nbps;<strong>cont_Main_2_2_Horiz</strong></br> 
+&nbps;&nbps;&nbps;&nbps;Parent container that contains every control below the header
 </summary>
-<strong>shpSpacerLeftMain</strong></br>Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container.
+&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;<strong>shpSpacerLeftMain</strong></br>
+&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container.
 
 <details>
 <summary>
-<strong>cont_Main_2_2_1_Vert</strong></br>
-Contains the controls needed to upload a new audio file
+&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;<strong>cont_Main_2_2_1_Vert</strong></br>
+&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;Contains the controls needed to upload a new audio file
 </summary>
 
 <details>
 <summary>
-<strong>attFileToUpload</strong></br>
-Allows user to upload a file
+&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;<strong>attFileToUpload</strong></br>
+&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;&nbps;Allows user to upload a file
 </summary>
 This control allows user to upload a file. The control validates file size and file format:
 - The API has a limit of 100 Mb, so the control is limited to 100 Mb.

@@ -2,6 +2,23 @@
 
 This document is for developers to help them understand *how* the solution works. Note: not every single control will be detailed.  (e.g. controls like back buttons will not be explained.)
 
+[Link to subsection](#test-section-2)
+
+<details>
+  <summary><a name="test-section-1"/> Test Section 1</summary>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
+  Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.
+  Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
+  Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.
+  <details>
+      <summary><a name="test-section-2"/> Test Subsection 2</summary>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
+    Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.
+    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
+    Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.
+  </details>
+</details>
+        
 ## Contents
 - [Tables](#tables)
   - [Transcript](#transcript)

@@ -136,8 +136,9 @@ In addition to setting variables, two controls are reset (see below for more on 
 <details>
 <summary>
 <strong>cont_Main_1_Vert</strong></br>  
-Only visible when **glbShowSpinner = true** 
+Only visible when <strong>glbShowSpinner = true</strong> 
 </summary>
+
 
 <details>
 <summary>

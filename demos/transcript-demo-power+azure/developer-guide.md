@@ -1,23 +1,6 @@
 # Developer Guide
 
 This document is for developers to help them understand *how* the solution works. Note: not every single control will be detailed.  (e.g. controls like back buttons will not be explained.)
-
-[Link to subsection](#test-section-2)
-
-<details>
-  <summary><a name="test-section-1"/> Test Section 1</summary>
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
-  Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.
-  Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
-  Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.
-  <details>
-      <summary><a name="test-section-2"/> Test Subsection 2</summary>
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
-    Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.
-    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
-    Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.
-  </details>
-</details>
         
 ## Contents
 - [Tables](#tables)
@@ -181,7 +164,9 @@ In addition to setting variables, two controls are reset (see below for more on 
 
 [▲Top](#contents)
 
-##### attFileToUpload:  
+<details>
+<summary> <strong>attFileToUpload:</strong> </br> Allows user to upload a file</summary>
+  
 _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)_
 
 This control allows user to upload a file. The control validates file size and file format:
@@ -261,23 +246,30 @@ It has several properties customized:
 - **Width**: ```Parent.Width - 60 ```
   
 [▲ Back](#controls)
+</details>
 
-##### inpTotalSpeakersMain
+<details>
+<summary><strong>inpTotalSpeakersMain</strong></br>
+  Number input field that indicates how many speakers should Azure Speech to Text services look for.
+  </summary>
 _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)_
 
-Number input field that indicates how many speakers should Azure Speech to Text services look for.
+
 - **AccessibleLabel**: ```"Enter the total number of speakers in the audio file"```
 - **Max**: ```36```
   - Azure Speech To Text services has a limit of 36 speakers for diarization
 - **Min**: ```1```
 - **Value**: ```0``` 
+</details>
 
-[▲ Back](#controls)
+<details>
+<summary><strong>btnUploadFile_Main </strong></br> 
+  Used to upload the selected file to Azure Blob Storage (via Power Automate flow)
+  </summary>
 
-##### btnUploadFile_Main 
 _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_1_1_Horiz)_
 
-Used to upload the selected file to Azure Blob Storage (via Power Automate flow)
+
 - **AccessibleLabel**: ```"Upload the selected file"```
 - **DisplayMode**: Default mode disabled. Only enabled (Edit mode) when file is attached, the format is correct and the total speakers is greater than zero
   ```
@@ -363,13 +355,13 @@ Used to upload the selected file to Azure Blob Storage (via Power Automate flow)
   )
    ```
 - **Text**: ```"Upload"```
+</details>
 
-[▲ Back](#controls)
-
-##### btnCancelUpload_Main
+<details>
+<summary><strong>btnCancelUpload_Main</strong></br>Resets the controls (attFileToUploadMain, inpTotalSpeakersMain) 
+  </summary>
 _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_1_1_Horiz)_
 
-Resets the controls (attFileToUploadMain, inpTotalSpeakersMain)
 - **OnSelect**:
   ```
   //Reset upload attachment and total number of speakers controls
@@ -378,22 +370,27 @@ Resets the controls (attFileToUploadMain, inpTotalSpeakersMain)
   Reset(inpTotalSpeakersMain)
   ```
 - **Text**: ```"Cancel"```
-
+</details>
 [▲ Back](#controls)
 
-##### galTranscripts_Main
+<details>
+<summary><strong>galTranscripts_Main</strong></br> 
+  Displays **all** the available transcripts in the Transcripts table.
+  </summary>
 _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert)_
 
-Displays **all** the available transcripts in the Transcripts table. Some properties were customized:
+ Some properties were customized:
 - **AccessibleLabel**: ```"List of all the transcripts"```
 - **Items**: ```SortByColumns(Transcripts,"createdon",SortOrder.Descending)```
 - **LayoutMinHeight**: ```284```
 - **TemplateSize**:```274```
 - **Width**: ```Parent.Width-Parent.PaddingLeft-Parent.PaddingRight-Parent.LayoutGap```
-
-[▲ Back](#controls)
+</details>
   
-##### btnEditTranscript_Main
+<details>
+<summary><strong>btnEditTranscript_Main</strong></br> 
+  Selects the transcript and opens it in the [Transcript Demo Screen](#transcript-demo-screen) 
+  </summary>
 _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert/galTranscripts_Main/cont_Main_2_2_2_1_Horiz)_
 
 - **AccessibleLabel**: ```"Click view and edit this transcript"```
@@ -461,10 +458,12 @@ _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert/galTranscripts_Main/
    ```
 - **Text**: ```Details```
 - **Width**:```100```
+</details>
 
-[▲ Back](#controls)
+<details>
+<summary><strong>btnRefreshTranscript_Main</strong></br> 
 
-##### btnRefreshTranscript_Main
+  </summary>
 _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_2_1_Horiz/cont_Main_2_2_2_Vert)_
 
 Refreshes the **Transcripts** table
@@ -474,7 +473,7 @@ Refreshes the **Transcripts** table
 - **Icon**:```"ArrowClockwise"```
 - **Text**:```"Refresh"```
 - **OnSelect**:```Refresh(Transcripts)```
-
+</details>
 [▲Top](#contents)
 
 ---------

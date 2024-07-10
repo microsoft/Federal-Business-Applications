@@ -134,7 +134,7 @@ In addition to setting variables, two controls are reset (see below for more on 
   <a name="main-screen-controls">
 #### Controls
 
-**_Many controls are located inside container(s). The path/location will be indicated in paranthesis._**
+_Many controls are located inside container(s). The path/location will be indicated in paranthesis._
 
 **cont_Main_1_Vert** </br> Only visible when **glbShowSpinner = true**
 
@@ -142,56 +142,17 @@ In addition to setting variables, two controls are reset (see below for more on 
  
 **spinner_Main** </br> OOTB Spinner (modern) control </br> _( cont_Main_1_1_Horiz )_
 
-**cont_Main_2_Vert **</br> Parent container for all other controls below 
+**cont_Main_2_Vert** </br> Parent container for all other controls below 
  
 **cont_Main_2_1_Horiz** </br> Contains the app header </br> _(cont_Main_2_Vert)_
 
-**headerMain **</br> OOTB Header (modern) control </br> _(cont_Main_2_1_Horiz)_
+**headerMain** </br> OOTB Header (modern) control </br> _(cont_Main_2_1_Horiz)_
 
 **cont_Main_2_2_Horiz** </br>Parent container that contains every control below the header </br> _(cont_Main_2_Vert)_
 
 **shpSpacerLeftMain** </br> Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container. </br> _(cont_Main_2_2_Horiz)_
 
 **cont_Main_2_2_1_Vert** </br> Contains the controls needed to upload a new audio file </br> _(cont_Main_2_2_Horiz)_
-
-**
-
-|  | [attFileToUpload](#attFileToUpload) | Allows user to upload a file </br> _(cont_Main_2_2_1_Vert
-|  | [inpTotalSpeakersMain](#inpTotalSpeakersMain) | Number input field that indicates how many speakers should Azure Speech to Text services look for </br> _(cont_Main_2_2_1_Vert)_
-
-**cont_Main_2_2_1_1_Horiz** </br> Contains the buttons to upload audio file (or cancel action) </br> _(cont_Main_2_2_1_Vert)_
-
-**
-
-|  | [btnUploadFile_Main](#btnUploadFile_Main) | Used to upload the selected file to Azure Blob Storage (via Power Automate flow) </br> _(cont_Main_2_2_1_1_Horiz
-|  | [btnCancelUpload_Main](#btnCancelUpload_Main) | Resets the controls (attFileToUploadMain, inpTotalSpeakersMain) </br> _(cont_Main_2_2_1_1_Horiz)_
-
-**cont_Main_2_2_2_Vert** </br> Contains controls to display all transcripts available </br> _(cont_Main_2_2_Horiz)_
-
-**[galTranscripts_Main](#galTranscripts_Main) | Displays **all** the available transcripts in the Transcripts table </br> _(cont_Main_2_2_2_Vert)_
-
-**cont_Main_2_2_2_1_Horiz** </br> Contains all controls for individual transcript records </br> _(galTranscripts_Main)_
-
-**cont_Main_2_2_2_1_1_Vert** </br> Contains controls to display the transcript details including: <br> <ul><li> lblTranscriptFileName_Main </li><li>lblTranscriptDetails_Main </li><li>lblTranscriptSummary</li></ul>| </br> _(cont_Main_2_2_2_1_Horiz)_
-
-**
-
-| cont_Main_2_2_2_1_Horiz | [btnEditTranscript_Main](#btnEditTranscript_Main) | Selects the transcript and opens it in the [Transcript Demo Screen](#transcript-demo-screen) |
-| cont_Main_2_2_2_Vert | [btnRefreshTranscript_Main](#btnRefreshTranscript_Main)| Refreshes the **Transcripts** table
-
-**cont_Main_2_2_3_Vert **</br> Only visible after an upload is completed successfully (i.e. **glbShowSuccess = true**) </br> _(cont_Main_2_2_Horiz)_
-
-**htmlSuccessMain** </br> HTML formatted success message </br> _(cont_Main_2_2_3_Vert)_
-
-**btnBackSuccessMain** </br> Takes user "back" to Main screen. i.e. sets **glbShowSuccess** to **false** </br> _(cont_Main_2_2_3_Vert)_
-
-**shpSpacerRightMain** </br> Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container. </br> _(cont_Main_2_2_Horiz)_
-
- 
-
-[▲Top](#contents)
-
-
 
 <details>
 <summary> <strong>attFileToUpload</strong> </br> Allows user to upload a file</summary>
@@ -274,7 +235,6 @@ It has several properties customized:
   ```
 - **Width**: ```Parent.Width - 60 ```
   
-[▲ Back](#controls)
 </details>
 
 <details>
@@ -290,6 +250,8 @@ _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)_
 - **Min**: ```1```
 - **Value**: ```0``` 
 </details>
+
+**cont_Main_2_2_1_1_Horiz** </br> Contains the buttons to upload audio file (or cancel action) </br> _(cont_Main_2_2_1_Vert)_
 
 <details>
 <summary><strong>btnUploadFile_Main </strong></br> 
@@ -401,6 +363,8 @@ _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_1_1_Ho
 - **Text**: ```"Cancel"```
 </details>
 
+**cont_Main_2_2_2_Vert** </br> Contains controls to display all transcripts available </br> _(cont_Main_2_2_Horiz)_
+
 <details>
 <summary><strong>galTranscripts_Main</strong></br> 
   Displays **all** the available transcripts in the Transcripts table.
@@ -414,7 +378,11 @@ _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert)_
 - **TemplateSize**:```274```
 - **Width**: ```Parent.Width-Parent.PaddingLeft-Parent.PaddingRight-Parent.LayoutGap```
 </details>
-  
+
+**cont_Main_2_2_2_1_Horiz** </br> Contains all controls for individual transcript records </br> _(galTranscripts_Main)_
+
+**cont_Main_2_2_2_1_1_Vert** </br> Contains controls to display the transcript details including: <br> <ul><li> lblTranscriptFileName_Main </li><li>lblTranscriptDetails_Main </li><li>lblTranscriptSummary</li></ul>| </br> _(cont_Main_2_2_2_1_Horiz)_
+
 <details>
 <summary><strong>btnEditTranscript_Main</strong></br> 
   Selects the transcript and opens it in the [Transcript Demo Screen](#transcript-demo-screen) 
@@ -502,6 +470,15 @@ Refreshes the **Transcripts** table
 - **Text**:```"Refresh"```
 - **OnSelect**:```Refresh(Transcripts)```
 </details>
+
+**cont_Main_2_2_3_Vert **</br> Only visible after an upload is completed successfully (i.e. **glbShowSuccess = true**) </br> _(cont_Main_2_2_Horiz)_
+
+**htmlSuccessMain** </br> HTML formatted success message </br> _(cont_Main_2_2_3_Vert)_
+
+**btnBackSuccessMain** </br> Takes user "back" to Main screen. i.e. sets **glbShowSuccess** to **false** </br> _(cont_Main_2_2_3_Vert)_
+
+**shpSpacerRightMain** </br> Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container. </br> _(cont_Main_2_2_Horiz)_
+
 
 [▲Top](#contents)
 

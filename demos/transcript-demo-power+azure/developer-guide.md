@@ -136,10 +136,11 @@ In addition to setting variables, two controls are reset (see below for more on 
 <ul>
         <li>cont_Main_1_Vert
         <ul>
-                <li>cont_Main_1_1_Horiz</li>
+                <li><details><summary><strong>cont_Main_1_1_Horiz</strong></summary>
                 <ul>
                         <li>spinner_Main</li>
-                </ul>
+                </ul></details>
+                </li>
         </ul>
         </li>
         <li>cont_Main_2_Vert</li>

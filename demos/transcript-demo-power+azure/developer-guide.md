@@ -130,10 +130,6 @@ This screen is used to upload audio files and select transcripts to view/edit.
 In addition to setting variables, two controls are reset (see below for more on each control):
 - **attFileToUploadMain**
 - **inpTotalSpeakersMain**
-  <style>
-        details details: {padding-left:50px;}
-          
-  </style>
   <a name="main-screen-controls">
 #### Controls
 

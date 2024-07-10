@@ -134,31 +134,36 @@ In addition to setting variables, two controls are reset (see below for more on 
 #### Controls
 
 <ul>
-        <li>cont_Main_1_Vert
-        <ul>
-                <li><details><summary><strong>cont_Main_1_1_Horiz</strong></summary>
+        <li>
+                <details>
+                <summary>
+                        <strong>cont_Main_1_Vert</strong></br>  
+                        Only visible when <strong>glbShowSpinner = true</strong> 
+                </summary>
                 <ul>
-                        <li>spinner_Main</li>
-                </ul></details>
-                </li>
-        </ul>
+                        <li>
+                                <details>
+                                        <summary>
+                                                <strong>cont_Main_1_1_Horiz</strong></br>
+                                                Creates rounded rectangle with drop shadow</summary>
+                                        <ul>
+                                                <li><strong>spinner_Main</strong></br> OOTB Spinner (modern) control</li>
+                                        </ul>
+                                </details>
+                        </li>
+                </ul>
         </li>
         <li>cont_Main_2_Vert</li>
 </ul>
 
-<details>
-<summary>
-<strong>cont_Main_1_Vert</strong></br>  
-Only visible when <strong>glbShowSpinner = true</strong> 
-</summary>
+
 
 
 <details>
 <summary>
-<strong>cont_Main_1_1_Horiz</strong></br>
-Creates rounded rectangle with drop shadow
+<strong>cont_Main_1_1_Horiz</strong>
 </summary>
-<strong>spinner_Main</strong></br> OOTB Spinner (modern) control
+
 </details>
 </details>
 

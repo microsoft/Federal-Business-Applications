@@ -134,29 +134,33 @@ In addition to setting variables, two controls are reset (see below for more on 
   <a name="main-screen-controls">
 #### Controls
 
-_Many controls are located inside container(s). The path/location will be indicated in paranthesis._
+<sub><i>Many controls are located inside container(s). The path/location will be indicated in paranthesis.</i></sub>
 
 **cont_Main_1_Vert** </br> Only visible when **glbShowSpinner = true**
 
 **cont_Main_1_1_Horiz** </br> Creates rounded rectangle with drop shadow 
  
-**spinner_Main** </br> OOTB Spinner (modern) control </br> _( cont_Main_1_1_Horiz )_
+**spinner_Main** </br> OOTB Spinner (modern) control </br> <sub><i>( cont_Main_1_1_Horiz )</i></sub>
 
 **cont_Main_2_Vert** </br> Parent container for all other controls below 
  
-**cont_Main_2_1_Horiz** </br> Contains the app header </br> _(cont_Main_2_Vert)_
+**cont_Main_2_1_Horiz** </br> Contains the app header </br> <sub><i>(cont_Main_2_Vert)</i></sub>
 
-**headerMain** </br> OOTB Header (modern) control </br> _(cont_Main_2_1_Horiz)_
+**headerMain** </br> OOTB Header (modern) control </br> <sub><i>(cont_Main_2_1_Horiz)</i></sub>
 
-**cont_Main_2_2_Horiz** </br>Parent container that contains every control below the header </br> _(cont_Main_2_Vert)_
+**cont_Main_2_2_Horiz** </br>Parent container that contains every control below the header </br> <sub><i>(cont_Main_2_Vert)</i></sub>
 
-**shpSpacerLeftMain** </br> Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container. </br> _(cont_Main_2_2_Horiz)_
+**shpSpacerLeftMain** </br> Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container. </br> <sub><i>(cont_Main_2_2_Horiz)</i></sub>
 
-**cont_Main_2_2_1_Vert** </br> Contains the controls needed to upload a new audio file </br> _(cont_Main_2_2_Horiz)_
+**cont_Main_2_2_1_Vert** </br> Contains the controls needed to upload a new audio file </br> <sub><i>(cont_Main_2_2_Horiz)</i></sub>
 
 <details>
-<summary> <strong>attFileToUpload</strong> </br> Allows user to upload a file </br> <i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)</i> </summary>
-  
+<summary>
+        <strong>attFileToUpload</strong></br> 
+        Allows user to upload a file </br> 
+        <sub><i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)</i></sub>
+</summary>
+
 This control allows user to upload a file. The control validates file size and file format:
 - The API has a limit of 100 Mb, so the control is limited to 100 Mb.
 - The Speach to Text API only accepts the following formats:
@@ -239,7 +243,7 @@ It has several properties customized:
 <summary><strong>inpTotalSpeakersMain</strong></br>
   Number input field that indicates how many speakers should Azure Speech to Text services look for.
   </summary>
-_(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)_
+<sub><i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)</i></sub>
 
 
 - **AccessibleLabel**: ```"Enter the total number of speakers in the audio file"```
@@ -249,12 +253,12 @@ _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)_
 - **Value**: ```0``` 
 </details>
 
-**cont_Main_2_2_1_1_Horiz** </br> Contains the buttons to upload audio file (or cancel action) </br> _(cont_Main_2_2_1_Vert)_
+**cont_Main_2_2_1_1_Horiz** </br> Contains the buttons to upload audio file (or cancel action) </br> <sub><i>(cont_Main_2_2_1_Vert)</i></sub>
 
 <details>
 <summary><strong>btnUploadFile_Main</strong></br> 
   Used to upload the selected file to Azure Blob Storage (via Power Automate flow)</br>
-  <i>_(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_1_1_Horiz)_</i>
+  <sub><i>(<sub><i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_1_1_Horiz)</i></sub>)</i></sub>
 </summary>
 
 - **AccessibleLabel**: ```"Upload the selected file"```
@@ -347,7 +351,7 @@ _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)_
 <details>
 <summary><strong>btnCancelUpload_Main</strong></br>
         Resets the controls (attFileToUploadMain, inpTotalSpeakersMain)</br>
-        <i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_1_1_Horiz)</i>
+        <sub><i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_1_1_Horiz)</i></sub>
 </summary>
 
 - **OnSelect**:
@@ -360,12 +364,12 @@ _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)_
 - **Text**: ```"Cancel"```
 </details>
 
-**cont_Main_2_2_2_Vert** </br> Contains controls to display all transcripts available </br> _(cont_Main_2_2_Horiz)_
+**cont_Main_2_2_2_Vert** </br> Contains controls to display all transcripts available </br> <sub><i>(cont_Main_2_2_Horiz)</i></sub>
 
 <details>
 <summary><strong>galTranscripts_Main</strong></br> 
           Displays **all** the available transcripts in the Transcripts table.</br>
-        <i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert)</i>
+        <sub><i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert)</i></sub>
   </summary>
 
  Some properties were customized:
@@ -376,14 +380,25 @@ _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)_
 - **Width**: ```Parent.Width-Parent.PaddingLeft-Parent.PaddingRight-Parent.LayoutGap```
 </details>
 
-**cont_Main_2_2_2_1_Horiz** </br> Contains all controls for individual transcript records </br> _(galTranscripts_Main)_
+**cont_Main_2_2_2_1_Horiz** </br> Contains all controls for individual transcript records </br> <sub><i>(galTranscripts_Main)</i></sub>
 
-**cont_Main_2_2_2_1_1_Vert** </br> Contains controls to display the transcript details including: <br> <ul><li> lblTranscriptFileName_Main </li><li>lblTranscriptDetails_Main </li><li>lblTranscriptSummary</li></ul>| </br> _(cont_Main_2_2_2_1_Horiz)_
-
+<details>
+<summary><strongcont_Main_2_2_2_1_1_Vert</strong></br>  
+        Contains controls to display the transcript details</br>
+        <sub><i>(cont_Main_2_2_2_1_Horiz)>)</i></sub>
+</summary>
+        Including: <br>
+        <ul>
+                <li>lblTranscriptFileName_Main</li>
+                <li>lblTranscriptDetails_Main</li>
+                <li>lblTranscriptSummary</li>
+        </ul> 
+</details>
+        
 <details>
 <summary><strong>btnEditTranscript_Main</strong></br> 
           Selects the transcript and opens it in the [Transcript Demo Screen](#transcript-demo-screen)</br>
-        <i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert/galTranscripts_Main/cont_Main_2_2_2_1_Horiz)</i>
+        <sub><i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert/galTranscripts_Main/cont_Main_2_2_2_1_Horiz)</i></sub>
   </summary>
 
 - **AccessibleLabel**: ```"Click view and edit this transcript"```
@@ -456,7 +471,7 @@ _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)_
 <details>
 <summary><strong>btnRefreshTranscript_Main</strong></br>
         Refreshes the **Transcripts** table </br>
-        <i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_2_1_Horiz/cont_Main_2_2_2_Vert)</i>
+        <sub><i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_2_1_Horiz/cont_Main_2_2_2_Vert)</i></sub>
   </summary>
 
 - **AccessibleLabel**:```"Refresh the list of transcripts"```
@@ -467,13 +482,13 @@ _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)_
 - **OnSelect**:```Refresh(Transcripts)```
 </details>
 
-**cont_Main_2_2_3_Vert **</br> Only visible after an upload is completed successfully (i.e. **glbShowSuccess = true**) </br> _(cont_Main_2_2_Horiz)_
+**cont_Main_2_2_3_Vert **</br> Only visible after an upload is completed successfully (i.e. **glbShowSuccess = true**) </br> <sub><i>(cont_Main_2_2_Horiz)</i></sub>
 
-**htmlSuccessMain** </br> HTML formatted success message </br> _(cont_Main_2_2_3_Vert)_
+**htmlSuccessMain** </br> HTML formatted success message </br> <sub><i>(cont_Main_2_2_3_Vert)</i></sub>
 
-**btnBackSuccessMain** </br> Takes user "back" to Main screen. i.e. sets **glbShowSuccess** to **false** </br> _(cont_Main_2_2_3_Vert)_
+**btnBackSuccessMain** </br> Takes user "back" to Main screen. i.e. sets **glbShowSuccess** to **false** </br> <sub><i>(cont_Main_2_2_3_Vert)</i></sub>
 
-**shpSpacerRightMain** </br> Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container. </br> _(cont_Main_2_2_Horiz)_
+**shpSpacerRightMain** </br> Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container. </br> <sub><i>(cont_Main_2_2_Horiz)</i></sub>
 
 
 [▲Top](#contents)
@@ -600,7 +615,7 @@ Displays the PDF version of the transcript. Only visible when Transcript File is
 [▲ Back](#controls-1)
 
 ##### txtSummaryTranscript 
-_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz)_
+<sub><i>(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz)</i></sub>
 
 Used to display and edit AI generated summary of transcript
 - **AccessibleLabel**:```"AI Generated summary using Azure OpenAI"```
@@ -614,7 +629,7 @@ Used to display and edit AI generated summary of transcript
 [▲ Back](#controls-1)
 
 ##### audRecordingPlayback  
-_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert)_  
+<sub><i>(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert)</i></sub>  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/4d4feed5-64ae-4b99-bb2c-9d0fe8815037)
 
 Used to playback the original audio (stored in Azure Blob Storage)
@@ -640,7 +655,7 @@ Used to playback the original audio (stored in Azure Blob Storage)
 [▲ Back](#controls-1)
 
 ##### btnEdit_Transcript
-_(cont_Transcript_4_Vert/cont_Transcript_4_2_Horiz)_  
+<sub><i>(cont_Transcript_4_Vert/cont_Transcript_4_2_Horiz)</i></sub>  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/21d4b135-ab8f-4761-8b3f-9527367f5cd6)
 
 _Note: only visible when **NOT** in edit mode and glbSelectedTranscript is NOT blank_
@@ -662,7 +677,7 @@ _Note: only visible when **NOT** in edit mode and glbSelectedTranscript is NOT b
 [▲ Back](#controls-1)
 
 ##### btnSave_Transcript
-_(cont_Transcript_4_Vert/cont_Transcript_4_2_Horiz)_     
+<sub><i>(cont_Transcript_4_Vert/cont_Transcript_4_2_Horiz)</i></sub>     
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/6b7670e6-c99f-4693-9158-2262df8cd618)
 
 _Note: only visible when in edit mode_  
@@ -729,7 +744,7 @@ _Note: only visible when in edit mode_
 [▲ Back](#controls-1)
 
 ##### btnCancel_Transcript
-_(cont_Transcript_4_Vert/cont_Transcript_4_2_Horiz)_      
+<sub><i>(cont_Transcript_4_Vert/cont_Transcript_4_2_Horiz)</i></sub>      
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/c26cdcec-d1a9-494e-b872-d759a875108d)
 
   _Note: Only visible when in Edit mode_  
@@ -750,7 +765,7 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_2_Horiz)_
 - **Visible**: ```glbMode=DisplayMode.Edit```
 
 ##### txtCurrentPhrase_Transcript
-_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert)_  
+<sub><i>(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert)</i></sub>  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/98c3429a-cd78-4f37-b203-525eab121cf1)
 
 - **AccessibleLabel**: ```"Transcript of the current phrase (based current time code)"```
@@ -767,7 +782,7 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
 [▲ Back](#controls-1)
 
 ##### lblCurrentSpeaker_Transcript
-_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert/cont_Transcript_4_3_1_1_2_1_Horiz)_  
+<sub><i>(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert/cont_Transcript_4_3_1_1_2_1_Horiz)</i></sub>  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/22d1f4da-33fc-46bc-9526-fd5e9653ae52)
 
 - **Text**: If the speaker dropdown has a selected name, use that. If not, use the value of the speaker name from the current phrase (glbCurrentPhrase). If no name exists, get the speaker value (number) from the current phrase
@@ -783,7 +798,7 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
 [▲ Back](#controls-1)
 
 #####  drpSelectSpeaker_Transcript
-_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert/cont_Transcript_4_3_1_1_2_1_Horiz)_   
+<sub><i>(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert/cont_Transcript_4_3_1_1_2_1_Horiz)</i></sub>   
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/8e22e6c4-70e6-4328-8a15-2e41d61326d8)
 
 - **AccessibleLabel**: ```"Select speaker from this drop down"```
@@ -795,7 +810,7 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
 [▲ Back](#controls-1)
 
 ##### icoClearSelectSpeaker_Transcript
-_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert/cont_Transcript_4_3_1_1_2_1_Horiz)_  
+<sub><i>(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert/cont_Transcript_4_3_1_1_2_1_Horiz)</i></sub>  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/c58b5e2f-3201-4899-8fb8-263c48b76709)
 
   _Note: only visible when speaker is selected in dropdown_  
@@ -814,7 +829,7 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
 [▲ Back](#controls-1)
 
 #####  btnNewSpeaker_Transcript
-_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert/cont_Transcript_4_3_1_1_2_1_Horiz)_  
+<sub><i>(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_1_Horiz/cont_Transcript_4_3_1_1_2_Vert/cont_Transcript_4_3_1_1_2_1_Horiz)</i></sub>  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/08151b97-e2bb-404b-9638-b85eed23d579)
 
 - **AccessibleLabel**: ```"Add new speaker"```
@@ -830,7 +845,7 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
 - **Visible**: ```glbMode=DisplayMode.Edit```
 
 #####  btnJumpToInPoint
-_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)_    
+<sub><i>(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)</i></sub>    
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/28f01fac-1537-425b-99f8-f7c3c532327f)  
 
 - **AccessibleLabel**: ```"Jump to In Point"```
@@ -842,7 +857,7 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
 [▲ Back](#controls-1)
 
 #####  lblInPoint_Transcript
-_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)_  
+<sub><i>(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)</i></sub>  
  ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/483a374f-8295-48de-b13d-a6f060a828ed)  
  - **Text**: Display the current phrase's in point (Offset in Seconds) in HH:MM:SS format
    ```
@@ -882,7 +897,7 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
 [▲ Back](#controls-1)
 
 #####  lblOutpoint_Transcript
-_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)_  
+<sub><i>(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)</i></sub>  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d11bac0b-e3fc-4b3b-8dbf-72ce79db931a)  
 - **Align**: ```'TextCanvas.Align'.End```
 - **Text**: Display current phrase's out point (outset) in HH:MM:SS
@@ -923,7 +938,7 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
 [▲ Back](#controls-1)
 
 #####  lblJumpToTime_Transcript
-_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)_    
+<sub><i>(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)</i></sub>    
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/1a360425-3a9f-48af-af57-909b9ed26a7e)  
 - **Align**: ```'TextCanvas.Align'.End```
 - **FontColor**: If variable glbJumpToTime exceeds the total duration of the audio file, display red text
@@ -952,7 +967,7 @@ _(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/co
 [▲ Back](#controls-1)
 
 #####  txtJumpToTime_Transcript
-_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)_   
+<sub><i>(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_1_Vert/cont_Transcript_4_3_1_2_Horiz)</i></sub>   
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d847eef6-59ae-4fa9-bcd6-d2b8efd336d1)  
 Allows user to type time code (HH:MM:SS) to jump to part of recording (and transcript)
 
@@ -1047,7 +1062,7 @@ Only visible when user clicks + New Speaker button (btnNewSpeaker_Transcript)
 [▲ Back](#controls-1)
   
 ##### frmAddSpeaker
-_(cont_Transcript_3_Vert)_  
+<sub><i>(cont_Transcript_3_Vert)</i></sub>  
 Submits new speaker name to Speakers table  
 - **DataSource**: ```Speakers```
 - **DefaultMode**: ```FormMode.New```
@@ -1063,7 +1078,7 @@ Submits new speaker name to Speakers table
 [▲ Back](#controls-1)
 
 ##### btnAddSpeakerSave
-_(cont_Transcript_3_Vert/cont_Transcript_3_Vert/cont_Transcript_3_1_Horiz)_  
+<sub><i>(cont_Transcript_3_Vert/cont_Transcript_3_Vert/cont_Transcript_3_1_Horiz)</i></sub>  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/221e4be6-985b-468d-8d2d-be65ae77c297)
 
 - **AccessibleLabel**: ```"Save the new speaker"```
@@ -1081,7 +1096,7 @@ _(cont_Transcript_3_Vert/cont_Transcript_3_Vert/cont_Transcript_3_1_Horiz)_
 [▲ Back](#controls-1)
 
 ##### btnAddSpeakerCancel
-_(cont_Transcript_3_Vert/cont_Transcript_3_Vert/cont_Transcript_3_1_Horiz)_  
+<sub><i>(cont_Transcript_3_Vert/cont_Transcript_3_Vert/cont_Transcript_3_1_Horiz)</i></sub>  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/f288d3da-a2be-4203-928c-625bb8efc987)
 - **AccessibleLabel**: ```"Cancel adding the new speaker"```
 - **Appearance**: ```'ButtonCanvas.Appearance'.Secondary```
@@ -1109,7 +1124,7 @@ Full screen container that has an opqaue fill and is only visible when **gblShow
 [▲ Back](#controls-1)
 
 ##### cont_Transcript_2_1_Vert
-_(cont_Transcript_2_Vert)_  
+<sub><i>(cont_Transcript_2_Vert)</i></sub>  
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/341528f9-2ae8-46e5-92d5-63041fda8e0a)
 - **DropShadow**: ```DropShadow.ExtraBold```
 - **Fill**: ```RGBA(255, 255, 255, 1)```
@@ -1121,7 +1136,7 @@ _(cont_Transcript_2_Vert)_
 [▲ Back](#controls-1)
 
 ##### btnPopUpUpdateAllSpeakersYes 
-_(cont_Transcript_2_Vert/cont_Transcript_2_1_Vert/cont_Transcript_2_1_1_Horiz)_
+<sub><i>(cont_Transcript_2_Vert/cont_Transcript_2_1_Vert/cont_Transcript_2_1_1_Horiz)</i></sub>
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/5c28730e-97a4-47e8-840c-fec5aa5db699)
 - **AccessibleLabel**: Dynamcially update accessible label based on the current phrase and the selected speaker name
   ```
@@ -1151,7 +1166,7 @@ _(cont_Transcript_2_Vert/cont_Transcript_2_1_Vert/cont_Transcript_2_1_1_Horiz)_
 [▲ Back](#controls-1)
 
 ##### btnPopUpUpdateAllSpeakersNo
-_(cont_Transcript_2_Vert/cont_Transcript_2_1_Vert/cont_Transcript_2_1_1_Horiz)_
+<sub><i>(cont_Transcript_2_Vert/cont_Transcript_2_1_Vert/cont_Transcript_2_1_1_Horiz)</i></sub>
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d0d07751-9058-4a01-aa02-44ad298e468f)  
 - **AccessibleLabel**: ```"Please do not update all speakers to the selected speaker"```
 - **Appearance**: ```'ButtonCanvas.Appearance'.Secondary```
@@ -1176,7 +1191,7 @@ _(cont_Transcript_2_Vert/cont_Transcript_2_1_Vert/cont_Transcript_2_1_1_Horiz)_
 [▲ Back](#controls-1)
 
 ##### btnSaveHidden  
-_(cont_Transcript_2_Vert/cont_Transcript_2_1_Vert/cont_Transcript_2_1_1_Horiz)_
+<sub><i>(cont_Transcript_2_Vert/cont_Transcript_2_1_Vert/cont_Transcript_2_1_1_Horiz)</i></sub>
 This button is hidden, but is called by various other buttons.  This is one technique to create reusable code/functions in Power Apps  
 - **AccessibleLabel**: ```"This is a hidden control - used for saving the edits to the current phrase"```
 - **OnSelect**: 
@@ -1288,14 +1303,14 @@ This button is hidden, but is called by various other buttons.  This is one tech
 [▲ Back](#controls-1)
 
 ##### shpFileTranscript
-_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_2_Vert)_
+<sub><i>(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_2_Vert)</i></sub>
 Used to properly size the [pdfFileTranscript](#pdfFileTranscript).  
 **FillPortions**:```1```  
 
 [▲ Back](#controls-1)
 
 ##### btnDownloadTranscriptFile
-_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_2_Vert/cont_Transcript_4_3_2_1_Horiz)_
+<sub><i>(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_2_Vert/cont_Transcript_4_3_2_1_Horiz)</i></sub>
 When user clicks this button, it uses the Dataverse Web API to get the transcript file attached to the selected transcript
 - **AccessibleLabel**:```"Click to download transcript PDF"```
 - **Appearance**:```'ButtonCanvas.Appearance'.Primary```
@@ -1317,7 +1332,7 @@ When user clicks this button, it uses the Dataverse Web API to get the transcrip
 [▲ Back](#controls-1)
 
 ##### btnRefreshTranscriptFile
-_(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_2_Vert/cont_Transcript_4_3_2_1_Horiz)_
+<sub><i>(cont_Transcript_4_Vert/cont_Transcript_4_3_Horiz/cont_Transcript_4_3_2_Vert/cont_Transcript_4_3_2_1_Horiz)</i></sub>
 Regenerates the PDF file via Power Automate when clicked
 - **AccessibleLabel**:``````
 - ****:```"Click to refresh the transcript PDF"```
@@ -1383,7 +1398,7 @@ Here's a detailed breakdown of each action:
   - **Total Speakers**: Total number of speakers in audio file. Used by Azure Speech to Text services for speaker diarization
   - **File Content**:  Actual audio file. Note: current limitation of 100 Mb
 - ** Create blob (V2)**: Uploads file passed from app.  Parameters include:
-  - **Storage account name**: Uses Azure Blob credentials (set on import). _Note: You must have an Azure Storage account and container to use this (see [Prerequistes](transcript-demo-power%2Bazure#prerequisites))_
+  - **Storage account name**: Uses Azure Blob credentials (set on import). _Note: You must have an Azure Storage account and container to use this (see [Prerequistes](transcript-demo-power%2Bazure#prerequisites)</i></sub>
   - **Folder Path**: Uses environment variable (set on import) to point to the destination folder
   - **Blob name**: Uses guid() + file name (from trigger) to generate a unique file name every time
   - **Blob content**: Actual content of file
@@ -1440,7 +1455,7 @@ Here's breakdown of each action:
           }
         },
         "contentUrls": [
-           "@{outputs('Create_SAS_URI_by_path_(V2)')?['body/WebUrl']}"
+           "@{outputs('Create_SAS_URI_by_path<sub><i>(V2)')?['body/WebUrl']}"
         ],
         "displayName": "transcript-@{utcNow()}"
         "locale": "en-US"
@@ -1555,7 +1570,7 @@ In the other branch, the following actions are called:
   ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/3547c0d4-aa1a-4f60-9f27-fc859b26b7f2)
   - **Transcript**: ```string(outputs('Run_a_Child_Flow_-_Get_Transcript_Results')?['Body'])```
   - **File Name** ```@{triggerBody()['text_1']}```
-  - **File Size**: ```@{outputs('Get_Blob_Metadata_using_path_(V2)')?['body/Size']}```
+  - **File Size**: ```@{outputs('Get_Blob_Metadata_using_path<sub><i>(V2)')?['body/Size']}```
 The two branches merge back and the flow continues:
 -  **Update a row - Transcript Summary**:  Stores the AI Builder generated summary in the Transcript record
 -  **Run a child flow - Create Transcript Document**: Passes the transcript Id to the child flow
@@ -1591,7 +1606,7 @@ Here's a breakdown of each action:
     With the following parameters:
     - **Method**: ```GET```
     - **URI**: ```@{triggerBody()['text']}```
-      _This is the path passed to the flow from the parent flow  [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#02---azure---when-audio-file-created-in-blob-storage---create-transcript)_
+      _This is the path passed to the flow from the parent flow  [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#02---azure---when-audio-file-created-in-blob-storage---create-transcript)</i></sub>
     - **Headers**:
       -  **Ocp-Apim-Subscription-Key**: ```@parameters('Speech To Text Key (demo_SpeechToTextKey)')```
   - **If Fail, wait and try again**: A second Do Until loop only runs when the previous action fails.  The HTTP action fails until the transcription has started. This can take several minutes depending on Azure resources.

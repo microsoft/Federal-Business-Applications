@@ -130,7 +130,10 @@ This screen is used to upload audio files and select transcripts to view/edit.
 In addition to setting variables, two controls are reset (see below for more on each control):
 - **attFileToUploadMain**
 - **inpTotalSpeakersMain**
-  
+  <style>
+        details details: {padding-left:50px;}
+          
+  </style>
   <a name="main-screen-controls">
 #### Controls
 
@@ -139,19 +142,14 @@ In addition to setting variables, two controls are reset (see below for more on 
 <strong>cont_Main_1_Vert</strong></br>  
 Only visible when **glbShowSpinner = true** 
 </summary>
-<!-- Test indent 1 -->
-<p style:"padding-left:50px;">
+
 <details>
 <summary>
 <strong>cont_Main_1_1_Horiz</strong></br>
 Creates rounded rectangle with drop shadow
 </summary>
-        <!-- Test indent 2 -->
-<p style:"padding-left:50px;">
 <strong>spinner_Main</strong></br> OOTB Spinner (modern) control
-</p>
 </details>
-</p>
 </details>
 
 <details>

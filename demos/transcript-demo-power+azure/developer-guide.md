@@ -133,6 +133,18 @@ In addition to setting variables, two controls are reset (see below for more on 
   <a name="main-screen-controls">
 #### Controls
 
+<ul>
+        <li>cont_Main_1_Vert
+        <ul>
+                <li>cont_Main_1_1_Horiz</li>
+                <ul>
+                        <li>spinner_Main</li>
+                </ul>
+        </ul>
+        </li>
+        <li>cont_Main_2_Vert</li>
+</ul>
+
 <details>
 <summary>
 <strong>cont_Main_1_Vert</strong></br>  

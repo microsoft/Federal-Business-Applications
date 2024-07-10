@@ -155,10 +155,8 @@ _Many controls are located inside container(s). The path/location will be indica
 **cont_Main_2_2_1_Vert** </br> Contains the controls needed to upload a new audio file </br> _(cont_Main_2_2_Horiz)_
 
 <details>
-<summary> <strong>attFileToUpload</strong> </br> Allows user to upload a file</summary>
+<summary> <strong>attFileToUpload</strong> </br> Allows user to upload a file </br> <i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)</i> </summary>
   
-_(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)_
-
 This control allows user to upload a file. The control validates file size and file format:
 - The API has a limit of 100 Mb, so the control is limited to 100 Mb.
 - The Speach to Text API only accepts the following formats:

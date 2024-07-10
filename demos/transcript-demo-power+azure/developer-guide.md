@@ -136,45 +136,52 @@ In addition to setting variables, two controls are reset (see below for more on 
 
 <details>
 <summary>
-        <strong>cont_Main_1_Vert</strong></br>  
-        Only visible when **glbShowSpinner = true** 
+<strong>cont_Main_1_Vert</strong></br>  
+Only visible when **glbShowSpinner = true** 
 </summary>
-        <details>
-                <summary>
-                        <strong>cont_Main_1_1_Horiz</strong></br>
-                        Creates rounded rectangle with drop shadow
-                </summary>
-                <strong>spinner_Main</strong></br> OOTB Spinner (modern) control
-        </details>
+        
+<details>
+<summary>
+<strong>cont_Main_1_1_Horiz</strong></br>
+Creates rounded rectangle with drop shadow
+</summary>
+
+<strong>spinner_Main</strong></br> OOTB Spinner (modern) control
+</details>
 </details>
 
 <details>
-        <summary>
-                <strong>cont_Main_2_Vert</strong></br>
-                Parent container for all other controls below 
-        </summary>
-        <details>
-                <summary>
-                        <strong>cont_Main_2_1_Horiz</strong></br>
-                        Contains the app header
-                </summary>
-                <strong>headerMain</strong></br>  OOTB Header (modern) control
-                <details>
-                        <summary>
-                                <strong>cont_Main_2_2_Horiz</strong></br> 
-                                Parent container that contains every control below the header
-                        </summary>
-                        <strong>shpSpacerLeftMain** </br> Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container.
-                                <details>
-                                        <summary>
-                                                <strong>cont_Main_2_2_1_Vert</strong></br>
-                                                Contains the controls needed to upload a new audio file
-                                        </summary>
-                                        <details>
-                                                <summary>
-                                                        <strong>attFileToUpload</strong></br>
-                                                        Allows user to upload a file </br> 
-                                                </summary>
+<summary>
+<strong>cont_Main_2_Vert</strong></br>
+Parent container for all other controls below 
+</summary>
+
+<details>
+<summary>
+<strong>cont_Main_2_1_Horiz</strong></br>
+Contains the app header
+</summary>
+<strong>headerMain</strong></br>OOTB Header (modern) control
+</details>
+
+<details>
+<summary>
+<strong>cont_Main_2_2_Horiz</strong></br> 
+Parent container that contains every control below the header
+</summary>
+<strong>shpSpacerLeftMain</strong></br>Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container.
+
+<details>
+<summary>
+<strong>cont_Main_2_2_1_Vert</strong></br>
+Contains the controls needed to upload a new audio file
+</summary>
+
+<details>
+<summary>
+<strong>attFileToUpload</strong></br>
+Allows user to upload a file
+</summary>
 This control allows user to upload a file. The control validates file size and file format:
 - The API has a limit of 100 Mb, so the control is limited to 100 Mb.
 - The Speach to Text API only accepts the following formats:
@@ -254,9 +261,10 @@ It has several properties customized:
 </details>
 
 <details>
-        <summary><strong>inpTotalSpeakersMain</strong></br>
-                Number input field that indicates how many speakers should Azure Speech to Text services look for.
-        </summary>
+<summary>
+<strong>inpTotalSpeakersMain</strong></br>
+Number input field that indicates how many speakers should Azure Speech to Text services look for.
+</summary>
 
 - **AccessibleLabel**: ```"Enter the total number of speakers in the audio file"```
 - **Max**: ```36```
@@ -266,14 +274,15 @@ It has several properties customized:
 </details>
 
 <details>
-        <summary>
-                <strong>cont_Main_2_2_1_1_Horiz</strong></br> 
-                Contains the buttons to upload audio file (or cancel action) 
-        </summary>
-        <details>
-                <summary><strong>btnUploadFile_Main</strong></br> 
-                        Used to upload the selected file to Azure Blob Storage (via Power Automate flow)
-                </summary>
+<summary>
+<strong>cont_Main_2_2_1_1_Horiz</strong></br> 
+Contains the buttons to upload audio file (or cancel action) 
+</summary>
+        
+<details>
+<summary><strong>btnUploadFile_Main</strong></br> 
+Used to upload the selected file to Azure Blob Storage (via Power Automate flow)
+</summary>
 
 - **AccessibleLabel**: ```"Upload the selected file"```
 - **DisplayMode**: Default mode disabled. Only enabled (Edit mode) when file is attached, the format is correct and the total speakers is greater than zero
@@ -360,12 +369,11 @@ It has several properties customized:
   )
    ```
 - **Text**: ```"Upload"```
-        </details>
+</details>
 
-  <details>
+<details>
 <summary><strong>btnCancelUpload_Main</strong></br>
-        Resets the controls (attFileToUploadMain, inpTotalSpeakersMain)</br>
-        <sub><i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_1_1_Horiz)</i></sub>
+Resets the controls (attFileToUploadMain, inpTotalSpeakersMain)
 </summary>
 
 - **OnSelect**:
@@ -378,20 +386,18 @@ It has several properties customized:
 - **Text**: ```"Cancel"```
 </details>
 </details>
-</details>
-</details>
 
 <details>
 <summary>
-        <strong>cont_Main_2_2_2_Vert</strong></br> 
-        Contains controls to display all transcripts available
+<strong>cont_Main_2_2_2_Vert</strong></br> 
+Contains controls to display all transcripts available
 </summary>
 
 <details>
 <summary><strong>galTranscripts_Main</strong></br> 
-          Displays <strong>all</strong> the available transcripts in the Transcripts table.</br>
-        <sub><i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert)</i></sub>
-  </summary>
+Displays <strong>all</strong> the available transcripts in the Transcripts table.</br>
+<sub><i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert)</i></sub>
+</summary>
 
  Some properties were customized:
 - **AccessibleLabel**: ```"List of all the transcripts"```
@@ -403,26 +409,27 @@ It has several properties customized:
 
 <details>
 <summary>
-        <strong>cont_Main_2_2_2_1_Horiz</strong></br> 
-        Contains all controls for individual transcript records
+<strong>cont_Main_2_2_2_1_Horiz</strong></br> 
+Contains all controls for individual transcript records
 </summary>
-        <details>
-        <summary><strong>cont_Main_2_2_2_1_1_Vert</strong></br>  
-                Contains controls to display the transcript details
-        </summary>
-                Including: <br>
-                <ul>
-                        <li>lblTranscriptFileName_Main</li>
-                        <li>lblTranscriptDetails_Main</li>
-                        <li>lblTranscriptSummary</li>
-                </ul> 
-        </details>
         
 <details>
+<summary><strong>cont_Main_2_2_2_1_1_Vert</strong></br>  
+Contains controls to display the transcript details
+</summary>
+        
+Including: <br>
+<ul>
+<li>lblTranscriptFileName_Main</li>
+<li>lblTranscriptDetails_Main</li>
+<li>lblTranscriptSummary</li>
+</ul> 
+</details>
+
+<details>
 <summary><strong>btnEditTranscript_Main</strong></br> 
-          Selects the transcript and opens it in the [Transcript Demo Screen](#transcript-demo-screen)</br>
-        <sub><i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert/galTranscripts_Main/cont_Main_2_2_2_1_Horiz)</i></sub>
-  </summary>
+Selects the transcript and opens it in the [Transcript Demo Screen](#transcript-demo-screen)
+</summary>
 
 - **AccessibleLabel**: ```"Click view and edit this transcript"```
 - **Appearance**:```'ButtonCanvas.Appearance'.Secondary```
@@ -490,12 +497,12 @@ It has several properties customized:
 - **Text**: ```Details```
 - **Width**:```100```
 </details>
+</details>
 
 <details>
 <summary><strong>btnRefreshTranscript_Main</strong></br>
-        Refreshes the **Transcripts** table </br>
-        <sub><i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_2_1_Horiz/cont_Main_2_2_2_Vert)</i></sub>
-  </summary>
+Refreshes the **Transcripts** table
+</summary>
 
 - **AccessibleLabel**:```"Refresh the list of transcripts"```
 - **AlignInContainer**:```AlignInContainer.Center```
@@ -504,15 +511,20 @@ It has several properties customized:
 - **Text**:```"Refresh"```
 - **OnSelect**:```Refresh(Transcripts)```
 </details>
+</details>
+</details>
 
-**cont_Main_2_2_3_Vert** </br> Only visible after an upload is completed successfully (i.e. **glbShowSuccess = true**) </br> <sub><i>(cont_Main_2_2_Horiz)</i></sub>
+<details>
+<summary><strong>cont_Main_2_2_3_Vert</strong></br>  Only visible after an upload is completed successfully (i.e. **glbShowSuccess = true**)</summary>
 
-**htmlSuccessMain** </br> HTML formatted success message </br> <sub><i>(cont_Main_2_2_3_Vert)</i></sub>
+<strong>htmlSuccessMain</strong></br>  HTML formatted success message
 
-**btnBackSuccessMain** </br> Takes user "back" to Main screen. i.e. sets **glbShowSuccess** to **false** </br> <sub><i>(cont_Main_2_2_3_Vert)</i></sub>
+<strong>btnBackSuccessMain</strong></br>Takes user "back" to Main screen. i.e. sets **glbShowSuccess** to **false**
+</details>
 
-**shpSpacerRightMain** </br> Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container. </br> <sub><i>(cont_Main_2_2_Horiz)</i></sub>
-
+<strong>shpSpacerRightMain</strong></br>Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container. 
+</details>
+</details>
 
 [▲Top](#contents)
 

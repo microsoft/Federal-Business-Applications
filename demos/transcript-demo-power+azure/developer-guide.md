@@ -252,12 +252,10 @@ _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert)_
 **cont_Main_2_2_1_1_Horiz** </br> Contains the buttons to upload audio file (or cancel action) </br> _(cont_Main_2_2_1_Vert)_
 
 <details>
-<summary><strong>btnUploadFile_Main </strong></br> 
-  Used to upload the selected file to Azure Blob Storage (via Power Automate flow)
-  </summary>
-
-_(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_1_1_Horiz)_
-
+<summary><strong>btnUploadFile_Main</strong></br> 
+  Used to upload the selected file to Azure Blob Storage (via Power Automate flow)</br>
+  <i>_(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_1_1_Horiz)_</i>
+</summary>
 
 - **AccessibleLabel**: ```"Upload the selected file"```
 - **DisplayMode**: Default mode disabled. Only enabled (Edit mode) when file is attached, the format is correct and the total speakers is greater than zero
@@ -347,9 +345,10 @@ _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_1_1_Ho
 </details>
 
 <details>
-<summary><strong>btnCancelUpload_Main</strong></br>Resets the controls (attFileToUploadMain, inpTotalSpeakersMain) 
-  </summary>
-_(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_1_1_Horiz)_
+<summary><strong>btnCancelUpload_Main</strong></br>
+        Resets the controls (attFileToUploadMain, inpTotalSpeakersMain)</br>
+        <i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_1_1_Horiz)</i>
+</summary>
 
 - **OnSelect**:
   ```
@@ -365,9 +364,9 @@ _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_1_1_Ho
 
 <details>
 <summary><strong>galTranscripts_Main</strong></br> 
-  Displays **all** the available transcripts in the Transcripts table.
+          Displays **all** the available transcripts in the Transcripts table.</br>
+        <i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert)</i>
   </summary>
-_(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert)_
 
  Some properties were customized:
 - **AccessibleLabel**: ```"List of all the transcripts"```
@@ -383,9 +382,9 @@ _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert)_
 
 <details>
 <summary><strong>btnEditTranscript_Main</strong></br> 
-  Selects the transcript and opens it in the [Transcript Demo Screen](#transcript-demo-screen) 
+          Selects the transcript and opens it in the [Transcript Demo Screen](#transcript-demo-screen)</br>
+        <i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert/galTranscripts_Main/cont_Main_2_2_2_1_Horiz)</i>
   </summary>
-_(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert/galTranscripts_Main/cont_Main_2_2_2_1_Horiz)_
 
 - **AccessibleLabel**: ```"Click view and edit this transcript"```
 - **Appearance**:```'ButtonCanvas.Appearance'.Secondary```
@@ -455,12 +454,11 @@ _(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_2_Vert/galTranscripts_Main/
 </details>
 
 <details>
-<summary><strong>btnRefreshTranscript_Main</strong></br> 
-
+<summary><strong>btnRefreshTranscript_Main</strong></br>
+        Refreshes the **Transcripts** table </br>
+        <i>(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_2_1_Horiz/cont_Main_2_2_2_Vert)</i>
   </summary>
-_(cont_Main_2_Vert/cont_Main_2_2_Horiz/cont_Main_2_2_1_Vert/cont_Main_2_2_2_1_Horiz/cont_Main_2_2_2_Vert)_
 
-Refreshes the **Transcripts** table
 - **AccessibleLabel**:```"Refresh the list of transcripts"```
 - **AlignInContainer**:```AlignInContainer.Center```
 - **Appearance**:```'ButtonCanvas.Appearance'.Secondary```

@@ -200,20 +200,24 @@ In addition to setting variables, two controls are reset (see below for more on 
                                                                                         Allows user to upload a file
                                                                                         </summary>
                                                                                         This control allows user to upload a file. The control validates file size and file format:
-                                                                                        - The API has a limit of 100 Mb, so the control is limited to 100 Mb.
-                                                                                        - The Speach to Text API only accepts the following formats:
-                                                                                          - MP3
-                                                                                          - WAV
-                                                                                          - AAC
-                                                                                          - OPUS
-                                                                                          - OGG
-                                                                                          - FLAC
-                                                                                          - WMA
-                                                                                          - AMR
-                                                                                          - WEBM
-                                                                                          - M4A
-                                                                                          - SPEEX
-                                                                                ---
+                                                                                       <ul>
+                                                                                        <li>The API has a limit of 100 Mb, so the control is limited to 100 Mb.</li> 
+                                                                                        <li>The Speach to Text API only accepts the following formats:
+                                                                                                <ul>
+                                                                                                  <li>MP3</li> 
+                                                                                                  <li>WAV</li> 
+                                                                                                  <li>AAC</li> 
+                                                                                                  <li>OPUS</li> 
+                                                                                                  <li>OGG</li> 
+                                                                                                  <li>FLAC</li> 
+                                                                                                  <li>WMA</li> 
+                                                                                                  <li>AMR</li> 
+                                                                                                  <li>WEBM</li> 
+                                                                                                  <li>M4A</li> 
+                                                                                                  <li>SPEEX</li> 
+                                                                                                </ul>
+                                                                                        </li> 
+                                                                                       </ul>
                                                                                         It has several properties customized:
                                                                                         - **AccessibleLabel**: ```"File to attach (upload) and transcribe"```
                                                                                         - **AddAttachmentText**: ```"Select audio file (100 MB Max)"```

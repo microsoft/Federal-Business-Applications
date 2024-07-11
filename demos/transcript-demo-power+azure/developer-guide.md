@@ -18,9 +18,11 @@ This document is for developers to help them understand *how* the solution works
 - [Flows](#flows)
   - [01 - Power Apps - Upload to Azure Blob](#01---power-apps---upload-to-azure-blob)
   - [02 -Child Flow - Create Transcript](#02--child-flow---create-transcript)
-  - [02b Child Flow - Loop Until Transcript Complete](#02b-child-flow---loop-until-transcript-complete)
-  - [02c Child Flow - Get Transcript Results](#02c-child-flow---get-transcript-results)
-  - [02d Child Flow - Parse Transcript and Load into Dataverse](#02d-child-flow---parse-transcript-and-load-into-dataverse)
+          - [02b Child Flow - Loop Until Transcript Complete](#02b-child-flow---loop-until-transcript-complete)
+          - [02c Child Flow - Get Transcript Results](#02c-child-flow---get-transcript-results)
+          - [02d Child Flow - Parse Transcript and Load into Dataverse](#02d-child-flow---parse-transcript-and-load-into-dataverse)
+          - [02e - Child Flow - Summarize Tanscript](#02e---child-flow---summarize-tanscript)
+- [PA - Create Transcript Document](#pa---create-transcript-document)
 
 [← Back to Read Me](readme.md#contents)
 ***
@@ -1182,13 +1184,13 @@ _Note: only visible when **NOT** in edit mode and glbSelectedTranscript is NOT b
 ## Flows
 There are six flows in this solution.  Most are designed to run sequentially (hence the numbering).   
 
-- [01 - Power Apps - Upload to Azure Blob]()
-- [02 - Child Flow - Create Transcript]()
-  - [02b Child Flow - Loop Until Transcript Complete]()
-  - [02c Child Flow - Get Transcript Results]()
-  - [02d Child Flow - Parse Transcript and Load into Dataverse]()
-  - [02e - Child Flow - Summarize Tanscript]()
-- [PA - Create Transcript Document]()
+- [01 - Power Apps - Upload to Azure Blob](#01---power-apps---upload-to-azure-blob)
+- [02 -Child Flow - Create Transcript](#02--child-flow---create-transcript)
+  - [02b Child Flow - Loop Until Transcript Complete](#02b-child-flow---loop-until-transcript-complete)
+  - [02c Child Flow - Get Transcript Results](#02c-child-flow---get-transcript-results)
+  - [02d Child Flow - Parse Transcript and Load into Dataverse](#02d-child-flow---parse-transcript-and-load-into-dataverse)
+  - [02e - Child Flow - Summarize Tanscript](#02e---child-flow---summarize-tanscript)
+- [PA - Create Transcript Document](#pa---create-transcript-document)
 
 [▲Top](#contents)
 ### 01 - Power Apps - Upload to Azure Blob

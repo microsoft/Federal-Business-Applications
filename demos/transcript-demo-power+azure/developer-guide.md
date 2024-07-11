@@ -133,311 +133,210 @@ In addition to setting variables, two controls are reset (see below for more on 
   <a name="main-screen-controls">
 #### Controls
 
-<ul>
-        <li>
-                <details>
-                        <summary>
-                                <strong>cont_Main_1_Vert</strong></br>  
-                                Only visible when <strong>glbShowSpinner = true</strong> 
-                        </summary>
-                        <ul>
-                                <li>
-                                        <details>
-                                                <summary>
-                                                        <strong>cont_Main_1_1_Horiz</strong></br>
-                                                        Creates rounded rectangle with drop shadow</summary>
-                                                <ul>
-                                                        <li><strong>spinner_Main</strong></br> OOTB Spinner (modern) control</li>
-                                                </ul>
-                                        </details>
-                                </li>
-                        </ul>
-                </details>
-        </li>
-        <li>
-                <details>
-                <summary>
-                        <strong>cont_Main_2_Vert</strong></br>
-                        Parent container for all other controls below 
-                </summary>
-                <ul>
-                        <li>
-                                <details>
-                                        <summary>
-                                        <strong>cont_Main_2_1_Horiz</strong></br>
-                                        Contains the app header
-                                        </summary>
-                                        <ul>
-                                                <li>
-                                                        <strong>headerMain</strong></br>
-                                                        OOTB Header (modern) control
-                                                </li>
-                                        </ul>
-                                </details>
-                        </li>
-                        <li>   
-                                <details>
-                                        <summary>
-                                                <strong>cont_Main_2_2_Horiz</strong></br> 
-                                                Parent container that contains every control below the header
-                                        </summary>
-                                        <ul>
-                                                <li>
-                                                        <strong>shpSpacerLeftMain</strong></br>
-                                                        Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container.
-                                                </li>
-                                                <li>
-                                                        <details>
-                                                                <summary>
-                                                                        <strong>cont_Main_2_2_1_Vert</strong></br>
-                                                                        Contains the controls needed to upload a new audio file
-                                                                </summary>
-                                                                <ul>
-                                                                        <li>
-                                                                               <details>
-                                                                                        <summary>
-                                                                                        <strong>attFileToUpload</strong></br>
-                                                                                        Allows user to upload a file
-                                                                                        </summary>
-                                                                                        This control allows user to upload a file. The control validates file size and file format:
-                                                                                       <ul>
-                                                                                        <li>The API has a limit of 100 Mb, so the control is limited to 100 Mb.</li> 
-                                                                                        <li>The Speach to Text API only accepts the following formats:
-                                                                                                <ul>
-                                                                                                  <li>MP3</li> 
-                                                                                                  <li>WAV</li> 
-                                                                                                  <li>AAC</li> 
-                                                                                                  <li>OPUS</li> 
-                                                                                                  <li>OGG</li> 
-                                                                                                  <li>FLAC</li> 
-                                                                                                  <li>WMA</li> 
-                                                                                                  <li>AMR</li> 
-                                                                                                  <li>WEBM</li> 
-                                                                                                  <li>M4A</li> 
-                                                                                                  <li>SPEEX</li> 
-                                                                                                </ul>
-                                                                                        </li> 
-                                                                                       </ul>
-                                                                                        It has several properties customized:
-                                                                                        - **AccessibleLabel**: ```"File to attach (upload) and transcribe"```
-                                                                                        - **AddAttachmentText**: ```"Select audio file (100 MB Max)"```
-                                                                                        - **Color**: This changes color to red if selected file is not supported audio file
-                                                                                          ```
-                                                                                          If(
-                                                                                            //IF Attachment is supported format
-                                                                                            Lower(
-                                                                                                Right(
-                                                                                                    First(attFileToUploadMain.Attachments).Name,
-                                                                                                    3
-                                                                                                )
-                                                                                            ) in colSupportedFileFormats,
-                                                                                            // THEN Color is Black
-                                                                                            Color.Black,
-                                                                                            // IF no attachment is selected
-                                                                                            IsEmpty(Self.Attachments),
-                                                                                            // THEN color is black
-                                                                                            Color.Black,
-                                                                                            // ELSE (Error) color is red
-                                                                                            Color.Red
-                                                                                          )
-                                                                                          ```
-                                                                                        - **Height**: ```100```
-                                                                                        - **MaxAttachments**: ```1```
-                                                                                           - If you want to allow for batch uploads, increase this option, but performance may suffer for larger files. Also some other parts of the solution may need to be refactored if you allow more than 1 file at a time
-                                                                                        - **MaxAttachmentSize**: ```1000```
-                                                                                           - _In MB_
-                                                                                        - **MaxAttachmentText**: This code does some basic data validation to check if the selected file is supported format
-                                                                                          ```
-                                                                                          If(
-                                                                                            //IF Attachment is supported format
-                                                                                                Lower(
-                                                                                                    Right(
-                                                                                                        First(attFileToUploadMain.Attachments).Name,
-                                                                                                        3
-                                                                                                    )
-                                                                                                ) in colSupportedFileFormats,
-                                                                                            "File Selected. Please click Upload",
-                                                                                            // ELSE display error
-                                                                                            "Error:  Only these file formats are supported: " &  Replace(glbListSupportedFileFormats,Len(glbListSupportedFileFormats)-1,1,"")
-                                                                                          )
-                                                                                          ```
-                                                                                        - **NoAttachmentsText**: ```"There is nothing selected."```
-                                                                                        - **OnAddFile**: Stores the selected file in a global variable (glbSelectedFileName).
-                                                                                          _IF you allow for more than one attachment, you'll need to refactor this_
-                                                                                          ```
-                                                                                          Set(
-                                                                                            glbSelectedFileName,
-                                                                                            First(attFileToUploadMain.Attachments).Name
-                                                                                          )
-                                                                                          ```
-                                                                                        - **OnRemoveFile**: When file is removed, clears variable
-                                                                                          ```
-                                                                                          Set(
-                                                                                            glbSelectedFileName,
-                                                                                            Blank()
-                                                                                          )
-                                                                                          ```
-                                                                                        - **Width**: ```Parent.Width - 60 ```                                                                                        
-                                                                                        </details> 
-                                                                        </li>
-                                                                        <li>
-                                                                                <details>
-                                                                                <summary>
-                                                                                <strong>inpTotalSpeakersMain</strong></br>
-                                                                                Number input field that indicates how many speakers should Azure Speech to Text services look for.
-                                                                                </summary>                                                                                
-                                                                                - **AccessibleLabel**: ```"Enter the total number of speakers in the audio file"```
-                                                                                - **Max**: ```36```
-                                                                                  - Azure Speech To Text services has a limit of 36 speakers for diarization
-                                                                                - **Min**: ```1```
-                                                                                - **Value**: ```0``` 
-                                                                                </details>
-                                                                        </li>
-                                                                </ul>
-                                                        </details>
-                                                </li>
-                                                <li>
-                                                        <details>
-                                                                <summary>
-                                                                        <strong>cont_Main_2_2_1_1_Horiz</strong></br> 
-                                                                        Contains the buttons to upload audio file (or cancel action) 
-                                                                </summary>
-                                                                <ul>
-                                                                        <li>
-                                                                                <details>
-                                                                                        <summary>
-                                                                                                <strong>btnUploadFile_Main</strong></br> 
-                                                                                                Used to upload the selected file to Azure Blob Storage (via Power Automate flow)
-                                                                                        </summary>                                                                                        
-                                                                                        - **AccessibleLabel**: ```"Upload the selected file"```
-                                                                                        - **DisplayMode**: Default mode disabled. Only enabled (Edit mode) when file is attached, the format is correct and the total speakers is greater than zero
-                                                                                        
-                                                                                        ```
-                                                                                          // If total speakers isn't set (min 1), disable this button
-                                                                                          If(
-                                                                                              inpTotalSpeakersMain.Value>0,
-                                                                                              // If No attachment, disable button
-                                                                                              If(
-                                                                                                  IsEmpty(attFileToUploadMain.Attachments),
-                                                                                                  DisplayMode.Disabled,
-                                                                                                  //IF Attachment is supported format
-                                                                                                  Lower(
-                                                                                                      Right(
-                                                                                                          First(attFileToUploadMain.Attachments).Name,
-                                                                                                          3
-                                                                                                      )
-                                                                                                  ) in colSupportedFileFormats,
-                                                                                                  // THEN Enable button
-                                                                                                  DisplayMode.Edit,
-                                                                                                  //ELSE disable button
-                                                                                                  DisplayMode.Disabled
-                                                                                              ),
-                                                                                              //ELSE disable button
-                                                                                              DisplayMode.Disabled
-                                                                                          )
-                                                                                        ```   
-.
-                                                                                        - **OnSelect**: When clicked, shows the loading spinner and calls the Power Automate Flow 
-                                                                                           ```
-                                                                                           // Show the loading spinner
-                                                                                          Set(
-                                                                                              glbShowSpinner,
-                                                                                              true
-                                                                                          );
-                                                                                          //Set loading spinner label
-                                                                                          Set(
-                                                                                              glbSpinnerLabel,
-                                                                                              "Uploading..."
-                                                                                          );
-                                                                                          // Store response from flow in variable (glbResponseUpload)
-                                                                                          Set(
-                                                                                              glbResponseUpload,
-                                                                                              //Run flow to upload the file and kickoff the transcript process
-                                                                                              '01-PowerApps-UploadtoAzureBlob'.Run(
-                                                                                                  inpTotalSpeakersMain.Value,
-                                                                                                  {
-                                                                                                      file: {
-                                                                                                          name: First(attFileToUploadMain.Attachments).Name,
-                                                                                                          contentBytes: First(attFileToUploadMain.Attachments).Value
-                                                                                                      }
-                                                                                                  }
-                                                                                              )
-                                                                                          );
-                                                                                          // Check for error uploading file
-                                                                                          IfError(
-                                                                                              glbResponseUpload,
-                                                                                              //Notify user of error
-                                                                                              Notify(
-                                                                                                  "Error: " & FirstError.Message,
-                                                                                                  NotificationType.Error
-                                                                                              );
-                                                                                              //Hide the loading spinner
-                                                                                          Set(
-                                                                                                  glbShowSpinner,
-                                                                                                  false
-                                                                                              ),
-                                                                                          //IF Successful then
-                                                                                              Concurrent(
-                                                                                              //Hide the loading spinner
-                                                                                                  Set(
-                                                                                                      glbShowSpinner,
-                                                                                                      false
-                                                                                                  ),
-                                                                                              //Show the success message
-                                                                                                  Set(
-                                                                                                      glbShowSuccess,
-                                                                                                      true
-                                                                                                  ),
-                                                                                                  //Reset Attachment Control
-                                                                                                  Reset(attFileToUploadMain),
-                                                                                                  // Reset Total Speakers input
-                                                                                                  Reset(inpTotalSpeakersMain)
-                                                                                              )
-                                                                                          )
-                                                                                           ```
-                                                                                        - **Text**: ```"Upload"```
-                                                                                        </details>
-                                                                        </li>
-                                                                        <li>
-                                                                        <details>
-                                                                                <summary>
-                                                                                        <strong>btnCancelUpload_Main</strong></br>
-                                                                                        Resets the controls (attFileToUploadMain, inpTotalSpeakersMain)
-                                                                                </summary>                                                                                
-                                                                                - **OnSelect**:
-                                                                                  ```
-                                                                                  //Reset upload attachment and total number of speakers controls
-                                                                                  Reset(attFileToUploadMain);
-                                                                                  // Reset the total speakers input field
-                                                                                  Reset(inpTotalSpeakersMain)
-                                                                                  ```
-                                                                                - **Text**: ```"Cancel"```
-                                                                                </details>
-                                                                        </li>
-                                                                </ul>
-                                                        </details>
-                                                </li>
-                                        </ul>
-                                 </details>
-                        </li>
-                </ul>
-       <details>
-        </li>
-</ul>
+
+- **cont_Main_1_Vert** </br> Only visible when **glbShowSpinner = true** 
+    - **cont_Main_1_1_Horiz** </br>Creates rounded rectangle with drop shadow                                                
+        - **spinner_Main** </br> OOTB Spinner (modern) control
+- **cont_Main_2_Vert** </br> Parent container for all other controls below 
+    - **cont_Main_2_1_Horiz** </br>Contains the app header                                   
+        - **headerMain** </br>OOTB Header (modern) control                                               
+    - **cont_Main_2_2_Horiz** </br> Parent container that contains every control below the header
+        - **shpSpacerLeftMain** </br>Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container.
+                - **cont_Main_2_2_1_Vert** </br>Contains the controls needed to upload a new audio file
+                - **attFileToUpload** </br> This control allows user to upload a file. The control validates file size and file format:
+                    - The API has a limit of 100 Mb, so the control is limited to 100 Mb. 
+                    - The Speach to Text API only accepts the following formats:
+                        - MP3 
+                        - WAV 
+                        - AAC 
+                        - OPUS 
+                        - OGG 
+                        - FLAC 
+                        - WMA 
+                        - AMR 
+                        - WEBM 
+                        - M4A 
+                        - SPEEX 
+                                                                                                
+          It has several properties customized:
+                    - **AccessibleLabel**: ```"File to attach (upload) and transcribe"```
+                    - **AddAttachmentText**: ```"Select audio file (100 MB Max)"```
+                    - **Color**: This changes color to red if selected file is not supported audio file
+                        ```
+                        If(
+                        //IF Attachment is supported format
+                        Lower(
+                            Right(
+                                First(attFileToUploadMain.Attachments).Name,
+                                3
+                            )
+                        ) in colSupportedFileFormats,
+                        // THEN Color is Black
+                        Color.Black,
+                        // IF no attachment is selected
+                        IsEmpty(Self.Attachments),
+                        // THEN color is black
+                        Color.Black,
+                        // ELSE (Error) color is red
+                        Color.Red
+                        )
+                        ```
+                    - **Height**: ```100```
+                    - **MaxAttachments**: ```1```
+                        - If you want to allow for batch uploads, increase this option, but performance may suffer for larger files. Also some other parts of the solution may need to be refactored if you allow more than 1 file at a time
+                    - **MaxAttachmentSize**: ```1000```
+                        - _In MB_
+                    - **MaxAttachmentText**: This code does some basic data validation to check if the selected file is supported format
+                        ```
+                        If(
+                        //IF Attachment is supported format
+                            Lower(
+                                Right(
+                                    First(attFileToUploadMain.Attachments).Name,
+                                    3
+                                )
+                            ) in colSupportedFileFormats,
+                        "File Selected. Please click Upload",
+                        // ELSE display error
+                        "Error:  Only these file formats are supported: " &  Replace(glbListSupportedFileFormats,Len(glbListSupportedFileFormats)-1,1,"")
+                        )
+                        ```
+                    - **NoAttachmentsText**: ```"There is nothing selected."```
+                    - **OnAddFile**: Stores the selected file in a global variable (glbSelectedFileName).
+                        _IF you allow for more than one attachment, you'll need to refactor this_
+                        ```
+                        Set(
+                        glbSelectedFileName,
+                        First(attFileToUploadMain.Attachments).Name
+                        )
+                        ```
+                    - **OnRemoveFile**: When file is removed, clears variable
+                        ```
+                        Set(
+                        glbSelectedFileName,
+                        Blank()
+                        )
+                        ```
+                    - **Width**: ```Parent.Width - 60 ```                                                                                        
+                        
+    
+    - **inpTotalSpeakersMain** </br>Number input field that indicates how many speakers should Azure Speech to Text services look for.
+            - **AccessibleLabel**: ```"Enter the total number of speakers in the audio file"```
+            - **Max**: ```36```
+                - Azure Speech To Text services has a limit of 36 speakers for diarization
+            - **Min**: ```1```
+            - **Value**: ```0``` 
+
+- **cont_Main_2_2_1_1_Horiz** </br>ontains the buttons to upload audio file (or cancel action) 
+    - **btnUploadFile_Main** </br> Used to upload the selected file to Azure Blob Storage (via Power Automate flow)
+        - **AccessibleLabel**: ```"Upload the selected file"```
+        - **DisplayMode**: Default mode disabled. Only enabled (Edit mode) when file is attached, the format is correct and the total speakers is greater than zero
+        
+        ```
+            // If total speakers isn't set (min 1), disable this button
+            If(
+                inpTotalSpeakersMain.Value>0,
+                // If No attachment, disable button
+                If(
+                    IsEmpty(attFileToUploadMain.Attachments),
+                    DisplayMode.Disabled,
+                    //IF Attachment is supported format
+                    Lower(
+                        Right(
+                            First(attFileToUploadMain.Attachments).Name,
+                            3
+                        )
+                    ) in colSupportedFileFormats,
+                    // THEN Enable button
+                    DisplayMode.Edit,
+                    //ELSE disable button
+                    DisplayMode.Disabled
+                ),
+                //ELSE disable button
+                DisplayMode.Disabled
+            )
+        ```   
+
+        - **OnSelect**: When clicked, shows the loading spinner and calls the Power Automate Flow 
+            ```
+            // Show the loading spinner
+            Set(
+                glbShowSpinner,
+                true
+            );
+            //Set loading spinner label
+            Set(
+                glbSpinnerLabel,
+                "Uploading..."
+            );
+            // Store response from flow in variable (glbResponseUpload)
+            Set(
+                glbResponseUpload,
+                //Run flow to upload the file and kickoff the transcript process
+                '01-PowerApps-UploadtoAzureBlob'.Run(
+                    inpTotalSpeakersMain.Value,
+                    {
+                        file: {
+                            name: First(attFileToUploadMain.Attachments).Name,
+                            contentBytes: First(attFileToUploadMain.Attachments).Value
+                        }
+                    }
+                )
+            );
+            // Check for error uploading file
+            IfError(
+                glbResponseUpload,
+                //Notify user of error
+                Notify(
+                    "Error: " & FirstError.Message,
+                    NotificationType.Error
+                );
+                //Hide the loading spinner
+            Set(
+                    glbShowSpinner,
+                    false
+                ),
+            //IF Successful then
+                Concurrent(
+                //Hide the loading spinner
+                    Set(
+                        glbShowSpinner,
+                        false
+                    ),
+                //Show the success message
+                    Set(
+                        glbShowSuccess,
+                        true
+                    ),
+                    //Reset Attachment Control
+                    Reset(attFileToUploadMain),
+                    // Reset Total Speakers input
+                    Reset(inpTotalSpeakersMain)
+                )
+            )
+            ```
+        - **Text**: ```"Upload"```
+        
+    - **btnCancelUpload_Main** </br>Resets the controls (attFileToUploadMain, inpTotalSpeakersMain)
+    - **OnSelect**:
+        ```
+        //Reset upload attachment and total number of speakers controls
+        Reset(attFileToUploadMain);
+        // Reset the total speakers input field
+        Reset(inpTotalSpeakersMain)
+        ```
+    - **Text**: ```"Cancel"```
+                                                                                
 
 
-
-
-<details>
-<summary>
-<strong>cont_Main_2_2_2_Vert</strong></br> 
+**cont_Main_2_2_2_Vert** </br> 
 Contains controls to display all transcripts available
-</summary>
 
-<details>
-<summary><strong>galTranscripts_Main</strong></br> 
-Displays <strong>all</strong> the available transcripts in the Transcripts table.
-</summary>
+
+
+**galTranscripts_Main** </br> 
+Displays **all** the available transcripts in the Transcripts table.
+
 
  Some properties were customized:
 - **AccessibleLabel**: ```"List of all the transcripts"```
@@ -447,29 +346,29 @@ Displays <strong>all</strong> the available transcripts in the Transcripts table
 - **Width**: ```Parent.Width-Parent.PaddingLeft-Parent.PaddingRight-Parent.LayoutGap```
 
 
-<details>
-<summary>
-<strong>cont_Main_2_2_2_1_Horiz</strong></br> 
+
+
+**cont_Main_2_2_2_1_Horiz** </br> 
 Contains all controls for individual transcript records
-</summary>
+
         
-<details>
-<summary><strong>cont_Main_2_2_2_1_1_Vert</strong></br>  
+
+**cont_Main_2_2_2_1_1_Vert** </br>  
 Contains controls to display the transcript details
-</summary>
+
         
 Including: <br>
-<ul>
-<li>lblTranscriptFileName_Main</li>
-<li>lblTranscriptDetails_Main</li>
-<li>lblTranscriptSummary</li>
-</ul> 
-</details>
 
-<details>
-<summary><strong>btnEditTranscript_Main</strong></br> 
+- lblTranscriptFileName_Main
+- lblTranscriptDetails_Main
+- lblTranscriptSummary
+ 
+
+
+
+**btnEditTranscript_Main** </br> 
 Selects the transcript and opens it in the [Transcript Demo Screen](#transcript-demo-screen)
-</summary>
+
 
 - **AccessibleLabel**: ```"Click view and edit this transcript"```
 - **Appearance**:```'ButtonCanvas.Appearance'.Secondary```
@@ -536,13 +435,13 @@ Selects the transcript and opens it in the [Transcript Demo Screen](#transcript-
    ```
 - **Text**: ```Details```
 - **Width**:```100```
-</details>
-</details>
 
-<details>
-<summary><strong>btnRefreshTranscript_Main</strong></br>
+
+
+
+**btnRefreshTranscript_Main** </br>
 Refreshes the **Transcripts** table
-</summary>
+
 
 - **AccessibleLabel**:```"Refresh the list of transcripts"```
 - **AlignInContainer**:```AlignInContainer.Center```
@@ -550,21 +449,21 @@ Refreshes the **Transcripts** table
 - **Icon**:```"ArrowClockwise"```
 - **Text**:```"Refresh"```
 - **OnSelect**:```Refresh(Transcripts)```
-</details>
-</details>
-</details>
 
-<details>
-<summary><strong>cont_Main_2_2_3_Vert</strong></br>  Only visible after an upload is completed successfully (i.e. **glbShowSuccess = true**)</summary>
 
-<strong>htmlSuccessMain</strong></br>  HTML formatted success message
 
-<strong>btnBackSuccessMain</strong></br>Takes user "back" to Main screen. i.e. sets **glbShowSuccess** to **false**
-</details>
 
-<strong>shpSpacerRightMain</strong></br>Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container. 
-</details>
-</details>
+
+**cont_Main_2_2_3_Vert** </br>  Only visible after an upload is completed successfully (i.e. **glbShowSuccess = true**)
+
+**htmlSuccessMain** </br>  HTML formatted success message
+
+**btnBackSuccessMain** </br>Takes user "back" to Main screen. i.e. sets **glbShowSuccess** to **false**
+
+
+**shpSpacerRightMain** </br>Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container. 
+
+
 
 [▲Top](#contents)
 
@@ -617,7 +516,7 @@ All controls (except two) are stored in horizontal and vertical containers to al
 | cont_Transcript_4_3_1_1_Horiz | cont_Transcript_4_3_1_1_1_Vert | |
 | cont_Transcript_4_3_1_1_1_Vert | galAllPhrasesTranscript | |
 | galAllPhrasesTranscript | btnAllPhrasesTranscript | Transparent button that captures when user clicks the phrase.  Selects the gallery triggering its OnSelect property |
-| galAllPhrasesTranscript | cont_Transcript_4_3_1_1_1_1_Horiz | Contains details for the each phrase including: <ul><li>txtAllPhrasesOffsetTranscript</li><li>lblAllPhrasesSpeakerTranscript</li><li>lblPhraseTranscript</li></ul> |
+| galAllPhrasesTranscript | cont_Transcript_4_3_1_1_1_1_Horiz | Contains details for the each phrase including: - txtAllPhrasesOffsetTranscript- lblAllPhrasesSpeakerTranscript- lblPhraseTranscript |
 | cont_Transcript_4_3_1_1_Horiz | cont_Transcript_4_3_1_1_2_Vert | |
 | cont_Transcript_4_3_1_1_2_Vert | **[txtCurrentPhrase_Transcript](#txtCurrentPhrase_Transcript)** |  Displays the text of the currently selected phrase |
 | cont_Transcript_4_3_1_1_2_Vert | cont_Transcript_4_3_1_1_2_1_Horiz | |

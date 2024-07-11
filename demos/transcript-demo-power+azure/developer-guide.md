@@ -1854,6 +1854,50 @@ Generates a Word and PDF doc version of the transcript based on Transcript GUID 
 This flow is triggered by parent flow [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#02---azure---when-audio-file-created-in-blob-storage---create-transcript) OR by the user using the canvas app.  
 
 Here is a breakdown of each action
+- Power Apps (V2): Triggered either via flow or canvas app. Passes one parameter:
+  - **Transcriptid** : GUID of the Transcript record
+- Get Transcript: Retrieve the Transcript record that matches the Transcriptid passed to the flow
+- **List Recognized Phrases**: Retrieves all Recognized Phrases related to the Transcript record and sorts them in ascending order by offset in seconds
+  
+  ![image](https://github.com/user-attachments/assets/79288d60-d4f7-42cf-9975-7c88b9a7ae5d)
+  
+  - **Table Name**: ```Recognized Phrases```
+  - **Filter Rows**: ```_demo_transcript_value eq '@{triggerBody()['text']}'```
+  - **Sort By**:```demo_offsetinseconds asc```
+- **Select Phrases**: Builds an array object with only three fields
+  
+  ![image](https://github.com/user-attachments/assets/fdc05397-13a0-4669-a913-bf64d08f0b31)
+  
+  - **From**:```@{outputs('List_Recognized_Phrases')?['body/value']}```
+  - **TimeStamp**:```@item()?['demo_timestamp']```
+  - **Speaker**:```@coalesce(item()?['_demo_speakerlookup_value@OData.Community.Display.V1.FormattedValue'],item()?['demo_speaker'])```
+  - **Phrase**:```@item()?['demo_display']```
+- **Populate a Microsoft Word template**: Populates a Word template with transcript
+  
+  ![image](https://github.com/user-attachments/assets/0f19f8d8-1df6-4791-b4f6-e1c531afec20)
+
+ - **Location**: Environment variable: demoSharePointSite
+    ```
+    @parameters('SharePoint Site (demo_SharePointSite)')
+    ```
+  - **Document Library**:   It must be stored in a SharePoint document library
+    ```Documents```
+    - Note: due to limitations of this connector, you must hardcode the word template location and file name.
+  - **File**:```/General/Transcript Demo Template.docx```
+    - Please update with your template
+  - **TranscriptNumberHeader**:```@{outputs('Get_Transcript')?['body/demo_transcriptnumber']}```
+  - **PhraseRows**: Output of the previous action (Select Phrases)
+    ```@body('Select_Phrases')```
+  - **CreatedBy**:```@{replace(outputs('Get_Transcript')?['body/_createdby_value@OData.Community.Display.V1.FormattedValue'],'# ','')}```
+    - _The replace() function is there to remove a '#' suffix that was in my tenant. You may or may not have that issue_  
+  - **FileNameHeader**:```@{outputs('Get_Transcript')?['body/demo_sourcefilename']}```
+  - **Summary**:```@{outputs('Get_Transcript')?['body/demo_summary']}```
+  - **TranscriptNumber**:```@{outputs('Get_Transcript')?['body/demo_transcriptnumber']}```
+  - **FileName**:```@{outputs('Get_Transcript')?['body/demo_sourcefilename']}```
+  - **Duration**:```@{outputs('Get_Transcript')?['body/demo_durationhhmmss']}```
+  - **CreateDate**:```formatDateTime(outputs('Get_Transcript')?['body/createdon'],'MM/dd/yyyy')```
+
+⁠
 
 
 [▲Top](#contents)

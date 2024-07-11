@@ -133,99 +133,97 @@ In addition to setting variables, two controls are reset (see below for more on 
   <a name="main-screen-controls">
 #### Controls
 
-
 - **cont_Main_1_Vert** </br> Only visible when **glbShowSpinner = true** 
-    - **cont_Main_1_1_Horiz** </br>Creates rounded rectangle with drop shadow                                                
-        - **spinner_Main** </br> OOTB Spinner (modern) control
+- **cont_Main_1_1_Horiz** </br>Creates rounded rectangle with drop shadow                                                
+- **spinner_Main** </br> OOTB Spinner (modern) control
 - **cont_Main_2_Vert** </br> Parent container for all other controls below 
-    - **cont_Main_2_1_Horiz** </br>Contains the app header                                   
-        - **headerMain** </br>OOTB Header (modern) control                                               
-    - **cont_Main_2_2_Horiz** </br> Parent container that contains every control below the header
-        - **shpSpacerLeftMain** </br>Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container.
-                - **cont_Main_2_2_1_Vert** </br>Contains the controls needed to upload a new audio file
-                - **attFileToUpload** </br> This control allows user to upload a file. The control validates file size and file format:
-                    - The API has a limit of 100 Mb, so the control is limited to 100 Mb. 
-                    - The Speach to Text API only accepts the following formats:
-                        - MP3 
-                        - WAV 
-                        - AAC 
-                        - OPUS 
-                        - OGG 
-                        - FLAC 
-                        - WMA 
-                        - AMR 
-                        - WEBM 
-                        - M4A 
-                        - SPEEX 
-                                                                                                
-          It has several properties customized:
-                    - **AccessibleLabel**: ```"File to attach (upload) and transcribe"```
-                    - **AddAttachmentText**: ```"Select audio file (100 MB Max)"```
-                    - **Color**: This changes color to red if selected file is not supported audio file
-                        ```
-                        If(
-                        //IF Attachment is supported format
-                        Lower(
-                            Right(
-                                First(attFileToUploadMain.Attachments).Name,
-                                3
-                            )
-                        ) in colSupportedFileFormats,
-                        // THEN Color is Black
-                        Color.Black,
-                        // IF no attachment is selected
-                        IsEmpty(Self.Attachments),
-                        // THEN color is black
-                        Color.Black,
-                        // ELSE (Error) color is red
-                        Color.Red
-                        )
-                        ```
-                    - **Height**: ```100```
-                    - **MaxAttachments**: ```1```
-                        - If you want to allow for batch uploads, increase this option, but performance may suffer for larger files. Also some other parts of the solution may need to be refactored if you allow more than 1 file at a time
-                    - **MaxAttachmentSize**: ```1000```
-                        - _In MB_
-                    - **MaxAttachmentText**: This code does some basic data validation to check if the selected file is supported format
-                        ```
-                        If(
-                        //IF Attachment is supported format
-                            Lower(
-                                Right(
-                                    First(attFileToUploadMain.Attachments).Name,
-                                    3
-                                )
-                            ) in colSupportedFileFormats,
-                        "File Selected. Please click Upload",
-                        // ELSE display error
-                        "Error:  Only these file formats are supported: " &  Replace(glbListSupportedFileFormats,Len(glbListSupportedFileFormats)-1,1,"")
-                        )
-                        ```
-                    - **NoAttachmentsText**: ```"There is nothing selected."```
-                    - **OnAddFile**: Stores the selected file in a global variable (glbSelectedFileName).
-                        _IF you allow for more than one attachment, you'll need to refactor this_
-                        ```
-                        Set(
-                        glbSelectedFileName,
-                        First(attFileToUploadMain.Attachments).Name
-                        )
-                        ```
-                    - **OnRemoveFile**: When file is removed, clears variable
-                        ```
-                        Set(
-                        glbSelectedFileName,
-                        Blank()
-                        )
-                        ```
-                    - **Width**: ```Parent.Width - 60 ```                                                                                        
+- **cont_Main_2_1_Horiz** </br>Contains the app header                                   
+- **headerMain** </br>OOTB Header (modern) control                                               
+- **cont_Main_2_2_Horiz** </br> Parent container that contains every control below the header
+- **shpSpacerLeftMain** </br>Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container.
+- **cont_Main_2_2_1_Vert** </br>Contains the controls needed to upload a new audio file
+- **attFileToUpload** </br> This control allows user to upload a file. The control validates file size and file format:  
+  - The API has a limit of 100 Mb, so the control is limited to 100 Mb. 
+  - The Speech to Text API only accepts the following formats:
+    - MP3 
+    - WAV 
+    - AAC 
+    - OPUS 
+    - OGG 
+    - FLAC 
+    - WMA 
+    - AMR 
+    - WEBM 
+    - M4A 
+    - SPEEX                                                                           
+  - It has several properties customized:
+    - **AccessibleLabel**: ```"File to attach (upload) and transcribe"```
+    - **AddAttachmentText**: ```"Select audio file (100 MB Max)"```
+    - **Color**: This changes color to red if selected file is not supported audio file
+    ```
+    If(
+    //IF Attachment is supported format
+    Lower(
+        Right(
+            First(attFileToUploadMain.Attachments).Name,
+            3
+        )
+    ) in colSupportedFileFormats,
+    // THEN Color is Black
+    Color.Black,
+    // IF no attachment is selected
+    IsEmpty(Self.Attachments),
+    // THEN color is black
+    Color.Black,
+    // ELSE (Error) color is red
+    Color.Red
+    )
+    ```
+    - **Height**: ```100```
+    - **MaxAttachments**: ```1```
+    - If you want to allow for batch uploads, increase this option, but performance may suffer for larger files. Also some other parts of the solution may need to be refactored if you allow more than 1 file at a time
+    - **MaxAttachmentSize**: ```1000```
+    - _In MB_
+    - **MaxAttachmentText**: This code does some basic data validation to check if the selected file is supported format
+    ```
+    If(
+    //IF Attachment is supported format
+        Lower(
+            Right(
+                First(attFileToUploadMain.Attachments).Name,
+                3
+            )
+        ) in colSupportedFileFormats,
+    "File Selected. Please click Upload",
+    // ELSE display error
+    "Error:  Only these file formats are supported: " &  Replace(glbListSupportedFileFormats,Len(glbListSupportedFileFormats)-1,1,"")
+    )
+    ```
+    - **NoAttachmentsText**: ```"There is nothing selected."```
+    - **OnAddFile**: Stores the selected file in a global variable (glbSelectedFileName).
+    _IF you allow for more than one attachment, you'll need to refactor this_
+    ```
+    Set(
+    glbSelectedFileName,
+    First(attFileToUploadMain.Attachments).Name
+    )
+    ```
+    - **OnRemoveFile**: When file is removed, clears variable
+    ```
+    Set(
+    glbSelectedFileName,
+    Blank()
+    )
+    ```
+    - **Width**: ```Parent.Width - 60 ```                                                                                        
                         
     
-    - **inpTotalSpeakersMain** </br>Number input field that indicates how many speakers should Azure Speech to Text services look for.
-            - **AccessibleLabel**: ```"Enter the total number of speakers in the audio file"```
-            - **Max**: ```36```
-                - Azure Speech To Text services has a limit of 36 speakers for diarization
-            - **Min**: ```1```
-            - **Value**: ```0``` 
+- **inpTotalSpeakersMain** </br>Number input field that indicates how many speakers should Azure Speech to Text services look for.
+    - **AccessibleLabel**: ```"Enter the total number of speakers in the audio file"```
+    - **Max**: ```36```
+        - Azure Speech To Text services has a limit of 36 speakers for diarization
+    - **Min**: ```1```
+    - **Value**: ```0``` 
 
 - **cont_Main_2_2_1_1_Horiz** </br>ontains the buttons to upload audio file (or cancel action) 
     - **btnUploadFile_Main** </br> Used to upload the selected file to Azure Blob Storage (via Power Automate flow)

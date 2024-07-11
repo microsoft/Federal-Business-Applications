@@ -1182,12 +1182,13 @@ _Note: only visible when **NOT** in edit mode and glbSelectedTranscript is NOT b
 ## Flows
 There are six flows in this solution.  Most are designed to run sequentially (hence the numbering).   
 
-- 01 - Power Apps - Upload to Azure Blob
-- 02 - Child Flow - Create Transcript
-  - 02b Child Flow - Loop Until Transcript Complete
-  - 02c Child Flow - Get Transcript Results
-  - 02d Child Flow - Parse Transcript and Load into Dataverse
-  - 
+- [01 - Power Apps - Upload to Azure Blob]()
+- [02 - Child Flow - Create Transcript]()
+  - [02b Child Flow - Loop Until Transcript Complete]()
+  - [02c Child Flow - Get Transcript Results]()
+  - [02d Child Flow - Parse Transcript and Load into Dataverse]()
+  - [02e - Child Flow - Summarize Tanscript]()
+- [PA - Create Transcript Document]()
 
 [▲Top](#contents)
 ### 01 - Power Apps - Upload to Azure Blob

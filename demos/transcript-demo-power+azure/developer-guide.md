@@ -490,8 +490,7 @@ All controls (except two) are stored in horizontal and vertical containers to al
     - **AccessibleLabel**:```"AI Generated summary using Azure OpenAI"```
     - **Appearance**:```If(glbMode=DisplayMode.Edit,'TextInputCanvas.Appearance'.FilledDarker,'TextInputCanvas.Appearance'.FilledLighter)```
     - **DisplayMode**:```glbMode```
-    - **Mode**:``````
-    - ****:```'TextInputCanvas.Mode'.Multiline```
+    - **Mode**:```'TextInputCanvas.Mode'.Multiline```
     - **Value**:```LookUp(Transcripts,Transcript=glbSelectedTranscript.Transcript).Summary```
     - **Width**:```Parent.Width-Parent.PaddingLeft-Parent.PaddingRight```
   
@@ -1134,10 +1133,8 @@ _Note: only visible when **NOT** in edit mode and glbSelectedTranscript is NOT b
   - **Width**:```120```
 
 - **btnRefreshTranscriptFile** </br>Regenerates the PDF file via Power Automate when clicked
-  - **AccessibleLabel**:``````
-  - ****:```"Click to refresh the transcript PDF"```
-  - **Appearance**:``````
-  - ****:```'ButtonCanvas.Appearance'.Subtle```
+  - **AccessibleLabel**:```"Click to refresh the transcript PDF"```
+  - **Appearance**:```'ButtonCanvas.Appearance'.Subtle```
   - **Icon**:```"ArrowClockwise"```
   - **Layout**:```"Icon before"```
   - **OnSelect**: Shows the Loading Spinner, then runs the flow to regenerate the Transcript PDF

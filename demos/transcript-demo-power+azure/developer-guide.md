@@ -22,7 +22,7 @@ This document is for developers to help them understand *how* the solution works
     - [02c Child Flow - Get Transcript Results](#02c-child-flow---get-transcript-results)
     - [02d Child Flow - Parse Transcript and Load into Dataverse](#02d-child-flow---parse-transcript-and-load-into-dataverse)
     - [02e - Child Flow - Summarize Tanscript](#02e---child-flow---summarize-tanscript)
-- [PA - Create Transcript Document](#pa---create-transcript-document)
+  - [PA - Create Transcript Document](#pa---create-transcript-document)
 
 [← Back to Read Me](readme.md#contents)
 ***

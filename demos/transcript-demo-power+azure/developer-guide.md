@@ -436,61 +436,7 @@ This screen has several containers. Some of these are used to for pop-up windows
 
 #### Controls
 
-All controls (except two) are stored in horizontal and vertical containers to allow for responsive design when the user's screen resolution and aspect ratio change.  Briefly, here are the controls and what they do. Click the control for more details:
-
-| **Parent** | **Control** | **Description** |
-| :-----------   | :-----------   | :-----------   |
-| - | **cont_Transcript_1_Vert** | Contains the loading spinner and is only visible when **glbShowSpinner** = true  |
-| - | **[pdfFileTranscript](#pdffiletranscript)** | Displays the PDF version of the transcript. Only visible when Transcript File is attached to record and the **Trancript (PDF)** tab is selected |
-| - | **[timerTranscript](#timerTranscript)** | Used to update variables based on the playhead of the audio control (**audRecordingPlayback**). Some of the properties have been customized |
-| - | **[cont_Transcript_2_Vert](#cont_Transcript_2_Vert)** | Is only visible when **gblShowPopUpUpdateAllSpeakers** = true   |
-| cont_Transcript_2_Vert | **[cont_Transcript_2_1_Vert](#cont_Transcript_2_1_Vert)** | |
-| cont_Transcript_2_1_Vert | cont_Transcript_2_1_1_Horiz | |
-| cont_Transcript_2_1_1_Horiz | **[btnPopUpUpdateAllSpeakersYes](#btnPopUpUpdateAllSpeakersYes)** | |
-| cont_Transcript_2_1_1_Horiz | **[btnPopUpUpdateAllSpeakersNo](#btnPopUpUpdateAllSpeakersNo)** | |
-| cont_Transcript_2_1_1_Horiz | **[btnSaveHidden](#btnSaveHidden)** |  | This button is hidden, but is called by various other buttons. This is one technique to create reusable code/functions in Power Apps |
-| - | **[cont_Transcript_3_Vert](#cont_Transcript_3_Vert)** | Only visible when **glbShowPopUpAddSpeaker** = true  |
-| cont_Transcript_3_Vert | **[frmAddSpeaker ](#frmAddSpeaker )** |  | Submits new speaker name to Speakers table |
-| cont_Transcript_3_Vert | cont_Transcript_3_1_Horiz | |
-| cont_Transcript_3_1_Horiz | **[btnAddSpeakerSave ](#btnAddSpeakerSave )** | |
-| cont_Transcript_3_1_Horiz | **[btnAddSpeakerCancel ](#btnAddSpeakerCancel )** | |
-| - |  **cont_Transcript_4_Vert** | Contains the main UI for this screen including playback and edit controls |
-| cont_Transcript_4_Vert | cont_Transcript_4_1_Horiz | Contains the app header |
-| cont_Transcript_4_1_Horiz | header_Transcript | OOTB Header (modern) control |
-| cont_Transcript_4_Vert | cont_Transcript_4_2_Horiz | |
-| cont_Transcript_4_2_Horiz | **[btnEdit_Transcript](#btnEdit_Transcript)** | Used to put screen into edit mode |
-| cont_Transcript_4_2_Horiz | **[btnSave_Transcript](#btnSave_Transcript)** | Used to save changes |
-| cont_Transcript_4_2_Horiz | **[btnCancel_Transcript](#btnCancel_Transcript)** | Resets screen to display mode without saving changes|
-| cont_Transcript_4_Vert | tabMainTranscript | |
-| cont_Transcript_4_Vert | cont_Transcript_4_3_Horiz | |
-| cont_Transcript_4_3_Horiz | cont_Transcript_4_3_1_Vert | |
-| cont_Transcript_4_3_1_Vert | cont_Transcript_4_3_1_2_Horiz | |
-| cont_Transcript_4_3_1_2_Horiz | **[btnJumpToInPoint ](#btnJumpToInPoint )** |  |
-| cont_Transcript_4_3_1_2_Horiz | **[lblInPoint_Transcript ](#lblInPoint_Transcript )** |  |
-| cont_Transcript_4_3_1_2_Horiz | **[lblOutpoint_Transcript:](#lblOutpoint_Transcript)** |  |
-| cont_Transcript_4_3_1_2_Horiz | **[lblJumpToTime_Transcript](#lblJumpToTime_Transcript)** |  |
-| cont_Transcript_4_3_1_2_Horiz | **[txtJumpToTime_Transcript ](#txtJumpToTime_Transcript )** | Allows user to type time code (HH:MM:SS) to jump to part of recording (and transcript) |
-| cont_Transcript_4_3_1_Vert | **[audRecordingPlayback](#audRecordingPlayback)** | Used to playback the original audio (stored in Azure Blob Storage) |
-| cont_Transcript_4_3_1_Vert | cont_Transcript_4_3_1_1_Horiz | |
-| cont_Transcript_4_3_1_1_Horiz | cont_Transcript_4_3_1_1_1_Vert | |
-| cont_Transcript_4_3_1_1_1_Vert | galAllPhrasesTranscript | |
-| galAllPhrasesTranscript | btnAllPhrasesTranscript | Transparent button that captures when user clicks the phrase.  Selects the gallery triggering its OnSelect property |
-| galAllPhrasesTranscript | cont_Transcript_4_3_1_1_1_1_Horiz | Contains details for the each phrase including: - txtAllPhrasesOffsetTranscript- lblAllPhrasesSpeakerTranscript- lblPhraseTranscript |
-| cont_Transcript_4_3_1_1_Horiz | cont_Transcript_4_3_1_1_2_Vert | |
-| cont_Transcript_4_3_1_1_2_Vert | **[txtCurrentPhrase_Transcript](#txtCurrentPhrase_Transcript)** |  Displays the text of the currently selected phrase |
-| cont_Transcript_4_3_1_1_2_Vert | cont_Transcript_4_3_1_1_2_1_Horiz | |
-| cont_Transcript_4_3_1_1_2_1_Horiz | **[drpSelectSpeaker_Transcript](#drpSelectSpeaker_Transcript)** | Used to select speaker from **Speakers** table |
-| cont_Transcript_4_3_1_1_2_1_Horiz | **[icoClearSelectSpeaker_Transcript](#icoClearSelectSpeaker_Transcript)** | Resets **[drpSelectSpeaker_Transcript](#drpSelectSpeaker_Transcript)** |
-| cont_Transcript_4_3_1_1_2_1_Horiz | **[btnNewSpeaker_Transcript ](#btnNewSpeaker_Transcript )** | Opens the **[contPopUpUpdateAllSpeakersBg](#contPopUpUpdateAllSpeakersBg)** pop-up |
-| cont_Transcript_4_3_1_1_2_1_Horiz | **[lblCurrentSpeaker_Transcript](#lblCurrentSpeaker_Transcript)** | Displays either Speaker name (if available) or speaker number (as generated by Azure Speech to Text) |
-| cont_Transcript_4_3_Horiz | cont_Transcript_4_3_2_Vert | |
-| cont_Transcript_4_3_2_Vert | shpFileTranscript | |
-| cont_Transcript_4_3_2_Vert | cont_Transcript_4_3_2_1_Horiz | |
-| cont_Transcript_4_3_2_1_Horiz | btnDownloadTranscriptFile | |
-| cont_Transcript_4_3_2_1_Horiz | btnRefreshTranscriptFile | |
-| cont_Transcript_4_3_Horiz | **[txtSummaryTranscript](#txtSummaryTranscript)** | Used to display and edit AI generated summary of transcript |
-
-----------
+All controls (except two) are stored in horizontal and vertical containers to allow for responsive design when the user's screen resolution and aspect ratio change.  
 
 - **pdfFileTranscript**</br>Displays the PDF version of the transcript. Only visible when Transcript File is attached to record and the Trancript (PDF) tab is selected
   - **Document**: ```LookUp(Transcripts,Transcript=glbSelectedTranscript.Transcript).'Transcript File'.Value```
@@ -508,8 +454,6 @@ All controls (except two) are stored in horizontal and vertical containers to al
   - **x**:```contMainBodyTranscriptHoriz.X+contMainBodyTranscriptHoriz.RadiusBottomLeft```
   - **y**:```contMainBodyTranscriptHoriz.Y+contMainBodyTranscriptHoriz.RadiusBottomLeft```
   - **Zoom**:```Zoom.FitHeight```
-  
-
 
 - **timerTranscript** </br> Used to update variables based on the playhead of the audio control (**audRecordingPlayback**).  
   - **Duration**: This is in milliseconds. 1000 = 1 second  
@@ -543,17 +487,17 @@ All controls (except two) are stored in horizontal and vertical containers to al
   - **Visible**: ```false```
 
 - **txtSummaryTranscript** </br> Used to display and edit AI generated summary of transcript
-  - **AccessibleLabel**:```"AI Generated summary using Azure OpenAI"```
-  - **Appearance**:```If(glbMode=DisplayMode.Edit,'TextInputCanvas.Appearance'.FilledDarker,'TextInputCanvas.Appearance'.FilledLighter)```
-  - **DisplayMode**:```glbMode```
-  - **Mode**:``````
-  - ****:```'TextInputCanvas.Mode'.Multiline```
-  - **Value**:```LookUp(Transcripts,Transcript=glbSelectedTranscript.Transcript).Summary```
-  - **Width**:```Parent.Width-Parent.PaddingLeft-Parent.PaddingRight```
+    - **AccessibleLabel**:```"AI Generated summary using Azure OpenAI"```
+    - **Appearance**:```If(glbMode=DisplayMode.Edit,'TextInputCanvas.Appearance'.FilledDarker,'TextInputCanvas.Appearance'.FilledLighter)```
+    - **DisplayMode**:```glbMode```
+    - **Mode**:``````
+    - ****:```'TextInputCanvas.Mode'.Multiline```
+    - **Value**:```LookUp(Transcripts,Transcript=glbSelectedTranscript.Transcript).Summary```
+    - **Width**:```Parent.Width-Parent.PaddingLeft-Parent.PaddingRight```
+  
+![audRecordingPlayback](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/4d4feed5-64ae-4b99-bb2c-9d0fe8815037)
 
 - **audRecordingPlayback** </br> Used to playback the original audio (stored in Azure Blob Storage)
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/4d4feed5-64ae-4b99-bb2c-9d0fe8815037)
-
   - **AccessibleLabel**:```"Playback control for the selected transcript's original audio recording"```
   - **DisplayMode**: If user is editing the current phrase, disable this so they can't move the playhead (and change the current phrase)
     ```
@@ -573,10 +517,8 @@ All controls (except two) are stored in horizontal and vertical containers to al
    - **StartTime**: ```glbJumpToTime```
    - **Width**: ```Parent.Width```
 
+![btnEdit_Transcript](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/21d4b135-ab8f-4761-8b3f-9527367f5cd6)
 - **btnEdit_Transcript** </br> Used to put screen into edit mode
-  
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/21d4b135-ab8f-4761-8b3f-9527367f5cd6)
-
 _Note: only visible when **NOT** in edit mode and glbSelectedTranscript is NOT blank_
   - **AccessibleLabel**: ```"Edit the current phrase"```
   - **Appearance**:```'ButtonCanvas.Appearance'.Transparent```
@@ -593,11 +535,8 @@ _Note: only visible when **NOT** in edit mode and glbSelectedTranscript is NOT b
   - **Text**:```"Edit"```
   - **Visible** ```Not(glbMode=DisplayMode.Edit) And !IsBlank(glbSelectedTranscript)```
 
-- **btnSave_Transcript** </br>Used to save changes
-
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/6b7670e6-c99f-4693-9158-2262df8cd618)
-
-_Note: only visible when in edit mode_  
+![btnSave_Transcript](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/6b7670e6-c99f-4693-9158-2262df8cd618)
+- **btnSave_Transcript** </br>Used to save changes</br> _Note: only visible when in edit mode_  
   - **AccessibleLabel**: ```"Save edits to current phrase"```
   - **Appearance**:```'ButtonCanvas.Appearance'.Transparent```
   - **Icon**:```"Save"```
@@ -658,11 +597,8 @@ _Note: only visible when in edit mode_
   - **Text**: ```"Save"```
   - **Visible**: ```glbMode=DisplayMode.Edit```
 
-- **btnCancel_Transcript** </br>Resets screen to display mode without saving changes
-
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/c26cdcec-d1a9-494e-b872-d759a875108d)
-
-_Note: Only visible when in Edit mode_  
+![btnCancel_Transcript](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/c26cdcec-d1a9-494e-b872-d759a875108d)
+- **btnCancel_Transcript** </br>Resets screen to display mode without saving changes</br> _Note: Only visible when in Edit mode_  
   - **AccessibleLabel**:```"Cancel the edits to the current phrase"```
   - **Appearance**: ```'ButtonCanvas.Appearance'.Outline```
   - **Icon**:```"Dismiss"```
@@ -679,10 +615,9 @@ _Note: Only visible when in Edit mode_
   - **Text**: ```"Cancel"```
   - **Visible**: ```glbMode=DisplayMode.Edit```
 
+
+![txtCurrentPhrase_Transcript](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/98c3429a-cd78-4f37-b203-525eab121cf1)
 - **txtCurrentPhrase_Transcript** </br>Displays the text of the currently selected phrase
-
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/98c3429a-cd78-4f37-b203-525eab121cf1)
-
   - **AccessibleLabel**: ```"Transcript of the current phrase (based current time code)"```
   - **DisplayMode**: If variable glbMode is blank, default to View mode
     ```Coalesce(glbMode,DisplayMode.View)```
@@ -694,10 +629,8 @@ _Note: Only visible when in Edit mode_
     ```
   - **Width**: ```Parent.Width```
 
+![lblCurrentSpeaker_Transcript](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/22d1f4da-33fc-46bc-9526-fd5e9653ae52)
 **lblCurrentSpeaker_Transcript** </br>Displays either Speaker name (if available) or speaker number (as generated by Azure Speech to Text)
-
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/22d1f4da-33fc-46bc-9526-fd5e9653ae52)
-
   - **Text**: If the speaker dropdown has a selected name, use that. If not, use the value of the speaker name from the current phrase (glbCurrentPhrase). If no name exists, get the speaker value (number) from the current phrase
     ```
     "Speaker: " & Coalesce(
@@ -708,23 +641,17 @@ _Note: Only visible when in Edit mode_
     '''
   - **Visible**: ```!IsBlank(glbCurrentPhrase)```
 
-- ** drpSelectSpeaker_Transcript** </br>
+![drpSelectSpeaker_Transcript](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/8e22e6c4-70e6-4328-8a15-2e41d61326d8)
+- **drpSelectSpeaker_Transcript** </br>
+  - **AccessibleLabel**: ```"Select speaker from this drop down"```
+  - *Items**: ```Filter(Speakers, Transcript.Transcript=glbSelectedTranscript.Transcript)```
+    - _Only returns speakers already related to current transcript._
+  - **Visible**: ```glbMode=DisplayMode.Edit```
+    - _Only visible when app is in Edit mode_*    
 
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/8e22e6c4-70e6-4328-8a15-2e41d61326d8)
 
-- **AccessibleLabel**: ```"Select speaker from this drop down"```
-- **Items**: ```Filter(Speakers, Transcript.Transcript=glbSelectedTranscript.Transcript)```
-  - _Only returns speakers already related to current transcript._
-- **Visible**: ```glbMode=DisplayMode.Edit```
-  - _Only visible when app is in Edit mode_    
-
-[▲ Back](#controls-1)
-
-**icoClearSelectSpeaker_Transcript** </br>Used to select speaker from **Speakers** table
-
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/c58b5e2f-3201-4899-8fb8-263c48b76709)
-
-_Note: only visible when speaker is selected in dropdown_  
+![icoClearSelectSpeaker_Transcript](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/c58b5e2f-3201-4899-8fb8-263c48b76709)
+**icoClearSelectSpeaker_Transcript** </br>Used to select speaker from **Speakers** table</br> _Note: only visible when speaker is selected in dropdown_  
   - **AccessibleLabel**: ```"Clear selected speaker dropdown"```
   - **BorderStyle**: ```BorderStyle.None```
   - **Color**: ```PowerAppsTheme.Colors.Primary```
@@ -737,10 +664,9 @@ _Note: only visible when speaker is selected in dropdown_
   - **Visible**: ```!IsBlank(drpSelectSpeaker_Transcript.Selected)```
   - **Width**: ```Self.Height```
 
-- ** btnNewSpeaker_Transcript** </br> Opens the **contPopUpUpdateAllSpeakersBg** pop-up
-  
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/08151b97-e2bb-404b-9638-b85eed23d579)
 
+![btnNewSpeaker_Transcript](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/08151b97-e2bb-404b-9638-b85eed23d579)
+- ** btnNewSpeaker_Transcript** </br> Opens the **contPopUpUpdateAllSpeakersBg** pop-up
   - **AccessibleLabel**: ```"Add new speaker"```
   - **Appearance**: ```'ButtonCanvas.Appearance'.Subtle```
   - **OnSelect**: Show the Add Speaker Pop Up
@@ -753,19 +679,18 @@ _Note: only visible when speaker is selected in dropdown_
   - **Text**: ```"+ New Speaker"```
   - **Visible**: ```glbMode=DisplayMode.Edit```
 
+
+![btnJumpToInPoint](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/28f01fac-1537-425b-99f8-f7c3c532327f)
 - ** btnJumpToInPoint** </br> Sets variable (glbJumpToTime) to current phrase's offset in seconds
-
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/28f01fac-1537-425b-99f8-f7c3c532327f)  
-
   - **AccessibleLabel**: ```"Jump to In Point"```
   - **Appearance**: ```'ButtonCanvas.Appearance'.Outline```
   - **OnSelect**: ```Set(glbJumpToTime,glbCurrentPhrase.demo_offsetinseconds)```
   - **Text**: ```"↦"1```
   - **Visible**: ```glbMode=DisplayMode.View```
 
-- ** lblInPoint_Transcript** </br> Display the current phrase's in point (Offset in Seconds) in HH:MM:SS format
 
- ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/483a374f-8295-48de-b13d-a6f060a828ed)  
+![lblInPoint_Transcript](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/483a374f-8295-48de-b13d-a6f060a828ed)  
+- **lblInPoint_Transcript** </br> Display the current phrase's in point (Offset in Seconds) in HH:MM:SS format 
   - **Text**: 
      ```
      " In: " & Text(
@@ -801,10 +726,9 @@ _Note: only visible when speaker is selected in dropdown_
   - **Visible**: ```!IsBlank(glbCurrentPhrase)```
   - **Width**: ```120```
 
-- ** lblOutpoint_Transcript** </br> Display current phrase's out point (outset) in HH:MM:SS
-  
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d11bac0b-e3fc-4b3b-8dbf-72ce79db931a)  
 
+![lblOutpoint_Transcript](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d11bac0b-e3fc-4b3b-8dbf-72ce79db931a) 
+- **lblOutpoint_Transcript** </br> Display current phrase's out point (outset) in HH:MM:SS
   - **Align**: ```'TextCanvas.Align'.End```
   - **Text**: 
     ```
@@ -841,9 +765,8 @@ _Note: only visible when speaker is selected in dropdown_
   - **Visible**: ```!IsBlank(glbCurrentPhrase)```
   - **Width**: ```120```
 
-- ** lblJumpToTime_Transcript** </br>
-   
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/1a360425-3a9f-48af-af57-909b9ed26a7e)  
+![lblJumpToTime_Transcript](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/1a360425-3a9f-48af-af57-909b9ed26a7e) 
+- **lblJumpToTime_Transcript** </br>
   - **Align**: ```'TextCanvas.Align'.End```
   - **FontColor**: If variable glbJumpToTime exceeds the total duration of the audio file, display red text
     ```
@@ -867,11 +790,8 @@ _Note: only visible when speaker is selected in dropdown_
       "Jump To "
     )
     ```
-
-- ** txtJumpToTime_Transcript** </br>Allows user to type time code (HH:MM:SS) to jump to part of recording (and transcript)
- 
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d847eef6-59ae-4fa9-bcd6-d2b8efd336d1)  
-
+![txtJumpToTime_Transcript](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d847eef6-59ae-4fa9-bcd6-d2b8efd336d1)  
+- **txtJumpToTime_Transcript** </br>Allows user to type time code (HH:MM:SS) to jump to part of recording (and transcript)
   - **AccessibleLabel**: ```"Type the time you want to jump to (Hours:Minutes:Seconds)"```
   - **FontColor**:
     ```
@@ -944,9 +864,9 @@ _Note: only visible when speaker is selected in dropdown_
     ```
   - **Width**: ```100```
 
-- **cont_Transcript_3_Vert** </br>Only visible when user clicks + New Speaker button (btnNewSpeaker_Transcript)
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/edbb1d88-5c0b-46b0-9255-ef5f0dceb74e)
 
+![cont_Transcript_3_Vert](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/edbb1d88-5c0b-46b0-9255-ef5f0dceb74e)
+- **cont_Transcript_3_Vert** </br>Only visible when user clicks + New Speaker button (btnNewSpeaker_Transcript)
   - **Fill**: ```RGBA(255, 255, 255, 1)```
   - **Height**: ```txtCurrentPhrase_Transcript.Height-10```
   - **PaddingLeft**: ```10```
@@ -969,10 +889,9 @@ _Note: only visible when speaker is selected in dropdown_
     ResetForm(frmAddSpeaker)
     ```
 
+    
+![btnAddSpeakerSave](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/221e4be6-985b-468d-8d2d-be65ae77c297)
 - **btnAddSpeakerSave** </br> Submits the add speaker form (frmAddSpeaker)
-
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/221e4be6-985b-468d-8d2d-be65ae77c297)
-
   - **AccessibleLabel**: ```"Save the new speaker"```
   - **DisplayMode**: If Name field is blank, disable button
     ```
@@ -985,10 +904,9 @@ _Note: only visible when speaker is selected in dropdown_
   - **OnSelect**: ```SubmitForm(frmAddSpeaker);```
   - **Text**: ```"Save"```
 
+
+![btnAddSpeakerCancel](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/f288d3da-a2be-4203-928c-625bb8efc987)
 - **btnAddSpeakerCancel** </br> Closes and resets the add speaker form (fromAddSpeaker)
-
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/f288d3da-a2be-4203-928c-625bb8efc987)
-
   - **AccessibleLabel**: ```"Cancel adding the new speaker"```
   - **Appearance**: ```'ButtonCanvas.Appearance'.Secondary```
   - **OnSelect**: Reset form and hide the Add New Speaker pop-up
@@ -1009,9 +927,8 @@ _Note: only visible when speaker is selected in dropdown_
   - **Visible**: ```gblShowPopUpUpdateAllSpeakers```
   - **Width**: ```Parent.Width```
 
-- **cont_Transcript_2_1_Vert
-  
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/341528f9-2ae8-46e5-92d5-63041fda8e0a)
+![cont_Transcript_2_1_Vert](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/341528f9-2ae8-46e5-92d5-63041fda8e0a)
+- **cont_Transcript_2_1_Vert**
   - **DropShadow**: ```DropShadow.ExtraBold```
   - **Fill**: ```RGBA(255, 255, 255, 1)```
   - **Height**: ```Self.Width*.6```
@@ -1019,9 +936,9 @@ _Note: only visible when speaker is selected in dropdown_
   - **LayoutJustifyContent**: ```LayoutJustifyContent.Center```
   - **Border Radius** (**RadiusBottomLeft**, **RadiusBottomRight**, **RadiusTopLeft**, **RadiusTopRight**): ```25```
 
-- **btnPopUpUpdateAllSpeakersYes** </br>
 
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/5c28730e-97a4-47e8-840c-fec5aa5db699)
+![btnPopUpUpdateAllSpeakersYes](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/5c28730e-97a4-47e8-840c-fec5aa5db699)
+- **btnPopUpUpdateAllSpeakersYes** </br>
   - **AccessibleLabel**: Dynamcially update accessible label based on the current phrase and the selected speaker name
     ```
     "Yes - For all the speakers equal to " &
@@ -1047,9 +964,9 @@ _Note: only visible when speaker is selected in dropdown_
     ```
   - **Text**: ```"Yes"```
 
-- **btnPopUpUpdateAllSpeakersNo** </br>
 
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d0d07751-9058-4a01-aa02-44ad298e468f)  
+![btnPopUpUpdateAllSpeakersNo](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/d0d07751-9058-4a01-aa02-44ad298e468f)  
+- **btnPopUpUpdateAllSpeakersNo** </br>
   - **AccessibleLabel**: ```"Please do not update all speakers to the selected speaker"```
   - **Appearance**: ```'ButtonCanvas.Appearance'.Secondary```
   - **OnSelect**:

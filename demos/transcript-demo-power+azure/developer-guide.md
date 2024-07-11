@@ -688,7 +688,7 @@ _Note: only visible when **NOT** in edit mode and glbSelectedTranscript is NOT b
 
 ![btnJumpToInPoint](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/28f01fac-1537-425b-99f8-f7c3c532327f)
 
-- ** btnJumpToInPoint** </br> Sets variable (glbJumpToTime) to current phrase's offset in seconds
+- **btnJumpToInPoint** </br> Sets variable (glbJumpToTime) to current phrase's offset in seconds
   - **AccessibleLabel**: ```"Jump to In Point"```
   - **Appearance**: ```'ButtonCanvas.Appearance'.Outline```
   - **OnSelect**: ```Set(glbJumpToTime,glbCurrentPhrase.demo_offsetinseconds)```

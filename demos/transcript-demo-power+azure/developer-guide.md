@@ -217,103 +217,101 @@ In addition to setting variables, two controls are reset (see below for more on 
     ```
     - **Width**: ```Parent.Width - 60 ```                                                                                        
                         
-    
 - **inpTotalSpeakersMain** </br>Number input field that indicates how many speakers should Azure Speech to Text services look for.
-    - **AccessibleLabel**: ```"Enter the total number of speakers in the audio file"```
-    - **Max**: ```36```
-        - Azure Speech To Text services has a limit of 36 speakers for diarization
-    - **Min**: ```1```
-    - **Value**: ```0``` 
+  - **AccessibleLabel**: ```"Enter the total number of speakers in the audio file"```
+  - **Max**: ```36```
+  - Azure Speech To Text services has a limit of 36 speakers for diarization
+  - **Min**: ```1```
+  - **Value**: ```0``` 
 
 - **cont_Main_2_2_1_1_Horiz** </br>ontains the buttons to upload audio file (or cancel action) 
-    - **btnUploadFile_Main** </br> Used to upload the selected file to Azure Blob Storage (via Power Automate flow)
-        - **AccessibleLabel**: ```"Upload the selected file"```
-        - **DisplayMode**: Default mode disabled. Only enabled (Edit mode) when file is attached, the format is correct and the total speakers is greater than zero
-        
-        ```
-            // If total speakers isn't set (min 1), disable this button
+  - **btnUploadFile_Main** </br> Used to upload the selected file to Azure Blob Storage (via Power Automate flow)
+    - **AccessibleLabel**: ```"Upload the selected file"```
+    - **DisplayMode**: Default mode disabled. Only enabled (Edit mode) when file is attached, the format is correct and the total speakers is greater than zero        
+    ```
+        // If total speakers isn't set (min 1), disable this button
+        If(
+            inpTotalSpeakersMain.Value>0,
+            // If No attachment, disable button
             If(
-                inpTotalSpeakersMain.Value>0,
-                // If No attachment, disable button
-                If(
-                    IsEmpty(attFileToUploadMain.Attachments),
-                    DisplayMode.Disabled,
-                    //IF Attachment is supported format
-                    Lower(
-                        Right(
-                            First(attFileToUploadMain.Attachments).Name,
-                            3
-                        )
-                    ) in colSupportedFileFormats,
-                    // THEN Enable button
-                    DisplayMode.Edit,
-                    //ELSE disable button
-                    DisplayMode.Disabled
-                ),
+                IsEmpty(attFileToUploadMain.Attachments),
+                DisplayMode.Disabled,
+                //IF Attachment is supported format
+                Lower(
+                    Right(
+                        First(attFileToUploadMain.Attachments).Name,
+                        3
+                    )
+                ) in colSupportedFileFormats,
+                // THEN Enable button
+                DisplayMode.Edit,
                 //ELSE disable button
                 DisplayMode.Disabled
-            )
-        ```   
+            ),
+            //ELSE disable button
+            DisplayMode.Disabled
+        )
+    ```   
 
-        - **OnSelect**: When clicked, shows the loading spinner and calls the Power Automate Flow 
-            ```
-            // Show the loading spinner
-            Set(
-                glbShowSpinner,
-                true
-            );
-            //Set loading spinner label
-            Set(
-                glbSpinnerLabel,
-                "Uploading..."
-            );
-            // Store response from flow in variable (glbResponseUpload)
-            Set(
-                glbResponseUpload,
-                //Run flow to upload the file and kickoff the transcript process
-                '01-PowerApps-UploadtoAzureBlob'.Run(
-                    inpTotalSpeakersMain.Value,
-                    {
-                        file: {
-                            name: First(attFileToUploadMain.Attachments).Name,
-                            contentBytes: First(attFileToUploadMain.Attachments).Value
-                        }
+    - **OnSelect**: When clicked, shows the loading spinner and calls the Power Automate Flow 
+        ```
+        // Show the loading spinner
+        Set(
+            glbShowSpinner,
+            true
+        );
+        //Set loading spinner label
+        Set(
+            glbSpinnerLabel,
+            "Uploading..."
+        );
+        // Store response from flow in variable (glbResponseUpload)
+        Set(
+            glbResponseUpload,
+            //Run flow to upload the file and kickoff the transcript process
+            '01-PowerApps-UploadtoAzureBlob'.Run(
+                inpTotalSpeakersMain.Value,
+                {
+                    file: {
+                        name: First(attFileToUploadMain.Attachments).Name,
+                        contentBytes: First(attFileToUploadMain.Attachments).Value
                     }
-                )
+                }
+            )
+        );
+        // Check for error uploading file
+        IfError(
+            glbResponseUpload,
+            //Notify user of error
+            Notify(
+                "Error: " & FirstError.Message,
+                NotificationType.Error
             );
-            // Check for error uploading file
-            IfError(
-                glbResponseUpload,
-                //Notify user of error
-                Notify(
-                    "Error: " & FirstError.Message,
-                    NotificationType.Error
-                );
-                //Hide the loading spinner
-            Set(
+            //Hide the loading spinner
+        Set(
+                glbShowSpinner,
+                false
+            ),
+        //IF Successful then
+            Concurrent(
+            //Hide the loading spinner
+                Set(
                     glbShowSpinner,
                     false
                 ),
-            //IF Successful then
-                Concurrent(
-                //Hide the loading spinner
-                    Set(
-                        glbShowSpinner,
-                        false
-                    ),
-                //Show the success message
-                    Set(
-                        glbShowSuccess,
-                        true
-                    ),
-                    //Reset Attachment Control
-                    Reset(attFileToUploadMain),
-                    // Reset Total Speakers input
-                    Reset(inpTotalSpeakersMain)
-                )
+            //Show the success message
+                Set(
+                    glbShowSuccess,
+                    true
+                ),
+                //Reset Attachment Control
+                Reset(attFileToUploadMain),
+                // Reset Total Speakers input
+                Reset(inpTotalSpeakersMain)
             )
-            ```
-        - **Text**: ```"Upload"```
+        )
+        ```
+    - **Text**: ```"Upload"```
         
     - **btnCancelUpload_Main** </br>Resets the controls (attFileToUploadMain, inpTotalSpeakersMain)
     - **OnSelect**:
@@ -325,141 +323,104 @@ In addition to setting variables, two controls are reset (see below for more on 
         ```
     - **Text**: ```"Cancel"```
                                                                                 
+- **cont_Main_2_2_2_Vert** </br> Contains controls to display all transcripts available
 
+- **galTranscripts_Main** </br> Displays **all** the available transcripts in the Transcripts table.
+  
+   Some properties were customized:
+  - **AccessibleLabel**: ```"List of all the transcripts"```
+  - **Items**: ```SortByColumns(Transcripts,"createdon",SortOrder.Descending)```
+  - **LayoutMinHeight**: ```284```
+  - **TemplateSize**:```274```
+  - **Width**: ```Parent.Width-Parent.PaddingLeft-Parent.PaddingRight-Parent.LayoutGap```
 
-**cont_Main_2_2_2_Vert** </br> 
-Contains controls to display all transcripts available
+- **cont_Main_2_2_2_1_Horiz** </br> Contains all controls for individual transcript records
 
-
-
-**galTranscripts_Main** </br> 
-Displays **all** the available transcripts in the Transcripts table.
-
-
- Some properties were customized:
-- **AccessibleLabel**: ```"List of all the transcripts"```
-- **Items**: ```SortByColumns(Transcripts,"createdon",SortOrder.Descending)```
-- **LayoutMinHeight**: ```284```
-- **TemplateSize**:```274```
-- **Width**: ```Parent.Width-Parent.PaddingLeft-Parent.PaddingRight-Parent.LayoutGap```
-
-
-
-
-**cont_Main_2_2_2_1_Horiz** </br> 
-Contains all controls for individual transcript records
-
-        
-
-**cont_Main_2_2_2_1_1_Vert** </br>  
-Contains controls to display the transcript details
-
-        
-Including: <br>
-
-- lblTranscriptFileName_Main
-- lblTranscriptDetails_Main
-- lblTranscriptSummary
+- **cont_Main_2_2_2_1_1_Vert** </br>  Contains controls to display the transcript details</br>  
+  Including:
+  - lblTranscriptFileName_Main
+  - lblTranscriptDetails_Main
+  - lblTranscriptSummary
  
+- **btnEditTranscript_Main** </br> Selects the transcript and opens it in the [Transcript Demo Screen](#transcript-demo-screen)
+  - **AccessibleLabel**: ```"Click view and edit this transcript"```
+  - **Appearance**:```'ButtonCanvas.Appearance'.Secondary```
+  - **Icon**: ```"MoreHorizontal"```
+  - **Layout**:```'ButtonCanvas.Layout'.IconAfter```
+  - **OnSelect**: When item is selected, store a copy of the **Recognized Phrases** for the selected transcript in a collection (**colPhrases**) and sort the collection in acensinding order by the '**Offset in Seconds**', then store the selected Transcript record in a global varilable (**glbSelectedTranscript**), then set a variable (**glbCurrentPhrase**) to the first phrase of colPhrases,  then go to the **Transcript Demo Screen**  
+     ```
+     //Set spinner label and show spinner
+    Set(
+        glbSpinnerLabel,
+        "Loading..."
+    );
+    Set(
+        glbShowSpinner,
+        true
+    );
+    //When item is selected
+    //Store a copy of the Recognized Phrases for the selected transcript in a collection (colPhrases)
+    // And sort the collection in acensinding order by the 'Offset in Seconds'
+    ClearCollect(
+        colPhrases,
+        SortByColumns(
+            Filter(
+                ShowColumns(
+                    'Recognized Phrases',
+                    Display,
+                    'Duration in Seconds',
+                    'Duration in Ticks',
+                    'Offset (HH:MM:SS)',
+                    'Offset in Seconds',
+                    'Offset in Ticks',
+                    Outset,
+                    'Outset (HH:MM:SS)',
+                    'Phrase Number',
+                    Speaker,
+                    'Speaker Lookup',
+                    Transcript,
+                    'Recognized Phrases'
+                ),
+                demo_Transcript.Transcript = ThisItem.Transcript
+            ),
+            "demo_offsetinseconds",
+            SortOrder.Ascending
+        )
+    );
+    //Store the currently selected transcript in a global variable
+    Set(
+        glbSelectedTranscript,
+        ThisItem
+    );
+    //Set current phrase (glbCurrentPhrase) to the first item in the phrases collection (colPhrases)
+    Set(
+        glbCurrentPhrase,
+        First(colPhrases)
+    );
+    //Navigate to the Transcript Demo Screen
+    Navigate('Transcript Demo Screen');
+    //Hide Spinner
+    Set(
+        glbShowSpinner,
+        false
+    );
+  
+     ```
+  - **Text**: ```Details```
+  - **Width**:```100```
 
+- **btnRefreshTranscript_Main** </br> Refreshes the **Transcripts** table
+  - **AccessibleLabel**:```"Refresh the list of transcripts"```
+  - **AlignInContainer**:```AlignInContainer.Center```
+  - **Appearance**:```'ButtonCanvas.Appearance'.Secondary```
+  - **Icon**:```"ArrowClockwise"```
+  - **Text**:```"Refresh"```
+  - **OnSelect**:```Refresh(Transcripts)```
 
-
-**btnEditTranscript_Main** </br> 
-Selects the transcript and opens it in the [Transcript Demo Screen](#transcript-demo-screen)
-
-
-- **AccessibleLabel**: ```"Click view and edit this transcript"```
-- **Appearance**:```'ButtonCanvas.Appearance'.Secondary```
-- **Icon**: ```"MoreHorizontal"```
-- **Layout**:```'ButtonCanvas.Layout'.IconAfter```
-- **OnSelect**: When item is selected, store a copy of the **Recognized Phrases** for the selected transcript in a collection (**colPhrases**) and sort the collection in acensinding order by the '**Offset in Seconds**', then store the selected Transcript record in a global varilable (**glbSelectedTranscript**), then set a variable (**glbCurrentPhrase**) to the first phrase of colPhrases,  then go to the **Transcript Demo Screen**  
-   ```
-   //Set spinner label and show spinner
-  Set(
-      glbSpinnerLabel,
-      "Loading..."
-  );
-  Set(
-      glbShowSpinner,
-      true
-  );
-  //When item is selected
-  //Store a copy of the Recognized Phrases for the selected transcript in a collection (colPhrases)
-  // And sort the collection in acensinding order by the 'Offset in Seconds'
-  ClearCollect(
-      colPhrases,
-      SortByColumns(
-          Filter(
-              ShowColumns(
-                  'Recognized Phrases',
-                  Display,
-                  'Duration in Seconds',
-                  'Duration in Ticks',
-                  'Offset (HH:MM:SS)',
-                  'Offset in Seconds',
-                  'Offset in Ticks',
-                  Outset,
-                  'Outset (HH:MM:SS)',
-                  'Phrase Number',
-                  Speaker,
-                  'Speaker Lookup',
-                  Transcript,
-                  'Recognized Phrases'
-              ),
-              demo_Transcript.Transcript = ThisItem.Transcript
-          ),
-          "demo_offsetinseconds",
-          SortOrder.Ascending
-      )
-  );
-  //Store the currently selected transcript in a global variable
-  Set(
-      glbSelectedTranscript,
-      ThisItem
-  );
-  //Set current phrase (glbCurrentPhrase) to the first item in the phrases collection (colPhrases)
-  Set(
-      glbCurrentPhrase,
-      First(colPhrases)
-  );
-  //Navigate to the Transcript Demo Screen
-  Navigate('Transcript Demo Screen');
-  //Hide Spinner
-  Set(
-      glbShowSpinner,
-      false
-  );
-
-   ```
-- **Text**: ```Details```
-- **Width**:```100```
-
-
-
-
-**btnRefreshTranscript_Main** </br>
-Refreshes the **Transcripts** table
-
-
-- **AccessibleLabel**:```"Refresh the list of transcripts"```
-- **AlignInContainer**:```AlignInContainer.Center```
-- **Appearance**:```'ButtonCanvas.Appearance'.Secondary```
-- **Icon**:```"ArrowClockwise"```
-- **Text**:```"Refresh"```
-- **OnSelect**:```Refresh(Transcripts)```
-
-
-
-
-
-**cont_Main_2_2_3_Vert** </br>  Only visible after an upload is completed successfully (i.e. **glbShowSuccess = true**)
-
-**htmlSuccessMain** </br>  HTML formatted success message
-
-**btnBackSuccessMain** </br>Takes user "back" to Main screen. i.e. sets **glbShowSuccess** to **false**
-
-
-**shpSpacerRightMain** </br>Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container. 
+- **cont_Main_2_2_3_Vert** </br>  Only visible after an upload is completed successfully (i.e. **glbShowSuccess = true**)
+- **htmlSuccessMain** </br>  HTML formatted success message
+- **btnBackSuccessMain** </br>Takes user "back" to Main screen. i.e. sets **glbShowSuccess** to **false**
+- **shpSpacerRightMain** </br>Only visible when there are no Transcripts found.  Helps center the cont_Main_2_2_1_Vert container. 
 
 
 

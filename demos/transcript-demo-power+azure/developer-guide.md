@@ -656,7 +656,7 @@ _Note: only visible when **NOT** in edit mode and glbSelectedTranscript is NOT b
 
 ![icoClearSelectSpeaker_Transcript](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/c58b5e2f-3201-4899-8fb8-263c48b76709)
 
-**icoClearSelectSpeaker_Transcript** </br>Used to select speaker from **Speakers** table</br> _Note: only visible when speaker is selected in dropdown_  
+- **icoClearSelectSpeaker_Transcript** </br>Used to select speaker from **Speakers** table</br> _Note: only visible when speaker is selected in dropdown_  
   - **AccessibleLabel**: ```"Clear selected speaker dropdown"```
   - **BorderStyle**: ```BorderStyle.None```
   - **Color**: ```PowerAppsTheme.Colors.Primary```

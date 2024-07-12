@@ -19,7 +19,7 @@ This demo is designed to illustrate the "better together" story of Azure + Power
 | Version | Release Date | Change Log |
 | :------ | :---------- | :--------- |
 | 1.0.1.0 | 3/21/2024 | - | 
-| 1.0.2.20 | 7/1/2024 | - Added GPT generated transcript summary (requires Generative AI enabled in environment) <br> - Added downloadable PDF transcript <br> - Removed SharePoint list dependency. App now uploades directly to Azure Blob Storage <br> - Other minor changes to UI/UX|
+| 1.0.2.24 | 7/11/2024 | - Added GPT generated transcript summary (requires Generative AI enabled in environment) <br> - Added downloadable PDF transcript <br> - Removed SharePoint list dependency. App now uploades directly to Azure Blob Storage <br> - Other minor changes to UI/UX|
 
 ## Supported Clouds
 This demo was built in a GCC-High tenant.  If you are using a GCC tenant, note that you will need an Azure Gov subscription to connect directly to [Azure Blob Storage](https://powerautomate.microsoft.com/en-us/connectors/details/shared_azureblob/azure-blob-storage/) and [Azure Speech to Text](https://powerautomate.microsoft.com/en-us/connectors/details/shared_cognitiveservicesspe/azure-batch-speech-to-text/) from Power Apps and Power Automate via the out of the box (OOTB) connectors.  There is a workaround described [here](https://github.com/microsoft/Federal-Business-Applications/wiki/PowerApps-Connecting-from-GCC-to-any-Endpoint-including-Commercial-Azure). 

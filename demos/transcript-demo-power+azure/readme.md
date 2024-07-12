@@ -34,6 +34,7 @@ You must have the following to use this solution:
 4. **Two** [Azure Blob Storage Containers](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction) (source for audio and destination for transcripts)
 5. [Azure Batch Speech to Text](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/batch-transcription) key
 6. [Generative AI Features enabled](https://github.com/microsoft/Federal-Business-Applications/blob/main/whitepapers/copilot/README.md#phase-1-opt-in-with-azure-commercial-azure-openai)
+7. SharePoint Site & Document Library
    
 [^ Top](#contents)
 

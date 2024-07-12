@@ -333,7 +333,7 @@ In addition to setting variables, two controls are reset (see below for more on 
   - **AccessibleLabel**: ```"List of all the transcripts"```
   - **Items**: ```SortByColumns(Transcripts,"createdon",SortOrder.Descending)```
   - **LayoutMinHeight**: ```284```
-  - **TemplateSize**:```274```
+  - **TemplateSize**: ```274```
   - **Width**: ```Parent.Width-Parent.PaddingLeft-Parent.PaddingRight-Parent.LayoutGap```
 
 - **cont_Main_2_2_2_1_Horiz** </br> Contains all controls for individual transcript records
@@ -346,9 +346,9 @@ In addition to setting variables, two controls are reset (see below for more on 
  
 - **btnEditTranscript_Main** </br> Selects the transcript and opens it in the [Transcript Demo Screen](#transcript-demo-screen)
   - **AccessibleLabel**: ```"Click view and edit this transcript"```
-  - **Appearance**:```'ButtonCanvas.Appearance'.Secondary```
+  - **Appearance**: ```'ButtonCanvas.Appearance'.Secondary```
   - **Icon**: ```"MoreHorizontal"```
-  - **Layout**:```'ButtonCanvas.Layout'.IconAfter```
+  - **Layout**: ```'ButtonCanvas.Layout'.IconAfter```
   - **OnSelect**: When item is selected, store a copy of the **Recognized Phrases** for the selected transcript in a collection (**colPhrases**) and sort the collection in acensinding order by the '**Offset in Seconds**', then store the selected Transcript record in a global varilable (**glbSelectedTranscript**), then set a variable (**glbCurrentPhrase**) to the first phrase of colPhrases,  then go to the **Transcript Demo Screen**  
      ```
      //Set spinner label and show spinner
@@ -409,15 +409,15 @@ In addition to setting variables, two controls are reset (see below for more on 
   
      ```
   - **Text**: ```Details```
-  - **Width**:```100```
+  - **Width**: ```100```
 
 - **btnRefreshTranscript_Main** </br> Refreshes the **Transcripts** table
-  - **AccessibleLabel**:```"Refresh the list of transcripts"```
-  - **AlignInContainer**:```AlignInContainer.Center```
-  - **Appearance**:```'ButtonCanvas.Appearance'.Secondary```
-  - **Icon**:```"ArrowClockwise"```
-  - **Text**:```"Refresh"```
-  - **OnSelect**:```Refresh(Transcripts)```
+  - **AccessibleLabel**: ```"Refresh the list of transcripts"```
+  - **AlignInContainer**: ```AlignInContainer.Center```
+  - **Appearance**: ```'ButtonCanvas.Appearance'.Secondary```
+  - **Icon**: ```"ArrowClockwise"```
+  - **Text**: ```"Refresh"```
+  - **OnSelect**: ```Refresh(Transcripts)```
 
 - **cont_Main_2_2_3_Vert** </br>  Only visible after an upload is completed successfully (i.e. **glbShowSuccess = true**)
 - **htmlSuccessMain** </br>  HTML formatted success message
@@ -442,7 +442,7 @@ All controls (except two) are stored in horizontal and vertical containers to al
 
 - **pdfFileTranscript**</br>Displays the PDF version of the transcript. Only visible when Transcript File is attached to record and the Trancript (PDF) tab is selected
   - **Document**: ```LookUp(Transcripts,Transcript=glbSelectedTranscript.Transcript).'Transcript File'.Value```
-  - **Height**:```shpFileTranscript.Height```
+  - **Height**: ```shpFileTranscript.Height```
   - **Visible**: Only displays when selected transcript has PDF attached and "Transcript (PDF)" tab is selected
       ```
     !IsBlank(
@@ -452,10 +452,10 @@ All controls (except two) are stored in horizontal and vertical containers to al
         ).'Transcript File'.Value
     ) And tabMainTranscript.Selected.Value = "Transcript (PDF)"
       ```
-  - **Width**:```contFileTranscript.Width-contFileTranscript.RadiusBottomRight*2```
-  - **x**:```contMainBodyTranscriptHoriz.X+contMainBodyTranscriptHoriz.RadiusBottomLeft```
-  - **y**:```contMainBodyTranscriptHoriz.Y+contMainBodyTranscriptHoriz.RadiusBottomLeft```
-  - **Zoom**:```Zoom.FitHeight```
+  - **Width**: ```contFileTranscript.Width-contFileTranscript.RadiusBottomRight*2```
+  - **x**: ```contMainBodyTranscriptHoriz.X+contMainBodyTranscriptHoriz.RadiusBottomLeft```
+  - **y**: ```contMainBodyTranscriptHoriz.Y+contMainBodyTranscriptHoriz.RadiusBottomLeft```
+  - **Zoom**: ```Zoom.FitHeight```
 
 - **timerTranscript** </br> Used to update variables based on the playhead of the audio control (**audRecordingPlayback**).  
   - **Duration**: This is in milliseconds. 1000 = 1 second  
@@ -489,17 +489,17 @@ All controls (except two) are stored in horizontal and vertical containers to al
   - **Visible**: ```false```
 
 - **txtSummaryTranscript** </br> Used to display and edit AI generated summary of transcript
-    - **AccessibleLabel**:```"AI Generated summary using Azure OpenAI"```
-    - **Appearance**:```If(glbMode=DisplayMode.Edit,'TextInputCanvas.Appearance'.FilledDarker,'TextInputCanvas.Appearance'.FilledLighter)```
-    - **DisplayMode**:```glbMode```
-    - **Mode**:```'TextInputCanvas.Mode'.Multiline```
-    - **Value**:```LookUp(Transcripts,Transcript=glbSelectedTranscript.Transcript).Summary```
-    - **Width**:```Parent.Width-Parent.PaddingLeft-Parent.PaddingRight```
+    - **AccessibleLabel**: ```"AI Generated summary using Azure OpenAI"```
+    - **Appearance**: ```If(glbMode=DisplayMode.Edit,'TextInputCanvas.Appearance'.FilledDarker,'TextInputCanvas.Appearance'.FilledLighter)```
+    - **DisplayMode**: ```glbMode```
+    - **Mode**: ```'TextInputCanvas.Mode'.Multiline```
+    - **Value**: ```LookUp(Transcripts,Transcript=glbSelectedTranscript.Transcript).Summary```
+    - **Width**: ```Parent.Width-Parent.PaddingLeft-Parent.PaddingRight```
   
 ![audRecordingPlayback](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/4d4feed5-64ae-4b99-bb2c-9d0fe8815037)
 
 - **audRecordingPlayback** </br> Used to playback the original audio (stored in Azure Blob Storage)
-  - **AccessibleLabel**:```"Playback control for the selected transcript's original audio recording"```
+  - **AccessibleLabel**: ```"Playback control for the selected transcript's original audio recording"```
   - **DisplayMode**: If user is editing the current phrase, disable this so they can't move the playhead (and change the current phrase)
     ```
     If(
@@ -522,10 +522,10 @@ All controls (except two) are stored in horizontal and vertical containers to al
 - **btnEdit_Transcript** </br> Used to put screen into edit mode
 _Note: only visible when **NOT** in edit mode and glbSelectedTranscript is NOT blank_
   - **AccessibleLabel**: ```"Edit the current phrase"```
-  - **Appearance**:```'ButtonCanvas.Appearance'.Transparent```
-  - **DisplayMode**:```If (tabMainTranscript.Selected.Value="Transcript (PDF)",DisplayMode.Disabled,DisplayMode.Edit)```
-  - **Icon**:```"Edit"```
-  - **IconStyle**:```'ButtonCanvas.IconStyle'.Outline```
+  - **Appearance**: ```'ButtonCanvas.Appearance'.Transparent```
+  - **DisplayMode**: ```If (tabMainTranscript.Selected.Value="Transcript (PDF)",DisplayMode.Disabled,DisplayMode.Edit)```
+  - **Icon**: ```"Edit"```
+  - **IconStyle**: ```'ButtonCanvas.IconStyle'.Outline```
   - **OnSelect**:
     ```
     Set(
@@ -533,15 +533,15 @@ _Note: only visible when **NOT** in edit mode and glbSelectedTranscript is NOT b
       DisplayMode.Edit
     )
     ```
-  - **Text**:```"Edit"```
+  - **Text**: ```"Edit"```
   - **Visible** ```Not(glbMode=DisplayMode.Edit) And !IsBlank(glbSelectedTranscript)```
 
 ![btnSave_Transcript](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/6b7670e6-c99f-4693-9158-2262df8cd618)
 - **btnSave_Transcript** </br>Used to save changes</br> _Note: only visible when in edit mode_  
   - **AccessibleLabel**: ```"Save edits to current phrase"```
-  - **Appearance**:```'ButtonCanvas.Appearance'.Transparent```
-  - **Icon**:```"Save"```
-  - **IconStyle**:```'ButtonCanvas.IconStyle'.Outline```
+  - **Appearance**: ```'ButtonCanvas.Appearance'.Transparent```
+  - **Icon**: ```"Save"```
+  - **IconStyle**: ```'ButtonCanvas.IconStyle'.Outline```
   - **OnSelect**: Button behaves differently depending on the tab selected. See comments for more details 
     ```
      If(
@@ -601,10 +601,10 @@ _Note: only visible when **NOT** in edit mode and glbSelectedTranscript is NOT b
 ![btnCancel_Transcript](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/c26cdcec-d1a9-494e-b872-d759a875108d)
 
 - **btnCancel_Transcript** </br>Resets screen to display mode without saving changes</br> _Note: Only visible when in Edit mode_  
-  - **AccessibleLabel**:```"Cancel the edits to the current phrase"```
+  - **AccessibleLabel**: ```"Cancel the edits to the current phrase"```
   - **Appearance**: ```'ButtonCanvas.Appearance'.Outline```
-  - **Icon**:```"Dismiss"```
-  - **IconStyle**:```"Outline"```
+  - **Icon**: ```"Dismiss"```
+  - **IconStyle**: ```"Outline"```
   - **OnSelect**: Resets controls and app to View mode
     ```
     Set(
@@ -624,7 +624,7 @@ _Note: only visible when **NOT** in edit mode and glbSelectedTranscript is NOT b
   - **AccessibleLabel**: ```"Transcript of the current phrase (based current time code)"```
   - **DisplayMode**: If variable glbMode is blank, default to View mode
     ```Coalesce(glbMode,DisplayMode.View)```
-  - **FontSize**:```20```
+  - **FontSize**: ```20```
   - **Mode**: ```'TextInputCanvas.Mode'.Multiline```
   - **Value**: Return the current phrase (glbCurrentPhrase) Display column value
     ```
@@ -1114,13 +1114,13 @@ _Note: only visible when **NOT** in edit mode and glbSelectedTranscript is NOT b
   - **Visible**: ```false```
 
 - **shpFileTranscript** </br>Used to properly size the [pdfFileTranscript](#pdfFileTranscript).  
-  - **FillPortions**:```1```  
+  - **FillPortions**: ```1```  
 
 - **btnDownloadTranscriptFile** </br>When user clicks this button, it uses the Dataverse Web API to get the transcript file attached to the selected transcript
-  - **AccessibleLabel**:```"Click to download transcript PDF"```
-  - **Appearance**:```'ButtonCanvas.Appearance'.Primary```
-  - **Icon**:```"ArrowDownload"```
-  - **Layout**:```"Icon before"```
+  - **AccessibleLabel**: ```"Click to download transcript PDF"```
+  - **Appearance**: ```'ButtonCanvas.Appearance'.Primary```
+  - **Icon**: ```"ArrowDownload"```
+  - **Layout**: ```"Icon before"```
   - **OnSelect**: For more see: [https://www.matthewdevaney.com/power-apps-download-file-from-dataverse-file-column/](https://www.matthewdevaney.com/power-apps-download-file-from-dataverse-file-column/)
     ```
       Download(
@@ -1131,14 +1131,14 @@ _Note: only visible when **NOT** in edit mode and glbSelectedTranscript is NOT b
           ).Value & "/demo_transcripts(" & glbSelectedTranscript.Transcript & ")/demo_transcriptfile/$value"
       );
     ```
-  - **Text**:```"Download"```
-  - **Width**:```120```
+  - **Text**: ```"Download"```
+  - **Width**: ```120```
 
 - **btnRefreshTranscriptFile** </br>Regenerates the PDF file via Power Automate when clicked
-  - **AccessibleLabel**:```"Click to refresh the transcript PDF"```
-  - **Appearance**:```'ButtonCanvas.Appearance'.Subtle```
-  - **Icon**:```"ArrowClockwise"```
-  - **Layout**:```"Icon before"```
+  - **AccessibleLabel**: ```"Click to refresh the transcript PDF"```
+  - **Appearance**: ```'ButtonCanvas.Appearance'.Subtle```
+  - **Icon**: ```"ArrowClockwise"```
+  - **Layout**: ```"Icon before"```
   - **OnSelect**: Shows the Loading Spinner, then runs the flow to regenerate the Transcript PDF
     ```
     //Set loading spinner label
@@ -1174,8 +1174,8 @@ _Note: only visible when **NOT** in edit mode and glbSelectedTranscript is NOT b
         false
     )
     ```
-  - **Text**:```"Regenerate PDF"```
-  - **Width**:```200```
+  - **Text**: ```"Regenerate PDF"```
+  - **Width**: ```200```
 
 [▲Top](#contents)
 
@@ -1854,29 +1854,29 @@ Generates a Word and PDF doc version of the transcript based on Transcript GUID 
 This flow is triggered by parent flow [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#02---azure---when-audio-file-created-in-blob-storage---create-transcript) OR by the user using the canvas app.  
 
 Here is a breakdown of each action
-- Power Apps (V2): Triggered either via flow or canvas app. Passes one parameter:
+- **Power Apps (V2)**: Triggered either via flow or canvas app. Passes one parameter:
   - **Transcriptid** : GUID of the Transcript record
-- Get Transcript: Retrieve the Transcript record that matches the Transcriptid passed to the flow
+- **Get Transcript**: Retrieve the Transcript record that matches the Transcriptid passed to the flow
 - **List Recognized Phrases**: Retrieves all Recognized Phrases related to the Transcript record and sorts them in ascending order by offset in seconds
   
   ![image](https://github.com/user-attachments/assets/79288d60-d4f7-42cf-9975-7c88b9a7ae5d)
   
   - **Table Name**: ```Recognized Phrases```
   - **Filter Rows**: ```_demo_transcript_value eq '@{triggerBody()['text']}'```
-  - **Sort By**:```demo_offsetinseconds asc```
+  - **Sort By**: ```demo_offsetinseconds asc```
 - **Select Phrases**: Builds an array object with only three fields
   
   ![image](https://github.com/user-attachments/assets/fdc05397-13a0-4669-a913-bf64d08f0b31)
   
-  - **From**:```@{outputs('List_Recognized_Phrases')?['body/value']}```
-  - **TimeStamp**:```@item()?['demo_timestamp']```
-  - **Speaker**:```@coalesce(item()?['_demo_speakerlookup_value@OData.Community.Display.V1.FormattedValue'],item()?['demo_speaker'])```
-  - **Phrase**:```@item()?['demo_display']```
+  - **From**: ```@{outputs('List_Recognized_Phrases')?['body/value']}```
+  - **TimeStamp**: ```@item()?['demo_timestamp']```
+  - **Speaker**: ```@coalesce(item()?['_demo_speakerlookup_value@OData.Community.Display.V1.FormattedValue'],item()?['demo_speaker'])```
+  - **Phrase**: ```@item()?['demo_display']```
 - **Populate a Microsoft Word template**: Populates a Word template with transcript
   
   ![image](https://github.com/user-attachments/assets/0f19f8d8-1df6-4791-b4f6-e1c531afec20)
 
- - **Location**: Environment variable **demoSharePointSite**
+  - **Location**: Environment variable **demoSharePointSite**
     ```
     @parameters('SharePoint Site (demo_SharePointSite)')
     ```
@@ -1885,53 +1885,53 @@ Here is a breakdown of each action
     Documents
     ```
     - Note: due to limitations of this connector, you must hardcode the word template location and file name.
-  - **File**:```/General/Transcript Demo Template.docx```
+  - **File**: ```/General/Transcript Demo Template.docx```
     - Please update with your template
-  - **TranscriptNumberHeader**:```@{outputs('Get_Transcript')?['body/demo_transcriptnumber']}```
+  - **TranscriptNumberHeader**: ```@{outputs('Get_Transcript')?['body/demo_transcriptnumber']}```
   - **PhraseRows**: Output of the previous action (Select Phrases)
     ```@body('Select_Phrases')```
-  - **CreatedBy**:```@{replace(outputs('Get_Transcript')?['body/_createdby_value@OData.Community.Display.V1.FormattedValue'],'# ','')}```
+  - **CreatedBy**: ```@{replace(outputs('Get_Transcript')?['body/_createdby_value@OData.Community.Display.V1.FormattedValue'],'# ','')}```
     - _The replace() function is there to remove a '#' suffix that was in my tenant. You may or may not have that issue_  
-  - **FileNameHeader**:```@{outputs('Get_Transcript')?['body/demo_sourcefilename']}```
-  - **Summary**:```@{outputs('Get_Transcript')?['body/demo_summary']}```
-  - **TranscriptNumber**:```@{outputs('Get_Transcript')?['body/demo_transcriptnumber']}```
-  - **FileName**:```@{outputs('Get_Transcript')?['body/demo_sourcefilename']}```
-  - **Duration**:```@{outputs('Get_Transcript')?['body/demo_durationhhmmss']}```
-  - **CreateDate**:```formatDateTime(outputs('Get_Transcript')?['body/createdon'],'MM/dd/yyyy')```
+  - **FileNameHeader**: ```@{outputs('Get_Transcript')?['body/demo_sourcefilename']}```
+  - **Summary**: ```@{outputs('Get_Transcript')?['body/demo_summary']}```
+  - **TranscriptNumber**: ```@{outputs('Get_Transcript')?['body/demo_transcriptnumber']}```
+  - **FileName**: ```@{outputs('Get_Transcript')?['body/demo_sourcefilename']}```
+  - **Duration**: ```@{outputs('Get_Transcript')?['body/demo_durationhhmmss']}```
+  - **CreateDate**: ```formatDateTime(outputs('Get_Transcript')?['body/createdon'],'MM/dd/yyyy')```
 
 - **Create Word Doc (Temporary)**: Creates a (temporary) Word document file
   
   ![image](https://github.com/user-attachments/assets/b6183476-3fc7-45f1-b369-38cdddff41b8)
 
-  - **Folder Path**:```/```
+  - **Folder Path**: ```/```
     - This demo uses your OneDrive's root folder. Feel free to update to another preferred location
   - **File Name**: Concantenates the source file name with the Word file extention (.docx)
     ```
     @{outputs('Get_Transcript')?['body/demo_sourcefilename']}.docx
     ```
-  - **File Content**:```@{body('Populate_a_Microsoft_Word_template')}```
+  - **File Content**: ```@{body('Populate_a_Microsoft_Word_template')}```
     
 - **Convert file**: Converts the Word doc to PDF
   
   ![image](https://github.com/user-attachments/assets/0f6b044c-4cf3-4350-abbd-de4dea32937b)
 
-  - **File**:```@outputs('Create_Word_Doc_(Temporary)')?['body/Id']```
-  - **Target type**:```PDF```
+  - **File**: ```@outputs('Create_Word_Doc_(Temporary)')?['body/Id']```
+  - **Target type**: ```PDF```
 - **Upload file or image**: Attaches the PDF to the Transcript record
   
   ![image](https://github.com/user-attachments/assets/5c9f1851-86fa-4632-8f80-2cf2a0e04439)
 
-  - **Table name**:```Transcripts```
-  - **Row ID**:```@{triggerBody()['text']}```
-  - **Column name**:```Transcript File```
-  - **Content**:```@{body('Convert_file')}```
-  - **Content name**:```@{outputs('Convert_file')?['headers/x-ms-file-name']}```
+  - **Table name**: ```Transcripts```
+  - **Row ID**: ```@{triggerBody()['text']}```
+  - **Column name**: ```Transcript File```
+  - **Content**: ```@{body('Convert_file')}```
+  - **Content name**: ```@{outputs('Convert_file')?['headers/x-ms-file-name']}```
 
 - **Delete (temporary) Word Doc**: Removes the temporary Word doc to save space
   
   ![image](https://github.com/user-attachments/assets/bc0df719-62bc-446e-a227-a20d790d7e6f)
 
-  - **File**:```@outputs('Create_Word_Doc_(Temporary)')?['body/Id']```
+  - **File**: ```@outputs('Create_Word_Doc_(Temporary)')?['body/Id']```
 - **Respond to a Power App or flow**: A response is required for Child flows. This simply returns **Yes** if the flow is successful
   
   ![image](https://github.com/user-attachments/assets/7dd7db37-1692-40c8-b751-ef9ca6993902)

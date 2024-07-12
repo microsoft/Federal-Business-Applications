@@ -77,20 +77,27 @@ Click this tab to playback the audio file and view the transcript created by Azu
 
 Click the play button to start audio playback.  As the audio plays, the current phrase will appear and update to nmatch the playhead's time code.
 
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/bbc37e6e-8995-4667-b214-2a24a8833757)
+![image](https://github.com/user-attachments/assets/c96cf728-4671-41b4-b82f-4851baf705f4)
+
+To navigate to a specific point in the audio file, you can use the gallery on the left and select the phrase. You can also use the playhead to scrub forwards or backwards.  There are also two buttons that let you go to the **In Point** or **Out Point** of the current phrase. Lastly, there is the **Jump To**: field that you can enter a specific time code (in HH:MM:SS).  
+
+
+
+[^ Top](#contents)
+
+#### Edit Transcript
+If you want to edit the current phrase or update/add the speaker, click **Edit**. 
+
+![image](https://github.com/user-attachments/assets/e80d9a83-cae5-46e2-aa91-ec65e937a05d)
 
 There two things you can edit:
 1. Text of the current phrase
 2. Identify/Assign speaker
 
-![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/9558df96-cbab-4ce4-bbe2-4cdffd920f1a)
+##### Edit Current Phrase
+You can now update any of the text in the transcript text box.  After you make the changes, click **Save**
 
-[^ Top](#contents)
-
-#### Edit Transcript
-Click the **Edit** button.  You can now update any of the text in the transcript text box.  After you make the changes, click **Save**
-
-### Identify/Assign Speaker
+##### Identify/Assign Speaker
 If you'd like to replace the speaker number with the name of the speaker, select the speaker name from the dropdown.  If the name isn't list, click New Speaker button and fill out the **Name** field and click **Save**
 
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/7f3e495c-a2c9-429e-8e6a-e368373439a3)

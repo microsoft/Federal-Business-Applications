@@ -1876,12 +1876,14 @@ Here is a breakdown of each action
   
   ![image](https://github.com/user-attachments/assets/0f19f8d8-1df6-4791-b4f6-e1c531afec20)
 
- - **Location**: Environment variable: demoSharePointSite
+ - **Location**: Environment variable **demoSharePointSite**
     ```
     @parameters('SharePoint Site (demo_SharePointSite)')
     ```
   - **Document Library**:   It must be stored in a SharePoint document library
-    ```Documents```
+    ```
+    Documents
+    ```
     - Note: due to limitations of this connector, you must hardcode the word template location and file name.
   - **File**:```/General/Transcript Demo Template.docx```
     - Please update with your template
@@ -1897,7 +1899,50 @@ Here is a breakdown of each action
   - **Duration**:```@{outputs('Get_Transcript')?['body/demo_durationhhmmss']}```
   - **CreateDate**:```formatDateTime(outputs('Get_Transcript')?['body/createdon'],'MM/dd/yyyy')```
 
-⁠
+- **Create Word Doc (Temporary)**: Creates a (temporary) Word document file
+  
+  ![image](https://github.com/user-attachments/assets/b6183476-3fc7-45f1-b369-38cdddff41b8)
+
+  - **Folder Path**:```/```
+    - This demo uses your OneDrive's root folder. Feel free to update to another preferred location
+  - **File Name**: Concantenates the source file name with the Word file extention (.docx)
+    ```
+    @{outputs('Get_Transcript')?['body/demo_sourcefilename']}.docx
+    ```
+  - **File Content**:```@{body('Populate_a_Microsoft_Word_template')}```
+    
+- **Convert file**: Converts the Word doc to PDF
+  
+  ![image](https://github.com/user-attachments/assets/0f6b044c-4cf3-4350-abbd-de4dea32937b)
+
+  - **File**:```@outputs('Create_Word_Doc_(Temporary)')?['body/Id']```
+  - **Target type**:```PDF```
+- **Upload file or image**: Attaches the PDF to the Transcript record
+  
+  ![image](https://github.com/user-attachments/assets/5c9f1851-86fa-4632-8f80-2cf2a0e04439)
+
+  - **Table name**:```Transcripts```
+  - **Row ID**:```@{triggerBody()['text']}```
+  - **Column name**:```Transcript File```
+  - **Content**:```@{body('Convert_file')}```
+  - **Content name**:```@{outputs('Convert_file')?['headers/x-ms-file-name']}```
+
+- **Delete (temporary) Word Doc**: Removes the temporary Word doc to save space
+  
+  ![image](https://github.com/user-attachments/assets/bc0df719-62bc-446e-a227-a20d790d7e6f)
+
+  - **File**:```@outputs('Create_Word_Doc_(Temporary)')?['body/Id']```
+- **Respond to a Power App or flow**: A response is required for Child flows. This simply returns **Yes** if the flow is successful
+  
+  ![image](https://github.com/user-attachments/assets/7dd7db37-1692-40c8-b751-ef9ca6993902)
+
+- **Respond to Power App or flow - Error Handler**: If the flow fails, returns **No**
+  
+  ![image](https://github.com/user-attachments/assets/c5d24809-1df6-4f15-8b91-a6fbb159810d)
+
+  - The **Configure run after** setting is set to only run this action if the previous action is skipped  (i.e. there was a failure)
+    
+    ![image](https://github.com/user-attachments/assets/09436986-f682-4bc9-abaa-68c2a098b7a4)
 
 
 [▲Top](#contents)

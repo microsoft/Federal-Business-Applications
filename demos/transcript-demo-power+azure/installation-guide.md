@@ -1,5 +1,11 @@
 # Installation Guide
-There are two versions of the solution: managed and unmanaged.  We **strongly** recommend you use the managed version if importing into an existing environment with other solutions.  If you want to customize the solution, you can use the unmanaged version or you can import that managed version and use an unmanaged solution to store your customiations.
+
+## Word Template
+Before you setup the solution, you must first load the Word template into a SharePoint document libray. You'll need to know the SharePoint site before importing the solution. 
+
+## Import Solution
+
+There are two versions of the solution: managed and unmanaged.  We **strongly** recommend you use the managed version if importing into an existing environment with other solutions.  If you want to customize the solution, you can use the unmanaged version or you can import that managed version and use an unmanaged solution to store your customizations.
 
 Which ever version you use, the steps are basically the same:
 
@@ -35,5 +41,11 @@ Which ever version you use, the steps are basically the same:
 
 The import process takes a few minutes.  
 
+## Update Flow with Word Template
 
+Due to limitations with the Word connector, you must hard code the Word template into the [PA - Create Transcript Document](developer-guide.md#pa---create-transcript-document) flow
+
+[▲ Top](#installation-guide)
+
+[← Back to Read Me](readme.md)
 

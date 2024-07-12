@@ -44,6 +44,9 @@ The import process takes a few minutes.
 ## Update Flow with Word Template
 
 Due to limitations with the Word connector, you must hard code the Word template into the [PA - Create Transcript Document](developer-guide.md#pa---create-transcript-document) flow
+Edit the flow and update the **Document Library** and **File** parameters
+
+![image](https://github.com/user-attachments/assets/ac2bedd1-fe3d-485c-96dc-327607a69c52)
 
 [▲ Top](#installation-guide)
 

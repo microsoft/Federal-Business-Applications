@@ -146,7 +146,7 @@ Below outlines target timelines for Power Platform / Dynamics 365 Copilot capabi
     * [Power Automate Cloud Flows with Copilot](https://learn.microsoft.com/en-us/power-automate/get-started-with-copilot)
   * Power Apps Copilot
     * [Build apps through conversation](https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/ai-conversations-create-app)
-    * [Describe the new table](https://learn.microsoft.com/en-us/power-apps/user/well-written-input-text-copilot)
+    * [Describe the new table](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/create-edit-entities-portal?tabs=excel#describe-the-new-table)
     * [Draft with Copilot](https://learn.microsoft.com/en-us/power-apps/user/well-written-input-text-copilot)
 
 ## Phase 2: Azure for Government Azure OpenAI

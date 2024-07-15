@@ -6,7 +6,7 @@ There are two apps in this solution: a canvas app for end users and a model-driv
   - [Upload Audio File](#upload-audio-file)
   - [View Transcript](#view-transcript)
   - [Edit Transcript](#edit-transcript)
-  - [Identify/Assign Speaker](#identify-assign-apeaker)
+  - [Identify/Assign Speaker](#identifyassign-speaker)
 - [Demo Transcript Admin App (model driven)](#demo-transcript-admin-app-model-driven)
 
 

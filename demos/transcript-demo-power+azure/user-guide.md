@@ -89,7 +89,7 @@ Click the Transcript (PDF) tab to view the entire transcript as a PDF.
  
 Click **Download** button to download copy of the PDF.
 
-If you've made changes to the transcript, you must click **Regenerate PDF** to update the PDF file
+If you've made changes to the transcript, you must click **Regenerate PDF** to update the PDF file (via [flow](developer-guide.md#pa---create-transcript-document))
 
 
 [^ Top](#contents)

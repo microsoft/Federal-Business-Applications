@@ -58,9 +58,9 @@ This takes you to the next screen.
 ![image](https://github.com/user-attachments/assets/feb2bc91-5aa1-41b3-a83a-0934e6d6e82b)
 
 There are three tabs:
-- Summary
-- Playback
-- Transcript (PDF)
+- [Summary](#summary)
+- [Playback](#playback)
+- [Transcript (PDF)](#transcript-pdf)
 
 #### Summary
 
@@ -81,6 +81,15 @@ Click the play button to start audio playback.  As the audio plays, the current 
 
 To navigate to a specific point in the audio file, you can use the gallery on the left and select the phrase. You can also use the playhead to scrub forwards or backwards.  There are also two buttons that let you go to the **In Point** or **Out Point** of the current phrase. Lastly, there is the **Jump To**: field that you can enter a specific time code (in HH:MM:SS).  
 
+#### Transcript (PDF)
+
+Click the Transcript (PDF) tab to view the entire transcript as a PDF. 
+
+![image](https://github.com/user-attachments/assets/db9f3016-17ff-4854-a98f-4d279afc2534)
+ 
+Click **Download** button to download copy of the PDF.
+
+If you've made changes to the transcript, you must click **Regenerate PDF** to update the PDF file
 
 
 [^ Top](#contents)

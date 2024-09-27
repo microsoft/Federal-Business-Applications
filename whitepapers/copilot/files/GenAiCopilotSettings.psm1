@@ -1,3 +1,6 @@
+# This is meant to be a sample of how you can automate some of these settings using PowerShell.
+# Please test and verify the script before running it in your environment and in a production environment.
+# 
 # A PowerShell module that provides methods to query and update Copilot settings via the Power Platform Admin Center (PAC) CLI tool
 #
 # To install this module, use the following command:

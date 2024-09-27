@@ -142,7 +142,7 @@ Below outlines target timelines for Power Platform / Dynamics 365 Copilot capabi
   * Power Automate
     * [Power Automate Cloud Flows with Copilot](https://learn.microsoft.com/en-us/power-automate/get-started-with-copilot)
   * Power Apps
-    * [Explain a Power FX Formula](https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/ai-formulas-formulabar#explain-a-formula)
+    * [Explain a Power Fx Formula](https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/ai-formulas-formulabar#explain-a-formula)
 * Available Today (GCC Only)
   * Dynamics 365 Customer Service
     * [Manage Dynamics 365 Customer Service Copilot Features](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-copilot-features)

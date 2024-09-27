@@ -52,6 +52,7 @@ ExpressRoute
 FedRAMP
 FOIA
 FQDN
+Fx
 GCC
 GCCH
 GIS

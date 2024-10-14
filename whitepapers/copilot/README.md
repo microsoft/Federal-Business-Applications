@@ -158,6 +158,10 @@ Phase 2 will leverage Azure for Government Azure OpenAI to enable Copilot capabi
 
 *UPDATE*: GCC and GCC High regions will migrate to using Azure for Government Azure OpenAI as the underlying service to support Copilot features for all Dynamics 365 and Power Platform Copilot workloads the week of November 7 to November 12.  New Copilot features will continue to rollout as the product group teams make them available, but all feaures already deployed will use Azure Government Azure OpenAI moving forward.
 
+There's now a central Microsoft documentation page that outlines all Dynamics 365 and Power Platform Generative AI features and the controls you have for each of them.  That document can be found in the link below,
+
+[Copilot in Dynamics 365 apps and Power Platform Governance Controls](https://learn.microsoft.com/en-us/power-platform/faqs-copilot-data-security-privacy#copilot-in-dynamics-365-apps-and-power-platform)
+
 ![Copilot Azure for Government Architecture](images/CopilotPhase2Architecture.png)
 
 

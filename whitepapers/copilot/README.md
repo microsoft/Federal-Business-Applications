@@ -189,6 +189,7 @@ Below are the values you can set with this approach,
 | JSON Setting | Associated Copilot Feature |
 | ------------ | -------------------------- |
 | ````intelligence > disableAiPrompts```` | Disable AI Builder GPT Prompts |
+| ```` intelligence > disableCopilot ```` | Disable Gen AI Features in Copilot Studio |
 | ````intelligence > enableOpenAiBotPublishing```` | Allow Copilot Studio Chatbots with Gen AI to be Published |
 | ````powerApps > disableCopilot```` | Disable Power Apps Copilot |
 | ````powerAutomate > disableCopilot```` | Disable Power Automate Copilot |

@@ -1,6 +1,6 @@
 # Federal Copilot Resources for Microsoft Business Applications
 > [!IMPORTANT]
-> November 7, 2024 through Nov 12, 2024 we are going live with Phase 2 of Copilot availbility for Power Platform and Dynamics 365 in GCC and GCC High!  More details below!
+> November 7, 2024 through Nov 12, 2024 we are going live with Phase 2 of Copilot availability for Power Platform and Dynamics 365 in GCC and GCC High!  More details below!
 
 The goal of this whitepaper is to serve as a guide for all US Federal customers to understand how Copilot across US Government sovereign clouds is rolling out for Power Platform and Dynamics 365.  We also want to outline our Microsoft Responsible AI framework, demonstrate what security protections we put in place for end users and organizational data, as well as illustrate architecture diagrams of how all of this works.  
 

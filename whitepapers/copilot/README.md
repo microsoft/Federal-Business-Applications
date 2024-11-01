@@ -174,8 +174,6 @@ If you are looking to control Copilot settings at the tenant level, you can use 
 
 First, run the Power Platform CLI command to list the current tenant level settings you have in your environment.
 
-https://learn.microsoft.com/en-us/power-platform/developer/cli/reference/admin#pac-admin-list-tenant-settings
-
 ````
 pac admin list-tenant-settings 
 ````

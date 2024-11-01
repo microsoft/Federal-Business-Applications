@@ -25,6 +25,7 @@ Chatbot
 chatbot's
 Chatbot's
 ChatGPT
+CLI
 CIDR
 CISA
 CISA's
@@ -64,6 +65,8 @@ IAM
 iFrame
 Integrations
 IPv6
+json
+Json
 JSON
 MACsec
 MSOnline

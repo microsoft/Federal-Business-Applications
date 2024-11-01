@@ -168,7 +168,7 @@ There's now a central Microsoft documentation page that outlines all Dynamics 36
 ![Copilot Azure for Government Architecture](images/CopilotPhase2Architecture.png)
 
 ## Tenant Level Copilot Settings
-If you are looking to control Copilot settings at the tenant level, you can use the PAC CLI tool to disable Copilot feaures
+If you are looking to control Copilot settings at the tenant level, you can use the PAC CLI tool to disable Copilot features
 
 First, run the PAC CLI command to list the current tenant level settings you have in your environment.
 
@@ -178,15 +178,15 @@ https://learn.microsoft.com/en-us/power-platform/developer/cli/reference/admin#p
 pac admin list-tenant-settings 
 ````
 
-Save the output of those settings, create a json file.  From there, identify the copilot settings you want to change, save the file and then run the following PAC CLI command,
+Save the output of those settings, create a JSON file.  From there, identify the copilot settings you want to change, save the file and then run the following PAC CLI command,
 
 ````
-pac admin list-tenant-settings > settings.json
+pac admin update-tenant-settings --settings-file .\settings.json
 ````
 
 Below are the values you can set with this approach,
 
-| Json Setting | Associated Copilot Feature |
+| JSON Setting | Associated Copilot Feature |
 | ------------ | -------------------------- |
 | ````intelligence > disableAiPrompts```` | AI Builder GPT Prompts |
 | ````intelligence > disableCopilot```` | Copilot Studio |

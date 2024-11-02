@@ -100,37 +100,15 @@ More details can be found below in our public documentation on this,
 
 * [Dynamics 365 Copilot Transcripts](https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/download-copilot-transcript-data)
 
-## Phase 1: Opt In with Azure Commercial Azure OpenAI
-Phase 1 leverages Azure Commercial **United States based data center regions** to enable Copilot capabilities across Power Platform and Dynamics 365.  More details on this can be found in our documentation page below,
+## Phase 2: Azure for Government Azure OpenAI
+GCC and GCC High regions will migrate to using Azure for Government Azure OpenAI as the underlying service to support Copilot features for all Dynamics 365 and Power Platform Copilot workloads the week of November 7 to November 12.  New Copilot features will continue to rollout as the product group teams make them available, but all features already deployed will use Azure Government Azure OpenAI moving forward.
 
-* [Copilot Geographic Availability Documentation](https://learn.microsoft.com/en-us/power-platform/admin/geographical-availability-copilot)
+### Architecture Diagram for GCC / GCC High
+Below is a diagram that outlines how Power Platform / Dynamics 365 services leverage Copilot features.  Microsoft manages an instance of Azure OpenAI that lives in Azure for Government to support GCC and GCC High.
 
+![Copilot Azure for Government Architecture](images/CopilotPhase2Architecture.png)
 
-The diagram below outlines how this works for GCC and GCC High calling Azure Commercial (US data center regions) for Copilot capabilities.
-
-![Copilot Opt In Architecture](images/CopilotPhase1Architecture.png)
-
-> [!NOTE]
-> During Phase 1, tenant level admins (i.e. Power Platform Administrator, Global Administrator) will be able to "opt in" to this at the environment level to turn these capabilities on. Environment Admins can see the setting, however if they try to change it they will receive an error message.
-
-Below shows when you can find these settings at the environment level,
-
-![Power Platform Admin Center GenAI Controls](images/GenAI_OptIn_Overview_01.png)
-
-The consent options you will have are below.  Both of the consent options are optional.  You do not need to require one to enable the other.
-
-![Power Platform Admin Center GenAI Consent Options](images/GenAI_OptIn_Overview_02.png)
-
-Mapping the consent options from the Power Platform Admin Center you can see which checkbox enables which integration features.
-
-![Power Platform Admin Center GenAI Consent Options](images/GenAI_OptIn_Overview_03.png)
-
-> [!NOTE]
-> Microsoft encrypts all Azure traffic within a region or between regions using MACsec, which relies on AES-128 block cipher for encryption. This traffic stays entirely within the Microsoft global network backbone and never enters the public internet.
-
-## Phase 1: Timeline
-Below outlines target timelines for Power Platform / Dynamics 365 Copilot capabilities with the Phase 1 rollout.  
-
+### Copilot Feature Roadmap
 > [!NOTE]
 > These dates are for planning purposes only and are subject to change without notice.
 
@@ -156,18 +134,12 @@ Below outlines target timelines for Power Platform / Dynamics 365 Copilot capabi
     * [Describe the new table](https://learn.microsoft.com/en-us/power-apps/user/well-written-input-text-copilot)
     * [Draft with Copilot](https://learn.microsoft.com/en-us/power-apps/user/well-written-input-text-copilot)
 
-## Phase 2: Azure for Government Azure OpenAI
-Phase 2 will leverage Azure for Government Azure OpenAI to enable Copilot capabilities.  
-
-*UPDATE*: GCC and GCC High regions will migrate to using Azure for Government Azure OpenAI as the underlying service to support Copilot features for all Dynamics 365 and Power Platform Copilot workloads the week of November 7 to November 12.  New Copilot features will continue to rollout as the product group teams make them available, but all features already deployed will use Azure Government Azure OpenAI moving forward.
-
-There's now a central Microsoft documentation page that outlines all Dynamics 365 and Power Platform Generative AI features and the controls you have for each of them.  That document can be found in the link below,
+### Copilot Feature Controls
+Please reference the following Microsoft documentation page that summarizes all Dynamics 365 and Power Platform Generative AI features and their associated governance controls.  That document can be found in the link below,
 
 [Copilot in Dynamics 365 apps and Power Platform Governance Controls](https://learn.microsoft.com/en-us/power-platform/faqs-copilot-data-security-privacy#copilot-in-dynamics-365-apps-and-power-platform)
 
-![Copilot Azure for Government Architecture](images/CopilotPhase2Architecture.png)
-
-## Tenant Level Copilot Settings
+### Tenant Level Copilot Settings
 If you are looking to control Copilot settings at the tenant level, you can use the Power Platform CLI tool to disable Copilot features.  For more details on the Power Platform CLI tool, please see our public documentation page below,
 
 [Microsoft Power Platform CLI](https://learn.microsoft.com/en-us/power-platform/developer/cli/introduction?tabs=windows)

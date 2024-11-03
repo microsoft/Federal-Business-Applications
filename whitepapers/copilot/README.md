@@ -144,6 +144,14 @@ If you are looking to control Copilot settings at the tenant level, you can use 
 
 [Microsoft Power Platform CLI](https://learn.microsoft.com/en-us/power-platform/developer/cli/introduction?tabs=windows)
 
+````powershell
+# authenticate for a GCC tenant
+ pac auth create --cloud UsGov
+
+# authenticate for a GCC High tenant
+ pac auth create --cloud UsGovHigh
+````
+
 First, run the Power Platform CLI command to list the current tenant level settings you have in your environment.
 
 ````

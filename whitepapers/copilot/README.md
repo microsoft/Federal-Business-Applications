@@ -158,6 +158,12 @@ First, run the Power Platform CLI command to list the current tenant level setti
 pac admin list-tenant-settings 
 ````
 
+Optionally, you can also write the output (and skip the first line which outputs the identity you are logged in with) to save to a JSON file which makes it easier to update your settings
+
+````
+pac admin list-tenant-settings | select -skip 1 > settings.json
+````
+
 Save the output of those settings, create a JSON file.  From there, identify the copilot settings you want to change, save the file and then run the following Power Platform CLI command,
 
 ````

@@ -1,6 +1,6 @@
 # Federal Copilot Resources for Microsoft Business Applications
 > [!IMPORTANT]
-> November 7, 2024 through Nov 12, 2024 we are going live with Phase 2 of Copilot availability for Power Platform and Dynamics 365 in GCC and GCC High!  More details below!
+> November 11, 2024 through Nov 16, 2024 we are going live with Phase 2 of Copilot availability for Power Platform and Dynamics 365 in GCC and GCC High!  More details below!
 
 The goal of this whitepaper is to serve as a guide for all US Federal customers to understand how Copilot across US Government sovereign clouds is rolling out for Power Platform and Dynamics 365.  We also want to outline our Microsoft Responsible AI framework, demonstrate what security protections we put in place for end users and organizational data, as well as illustrate architecture diagrams of how all of this works.  
 
@@ -101,7 +101,7 @@ More details can be found below in our public documentation on this,
 * [Dynamics 365 Copilot Transcripts](https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/download-copilot-transcript-data)
 
 ## Phase 2: Azure for Government Azure OpenAI
-GCC and GCC High regions will migrate to using Azure for Government Azure OpenAI as the underlying service to support Copilot features for all Dynamics 365 and Power Platform Copilot workloads the week of November 7 to November 12.  New Copilot features will continue to rollout as the product group teams make them available, but all features already deployed will use Azure Government Azure OpenAI moving forward.
+GCC and GCC High regions will migrate to using Azure for Government Azure OpenAI as the underlying service to support Copilot features for all Dynamics 365 and Power Platform Copilot workloads the week of November 11 to November 16.  New Copilot features will continue to rollout as the product group teams make them available, but all features already deployed will use Azure Government Azure OpenAI moving forward.
 
 ### Architecture Diagram for GCC / GCC High
 Below is a diagram that outlines how Power Platform / Dynamics 365 services leverage Copilot features.  Microsoft manages an instance of Azure OpenAI that lives in Azure for Government to support GCC and GCC High.

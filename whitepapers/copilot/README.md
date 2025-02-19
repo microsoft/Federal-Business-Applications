@@ -124,7 +124,7 @@ Below is a diagram that outlines how Power Platform / Dynamics 365 services leve
 * Available Today (GCC Only)
   * Dynamics 365 Customer Service
     * [Manage Dynamics 365 Customer Service Copilot Features](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-copilot-features)
-* Winter 2024 (GCC & GCC High)
+* Spring 2025 (GCC & GCC High)
   * Power Apps Copilot
     * [Build apps through conversation](https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/ai-conversations-create-app)
     * [Describe the new table](https://learn.microsoft.com/en-us/power-apps/user/well-written-input-text-copilot)

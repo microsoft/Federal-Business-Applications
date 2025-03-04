@@ -6,4 +6,4 @@ We've created a starter pack of Copilot Studio Agents that can be easily install
 
 To download the solution file, use the link below which is in our GitHub repository,
 
-[Federal Copilot Studio Agent Templates Solution File](files/FederalCopilotStudioTemplate_1_0_0_2.zip)
+[Federal Copilot Studio Agent Templates Solution File](files/FederalCopilotStudioTemplate_1_0_0_3.zip)

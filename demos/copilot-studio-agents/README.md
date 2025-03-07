@@ -15,9 +15,9 @@ The Agent templates below integrate with ServiceNow and as a result require usin
 
 | Agent Documentation Link | Agent Template Download Link |
 | ------------------------ | ---------------------------- |
-| [IT Help Desk Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-it-helpdesk) | [GCC Citizen Services Template](files/ITHelpdeskTemplate_1_0_0_1.zip) |
-| [Self Help Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-m365-ext-self-help) | [GCC Financial Insights Template](files/SelfHelpTemplate_1_0_0_1.zip) |
-| [Case Management Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-case-management) | [GCC Safe Travels Template](files/CaseManagementTemplate_1_0_0_1.zip) |
+| [IT Help Desk Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-it-helpdesk) | [GCC IT Help Desk Template](files/ITHelpdeskTemplate_1_0_0_1.zip) |
+| [Self Help Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-m365-ext-self-help) | [GCC Self Help Template](files/SelfHelpTemplate_1_0_0_1.zip) |
+| [Case Management Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-case-management) | [GCC Case Management Template](files/CaseManagementTemplate_1_0_0_1.zip) |
 
 For steps on how to import a solution file in the Power Platform.  See the public documentation page we have below,
 

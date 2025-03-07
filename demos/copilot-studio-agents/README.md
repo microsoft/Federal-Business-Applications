@@ -1,14 +1,15 @@
 # Federal Copilot Studio Agent Templates
 
-We've created a starter pack of Copilot Studio Agents that can be easily installed with a single Power Platform Solution file.  The Agents included in this solution file are below,
+To help get started quicker with Copilot Studio Agents, we have release number of templates that work today in GCC.  The table below outlines the list of Agent templates you can get up and running in your GCC environment today!
 
-* [Safe Travels Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-safe-travels)
-* [Citizen Services Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-citizen-services)
-* [Team Navigator Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-org-navigator)
-
-To download the solution file, use the link below which is in our GitHub repository,
-
-[Federal Copilot Studio Agent Templates Solution File](files/FederalCopilotStudioTemplate_1_0_0_5.zip)
+| Agent Documentation Link | Agent Template Download Link |
+| ------------------------ | ---------------------------- |
+| [Citizen Services Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-citizen-services) | [GCC Citizen Services Template](files/CitizenServicesTemplate_1_0_0_1.zip) |
+| [Financial Insights Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-fin-insights) | [GCC Financial Insights Template](files/FinancialInsightsTemplate_1_0_0_1.zip) |
+| [Safe Travels Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-safe-travels) | [GCC Safe Travels Template](files/SafeTravelsTemplate_1_0_0_1.zip) |
+| [Team Navigator Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-org-navigator) | [GCC Team Navigator Template](files/TeamNavigatorTemplate_1_0_0_1.zip) |
+| [Weather Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-weather) | [GCC Weather Template](files/WeatherTemplate_1_0_0_1.zip) |
+| [Website Q&A Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-website-q-and-a) | [GCC Website Q&A Template](files/WebsiteQandATemplate_1_0_0_1.zip) |
 
 For steps on how to import a solution file in the Power Platform.  See the public documentation page we have below,
 

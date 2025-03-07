@@ -99,6 +99,7 @@ runtime
 SaaS
 SCuBA
 SDK
+ServiceNow
 SMS
 SPO
 subfolder

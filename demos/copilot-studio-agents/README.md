@@ -19,7 +19,7 @@ The Agent templates below integrate with ServiceNow and as a result require usin
 | [Self Help Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-m365-ext-self-help) | [GCC Self Help Template](files/SelfHelpTemplate_1_0_0_1.zip) |
 | [Case Management Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-case-management) | [GCC Case Management Template](files/CaseManagementTemplate_1_0_0_1.zip) |
 
-The Agent templates below intergrate with SAP and as a result require using the SAP connector to run.
+The Agent templates below integrate with SAP and as a result require using the SAP connector to run.
 
 | Agent Documentation Link | Agent Template Download Link |
 | ------------------------ | ---------------------------- |

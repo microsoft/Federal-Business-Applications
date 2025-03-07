@@ -19,6 +19,12 @@ The Agent templates below integrate with ServiceNow and as a result require usin
 | [Self Help Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-m365-ext-self-help) | [GCC Self Help Template](files/SelfHelpTemplate_1_0_0_1.zip) |
 | [Case Management Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-case-management) | [GCC Case Management Template](files/CaseManagementTemplate_1_0_0_1.zip) |
 
+The Agent templates below intergrate with SAP and as a result require using the SAP connector to run.
+
+| Agent Documentation Link | Agent Template Download Link |
+| ------------------------ | ---------------------------- |
+| [Benefits Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-m365-ext-benefits) | [GCC Benefits Template](files/BenefitsTemplate_1_0_0_1.zip) |
+
 For steps on how to import a solution file in the Power Platform.  See the public documentation page we have below,
 
 [How To Import Solution Files](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/import-update-export-solutions)

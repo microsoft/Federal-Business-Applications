@@ -11,6 +11,14 @@ To help get started quicker with Copilot Studio Agents, we have release number o
 | [Weather Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-weather) | [GCC Weather Template](files/WeatherTemplate_1_0_0_1.zip) |
 | [Website Q&A Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-website-q-and-a) | [GCC Website Q&A Template](files/WebsiteQandATemplate_1_0_0_1.zip) |
 
+The Agent templates below integrate with ServiceNow and as a result require using the ServiceNow connector in Power Platform.
+
+| Agent Documentation Link | Agent Template Download Link |
+| ------------------------ | ---------------------------- |
+| [IT Help Desk Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-it-helpdesk) | [GCC Citizen Services Template](files/ITHelpdeskTemplate_1_0_0_1.zip) |
+| [Self Help Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-m365-ext-self-help) | [GCC Financial Insights Template](files/SelfHelpTemplate_1_0_0_1.zip) |
+| [Case Management Agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/template-case-management) | [GCC Safe Travels Template](files/CaseManagementTemplate_1_0_0_1.zip) |
+
 For steps on how to import a solution file in the Power Platform.  See the public documentation page we have below,
 
 [How To Import Solution Files](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/import-update-export-solutions)

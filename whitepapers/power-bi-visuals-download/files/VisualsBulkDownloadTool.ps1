@@ -96,7 +96,7 @@ if(-not (Test-Path $downloadFolder)){
 }
 
 # This is the REST call to get all of the list of all Power BI visuals from the marketplace
-$url = 'https://store.office.com/api/addins/search?ad=US&apiversion=1.0&client=Any_PowerBI&top=1000'
+
 
 # Execute the REST call and parse the results into JSON
 Write-Host "Attempting to download the list of all Power BI visuals"
@@ -105,6 +105,10 @@ Write-Host "Attempting to download the list of all Power BI visuals"
 # If you don't specify a language, no results will be returned
 $headers = @{'Accept-Language' = 'en-US'}
 
+$page = 1
+
+$url = 'https://appsource.microsoft.com/view/tiledata?ReviewsMyCommentsFilter=true&country=US&entityType=App&page=' + $page + '&product=power-bi-visuals&region=ALL'
+
 # Wrap the download call in a Invoke-RetryCommand to try and recover from transient errors
 # NOTE: We have to specify the UseBasicParsing switch for legacy Windows OS's
 # https://stackoverflow.com/questions/38005341/the-response-content-cannot-be-parsed-because-the-internet-explorer-engine-is-no
@@ -112,44 +116,63 @@ $json = Invoke-RetryCommand -ScriptBlock {
         Invoke-WebRequest $url -UseBasicParsing:$LegacyWindowsOS -Headers $headers | ConvertFrom-Json 
     }.GetNewClosure() -Verbose
 
-# loop over all results
-$json.Values | ForEach-Object {
-    # if the CertifiedOnly switch was specified, skip any visuals that are not certified
-    if($CertifiedOnly){
-        # Check the categories attributes to see if "Power BI Certified" exists
-        $containsCertified = $_.Categories | Where-Object {$_.Id -eq 'Power BI Certified'}
+while ($json.apps.dataList.Count -gt 0) {
+    # loop over all results
+    $json.apps.dataList | ForEach-Object {        
+        # find the download url for the pbiviz file
+        $fileUrl = $_.downloadLink
 
-        # If it is not certified, skip this visual and go to the next one
-        if($containsCertified -eq $null){
-            return
+        # parse the visual file name
+        $visualName = $_.title
+
+        # if the CertifiedOnly switch was specified, skip any visuals that are not certified
+        if($CertifiedOnly){
+            # Check the categories attributes to see if "Power BI Certified" exists
+            $containsCertified = $_.tags | Where-Object {$_.Id -eq 'PowerBICertified'}
+
+            # If it is not certified, skip this visual and go to the next one
+            if($containsCertified -eq $null){
+                Write-Host "Skipping the visual: $visualName"
+                Write-Host "This visual is not certified"
+                return
+            }
         }
+
+        # Filter out Microsoft only created visuals if specified
+        if($MicrosoftOnly){
+            if($_.publisher -ne "Microsoft Corporation"){
+                Write-Host "Skipping the visual: $visualName"
+                Write-Host "This visual is not created by Microsoft"
+                return
+            }
+        }
+
+        # print the visual name
+        Write-Host "Attempting to download the visual: $visualName"
+        Write-Host "Visual URL: $fileUrl"
+        Write-Host "Visual Publisher: $($_.publisher)"
+
+        $visualFileName = "" + ($visualName -replace "\W") + ".pbiviz"
+
+        # create the destination path
+        $destFilePath = Join-Path $downloadFolder $visualFileName
+
+        # download and save the pbiviz file to the downloads subfolder
+        $wc = New-Object System.Net.WebClient
+
+        # Wrap the download call in a Invoke-RetryCommand to try and recover from transient errors
+        Invoke-RetryCommand -ScriptBlock {$wc.DownloadFile($fileUrl, $destFilePath)} -Verbose
     }
 
-    # Download the manifest xml file
-    [xml]$xml = (New-Object System.Net.WebClient).DownloadString($_.ManifestUrl)
+    $page = $page + 1
+    $url = 'https://appsource.microsoft.com/view/tiledata?ReviewsMyCommentsFilter=true&country=US&entityType=App&page=' + $page + '&product=power-bi-visuals&region=ALL'
 
-    # Filter out Microsoft only created visuals if specified
-    if($MicrosoftOnly){
-        if($xml.OfficeApp.ProviderName -ne "Microsoft"){
-            return
-        }
-    }
-
-    # find the download url for the pbiviz file
-    $fileUrl = $xml.OfficeApp.DefaultSettings.SourceLocation.DefaultValue
-
-    # parse the visual file name
-    $visualName = $fileUrl.split('/')[-1]
-
-    # print the visual name
-    Write-Host "Attempting to download the visual: $visualName"
-
-    # create the destination path
-    $destFilePath = Join-Path $downloadFolder $visualName
-
-    # download and save the pbiviz file to the downloads subfolder
-    $wc = New-Object System.Net.WebClient
+    Write-Host "Attempting to download the next page of Power BI visuals from the AppSource API"
 
     # Wrap the download call in a Invoke-RetryCommand to try and recover from transient errors
-    Invoke-RetryCommand -ScriptBlock {$wc.DownloadFile($fileUrl, $destFilePath)} -Verbose
+    # NOTE: We have to specify the UseBasicParsing switch for legacy Windows OS's
+    # https://stackoverflow.com/questions/38005341/the-response-content-cannot-be-parsed-because-the-internet-explorer-engine-is-no
+    $json = Invoke-RetryCommand -ScriptBlock { 
+        Invoke-WebRequest $url -UseBasicParsing:$LegacyWindowsOS -Headers $headers | ConvertFrom-Json 
+    }.GetNewClosure() -Verbose
 }

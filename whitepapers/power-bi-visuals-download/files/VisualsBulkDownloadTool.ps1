@@ -134,6 +134,7 @@ while ($json.apps.dataList.Count -gt 0) {
             if($containsCertified -eq $null){
                 Write-Host "Skipping the visual: $visualName"
                 Write-Host "This visual is not certified"
+                Write-Host ""
                 return
             }
         }
@@ -143,6 +144,7 @@ while ($json.apps.dataList.Count -gt 0) {
             if($_.publisher -ne "Microsoft Corporation"){
                 Write-Host "Skipping the visual: $visualName"
                 Write-Host "This visual is not created by Microsoft"
+                Write-Host ""
                 return
             }
         }
@@ -151,6 +153,7 @@ while ($json.apps.dataList.Count -gt 0) {
         Write-Host "Attempting to download the visual: $visualName"
         Write-Host "Visual URL: $fileUrl"
         Write-Host "Visual Publisher: $($_.publisher)"
+        Write-Host ""
 
         $visualFileName = "" + ($visualName -replace "\W") + ".pbiviz"
 
@@ -168,6 +171,7 @@ while ($json.apps.dataList.Count -gt 0) {
     $url = 'https://appsource.microsoft.com/view/tiledata?ReviewsMyCommentsFilter=true&country=US&entityType=App&page=' + $page + '&product=power-bi-visuals&region=ALL'
 
     Write-Host "Attempting to download the next page of Power BI visuals from the AppSource API"
+    Write-Host ""
 
     # Wrap the download call in a Invoke-RetryCommand to try and recover from transient errors
     # NOTE: We have to specify the UseBasicParsing switch for legacy Windows OS's

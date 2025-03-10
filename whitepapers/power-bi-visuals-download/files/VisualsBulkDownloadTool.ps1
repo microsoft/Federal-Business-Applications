@@ -161,6 +161,7 @@ while ($json.apps.dataList.Count -gt 0) {
         Write-Host "Visual Publisher: $($_.publisher)"
         Write-Host ""
 
+        # parse the visual file name to remove any special characters
         $visualFileName = "" + ($visualName -replace "\W") + ".pbiviz"
 
         # create the destination path

@@ -64,6 +64,16 @@ function Invoke-RetryCommand {
 }
 # End Ridicurious Retry-Command function
 
+function Get-AppSourceApiURL {
+    [CmdletBinding()]
+    param (
+        [parameter(Mandatory)] 
+        [int] $PageNumber
+        )
+    
+    return 'https://appsource.microsoft.com/view/tiledata?ReviewsMyCommentsFilter=true&country=US&entityType=App&page=' + $PageNumber + '&product=power-bi-visuals&region=ALL'
+}
+
 # For debugging purposes, output the OS Version information
 Write-Host "OS Version Information"
 [System.Environment]::OSVersion
@@ -95,10 +105,6 @@ if(-not (Test-Path $downloadFolder)){
     New-Item -Path $downloadFolder -ItemType Directory
 }
 
-# This is the REST call to get all of the list of all Power BI visuals from the marketplace
-
-
-# Execute the REST call and parse the results into JSON
 Write-Host "Attempting to download the list of all Power BI visuals"
 
 # Construct the Headers for the web request
@@ -106,8 +112,7 @@ Write-Host "Attempting to download the list of all Power BI visuals"
 $headers = @{'Accept-Language' = 'en-US'}
 
 $page = 1
-
-$url = 'https://appsource.microsoft.com/view/tiledata?ReviewsMyCommentsFilter=true&country=US&entityType=App&page=' + $page + '&product=power-bi-visuals&region=ALL'
+$url = Get-AppSourceApiURL -PageNumber $page
 
 # Wrap the download call in a Invoke-RetryCommand to try and recover from transient errors
 # NOTE: We have to specify the UseBasicParsing switch for legacy Windows OS's
@@ -116,6 +121,7 @@ $json = Invoke-RetryCommand -ScriptBlock {
         Invoke-WebRequest $url -UseBasicParsing:$LegacyWindowsOS -Headers $headers | ConvertFrom-Json 
     }.GetNewClosure() -Verbose
 
+# Keep looping until there are no more results to process
 while ($json.apps.dataList.Count -gt 0) {
     # loop over all results
     $json.apps.dataList | ForEach-Object {        
@@ -167,8 +173,9 @@ while ($json.apps.dataList.Count -gt 0) {
         Invoke-RetryCommand -ScriptBlock {$wc.DownloadFile($fileUrl, $destFilePath)} -Verbose
     }
 
+    # Increment the page number to get the next page of results
     $page = $page + 1
-    $url = 'https://appsource.microsoft.com/view/tiledata?ReviewsMyCommentsFilter=true&country=US&entityType=App&page=' + $page + '&product=power-bi-visuals&region=ALL'
+    $url = Get-AppSourceApiURL -PageNumber $page
 
     Write-Host "Attempting to download the next page of Power BI visuals from the AppSource API"
     Write-Host ""

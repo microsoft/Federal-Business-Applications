@@ -115,15 +115,14 @@ Below is a diagram that outlines how Power Platform / Dynamics 365 services leve
       * [AI Builder prompt engineering guide](https://go.microsoft.com/fwlink/?linkid=2255775)
   * Copilot Studio
     * [Generative AI in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-gpt-overview)
+  * Dynamics 365 Customer Service
+    * [Manage Dynamics 365 Customer Service Copilot Features](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-copilot-features)
   * Power Pages
     * [Overview of Power Pages Copilot Features](https://learn.microsoft.com/en-us/power-pages/configure/ai-copilot-overview)
   * Power Automate
     * [Power Automate Cloud Flows with Copilot](https://learn.microsoft.com/en-us/power-automate/get-started-with-copilot)
   * Power Apps
     * [Explain a Power Fx Formula](https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/ai-formulas-formulabar#explain-a-formula)
-* Available Today (GCC Only)
-  * Dynamics 365 Customer Service
-    * [Manage Dynamics 365 Customer Service Copilot Features](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-copilot-features)
 * Spring 2025 (GCC & GCC High)
   * Power Apps Copilot
     * [Build apps through conversation](https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/ai-conversations-create-app)

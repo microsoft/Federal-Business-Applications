@@ -16,6 +16,7 @@ Below is a listing of the sample solutions available.  These sample solution fil
 | [Azure Computer Vision Canvas App](demos/azure-computer-vision/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Book a Room Template App](demos/Book-Room/README.MD) | :heavy_check_mark: | :heavy_check_mark: |  |
 | [Chargeback & License Management](demos/chargeback/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [Copilot Studio Agent Templates](demos/copilot-studio-agents/README.md) | ✔️ | | |
 | [Dynamics 365 Fraud Protection](demos/d365-fraud-protection/d365-fraud-protection.pdf) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Dynamics 365 or Model-Driven Power Apps & Teams Click-To-Dial](demos/d365-click-to-dial-teams/README.md) | :heavy_check_mark: | | |
 | [DevOps with GitHub Actions](demos/devops/README.md)| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |

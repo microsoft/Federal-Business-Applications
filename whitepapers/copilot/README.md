@@ -98,7 +98,7 @@ More details can be found below in our public documentation on this,
 * [Dynamics 365 Copilot Transcripts](https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/download-copilot-transcript-data)
 
 ### Architecture Diagram for GCC / GCC High
-Below is a diagram that outlines how Power Platform / Dynamics 365 services leverage Copilot features.  Microsoft manages an instance of Azure OpenAI that lives in Azure for Government to support GCC and GCC High which was deployed in Novemember of 2024.
+Below is a diagram that outlines how Power Platform / Dynamics 365 services leverage Copilot features.  Microsoft manages an instance of Azure OpenAI that lives in Azure for Government to support GCC and GCC High which was deployed in November of 2024.
 
 ![Copilot Azure for Government Architecture](images/CopilotPhase2Architecture.png)
 

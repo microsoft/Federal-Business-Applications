@@ -1,6 +1,6 @@
 # AI-Powered Job Application Evaluator (Power Platform Solution)
 
-This Power Apps solution allows organizations to evaluate job applicants using AI. It compares the applicant's resume to the job description and generates a recommendation using AI Builder.
+This Power Apps solution allows organizations to evaluate job applicants using AI. It compares the applicant's resume to the job description and generates a recommendation using AI Builder. It is a simple but full solution to track candidates, and can be modified as desired. (unmanaged solution) 
 
 ## Getting Started
 
@@ -27,10 +27,11 @@ Follow these steps to get the solution running:
 - **Model-Driven App**: Manage job openings and the application process.
 - **Quick AI App**: A lightweight experience to test or use the AI recommendation quickly.
 
-### ⚙️ AI
-Compares the resume text to the job description and provides a tailored recommendation. 2 prompts - one for the lightweight app and one for the main model driven app. 
-- **AI Builder Prompt: AI Hiring App Resume Matcher Prompt** for the Model Driven app
-- **AI Builder Prompt: Resume Matching Prompt** for the lightweight app
+### ⚙️ AI Builder AI Prompts
+Compares the resume text to the job description and provides a tailored recommendation. 
+2 AI Prompts - one for the lightweight app and one for the main model driven app. 
+- `AI Hiring App Resume Matcher Prompt` for the Model Driven app
+- `Resume Matching Prompt` for the lightweight app
 
 ### 🔄 Automation
 - **Power Automate Flow**: Triggered on save of a new Job Application; runs the AI prompt and updates the record with the recommendation.

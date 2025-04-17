@@ -41,4 +41,37 @@ Compares the resume text to the job description and provides a tailored recommen
 - `Job Application`
 
 ## 🖼️ Screenshots
-- coming soon
+
+### 1. Job Openings List
+Shows the list view of all created job openings in the model-driven app.
+
+![Job Openings List](./assets/job_openings_list.png)
+
+---
+
+### 2. Job Opening: Data Analyst Role
+Example of a job opening record with a detailed job description.
+
+![Job Opening - Data Analyst](./assets/job_opening_data_analyst.png)
+
+---
+
+### 3. Jane Smith Application Record
+Sample job application with resume text and AI-generated recommendation.
+
+![Jane Smith Application](./assets/jane_smith_application.png)
+
+---
+
+### 4. Lisa Brown Application Record
+Another sample showing a completed recommendation for a different applicant.
+
+![Lisa Brown Application](./assets/lisa_brown_application.png)
+
+---
+
+### 5. Lightweight AI Resume Analyzer (Canvas App)
+Canvas app version of the experience for quickly running AI recommendations.
+
+![Lightweight App Screenshot](./assets/lightweight_ai_resume_analyzer_app_screenshot.png)
+

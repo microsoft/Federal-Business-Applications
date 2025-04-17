@@ -2,6 +2,10 @@
 
 This Power Apps solution allows organizations to evaluate job applicants using AI. It compares the applicant's resume to the job description and generates a recommendation using AI Builder. It is a simple but full solution to track candidates, and can be modified as desired. (unmanaged solution) 
 
+### Sample job application with resume text and AI-generated recommendation.
+
+![Jane Smith Application](./assets/jane_smith_application.png)
+
 ## Getting Started
 
 Follow these steps to get the solution running:
@@ -25,7 +29,7 @@ Follow these steps to get the solution running:
 
 ### 🧠 Apps
 - `AI Hiring App`(Model-Driven App): Manage job openings and the application process.
-- `Lightweight Resume Analyzer App` (Canvas app): A lightweight experience to test or use the AI recommendation quickly.
+- `Lightweight Resume Analyzer App` (Canvas app): A lightweight experience to test or use the AI recommendation quickly. No need to create any job opening record, etc. Just a quick recommendation of a resume against a job description.
 
 ### ⚙️ AI Builder AI Prompts
 Compares the resume text to the job description and provides a tailored recommendation. 
@@ -42,35 +46,28 @@ Compares the resume text to the job description and provides a tailored recommen
 
 ## 🖼️ Screenshots
 
-### 1. Job Openings List
-Shows the list view of all created job openings in the model-driven app.
-
-![Job Openings List](./assets/job_openings_list.png)
-
----
-
-### 2. Job Opening: Data Analyst Role
+### 1. Job Opening: Data Analyst Role
 Example of a job opening record with a detailed job description.
 
 ![Job Opening - Data Analyst](./assets/job_opening_data_analyst.png)
 
 ---
 
-### 3. Jane Smith Application Record
-Sample job application with resume text and AI-generated recommendation.
-
-![Jane Smith Application](./assets/jane_smith_application.png)
-
----
-
-### 4. Lisa Brown Application Record
+### 2. Lisa Brown Application Record
 Another sample showing a completed recommendation for a different applicant.
 
 ![Lisa Brown Application](./assets/lisa_brown_application.png)
 
 ---
 
-### 5. Lightweight AI Resume Analyzer (Canvas App)
+### 3. Job Openings List
+Shows the list view of all created job openings in the model-driven app.
+
+![Job Openings List](./assets/job_openings_list.png)
+
+---
+
+### 4. Lightweight AI Resume Analyzer (Canvas App)
 Canvas app version of the experience for quickly running AI recommendations.
 
 ![Lightweight App Screenshot](./assets/lightweight_ai_resume_analyzer_app_screenshot.png)

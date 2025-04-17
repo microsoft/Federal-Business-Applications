@@ -24,13 +24,13 @@ Follow these steps to get the solution running:
 ## 🧩 Solution Components
 
 ### 🧠 Apps
-- **Model-Driven App**: Manage job openings and the application process.
-- **Quick AI App**: A lightweight experience to test or use the AI recommendation quickly.
+- `AI Hiring App`(Model-Driven App): Manage job openings and the application process.
+- `Lightweight Resume Analyzer App` (Canvas app): A lightweight experience to test or use the AI recommendation quickly.
 
 ### ⚙️ AI Builder AI Prompts
 Compares the resume text to the job description and provides a tailored recommendation. 
 2 AI Prompts - one for the lightweight app and one for the main model driven app. 
-- `AI Hiring App Resume Matcher Prompt` for the Model Driven app
+- `AI Hiring App Resume Matcher Prompt` for the Model-Driven app
 - `Resume Matching Prompt` for the lightweight app
 
 ### 🔄 Automation

@@ -9,10 +9,10 @@ The table below summarizes the supported cloud configurations (**D365 to Azure**
 
 | | GCC to Commercial | GCC to Gov | GCCH to Gov | 
 |-------|:-----:|:-----------:|:-----------:|
-| [CRM no Synapse](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-data-lake)          | Yes  | Yes  | Yes |
-| [CRM with Synapse](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-synapse)        | Yes  | Yes  | Yes |
-| [CRM Incremental Folder](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-incremental-updates)  | Yes  | Yes  | Yes |
-| [CRM Synapse with Delta](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-delta-lake)  | No   | Yes  | Yes |
+| [Dataverse no Synapse](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-data-lake)          | Yes  | Yes  | Yes |
+| [Dataverse with Synapse](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-synapse)        | Yes  | Yes  | Yes |
+| [Dataverse Incremental Folder](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-incremental-updates)  | Yes  | Yes  | Yes |
+| [Dataverse Synapse with Delta](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-delta-lake)  | No   | Yes  | Yes |
 | [F&O Incremental Folder](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-select-fno-data#access-incremental-data-changes-from-finance-and-operations)  | No  | Yes  | Yes |
 | [F&O Synapse with Delta](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-select-fno-data)  | No   | Yes  | No  |
 

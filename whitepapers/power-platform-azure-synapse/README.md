@@ -4,6 +4,18 @@
 ## Overview of the Feature
 Azure Synapse integration with Power Platform Dataverse allows you to sync data automatically from select tables in Dataverse into an Azure Data Lake Storage Account.  Below is an example of how it works once Azure Synapse Link is already setup.  Full setup notes for GCC and GCCH are included below.
 
+## Support Matrix
+The table below summarizes the supported cloud configurations (**D365 to Azure**):
+
+| | GCC to Commercial | GCC to Gov | GCCH to Gov | 
+|-------|:-----:|:-----------:|:-----------:|
+| [CRM no Synapse](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-data-lake)          | Yes  | Yes  | Yes |
+| [CRM with Synapse](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-synapse)        | Yes  | Yes  | Yes |
+| [CRM Incremental Folder](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-incremental-updates)  | Yes  | Yes  | Yes |
+| [CRM Synapse with Delta](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-delta-lake)  | No   | Yes  | Yes |
+| [F&O Incremental Folder](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-select-fno-data#access-incremental-data-changes-from-finance-and-operations)  | No  | Yes  | Yes |
+| [F&O Synapse with Delta](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-select-fno-data)  | No   | Yes  | No  |
+
 1. Make sure the Dataverse table you want to sync is marked to enable change tracking.
 
 ![Enable change tracking](files/SampleEnableChangeTracking.png)

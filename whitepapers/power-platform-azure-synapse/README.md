@@ -1,9 +1,6 @@
 # Power Platform Azure Synapse Link Integration
 > This feature is live in the GCC and GCCH clouds.
 
-## Overview of the Feature
-Azure Synapse integration with Power Platform Dataverse allows you to sync data automatically from select tables in Dataverse into an Azure Data Lake Storage Account.  Below is an example of how it works once Azure Synapse Link is already setup.  Full setup notes for GCC and GCCH are included below.
-
 ## Support Matrix
 The table below summarizes the supported cloud configurations (**D365 to Azure**):
 
@@ -15,6 +12,9 @@ The table below summarizes the supported cloud configurations (**D365 to Azure**
 | [Dataverse Synapse with Delta](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-delta-lake)  | No   | Yes  | Yes |
 | [F&O Incremental Folder](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-select-fno-data#access-incremental-data-changes-from-finance-and-operations)  | No  | Yes  | Yes |
 | [F&O Synapse with Delta](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-select-fno-data)  | No   | Yes  | No  |
+
+## Overview of the Feature
+Azure Synapse integration with Power Platform Dataverse allows you to sync data automatically from select tables in Dataverse into an Azure Data Lake Storage Account.  Below is an example of how it works once Azure Synapse Link is already setup.  Full setup notes for GCC and GCCH are included below.
 
 1. Make sure the Dataverse table you want to sync is marked to enable change tracking.
 

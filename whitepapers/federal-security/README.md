@@ -86,9 +86,10 @@ We recommend using Azure Application Gateway with Power Pages to support CISA TI
 * Content Delivery Network (CDN) of static content in Power Pages
 * Restrict Power Pages traffic to a single IP address from Azure Application Gateway
 
-Below is a great resource on designing a general web application to use Azure Front Door / Azure Application Gateway to meet TIC 3.0 requirements,
+Below are great resource on designing a general web application to use Azure Front Door / Azure Application Gateway to meet TIC 3.0 requirements,
 
-* [TIC 3.0 Azure Web Application Architecture](https://github.com/haithamshahin333/Federal-App-Innovation-Community/tree/main/topics/infrastructure/solutions/tic3.0/Azure-Front-Door)
+* [TIC 3.0 Azure Web Application Architecture](https://github.com/microsoft/Federal-App-Innovation-Community/tree/main/assets/topics/infrastructure/solutions/tic3.0/Azure-Application-Gateway)
+* [Implement TIC 3.0 compliance (MS Learn)](https://learn.microsoft.com/en-us/azure/architecture/networking/architecture/trusted-internet-connections)
 
 You can easily swap out the web application above with a Power Pages web application.  That design would look like this,
 

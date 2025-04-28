@@ -103,29 +103,9 @@ Below is a diagram that outlines how Power Platform / Dynamics 365 services leve
 ![Copilot Azure for Government Architecture](images/CopilotPhase2Architecture.png)
 
 ### Copilot Feature Roadmap
-> [!NOTE]
-> These dates are for planning purposes only and are subject to change without notice.
+Microsoft has published a live Power BI report that tracks Power Platform and Dynamics 365 Copilot feature availability by all cloud regions.  The link below lets you view the report and is our recommended resource moving forward to track GCC / GCC High Copilot feature availability questions.  Select "US Government" in the "Feature geography" to filter to US Government cloud regions for the report. 
 
-* Available Today (GCC & GCC High)
-   * AI Builder
-     * [Create text using custom prompt](https://learn.microsoft.com/en-us/ai-builder/create-a-custom-prompt)
-      * [AI Builder prompt engineering guide](https://go.microsoft.com/fwlink/?linkid=2255775)
-  * Copilot Studio
-    * [Generative AI in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-gpt-overview)
-  * Power Pages
-    * [Overview of Power Pages Copilot Features](https://learn.microsoft.com/en-us/power-pages/configure/ai-copilot-overview)
-  * Power Automate
-    * [Power Automate Cloud Flows with Copilot](https://learn.microsoft.com/en-us/power-automate/get-started-with-copilot)
-  * Power Apps
-    * [Explain a Power Fx Formula](https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/ai-formulas-formulabar#explain-a-formula)
-* Available Today (GCC Only)
-  * Dynamics 365 Customer Service
-    * [Manage Dynamics 365 Customer Service Copilot Features](https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-copilot-features)
-* Spring 2025 (GCC & GCC High)
-  * Power Apps Copilot
-    * [Build apps through conversation](https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/ai-conversations-create-app)
-    * [Describe the new table](https://learn.microsoft.com/en-us/power-apps/user/well-written-input-text-copilot)
-    * [Draft with Copilot](https://learn.microsoft.com/en-us/power-apps/user/well-written-input-text-copilot)
+* [Copilot Availability Report](https://releaseplans.microsoft.com/en-US/availability-reports/?report=copilotfeaturereport)
 
 ### Copilot Feature Controls
 Please reference the following Microsoft documentation page that summarizes all Dynamics 365 and Power Platform Generative AI features and their associated governance controls.  That document can be found in the link below,

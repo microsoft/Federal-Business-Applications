@@ -34,6 +34,42 @@ The security baseline recommendations Power Platform and Power BI can be found b
 * [Microsoft Power Platform M365 Minimum Viable Secure Configuration Baseline](https://github.com/cisagov/ScubaGear/blob/main/PowerShell/ScubaGear/baselines/powerplatform.md)
 * [Microsoft Power BI M365 Minimum Viable Secure Configuration Baseline](https://github.com/cisagov/ScubaGear/blob/main/PowerShell/ScubaGear/baselines/powerbi.md)
 
+# FIDO2 / Passkey Support for End Users
+
+Microsoft Entra natively supports FIDO2 authentication.  Because Power Platform and Dynamics 365 are secured with Microsoft Entra it is very easy to configure and set this up for your organization.  You can read more details on how to congfigure this below,
+
+* [Enable passkeys (FIDO2) for your organization](https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)
+
+# FIDO2 / Passkey Support for Power Platform CLI Tool
+
+The Power Platform CLI allows you to authenticate with FIDO2 / Passkeys.  To do this today, you need to leverage the .NET Core version of the Power Platform CLI tool.  Instructions to install the .NET Core version can be found in the documentation page below,
+
+* [.NET Core Power Platform CLI Install Steps](https://learn.microsoft.com/en-us/power-platform/developer/howto/install-cli-net-tool?tabs=windows)
+
+# FIDO2 / Passkey Support for Power Apps PowerShell Module
+
+As of version 2.0.212, you can now use FIDO2 / Passkey authentication with the Power Apps PowerShell Module.  You can get the latest version in the PowerShell Gallery site below,
+
+* [Microsoft.PowerApps.Administration.PowerShell Module](https://www.powershellgallery.com/packages/Microsoft.PowerApps.Administration.PowerShell/2.0.212)
+
+When you use this module, you need to specify you want to use the System Browser for authentication.  This allows you to use Microsoft Edge as the browser to do your authentication which supports FIDO2 authentication.  Below is an example of authenticating to a GCC endpoint and specifying to use the System Browser (i.e. Edge).
+
+````
+Add-PowerAppsAccount -Endpoint "usgov" -UseSystemBrowser: $true
+````
+> [!NOTE]
+> If you need to use the ```` Get-TenantDetailsFromGraph ```` commandlet this does not support FIDO2 as of version 2.0.212.  Instead, we recommend using the Microsoft Graph PowerShell Module.  You can download the latest Microsoft Graph PowerShell Module which can be found [here](https://www.powershellgallery.com/packages/Microsoft.Graph/2.28.0)
+
+Below is a sample of using the Microsoft Graph PowerShell Module to get the organization information that ```` Get-TenantDetailsFromGraph ```` will also give you.  However, this PowerShell Module supports FIDO2 authentication today.
+
+````
+# First Authenticate to the Microsoft Graph API
+Connect-MgGraph -Scopes "Directory.Read.All"
+
+# Now Get the Tenant Organization Details
+Get-MgOrganization | Format-List
+````
+
 # TIC 3.0 for Internal Agency Use
 
 For internal Agency use of Power Platform and Dynamics 365, our services leverage the security and auditing capabilities of Microsoft 365.  We have a great blog series that outlines how Microsoft 365 services align to TIC.  The blog links can be found below,

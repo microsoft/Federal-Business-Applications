@@ -48,9 +48,9 @@ The Power Platform CLI allows you to authenticate with FIDO2 / Passkeys.  To do 
 
 Below is an example to authenticate with the .NET Core Power Platform CLI,
 
-````
+```
 pac.exe auth create --cloud UsGov
-````
+```
 
 # FIDO2 / Passkey Support for Power Apps PowerShell Module
 
@@ -60,21 +60,22 @@ As of version 2.0.212, you can now use FIDO2 / Passkey authentication with the P
 
 When you use this module, you need to specify you want to use the System Browser for authentication.  This allows you to use Microsoft Edge as the browser to do your authentication which supports FIDO2 authentication.  Below is an example of authenticating to a GCC endpoint and specifying to use the System Browser (i.e. Edge).
 
-````
+```powershell
 Add-PowerAppsAccount -Endpoint "usgov" -UseSystemBrowser: $true
-````
+```
+
 > [!NOTE]
-> If you need to use the ```` Get-TenantDetailsFromGraph ```` command this does not support FIDO2 as of version 2.0.212.  Instead, we recommend using the Microsoft Graph PowerShell Module.  You can download the latest Microsoft Graph PowerShell Module which can be found [here](https://www.powershellgallery.com/packages/Microsoft.Graph/2.28.0)
+> If you need to use the ````Get-TenantDetailsFromGraph```` command this does not support FIDO2 as of version 2.0.212.  Instead, we recommend using the Microsoft Graph PowerShell Module.  You can download the latest Microsoft Graph PowerShell Module which can be found [here](https://www.powershellgallery.com/packages/Microsoft.Graph/2.28.0)
 
-Below is a sample of using the Microsoft Graph PowerShell Module to get the organization information that ```` Get-TenantDetailsFromGraph ```` will also give you.  However, this PowerShell Module supports FIDO2 authentication today.
+Below is a sample of using the Microsoft Graph PowerShell Module to get the organization information that ````Get-TenantDetailsFromGraph```` will also give you.  However, this PowerShell Module supports FIDO2 authentication today.
 
-````
+```powershell
 # First Authenticate to the Microsoft Graph API
 Connect-MgGraph -Scopes "Directory.Read.All"
 
 # Now Get the Tenant Organization Details
 Get-MgOrganization | Format-List
-````
+```
 
 # TIC 3.0 for Internal Agency Use
 

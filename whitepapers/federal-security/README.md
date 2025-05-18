@@ -46,6 +46,12 @@ The Power Platform CLI allows you to authenticate with FIDO2 / Passkeys.  To do 
 
 * [.NET Core Power Platform CLI Install Steps](https://learn.microsoft.com/en-us/power-platform/developer/howto/install-cli-net-tool?tabs=windows)
 
+Below is an example to authenticate with the .NET Core Power Platform CLI,
+
+````
+pac.exe auth create --cloud UsGov
+````
+
 # FIDO2 / Passkey Support for Power Apps PowerShell Module
 
 As of version 2.0.212, you can now use FIDO2 / Passkey authentication with the Power Apps PowerShell Module.  You can get the latest version in the PowerShell Gallery site below,

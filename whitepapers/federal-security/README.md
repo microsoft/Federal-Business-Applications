@@ -36,7 +36,7 @@ The security baseline recommendations Power Platform and Power BI can be found b
 
 # FIDO2 / Passkey Support for End Users
 
-Microsoft Entra natively supports FIDO2 authentication.  Because Power Platform and Dynamics 365 are secured with Microsoft Entra it is very easy to configure and set this up for your organization.  You can read more details on how to congfigure this below,
+Microsoft Entra supports FIDO2 authentication.  Because Power Platform and Dynamics 365 are secured with Microsoft Entra it is very easy to configure and set this up for your organization.  You can read more details on how to configure this below,
 
 * [Enable passkeys (FIDO2) for your organization](https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-enable-passkey-fido2)
 
@@ -58,7 +58,7 @@ When you use this module, you need to specify you want to use the System Browser
 Add-PowerAppsAccount -Endpoint "usgov" -UseSystemBrowser: $true
 ````
 > [!NOTE]
-> If you need to use the ```` Get-TenantDetailsFromGraph ```` commandlet this does not support FIDO2 as of version 2.0.212.  Instead, we recommend using the Microsoft Graph PowerShell Module.  You can download the latest Microsoft Graph PowerShell Module which can be found [here](https://www.powershellgallery.com/packages/Microsoft.Graph/2.28.0)
+> If you need to use the ```` Get-TenantDetailsFromGraph ```` command this does not support FIDO2 as of version 2.0.212.  Instead, we recommend using the Microsoft Graph PowerShell Module.  You can download the latest Microsoft Graph PowerShell Module which can be found [here](https://www.powershellgallery.com/packages/Microsoft.Graph/2.28.0)
 
 Below is a sample of using the Microsoft Graph PowerShell Module to get the organization information that ```` Get-TenantDetailsFromGraph ```` will also give you.  However, this PowerShell Module supports FIDO2 authentication today.
 

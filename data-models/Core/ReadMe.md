@@ -1,10 +1,101 @@
 # Government Common Data Model - Core
 
+# Releases
+---
+
 We highly recommend using the managed versions, which will allow you to easily update and uninstall the solution from your environment. If you need to modify or enhance the managed solution, you can can create a new solution, add the components to that solution and make changes as needed.
 
 # Entity Relationship Diagram
 ---
-<img width="1651" alt="384500833-589f6476-b704-4e7f-9ffc-1ab05be82ef4" src="https://github.com/user-attachments/assets/3d5d1cc9-8525-453d-a7e0-61065920bceb">
+
+```mermaid
+graph TD
+  Account(Account)
+  Contact(Person)
+  govcdm_Agreement(Agreement)
+  govcdm_Analysis(Analysis)
+  govcdm_clearancelevel(Clearance Level)
+  govcdm_Competency(Competency)
+  govcdm_ComplianceFramework(Compliance Framework)
+  govcdm_ComplianceFrameworkCategory(Compliance Framework Category)
+  govcdm_ComplianceRequirement(Compliance Requirement)
+  govcdm_ContentTemplate(Content Template)
+  govcdm_country(Country)
+  govcdm_DiscussionItem(Discussion Item)
+  govcdm_Document(Document)
+  govcdm_fiscalperiod(Fiscal Period)
+  govcdm_graderank(Grade-Rank)
+  govcdm_Impact(Impact)
+  govcdm_jobseries(Job Series)
+  govcdm_JudicialDistrict(Judicial District)
+  govcdm_LegalAmendment(Legal Amendment)
+  govcdm_LegalAuthority(Legal Authority)
+  govcdm_LegalCrossReference(Legal Cross-Reference)
+  govcdm_Location(Location)
+  govcdm_organizationinitiative(Organization Initiative)
+  govcdm_organizationunit(Organization Unit)
+  govcdm_organizationunittype(Organization Unit Type)
+  govcdm_paygrade(Pay Grade)
+  govcdm_personneltype(Personnel Type)
+  govcdm_PrivacyConsent(Privacy Consent)
+  govcdm_Product(Product)
+  govcdm_reviewapprovaldecision(Review Approval Decision)
+  govcdm_RiskItem(Risk Item)
+  govcdm_SignatureApproval(Signature Approval)
+  govcdm_stateorprovince(State or Province)
+  SystemUser(User)
+  govcdm_Agreement --> Account
+  govcdm_ComplianceFramework --> Account
+  govcdm_Product --> Account
+  govcdm_LegalAuthority --> Account
+  govcdm_Analysis --> Contact
+  govcdm_SignatureApproval --> Contact
+  govcdm_organizationunit --> Contact
+  govcdm_reviewapprovaldecision --> Contact
+  govcdm_SignatureApproval --> FileAttachment
+  govcdm_Impact --> govcdm_Analysis
+  govcdm_RiskItem --> govcdm_Analysis
+  Contact --> govcdm_clearancelevel
+  govcdm_Competency --> govcdm_Competency
+  govcdm_ComplianceFrameworkCategory --> govcdm_ComplianceFramework
+  govcdm_ComplianceRequirement --> govcdm_ComplianceFramework
+  govcdm_ComplianceRequirement --> govcdm_ComplianceFrameworkCategory
+  govcdm_ComplianceRequirement --> govcdm_ComplianceRequirement
+  govcdm_Document --> govcdm_ContentTemplate
+  Contact --> govcdm_country
+  govcdm_Location --> govcdm_country
+  govcdm_stateorprovince --> govcdm_country
+  govcdm_DiscussionItem --> govcdm_DiscussionItem
+  govcdm_LegalAmendment --> govcdm_Document
+  govcdm_LegalAuthority --> govcdm_Document
+  Contact --> govcdm_graderank
+  govcdm_Impact --> govcdm_Impact
+  Contact --> govcdm_jobseries
+  govcdm_Analysis --> govcdm_LegalAuthority
+  govcdm_ComplianceFramework --> govcdm_LegalAuthority
+  govcdm_Impact --> govcdm_LegalAuthority
+  govcdm_LegalAmendment --> govcdm_LegalAuthority
+  govcdm_LegalCrossReference --> govcdm_LegalAuthority
+  govcdm_LegalCrossReference --> govcdm_LegalAuthority
+  govcdm_RiskItem --> govcdm_LegalAuthority
+  govcdm_Location --> govcdm_Location
+  govcdm_organizationinitiative --> govcdm_organizationinitiative
+  govcdm_Analysis --> govcdm_organizationunit
+  govcdm_Competency --> govcdm_organizationunit
+  govcdm_Impact --> govcdm_organizationunit
+  govcdm_organizationinitiative --> govcdm_organizationunit
+  govcdm_organizationunit --> govcdm_organizationunit
+  govcdm_RiskItem --> govcdm_organizationunit
+  govcdm_organizationunit --> govcdm_organizationunittype
+  govcdm_graderank --> govcdm_paygrade
+  Contact --> govcdm_personneltype
+  govcdm_Product --> govcdm_Product
+  govcdm_RiskItem --> govcdm_RiskItem
+  Contact --> govcdm_stateorprovince
+  govcdm_Location --> govcdm_stateorprovince
+  govcdm_Agreement --> TransactionCurrency
+  govcdm_Product --> TransactionCurrency
+```
 
 # Account
 ---
@@ -50,6 +141,92 @@ We highly recommend using the managed versions, which will allow you to easily u
   - Type: Lookup
   - Schema: govcdm_user
 
+# Agreement
+---
+
+**Metadata**
+
+- Schema: govcdm_Agreement
+
+**Custom Fields**
+
+- Agreement Number
+  - Type: Nvarchar
+  - Schema: govcdm_AgreementNumber
+- Agreement Status
+  - Type: Picklist
+  - Schema: govcdm_AgreementStatus
+- Agreement Type
+  - Type: Picklist
+  - Schema: govcdm_AgreementType
+- Amount
+  - Type: Money
+  - Schema: govcdm_Amount
+- Amount (Base)
+  - Type: Money
+  - Schema: govcdm_amount_Base
+- Counterparty
+  - Type: Lookup
+  - Schema: govcdm_Counterparty
+- Currency
+  - Type: Lookup
+  - Schema: TransactionCurrencyId
+- Description
+  - Type: Ntext
+  - Schema: govcdm_Description
+- End Date
+  - Type: Datetime
+  - Schema: govcdm_EndDate
+- Exchange Rate
+  - Type: Decimal
+  - Schema: ExchangeRate
+- Is Binding
+  - Type: Picklist
+  - Schema: govcdm_IsBinding
+- Name
+  - Type: Nvarchar
+  - Schema: govcdm_Name
+- Start Date
+  - Type: Datetime
+  - Schema: govcdm_StartDate
+
+# Analysis
+---
+
+**Metadata**
+
+- Schema: govcdm_Analysis
+
+**Custom Fields**
+
+- Action Status
+  - Type: Picklist
+  - Schema: govcdm_ActionStatus
+- Analysis From Date
+  - Type: Datetime
+  - Schema: govcdm_AnalysisFromDate
+- Analysis To Date
+  - Type: Datetime
+  - Schema: govcdm_AnalysisToDate
+- Assessment POC
+  - Type: Lookup
+  - Schema: govcdm_AssessmentPOC
+- Details
+  - Type: Ntext
+  - Schema: govcdm_Details
+- Legal Authority
+  - Type: Lookup
+  - Schema: govcdm_LegalAuthority
+- Name
+  - Type: Nvarchar
+  - Schema: govcdm_Name
+- Organization Unit
+  - Type: Lookup
+  - Schema: govcdm_OrganizationUnit
+- Summary
+  - Type: Ntext
+  - Schema: govcdm_Summary
+
 # Clearance Level
 ---
 
@@ -72,6 +249,28 @@ We highly recommend using the managed versions, which will allow you to easily u
   - Type: Nvarchar
   - Schema: govcdm_name
 
+# Competency
+---
+
+**Metadata**
+
+- Schema: govcdm_Competency
+
+**Custom Fields**
+
+- Description
+  - Type: Ntext
+  - Schema: govcdm_Description
+- Name
+  - Type: Nvarchar
+  - Schema: govcdm_Name
+- Organization Unit
+  - Type: Lookup
+  - Schema: govcdm_OrganizationUnit
+- Parent Competency
+  - Type: Lookup
+  - Schema: govcdm_ParentCompetency
+
 # Compliance Framework
 ---
 
@@ -87,6 +286,9 @@ We highly recommend using the managed versions, which will allow you to easily u
 - Name
   - Type: Nvarchar
   - Schema: govcdm_Name
+- Primary Legal Authority
+  - Type: Lookup
+  - Schema: govcdm_PrimaryLegalAuthority
 - Responsible Authority
   - Type: Lookup
   - Schema: govcdm_ResponsibleAuthority
@@ -291,6 +493,64 @@ We highly recommend using the managed versions, which will allow you to easily u
   - Type: Lookup
   - Schema: govcdm_paygrade
 
+# Impact
+---
+
+**Metadata**
+
+- Schema: govcdm_Impact
+
+**Custom Fields**
+
+- Action Status
+  - Type: Picklist
+  - Schema: govcdm_ActionStatus
+- Analysis
+  - Type: Lookup
+  - Schema: govcdm_Analysis
+- Description
+  - Type: Ntext
+  - Schema: govcdm_Description
+- Evidence of Mitigation
+  - Type: Ntext
+  - Schema: govcdm_EvidenceofMitigation
+- General Category
+  - Type: Picklist
+  - Schema: govcdm_GeneralCategory
+- Identification Date
+  - Type: Datetime
+  - Schema: govcdm_IdentificationDate
+- Impact Level
+  - Type: Picklist
+  - Schema: govcdm_ImpactLevel
+- Impact Likelihood
+  - Type: Picklist
+  - Schema: govcdm_ImpactLikelihood
+- Impact Relevance
+  - Type: Picklist
+  - Schema: govcdm_ImpactRelevance
+- Legal Authority
+  - Type: Lookup
+  - Schema: govcdm_LegalAuthority
+- Mitigation Plan
+  - Type: Ntext
+  - Schema: govcdm_MitigationPlan
+- Name
+  - Type: Nvarchar
+  - Schema: govcdm_Name
+- Organization Unit
+  - Type: Lookup
+  - Schema: govcdm_OrganizationUnit
+- Parent Impact
+  - Type: Lookup
+  - Schema: govcdm_ParentImpact
+- Review Date
+  - Type: Datetime
+  - Schema: govcdm_ReviewDate
+- Target Mitigation Date
+  - Type: Datetime
+  - Schema: govcdm_TargetMitigationDate
+
 # Job Series
 ---
 
@@ -309,6 +569,136 @@ We highly recommend using the managed versions, which will allow you to easily u
 - Series Number
   - Type: Nvarchar
   - Schema: govcdm_seriesnumber
+
+# Judicial District
+---
+
+**Metadata**
+
+- Schema: govcdm_JudicialDistrict
+
+**Custom Fields**
+
+- Name
+  - Type: Nvarchar
+  - Schema: govcdm_Name
+
+# Legal Amendment
+---
+
+**Metadata**
+
+- Schema: govcdm_LegalAmendment
+
+**Custom Fields**
+
+- Amendment Date
+  - Type: Datetime
+  - Schema: govcdm_AmendmentDate
+- Document
+  - Type: Lookup
+  - Schema: govcdm_Document
+- Full Text URL
+  - Type: Nvarchar
+  - Schema: govcdm_FullTextURL
+- Name
+  - Type: Nvarchar
+  - Schema: govcdm_Name
+- Parent Legal Authority
+  - Type: Lookup
+  - Schema: govcdm_ParentLegalAuthority
+- Submission Type
+  - Type: Picklist
+  - Schema: govcdm_SubmissionType
+- Summary of Change
+  - Type: Ntext
+  - Schema: govcdm_SummaryofChange
+
+# Legal Authority
+---
+
+**Metadata**
+
+- Schema: govcdm_LegalAuthority
+
+**Custom Fields**
+
+- Citation
+  - Type: Nvarchar
+  - Schema: govcdm_Citation
+- Disposition Notes
+  - Type: Ntext
+  - Schema: govcdm_DispositionNotes
+- Document
+  - Type: Lookup
+  - Schema: govcdm_Document
+- Document Number
+  - Type: Nvarchar
+  - Schema: govcdm_DocumentNumber
+- Effective Date
+  - Type: Datetime
+  - Schema: govcdm_EffectiveDate
+- Executive Order Number
+  - Type: Nvarchar
+  - Schema: govcdm_ExecutiveOrderNumber
+- Expiration Date
+  - Type: Datetime
+  - Schema: govcdm_ExpirationDate
+- Full Text URL
+  - Type: Nvarchar
+  - Schema: govcdm_FullTextURL
+- Issuing Body
+  - Type: Lookup
+  - Schema: govcdm_IssuingBody
+- Jurisdiction Level
+  - Type: Picklist
+  - Schema: govcdm_JurisdictionLevel
+- Legal Authority Status
+  - Type: Picklist
+  - Schema: govcdm_LegalAuthorityStatus
+- Legal Authority Type
+  - Type: Picklist
+  - Schema: govcdm_LegalAuthorityType
+- Name
+  - Type: Nvarchar
+  - Schema: govcdm_Name
+- Public Doc URL
+  - Type: Nvarchar
+  - Schema: govcdm_PublicDocURL
+- Publication Date
+  - Type: Datetime
+  - Schema: govcdm_PublicationDate
+- Signing Date
+  - Type: Datetime
+  - Schema: govcdm_SigningDate
+- Summary
+  - Type: Ntext
+  - Schema: govcdm_Summary
+- Tags
+  - Type: Ntext
+  - Schema: govcdm_Tags
+
+# Legal Cross-Reference
+---
+
+**Metadata**
+
+- Schema: govcdm_LegalCrossReference
+
+**Custom Fields**
+
+- From Legal Authority
+  - Type: Lookup
+  - Schema: govcdm_FromLegalAuthority
+- Legal Authority Impact
+  - Type: Picklist
+  - Schema: govcdm_LegalAuthorityImpact
+- Name
+  - Type: Nvarchar
+  - Schema: govcdm_Name
+- To Legal Authority
+  - Type: Lookup
+  - Schema: govcdm_ToLegalAuthority
 
 # Location
 ---
@@ -559,6 +949,9 @@ We highly recommend using the managed versions, which will allow you to easily u
 - Action Status
   - Type: Picklist
   - Schema: govcdm_ActionStatus
+- Analysis
+  - Type: Lookup
+  - Schema: govcdm_Analysis
 - Description
   - Type: Ntext
   - Schema: govcdm_Description
@@ -571,12 +964,18 @@ We highly recommend using the managed versions, which will allow you to easily u
 - Impact Description
   - Type: Ntext
   - Schema: govcdm_ImpactDescription
+- Legal Authority
+  - Type: Lookup
+  - Schema: govcdm_LegalAuthority
 - Mitigation Plan
   - Type: Ntext
   - Schema: govcdm_MitigationPlan
 - Name
   - Type: Nvarchar
   - Schema: govcdm_Name
+- Organization Unit
+  - Type: Lookup
+  - Schema: govcdm_OrganizationUnit
 - Parent Risk Item
   - Type: Lookup
   - Schema: govcdm_ParentRiskItem

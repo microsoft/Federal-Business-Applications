@@ -10,7 +10,7 @@ The table below summarizes the supported cloud configurations (**D365 to Azure**
 | [Dataverse with Synapse](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-synapse)        | Yes  | Yes  | Yes |
 | [Dataverse Incremental Folder](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-incremental-updates)  | Yes  | Yes  | Yes |
 | [Dataverse Synapse with Delta](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-delta-lake)  | No   | Yes  | Yes |
-| [F&O Incremental Folder](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-select-fno-data#access-incremental-data-changes-from-finance-and-operations)  | No  | Yes  | Yes |
+| [F&O Incremental Folder](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-select-fno-data#access-incremental-data-changes-from-finance-and-operations)  | Yes  | Yes  | Yes |
 | [F&O Synapse with Delta](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/azure-synapse-link-select-fno-data)  | No   | Yes  | No  |
 
 ## Overview of the Feature

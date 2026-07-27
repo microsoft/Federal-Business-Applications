@@ -132,9 +132,9 @@ We recommend using Azure Application Gateway with Power Pages to support CISA TI
 > [!NOTE]  
 > When your compliance requirements allow for platform-managed security controls, the native "turnkey" CDN and WAF features are now available in GCC for Power Pages as of May 15, 2025. Lean more: [Announcing Content Delivery Network and Web Application Firewall for US Government Cloud in Power Pages - Microsoft Power Platform Blog](https://www.microsoft.com/en-us/power-platform/blog/power-pages/announcing-content-delivery-network-and-web-application-firewall-for-us-government-cloud-in-power-pages)
 
-Below are great resource on designing a general web application to use Azure Front Door / Azure Application Gateway to meet TIC 3.0 requirements,
+Below are great resource on designing a general web application to use Azure Front Door / Azure Application Gateway to meet TIC 3.0 requirements:
 
-* [TIC 3.0 Azure Web Application Architecture](https://github.com/microsoft/Federal-App-Innovation-Community/tree/main/assets/topics/infrastructure/solutions/tic3.0/Azure-Application-Gateway)
+* [TIC 3.0 Azure Web Application Architecture](https://github.com/Azure/trusted-internet-connection/tree/main/Architecture/Azure-Application-Gateway)
 * [Implement TIC 3.0 compliance (MS Learn)](https://learn.microsoft.com/en-us/azure/architecture/networking/architecture/trusted-internet-connections)
 
 You can easily swap out the web application above with a Power Pages web application.  That design would look like this,

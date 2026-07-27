@@ -12,6 +12,7 @@ Below is a listing of the sample solutions available.  These sample solution fil
 | --------- | :---: | :----: | :---: |
 | [Access Data Migration to Dataverse](demos/access-migration/README.md) | :heavy_check_mark: | | |
 | [AI Builder Drivers License Canvas App](demos/ai-builder-drivers-license/README.md) | :heavy_check_mark: | :heavy_check_mark: | |
+| [AI Recruitment Accelerator App](demos/AI%20Recruitment%20Accelerator%20App/readme.md) | :heavy_check_mark: | :heavy_check_mark: | |
 | [AI Builder Form Processing + RPA](demos/ai-builder-form-processing-rpa/README.md) | :heavy_check_mark: | :heavy_check_mark: | |
 | [Azure Computer Vision Canvas App](demos/azure-computer-vision/README.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Book a Room Template App](demos/Book-Room/README.MD) | :heavy_check_mark: | :heavy_check_mark: |  |

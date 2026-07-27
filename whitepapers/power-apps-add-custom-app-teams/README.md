@@ -55,7 +55,7 @@ An outline icon displays in two scenarios:
   
 The icon must be 32x32 pixels. It can be white with a transparent background or transparent with a white background (no other colors are permitted). The outline icon should not have any extra padding around the symbol.
 
-<img  alt="Image of the the outline icon with dimensions indicated and exmaples of how the icon appears in Microsoft Teams" src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/3f583831-5be4-43a5-8c5d-aeaba621d9a4" width="500px">
+<img  alt="Image of the outline icon with dimensions indicated and examples of how the icon appears in Microsoft Teams" src="https://github.com/microsoft/Federal-Business-Applications/assets/12347531/3f583831-5be4-43a5-8c5d-aeaba621d9a4" width="500px">
 
 For more, see [App Icons](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/apps-package#app-icons)
 

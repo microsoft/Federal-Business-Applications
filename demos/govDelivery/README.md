@@ -10,7 +10,7 @@ Sample Power Automate Flow below using the custom connector,
 ## Installing the Custom Connector
 To get started, you will need a govDelivery account and an API key to connect to their APIs.  Details on govDelivery's APIs can be found below,
 
-[govDelivery API Docs](https://developer.govdelivery.com/api/tms/overview/Setup/)
+[govDelivery API Docs](https://developers.govdelivery.com/)
 
 To install the sample custom connector, download the following swagger OpenAPI connection file,
 

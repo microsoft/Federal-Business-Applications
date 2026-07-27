@@ -112,7 +112,7 @@ function Disable-CopilotSettings{
 
     $settingsXml = [xml]$parsedSettingsValue
 
-    # check for existance of the IsDVCopilotForTextDataEnabled property
+    # check for existence of the IsDVCopilotForTextDataEnabled property
     # if it does not exist, create it and set it to false
     if ($null -eq (Select-Xml -Content $parsedSettingsValue -XPath "//IsDVCopilotForTextDataEnabled").Node) {
         $newElement = $settingsXml.CreateElement("IsDVCopilotForTextDataEnabled")
@@ -124,7 +124,7 @@ function Disable-CopilotSettings{
         $settingsXml.OrgSettings.IsDVCopilotForTextDataEnabled = "false"
     }
 
-    # check for existance of the IsAiSuggestFormulaColumnEnabled property
+    # check for existence of the IsAiSuggestFormulaColumnEnabled property
     # if it does not exist, create it and set it to false
     if ($null -eq (Select-Xml -Content $parsedSettingsValue -XPath "//IsAiSuggestFormulaColumnEnabled").Node) {
         $newElement = $settingsXml.CreateElement("IsAiSuggestFormulaColumnEnabled")

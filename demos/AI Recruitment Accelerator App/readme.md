@@ -6,6 +6,14 @@ This Power Apps solution allows organizations to evaluate job applicants using A
 
 ![Jane Smith Application](./assets/jane_smith_application.png)
 
+## Cloud Compatibility
+
+| GCC | GCC High | DoD |
+| :---: | :----: | :---: |
+| :heavy_check_mark: | :heavy_check_mark: | |
+
+> **Note:** This solution requires AI Builder, which is not available in DoD environments.
+
 ## Getting Started
 
 Follow these steps to get the solution running:

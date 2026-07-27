@@ -52,7 +52,7 @@ Below are whitepapers that have been created specifically for use in the US Gove
 * [Azure Synapse Link Integration](whitepapers/power-platform-azure-synapse/README.md)
 * [Consume Commercial Azure Storage Resources from Power Platform GCC](https://github.com/microsoft/Federal-Business-Applications/wiki/PowerApps-Connecting-from-GCC-to-any-Endpoint-including-Commercial-Azure)
 * [Creating US Government Support Tickets](whitepapers/power-platform-support/README.md)
-* [Enable Azure AD Connector in GCC](whitepapers/azure-ad-gcc/README.md)
+* [Enable Microsoft Entra ID Connector in GCC](whitepapers/azure-ad-gcc/README.md)
 * [How to use the O365 Outlook Connector for Notifications](whitepapers/o365-outlook-connector/How%20to%20use%20the%20O365%20Outlook%20Connector%20for%20Notifications.pdf)
 * [Power Apps Developer Plan for US Government Customers](whitepapers/power-apps-dev-plan/README.md)
 * [Copilot Studio Kit - Agent Analytics](https://aka.ms/copilotstudiokitoverview)

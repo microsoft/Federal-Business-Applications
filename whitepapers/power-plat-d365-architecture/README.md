@@ -27,7 +27,9 @@ There's also a great video that overviews all of Microsoft's Sovereign Clouds,
 ![GCC Overview](files/Slide2.PNG)
 
 ### GCC Power Platform Connectors
-The list of GCC Power Platform connectors available can be found below,
+The list of GCC Power Platform connectors available can be found below.
+
+> **Note:** This link requires authentication with a valid GCC tenant account and is not publicly accessible.
 
 [GCC Power Platform Connectors List](https://gov.flow.microsoft.us/en-us/connectors/)
 
@@ -49,7 +51,9 @@ A work around for the listed scenario above is to create a Azure Logic App in Az
 ![GCC High Overview](files/Slide3.PNG)
 
 ### GCC High Power Platform Connectors
-The list of GCC High Power Platform connectors available can be found below,
+The list of GCC High Power Platform connectors available can be found below.
+
+> **Note:** This link requires authentication with a valid GCC High tenant account and is not publicly accessible.
 
 [GCC High Power Platform Connectors List](https://high.flow.microsoft.us/en-us/connectors/)
 
@@ -57,6 +61,8 @@ The list of GCC High Power Platform connectors available can be found below,
 ![DOD Overview](files/Slide4.PNG)
 
 ### DOD Power Platform Connectors
-The list of DOD Power Platform connectors available can be found below,
+The list of DOD Power Platform connectors available can be found below.
+
+> **Note:** This link requires authentication with a valid DoD tenant account and is not publicly accessible.
 
 [DOD Power Platform Connectors List](https://flow.appsplatform.us/en-us/connectors/)

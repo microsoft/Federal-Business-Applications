@@ -33,7 +33,7 @@ Which ever version you use, the steps are basically the same:
     - **Azure Speech to Text Region**: The Azure location/region used by the Azure Batch Speech to Text services
     - **Azure Speech to Text Key**: The key for the Azure Batch Speech to Text service
     - **Azure Blob Storage Source Container**: Path to the container that will receive the audio files
-       - **Azure Blob Destination SAS URL**:  The SAS URL for the container the the transcripts go into.  <br>_Note: this SAS URL must be configured for anonymous access and have write/create priviledges._
+       - **Azure Blob Destination SAS URL**:  The SAS URL for the container the transcripts go into.  <br>_Note: this SAS URL must be configured for anonymous access and have write/create privileges._
     - **SharePoint Site**: The site where the Word document template is located
     - **Web API Endpoint**: For Databverse Web API calls
     

@@ -64,7 +64,7 @@ function initiatePhoneCallWindow(executionContext ){
 
         }
     }else{
-        /* This is used to accomodate the avaiable onChange event, so the call does not re-trigger if the switch is set back to No/False */
+        /* This is used to accommodate the available onChange event, so the call does not re-trigger if the switch is set back to No/False */
     }
 
 

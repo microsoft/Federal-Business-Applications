@@ -1220,7 +1220,7 @@ For more on the Azure Batch Speech to Text transcription click[https://learn.mic
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/0422b020-a414-4b64-8d25-cce87663307b)
 
 Here's breakdown of each action:
-- **Manually trigger a flow**: This child low is triggered by 01 - Power Apps - Upload to Azure Blob flow.  It has three parameters:
+- **Manually trigger a flow**: This child flow is triggered by 01 - Power Apps - Upload to Azure Blob flow.  It has three parameters:
   - **TotalSpeakers**: How many speakers should Azure Speech to Text services expect (for diarization)
   - **BlobPath**: Path of the blob uploaded in the 01 - Power Apps - Upload to Azure Blob flow
   - **FileName**: Name of the file uploaded in the 01 - Power Apps - Upload to Azure Blob flow 
@@ -1390,7 +1390,7 @@ Due to issue/limitation of the [Azure Blob Storage trigger]([url](https://learn.
 ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/cf3f6466-3fd5-416b-9699-df0fab9d6e9a)  
 Here's a breakdown of each action:  
 - **Manually trigger flow**: Child flow is triggered from parent flow [02 - Azure - When Audio File Created in Blob Storage - Create Transcript](#02---azure---when-audio-file-created-in-blob-storage---create-transcript) and receives a text parameter with the transcriptions path
-- **Initialize variable  varWait**: Creates a variable with these paramters
+- **Initialize variable  varWait**: Creates a variable with these parameters
   ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/116b2c78-df66-43a0-939d-8ec2a0f24501)
 
   - **Name**: ```varWait```
@@ -1596,13 +1596,13 @@ Here is a breakdown of each action:
     Here are the parameters passed:
     - **Method**: ```GET```
     - **URI**: ```@{first(body('Filter_array_-_contenturl_0.json'))?['links']?['contenturl']}```
-      **_Note_**: _This flow uses the ```first()``` function to avoid the need for For Each loop. IF you are submitting mutliple files at one time to transcribe, please replace with a For Each control_  
+      **_Note_**: _This flow uses the ```first()``` function to avoid the need for For Each loop. IF you are submitting multiple files at one time to transcribe, please replace with a For Each control_  
     - **Headers**:
         -  **Ocp-Apim-Subscription-Key**: ```@parameters('Speech To Text Key (demo_SpeechToTextKey)')```
   - **Response**: Sends the full transcript JSON back to the parent flow.  
     ![image](https://github.com/microsoft/Federal-Business-Applications/assets/12347531/1c7045dc-fe01-4cb7-acc5-3b852f32dacb)  
 
-    The paramters are:
+    The parameters are:
     - **Status Code**: ```200```
     - **Body**: ```@{body('HTTP_Get_Transcript')}```
     - **Response Body JSON Schema**:

@@ -2,6 +2,8 @@
 
 A lightweight, model-driven Power Apps solution that helps a Contracting Officer track software purchasing actions ("Inquiries"), the products and vendors involved, and the lifecycle of each action from draft to fulfillment. Built entirely on Microsoft Dataverse and validated in a GCC (US Gov) environment.
 
+![The Inquiry form showing the Draft → In Review → Award & Fulfillment process, key fields, the related Inquiry Products line items, and the activity timeline.](screenshot.png)
+
 ## The problem this solves
 
 Contracting teams often manage software purchases in spreadsheets and email, which makes it hard to answer basic questions: *What are we buying, from whom, for how much, and what's expiring soon?* This solution gives a command a single, structured system of record to:

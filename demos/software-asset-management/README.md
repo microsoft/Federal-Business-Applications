@@ -30,10 +30,7 @@ Contracting teams often manage software purchases in spreadsheets and email, whi
 | Component | Type | Purpose |
 |---|---|---|
 | Software Asset Management | Model-driven app + sitemap | The app users open; navigation across all tables. |
-| Vendor | Custom table | Companies that supply software; links to a primary Contact. |
-| Product | Custom table | Software products with SKU and price; related to a Vendor. |
-| Inquiry | Custom table | A purchasing action with POP dates, business justification, and a rolled-up total cost. |
-| Inquiry Product | Custom table | Line items joining an Inquiry to Products, with quantity, per-line POC, and extended price. |
+| Custom tables | Dataverse tables | <ul><li>**Vendor** — companies that supply software; links to a primary Contact.</li><li>**Product** — software products with SKU and price; related to a Vendor.</li><li>**Inquiry** — a purchasing action with POP dates, business justification, and a rolled-up total cost.</li><li>**Inquiry Product** — line items joining an Inquiry to Products, with quantity, per-line POC, and extended price.</li></ul> |
 | Inquiry Process | Business Process Flow (+ backing table) | Guides each Inquiry through Draft → In Review → Award & Fulfillment. |
 | Contact / User | OOTB tables | Referenced for vendor primary contacts and record ownership (POC, Requested By). |
 | Inquiry - Sync Stage to Status | Real-time workflow | Keeps the Inquiry status reason aligned with the active BPF stage. |
@@ -52,7 +49,3 @@ Contracting teams often manage software purchases in spreadsheets and email, whi
 5. Open the **Software Asset Management** app to get started.
 
 > This is an **unmanaged** solution intended as a demo and starting point for customization. Import it into a development environment.
-
-## Notes
-
-- Built and validated in a **GCC (US Gov)** environment; it uses only standard Dataverse capabilities and works in commercial and government clouds.

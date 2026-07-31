@@ -54,5 +54,3 @@ Contracting teams often manage software purchases in spreadsheets and email, whi
 ## Notes
 
 - Built and validated in a **GCC (US Gov)** environment; it uses only standard Dataverse capabilities and works in commercial and government clouds.
-- Publisher prefix: `fedabs` (Federal ABS Demos).
-- A future (2.0) license-assignment capability is described in the design but intentionally left out of this MVP.

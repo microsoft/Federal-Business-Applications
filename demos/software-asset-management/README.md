@@ -1,6 +1,6 @@
 # Software Asset Management
 
-A lightweight, model-driven Power Apps solution that helps a Contracting Officer track software purchasing actions ("Inquiries"), the products and vendors involved, and the lifecycle of each action from draft to fulfillment. Built entirely on Microsoft Dataverse and validated in a GCC (US Gov) environment.
+A lightweight, model-driven Power Apps solution that helps a Contracting Officer track software purchasing actions ("Inquiries"), the products and vendors involved, and the life cycle of each action from draft to fulfillment. Built entirely on Microsoft Dataverse and validated in a GCC (US Gov) environment.
 
 ![The Inquiry form showing the Draft → In Review → Award & Fulfillment process, key fields, the related Inquiry Products line items, and the activity timeline.](screenshot.png)
 

@@ -79,6 +79,7 @@ NetImpact
 OAuth
 OAUTH
 OData
+OOTB
 Omnichannel
 OneDrive
 OpenAPI
@@ -88,12 +89,14 @@ PDF
 PDF's
 PII
 PIV
+POC
 PowerApps
 PowerShell
 prebuilt
 programmatically
 roadmap
 rollout
+rollups
 RPA
 Runtime
 runtime
@@ -101,6 +104,7 @@ SaaS
 SCuBA
 SDK
 ServiceNow
+SKU
 SMS
 SPO
 subfolder

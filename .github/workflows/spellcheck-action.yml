@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions: read-all
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
     - uses: rojopolis/spellcheck-github-actions@58bd6665414e77e1d08688ff54323e01b9b434e5 # 0.29.0
       name: Spellcheck
       with:

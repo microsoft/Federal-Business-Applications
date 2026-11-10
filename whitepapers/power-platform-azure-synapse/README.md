@@ -320,10 +320,10 @@ Click on the Azure Synapse Link menu item
 
 ![Azure Synapse Menu Item](files/AzureSynapseMenuItem.png)
 
-Add the following query string ```?athena.advancedSetup=true``` to configure cross Tenant setup and ```&athena.synapse=true``` for Azure Synapse Analytics integration the end of the URL and load the page.  For example,
+Add the following query string ```?linkdata.advancedSetup=true``` to configure cross Tenant setup and ```&linkdata.synapse=true``` for Azure Synapse Analytics integration the end of the URL and load the page.  For example,
 
 ```
-https://make.gov.powerapps.us/environments/aaaaaa-xxx-4442-8f7e-229b080exxx/exporttodatalake?athena.advancedSetup=true&athena.synapse=true
+https://make.gov.powerapps.us/environments/aaaaaa-xxx-4442-8f7e-229b080exxx/linkdata?linkdata.advancedSetup=true&linkdata.synapse=true
 ```
 
 Click on "New link to data lake"
